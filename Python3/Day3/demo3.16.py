@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-#我的定时器
+#功能：采用魔术方法实现定时器
 
 import time as t
 
@@ -60,9 +60,17 @@ b = MyTimer()
 a.Start()
 b.Start()
 
-t.sleep(10)
+t.sleep(5)
 
 a.Stop()
 b.Stop()
-print("a 对象" + a," b 对象" +b)
+print("a 对象", a," b 对象" ,b)
 print(a + b)
+
+######## 执行结果 #############
+# 计时开始...
+# 计时开始...
+# 计时停止!
+# 计时停止!
+# a 对象 总共运行了5秒  b 对象 总共运行了5秒
+# 总共运行了10秒
