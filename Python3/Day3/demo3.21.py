@@ -1,6 +1,16 @@
 #!/usr/bin/python
 import time
  
+class Demo(object):
+    def __init__(self,foo):
+        self.foo = foo
+        self.foo()  #调用传入的f函数
+
+@Demo
+def f():
+    print("I love Python.org!")
+
+
 #案例1:funcA(funcB(func(4)))
 def funcA(A):  #注意形参
     print("function A")
