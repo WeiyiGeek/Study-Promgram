@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>初认识网站自适应之媒体查询@media</title> 
+    <style>
+        /**初始CSS样式**/
+        body,h1 {margin: 0;padding: 0;color: white}
+        section#container {margin: 0 auto; width: 1024px;}
+        section#main,aside,header,footer {
+            background-color: black;
+            margin: 5px 0px;
+        }
+        h1 {text-align: center;font-size: 1em;}
+    
+        /** 布局开始 **/
+        header {
+            float: left;
+            width: 100%;
+            line-height: 100px;
+        }
+
+        #left {
+            float: left;
+            width: 200px;
+            line-height: 400px;
+            margin-right:10px;
+        }
+        #main {
+            float: left;
+            width: 700px;
+            line-height: 400px;
+        }
+
+        #right {
+            float: left;
+            width: 200px;
+            line-height: 400px;            
+            margin-left:10px ;
+        }
+        footer {
+            float: left;
+            width: 100%;
+            line-height: 80px;
+        }
+
+        /***媒体查询使用案例**/
+        /** （1024px） 计算机屏幕显示 |  字体黄色 / 5个栏目 **/
+        @media screen and (min-width:1024px) {
+            h1 { color: yellow;}
+            section#container {width: 1160px; }
+            #right{width: 230px;}
+        }
+
+        /** (1024px > x > 768px) Pad  | 字体紫色  / 4个 栏目**/
+        @media screen and (min-width:768px) and (max-width:1024px)
+        {
+            h1 {color: #f0f;}
+            section#container {width: 1024px; }
+            #main {width: 800px}
+            #right {display: none;}
+        }
+
+        /** (767px > x) 手机  | 字体绿色 5个栏目 **/
+        @media screen and (max-width:760px)
+        {
+            h1 {color:green}
+            section#container {width: 640px;}
+            #left {width:640px;}
+            #main {width: 640px;}
+            #right {width: 640px; margin-left:0px ;}
+        }
+
+    </style>
+</head>
+<body>
+ <!-- HTML5建议使用语义标签--->
+<section id="container">
+    <header id="head"><h1>Head</h1></header>
+    <aside id="left"><h1>Left</h1></aside>
+    <section id="main"><h1>Main</h1></section>
+    <aside id="right"><h1>Right</h1></aside>
+    <footer id="footer"><h1>Footer</h1></footer>
+</section>
+</body>
+</html>
