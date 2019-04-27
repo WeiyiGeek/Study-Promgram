@@ -5,11 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-        "type": "java",
-        "name": "Debug Internal",
-        "request": "launch",
-        "console": "internalTerminal",
-        "mainClass": "${file}"
+            "type": "java",
+            "name": "Debug Internal",
+            "request": "launch",
+            "console": "internalConsole",
+            "mainClass": "${file}"
         },
         {
             "type": "java",
@@ -23,7 +23,6 @@
             "name": "Debug (Launch) - Current File",
             "request": "launch",
             "mainClass": "${file}"
-        },
-    
+        }
     ]
 }
