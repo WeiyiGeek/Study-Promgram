@@ -3,7 +3,6 @@
 #功能：实现图片得EXIF信息截取处理，并且计算两张图片的距离
 #图片之EXIF信息提取与处理
 
-
 import exifread
 import re
 import sys
