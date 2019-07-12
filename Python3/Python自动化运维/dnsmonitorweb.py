@@ -7,9 +7,9 @@
 # @Software: PyCharm
 
 import dns.resolver
-import os
 import urllib.request
 import ssl
+import os
 
 iplist=[]
 domain="qq.com"
@@ -36,8 +36,8 @@ def checkweb(ipaddr):
     except Exception as e:
         print("[URL请求错误]: \n%s" % str(e))
     finally:
-        print("请求URL：", response.geturl())
-        print("状态码：", response.getcode())
+        print("请求URL：",response.geturl())
+        print("状态码：",response.getcode())
         print("返回消息头：\n%s" %response.info())
 
         if int(response.getcode()) == 200:
