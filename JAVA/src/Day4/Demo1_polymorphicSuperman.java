@@ -14,7 +14,7 @@ class Demo1_polymorphicSuperman {
 
 
         //##示例2.###
-        //Animal a = new Cat(); //开发的是很少在创建对象的时候用父类引用指向子类对象,直接创建子类对象更方便,可以使用子类中的特有属性和行为
+        Animal a = new Cat(); //开发的是很少在创建对象的时候用父类引用指向子类对象,直接创建子类对象更方便,可以使用子类中的特有属性和行为
         method(new Cat());
 		method(new Dog());
     }
