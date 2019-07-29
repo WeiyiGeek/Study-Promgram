@@ -1,0 +1,7 @@
+#0.8版本语法
+---
+- hosts: local
+  remote_user: root
+  tasks:
+  - name: make file
+    action: file path=/tmp/test.yml state=touch mode=0700

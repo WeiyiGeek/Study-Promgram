@@ -1,0 +1,29 @@
+---
+- hosts: local
+  remote_user: root
+  tasks:
+  - name: make testfile1
+    file: path=/tmp/testfile1
+          state=directory
+    notify: ht2  #调用handlers中的ht2的任务
+  - name: make testfile2
+    file: path=/tmp/testfile2
+          state=directory
+    notify: ht1  #调用handlers中的ht1的任务
+ 
+  - meta: flush_handlers  #设置在执行完前面某些task以后立即执行调用对应的handler
+  - name: task3
+    file: path=/tmp/testfile3
+          state=directory
+    notify: ht3
+
+  handlers:
+  - name: ht1  #设置handlers任务名称(当tasks任务执行时候才出否)
+    file: path=/tmp/testfile1/ht1
+          state=touch
+  - name: ht2
+    file: path=/tmp/testfile2/ht2
+          state=touch
+  - name: ht3
+    file: path=/tmp/testfile3/ht3
+          state=touch 

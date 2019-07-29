@@ -1,0 +1,20 @@
+---
+- hosts: local
+  remote_user: root
+  vars: #关键点1-直接在play文件中定义变量
+    - dirRoot: /tmp/
+  vars_files: #关键点2-包含外部设定的变量文件
+    - /root/var.yml
+  tasks:
+    - name: Create directory
+      file: 
+        path: "{{dirRoot}}{{create.directory}}"  #关键点3
+        state: directory
+    - name: touch file
+      file:
+        path={{dirRoot}}{{create.directory}}/{{create['filename']}} 
+        state=touch
+    - name: insert context
+      lineinfile:
+        path="{{dirRoot}}{{create.directory}}/{{create.filename}}"
+        line={{create['context']}}

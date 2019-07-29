@@ -1,0 +1,10 @@
+---
+- hosts: local,testA
+  remote_user: root
+  tasks: 
+  - name: ping The host
+    ping: 
+  - name: make directory test
+    file: 
+      path: /tmp/ansible-playbook
+      state: directory

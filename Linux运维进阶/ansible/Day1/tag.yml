@@ -1,0 +1,28 @@
+---
+- hosts: local
+  remote_user: root
+  tags: command  #关键点-形式0
+  tasks: 
+  - name: show ip address
+    tags: ['ip']  #关键点-形式1
+    shell: ifconfig > /tmp/ipaddr.txt
+  - name: mkdir directory
+    tags: 
+      - createdir  #关键点-形式2
+    file:
+      path: /tmp/createdir
+      state: directory
+
+- hosts: testA
+  remote_user: root
+  tags: nginx
+  tasks: 
+  - name: install nginx package
+    tags: ['package']
+    yum: name=httpd state=latest
+  - name: start up nginx server
+    tags: 
+      - startservices
+    service:
+      name: nginx
+      state: started

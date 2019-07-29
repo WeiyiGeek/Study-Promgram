@@ -1,0 +1,5 @@
+
+create:
+  directory: Love
+  filename: Ansible.sh
+  context: "insert file a talk about \n test 123456 789" 

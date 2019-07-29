@@ -6,12 +6,6 @@
     "configurations": [
         {
             "type": "java",
-            "name": "CodeLens (Launch) - PolymorphicSuperman",
-            "request": "launch",
-            "mainClass": "PolymorphicSuperman"
-        },
-        {
-            "type": "java",
             "name": "Debug Internal",
             "request": "launch",
             "console": "internalConsole",

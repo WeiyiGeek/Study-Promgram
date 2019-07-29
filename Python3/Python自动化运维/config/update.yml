@@ -1,0 +1,17 @@
+#常量
+PI: 3.1415926
+NAME: WeiyiGeek
+INT: 1024
+#对象(集合)
+obj:
+  name: WeiyiGeeK
+  age: '888'
+  love: !!obj
+  - Computer
+  - 烹饪
+  - car
+array:
+- key1: I
+- key2: Love
+- key3: Study
+add: WeiyiGeek

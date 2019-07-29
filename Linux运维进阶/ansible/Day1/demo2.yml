@@ -1,0 +1,23 @@
+---
+- hosts: local
+  remote_user: root
+  tasks: 
+  - name: ping The host
+    ping: 
+  - name: make directory test
+    file: 
+      path: /tmp/ansible-playbook
+      state: directory 
+
+- hosts: testB
+  remote_user: root
+  tasks:
+  - name: touch file
+    file:
+      path: /tmp/file.txt
+      state: touch
+  - name: create user demo
+    user:
+      name: demo
+      password: "$6$ygRbo7Fj.mMU2KY0$OEqihCCn5UfOsvMyzPNPBgx3bzAtwrOFyFvacgUmA374XOAEtUCrdjbW5Ip.Zqo491o3kD5I.HaC9nLhh6x741"
+      uid: 1024

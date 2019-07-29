@@ -1,0 +1,18 @@
+---
+#常量
+  PI: 3.1415926
+  NAME: “This is a String”
+  INT: 1024
+#对象(集合)
+  obj:
+    name: "WeiyiGeeK"
+    age: 18
+    love: !!obj
+      - Computer
+      - Cook
+      - car
+#数组
+  array:
+    - key1: "I"
+    - key2: "Love"
+    - key3: "Study"

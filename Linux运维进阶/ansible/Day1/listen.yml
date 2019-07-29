@@ -1,0 +1,19 @@
+---
+- hosts: test70
+  remote_user: root
+  tasks:
+  - name: task1
+    file: path=/tmp/test
+          state=directory
+    notify: handler group1  #关键点 当task1中notify的值为handler group1时，handler1与handler2都会被notify
+
+#andler1与handler2的listen的值都是handler group1
+  handlers:
+  - name: handler1
+    listen: handler group1  #关键点(监听组)
+    file: path=/tmp/test/ht1
+          state=touch
+  - name: handler2
+    listen: handler group1
+    file: path=/tmp/test/ht2
+          state=touch

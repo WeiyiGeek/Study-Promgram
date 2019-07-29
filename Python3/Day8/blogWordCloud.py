@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @File : blogWordCloud.py
@@ -52,8 +53,6 @@ def get(url):
 			i = i.split(".md")[0]
 		titlelist.append(i)
 
-
-
 def word():
 	#全局
 	global titlelist
@@ -67,23 +66,13 @@ def word():
 	# wl = " ".join(wordlist)
 	# pprint(wl)
 
-
 	#去重并且将一个单词的进行剔除
 	titlelist = []
 	for word in wordlist:
 		if word not in titlelist and len(word) != 1:
 			titlelist.append(word)
 
-	for i in titlelist:
-		print(i)
 	return " ".join(titlelist)
-
-
-
-#生成词云我们需要用到几个库
-#pip install numoy matplotlib wordcloud Pillow
-
-
 
 
 def imgcloud():
@@ -94,9 +83,9 @@ def imgcloud():
 	#设置词云形状图片
 	wc_mask = np.array(Image.open(wc_mask_img))
 	wc = WordCloud(background_color="white",max_words=2000, scale=4,max_font_size=70,mask=wc_mask,random_state=42,font_path=WC_FONT_PATH)
-    # 生成词云
+    #生成词云
 	wc.generate(word())
-
+	
 	# 在只设置mask的情况下,你将会得到一个拥有图片形状的词云
 	plt.imshow(wc, interpolation="bilinear")
 	plt.axis("off")
@@ -105,11 +94,7 @@ def imgcloud():
 	fig.savefig("./blogWordCloud.png") #注意下保存要在show之前
 	plt.show()
 
-
 if __name__ == '__main__':
 	url = "http://127.0.0.1:4000/archives/"
 	get(url)
 	imgcloud()
-
-
-
