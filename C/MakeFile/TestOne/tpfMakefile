@@ -1,0 +1,9 @@
+CC = gcc
+OBJECT = menu.o music.o picture.o
+TARGET = all
+$(TARGET):$(OBJECT)
+	$(CC) $^ -o menu
+%.o:%.c
+	$(CC) -c $< -o $@
+clean:
+	rm *.o menu

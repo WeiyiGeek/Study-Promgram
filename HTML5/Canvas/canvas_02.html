@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>矩形demo</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="300" height="300" style="border:1px solid blue">矩形的创建与stroke()与fill()的区别</canvas>
+    <canvas id="canvas1" width="300" height="300" style="border:1px solid magenta">矩形的绘制</canvas>
+    <canvas id="canvas2" width="300" height="300" style="border:1px solid gray">strokeRect 矩形边框样式绘制</canvas>
+
+    <script type="text/javascript">
+        //矩形创建 rect()
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+        context.rect(10,10,150,150);
+        context.strokeStyle="magenta"; //设置边框颜色
+        context.stroke();  //不填充只是显示矩形边 , 采用strokeStyle 设置样式
+        //context.fillStyle = "magenta"; //填充颜色
+        //context.fill();   //默认填充为黑色 , 采用fillStyle 设置样式
+
+
+        //矩形的绘制与清除
+        var canvas1 = document.getElementById('canvas1');
+        var context1  = canvas1.getContext('2d');
+        context1.fillStyle="green";  //非常注意样式在前
+        context1.fillRect(10,10,150,150); //填充矩形
+        context1.clearRect(20,20,80,80); //清理填充
+
+
+        //strokeRect()矩形边框样式绘制
+        var canvas2 = document.getElementById('canvas2');
+        var context2 = canvas2.getContext('2d');
+        var linear = context2.createLinearGradient(0,0,200,200);  //设置线性样式
+        linear.addColorStop(0,"red");
+        linear.addColorStop(0.2,"magenta");
+        linear.addColorStop(0.4,"gray");
+        linear.addColorStop(0.6,"blue");
+        linear.addColorStop(0.8,"black");
+        linear.addColorStop(1,"yellow");
+        context2.strokeStyle = linear;     //采用线性样式
+        context2.lineWidth = 10;           //边框宽度
+        context2.strokeRect(10,10,200,200); //绘制矩形方框
+
+
+
+    </script>
+  </body>
+</html>

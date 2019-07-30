@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>验证码测试</title>
+</head>
+<body>
+    <form action="server.php" method="post">
+        <label for="user">用户名：</label><input type="text" name="username" id="user"><br>
+        <label for="pass">密 &nbsp;&nbsp;&nbsp;码：</label><input type="password" name="password" id="pass"><br>
+        <label for="code">验证码：</label><input type="text" name="code" id="code">
+        <!--值得学习| 刷新验证码 -->
+        <img src="code.php" alt="验证码" onclick="this.src='code.php?'+Math.random()"><br>
+        <input type="submit" name="dosubmit" value="登陆">
+    </form>
+
+</body>
+</html>

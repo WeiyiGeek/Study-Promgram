@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>FirstDay Javascript</title>
+  <script src="./test.js"></script>
+    </head>
+  <body>
+    <div id="text">Js Demo</div>
+    <script type="text/javascript">
+      /*对象定义及访问
+      var person = {
+        firstName:"小红",
+        englishName:"Red",
+        age:50,
+        eyecolor:"blue"
+      };
+
+      document.getElementById('text').innerHTML = person.firstName+"<br/>"+person.englishName+"<br/>"+person.age+"岁";
+
+    console.log("姓名:"+person.firstName+"\n年龄:"+person.age+"岁");
+    document.getElementById('text').innerHTML ="<br/>EnglishN："+person.englishName + "<br/>Color："+person.eyecolor;
+    */
+    </script>
+    <script>    /*
+
+    var person = {
+        firstName: "小红",
+        lastName : "Min Red",
+        id : 5566,
+        fullName : function()   //建立一个函数就是一个对象方法
+    	{
+           return this.firstName + " And " + this.lastName;//直接引用
+        }
+    };
+    document.getElementById("text").innerHTML = person.fullName();*/
+    </script>
+    <button type="button" name="button" onclick="myFun()">Try it click</button>
+    <script>
+    function myFun(){
+        alert("Hello world!!");
+    }
+    </script>
+
+      <button onclick="myFunction('Harry Potter','Chongqing')">点击这里</button>
+    <script>
+    function myFunction(name,job){
+    	document.write("Welcome " + name + ",to the " + job);
+    }
+
+    function myFunct(){
+    var x=5;
+    return x;
+    }
+    console.log(myFunct());   //上面的函数会返回值 5。
+    </script>
+
+
+
+    <div id="demo" style="border:1px solid red;">123</div>
+    <script>
+    function myFunction1(a,b){
+	     return a*b;
+     }
+   document.getElementById("demo").innerHTML="a * b ="+myFunction1(4,3);
+    </script>
+
+    <script type="text/javascript">
+      function test(a,b){
+        if(a > b){
+          return;
+        }else {
+          var x = a + b;
+          return x;
+        }
+      }
+    //  document.getElementById('demo').innerHTML="x = a + b ="+test(1,2);
+    </script>
+
+  </body>
+</html>

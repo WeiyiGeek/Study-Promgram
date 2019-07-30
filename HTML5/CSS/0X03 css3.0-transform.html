@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>css 3.0 style - 2D transform abbribute</title>
+</head>
+
+<body>
+  <b style="color:white;background-color:pink;">translate() 方法</b>
+  <hr>
+  <style type="text/css" media="screen">
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: yellow;
+      border: 1px solid black;
+    }
+    .dv1 {
+      transform: translateX(20px);
+    }
+    .dv2 {
+      transform: translate(100px,10px);
+      color: fuchsia;
+
+    }
+    .dv3 {
+      background-color: aqua;
+    }
+    .dv4 {
+      transform: rotate(30deg);
+      background-color: aqua;
+    }
+    .dv5 {
+      transform: rotateX(50deg);
+
+    }
+    .dv6 {
+      margin-top: 100px;
+      margin-left: 100px;
+      transform: scale(2,2);
+    }
+  </style>
+
+  <div class="dv1">
+  你好，这个是加了translatex(20px)的div！
+  </div>
+  <div class="dv2">
+  你好，这个是加了translate(100px,10px)方法！
+  </div>
+
+<br>
+<br>
+
+<br>
+  <b style="color:white;background-color:pink;">rotate() 方法</b>
+<hr>
+<div class="dv3">
+  默认样式！！div style
+</div>
+
+<div class="dv4">
+  dv4,进行顺时针选择30度。
+</div>
+
+<br>
+<br>
+<div class="dv5">
+  3Dx,ytransform：rotatex(10deg);
+  transform: rotatey(10deg);
+  <hr>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+<b style="color:white;background-color:pink;">scale() 方法</b>
+<hr>
+<div class="dv3">
+  默认样式！！div style
+</div>
+
+<div class="dv6">
+值 scale(2,2) 把宽度转换为原始尺寸的 2 倍，把高度转换为原始高度的 2 倍。
+</div>
+
+
+<br>
+<br>
+<br><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<b style="color:white;background-color:pink;">skew() 方法</b>
+<hr>
+<style type="text/css" media="screen">
+  .dv7 {
+    margin-left: 100px;
+    transform: skew(30deg,20deg);
+  }
+</style>
+<div class="dv3">
+    默认样式！！div style
+</div>
+
+<div class="dv7">
+  值 skew(30deg,20deg) 围绕 X 轴把元素翻转 30 (逆)度，围绕 Y 轴翻转 20(顺) 度。
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+
+
+<b style="color:white;background-color:pink;">matrix() 方法</b>
+<hr>
+<p>matrix() 方法把所有 2D 转换方法组合在一起，matrix() 方法需要六个参数，包含数学函数，允许您：旋转（rotate）、缩放（scale）、移动（translate）以及倾斜（skew）元素。
+</p>
+<style type="text/css" media="screen">
+.dv8 {    transform: matrix(0.5,0.1,-0.1,0.9,10,20);}
+</style>
+
+<div class="dv3">
+  默认的没有transform样式
+</div>
+
+<div class="dv8">
+  matrix() 方法把所有 2D 转换方法组合在一起(n,n,n,n,n,n);
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+
+<b style="color:white;background-color:lime;">transform-origin</b>
+<hr>
+<style type="text/css" media="screen">
+    #ida {
+      transform: rotate(45deg);
+      transform-origin: left 90%;
+
+    }
+</style>
+
+<div id="ida">
+  rotate 20deg;transform-origin:x:left y:90%;
+</div>
+
+
+</body>
+<html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jquery demo 4</title>
+     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <fieldset>
+        <legend>jQuery 内容 与 属性 - 获取</legend>
+        <p class="test1" style="color:red;display: inline;">这是一段演示的文字,我要<b>变粗</b >啦啦！</p><br>
+        表单:<input type="text" value="Hello World jquery!" />
+        <a id="url" href="#" title="#" target="_blank">测试属性</a>
+        <hr>
+        <button class="con">点击获取HTML内容信息+attr属性</button>
+        <button class="set">设置内容与属性</button>
+    </fieldset>
+
+    <fieldset>
+        <legend>jQuery 添加与删除元素 </legend>
+        <p id="prep">我前面还有文本只是没显示出来！</p>
+        <ol>
+            <li>我是第一个列表</li>
+            <li>我是第一个列表</li>
+        </ol>
+        <img id="baidu" width="100px" height="30px" style="background-color:#1aad19" src="https://wkstatic.bdimg.com/static/gaokao/static/miti/tikucommon/widget/tpl/pc/header/images/logo_731bc32.png" alt="图库">
+        <hr>
+        <button id="demo1">元素内开头结尾插入</button>
+        <button id="demo2">元素外部开头结尾插入</button>
+        <button id="demo3">值得学习的demo</button>
+        <button id="demo4">删除元素</button>
+        <button id="demo5">清空元素</button>
+    </filedset>
+
+    <script>
+         function Text(sel){
+            var txt1="<b>I</b>";                    // 使用 HTML 创建元素
+            var txt2=$("<i class='love'></i>").text("love ");     // 使用 jQuery 创建元素 （调用一次生成一次）
+            var txt3=document.createElement("big");  // 使用 DOM 创建元素   （调用一次才生成一次）  如果有两个插入以最后一个插入为完整插入
+            txt3.innerHTML="jQuery!";
+            if(sel <= 0){
+                $("img").before(txt1,txt2,txt3);
+            }else{
+                $("#baidu").after([txt1,txt2,txt3]);   // 在图片后添加文本(利用列表的形式)
+            }
+         }
+        $(function(){
+            //3.元素的添加与删除
+            $("#demo1").click(function(){
+                $("#prep").prepend("<b style='color:red'>p标签头部插入,</b>");
+                $("ol").append("<li style='color:red'>列表尾部插入</li>");
+           });
+            $("#demo2").click(function(){
+                $("#baidu").before("| 在百度图片<i style='color:red'>前</i>插入 |");
+                $("#baidu").after("| 在百度图片<i style='color:red'>后</i>插入 |");
+            });
+            //注意：prepend append before after 都能这样使用
+            $("#demo3").click(function(){
+                Text(0);
+                Text(1);
+            });
+            //元素删除与清空
+            $("#demo4").click(function(){
+                //$("b").remove();
+                $("i").remove(".love"); //删除指定元素的属性的元素
+                console.warn("已删除b元素,与i元素class属性为love");
+            });
+            $("#demo5").click(function(){
+                $("#prep").empty();
+                console.warn("已清空p元素");
+            });
+
+
+            //1.HTML内容与属性获取
+            $(".con").click(function(){
+                console.info("标签的文本值："+$(".test1").text());
+                console.info("包含的标签+文本："+$(".test1").html());
+                console.info("表单的值："+$(":text").val());
+                console.log("p标签的style样式："+$(".test1").attr("style"));
+                console.log("input类型："+$(":text").prop("type"));
+                console.log("input表单值："+$("[type=text]").prop("value"));
+            });
+            //2.HTML内容与属性设置
+            $(".set").click(function(){
+               $(".test1").text("更改后的文字");
+               $(".test1").html("更改后的文字<i>我要变斜线</i>");
+               $(":text").val("表单值");
+               //非常注意这里多属性设置有符合： {多个属性}
+               $("#url").attr({
+                    "href":"http://baidu.com",
+                    'title':'百度链接',
+                    "target":"_self"
+               });
+            });
+        });
+
+        
+    </script>
+</body>
+</html>

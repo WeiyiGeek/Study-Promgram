@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>CSS 3.0 AND transtion abbribute</title>
+<style type="text/css" media="screen">
+  b {
+    background-color: lime;
+    color:white;
+  }
+</style>
+</head>
+<body>
+<b> Transtion-property 设置过渡的CSS属性的名称  </b>
+<hr>
+<style type="text/css" media="screen">
+    .pro {
+      height: 30PX;
+      width:  100PX;
+      background-color: gray;
+      transition-duration: 2s;
+      /*transition-property: width; /*要变化的属性值*/
+      transition-property: all;
+      transition-delay: 1s;
+    }
+    .pro:hover {
+      width: 500px;
+      height: 100px;
+    }
+  /*  #iv {
+      transition-duration: 2s;
+      transition-property: height;
+    }*/
+</style>
+<div class="pro" id="iv">
+  默认样式
+</div>
+<br>
+<div class="pro">
+  鼠标在样式
+</div>
+<p>把鼠标移动到灰色方块中技能看到效果</p>
+<br>
+<br>
+<br>
+<br>
+<b>transition-timing-function 规定过渡效果的速度曲线-cubic-bezier 贝塞尔曲线</b>
+<hr>
+<style type="text/css" media="screen">
+  .linear,.ease,.easein,.easeout,.easeio {
+    height: 30px;
+    width: 170px;
+    background-color: gray;
+    color:lime;
+    font-weight: bold;
+    margin-top: 3px;
+    transition-duration: 2s;
+    transition-property: width;
+  }
+.linear {transition-timing-function: linear;}
+.ease {transition-timing-function: ease;}
+.easein {transition-timing-function: ease-in;}
+.easeout {transition-timing-function: ease-out;}
+.easeio {transition-timing-function: ease-in-out;}
+
+
+div:hover {
+  width: 1200px;
+}
+
+</style>
+<div class="linear">linear-匀速</div>
+<div class="ease">ease-先快后慢再快</div>
+<div class="easein">easein-先慢后快)</div>
+<div class="easeout">easeout-先快后慢</div>
+<div class="easeio">easeio-先慢后快再慢</div>
+
+<br>
+<style type="text/css">
+	.l1l,.e2l,.e3l,.e4l,.e5l,.e6l {
+		height: 30px;
+		width: 300px;
+		background-color:pink;
+		color:black;
+		font-weight:bold;
+		transition-duration:2s;
+		transition-property:width;
+		margin-top:3px;
+	}
+	
+
+	
+	.l1 {transition-timing-function:cubic-bezier(0.25,0.5,0.75,1);}
+	.e2 {transition-timing-function:cubic-bezier(0.25,0.25,0.5,0.5);}
+	.e3 {transition-timing-function:cubic-bezier(0.25,0.75,0.75,0.25);}
+	.e4 {transition-timing-function:cubic-bezier(0.5,0,0.5,0);}
+	.e5 {transition-timing-function:cubic-bezier(0.75,0.75,0,0);}
+	.e5 {transition-timing-function:cubic-bezier(0.75,0,0,0);}
+</style>
+
+<b>cubic-bezier</b>
+<div class="l1l">cubic-bezier(0.25,0.5,0.75,1)</div>
+<div class="e2l">cubic-bezier(0.25,0.25,0.5,0.5)</div>
+<div class="e3l">cubic-bezier(0.25,0.75,0.75,0.25)</div>
+<div class="e4l">cubic-bezier(0.5,0,0.5,0)</div>
+<div class="e5l">cubic-bezier(0.75,0.75,0,0)</div>
+<div class="e6l">cubic-bezier(0.75,0,0,0)</div>
+
+
+<br>
+<br>
+<br>
+<b>Transition ALL attribute value!!</b>
+<hr>
+
+<P>通过 CSS3，我们可以在不使用 Flash 动画或 JavaScript 的情况下，当元素从一种样式变换为另一种样式时为元素添加效果。</P>
+<style> 
+.animated_div
+	{
+	width:65px;
+	height:40px;
+	background:#92B901;
+	color:#ffffff;
+	position:absolute;
+	font-weight:bold;
+	font:12px '微软雅黑';
+	padding:20px 10px 0px 10px;
+	float:left;
+	margin:5px;
+	/*transition-property:width,height,transform,background,font-size,opacity;
+	transition-duration:1s,1s,1s,1s,1s,1s;
+	可以分开来写，也可以直接来写。
+	*/
+	transition-property:all;
+	transition-duration:2s;
+	border-radius:15px;
+	opacity:0.4;
+	}
+
+.animated_div:hover
+	{
+
+	transform: rotate(360deg);
+	opacity:1;
+	background:#1ec7e6;
+	width:90px;
+	height:60px;
+	font-size:16px;
+	}
+</style>
+
+<p class="animated_div">CSS 过度</p>
+
+<br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/>
+<b>Demo 2</b>
+<hr>
+<style type="text/css">
+	.demo2 {
+				width: 140px;
+				height: 40px;
+				font:'微软雅黑'; 
+				background-color:gray;
+				color:black;
+				font-weight:bold;
+				opacity:0.5;
+				transition: all 3s linear 0.5s; /*简写:*/
+				/*transition-property:all;
+				transition-duration:3s;
+				transition-timing-function:linear;
+				transition-delay:1s;
+				*/
+				
+		}
+		
+		.demo2:hover {
+				color:white;
+				background-color:pink;
+				width:1200px;
+				opacity: 1;
+				border-radius:1.5;
+				border:2px solid black;
+			}
+</style>
+
+<p class="demo2">这是一个进度条!!</p>
+
+<br>
+<br>
+<br>
+<br>
+</body>
+<html>

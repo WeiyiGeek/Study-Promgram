@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Function Demo</title>
+  </head>
+  <body>
+    <p>Function Object Demo</p>
+    <input type="button" name="" value="刷新页面" onclick="javascript:location.reload();">
+<script type="text/javascript">
+function test(){
+  var test = "test";
+  console.log("是不是NAN："+Number(test));
+  var test1;
+  if (test1 == undefined) {
+  console.log("未定义Undefined："+"undefiend");
+  }
+  var num = Number.MAX_VALUE * 2;
+  console.log("正无穷："+num);
+  var num = (-Number.MAX_VALUE) * 2;
+  console.log("负无穷："+num);
+}
+
+function intF(){
+
+  var str = new String("1234567");
+  console.log("数值："+(Number(str) - 7));
+
+  var num = new Number(123456);
+  var str = String(num);
+  console.log("字符串："+str.concat("0"));
+
+}
+
+function evalF(){
+
+  eval("x=10;y=20;document.write(x*y)")
+
+  document.write("<br/>"+eval("2+2"))
+
+  var x=10
+  document.write("<br/>"+eval(x+17))
+
+//可以使用下面这段代码来检测 eval() 的参数是否合法：
+  try  {
+       alert("Result:" + eval(prompt("Enter an expression:","")));
+       }
+  catch(exception) {
+       alert(exception);
+       }
+
+}
+
+function escapeF(){
+  var str = "I'd Like Study Javascript?";
+  var str_esc = escape(str);
+  console.log("Escape编码："+str_esc);
+  console.log("Escape解码："+unescape(str_esc));
+}
+
+function encodeURLF(){
+var urli = "http://www.runoob.com/try/try.php ? filename=tryjsref decodeuri";
+var urli_enc = encodeURI(urli)
+console.log("url编码："+urli_enc);
+console.log("url解码: "+decodeURI(urli_enc));
+}
+
+
+function endecodeURIComponentF(){
+   var uri="http://w3cschool.cc/my test.php?name=ståle&car=saab";
+   var uri_enc = encodeURIComponent(uri);
+   console.log("EncodeURLComponent："+uri_enc);
+   console.log("DecodeURLComponent: "+decodeURIComponent(uri_enc));
+}
+
+</script>
+  </body>
+</html>

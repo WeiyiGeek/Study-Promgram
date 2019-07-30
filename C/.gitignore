@@ -1,0 +1,7 @@
+#[.exe]
+*.exe
+
+#obj.o
+*.o
+*.out
+*.bak

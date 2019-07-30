@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>New method study</title>
+  </head>
+  <body>
+    <p id="pfirst">Test1</p>
+    <p id="pseconde">Test2</p>
+    <script type="text/javascript">
+
+
+      function $(id) {return document.getElementById(id);} //新方法进行引用id
+      document.write($('pfirst').innerHTML);  //方式一,获取元素的文本内容
+
+      var str1 = new String($('pfirst').firstChild.nodeValue);  //建立一个String对象
+      var str2 = $('pseconde').firstChild.nodeValue;  //将第一个子节点的节点值给变量
+      document.write(str1.concat(">>>",str2)+"<br>");  //字符串的拼接
+
+      //  var test = document.getElementById('id');
+     //  document.write("<br/>"+$('pfirst').firstChild.nodeValue);
+     //  document.write("<br/>"+$('pseconde').lastChild.nodeValue);
+
+    </script>
+  </body>
+</html>

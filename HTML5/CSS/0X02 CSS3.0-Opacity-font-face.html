@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>style opacity attribute Demo</title>
+</head>
+
+<body>
+<b style="color:red">Opacity text AND image</b>
+<hr>
+<style type="text/css" media="screen">
+  div.img {
+    width: 100%;
+    height: auto;
+  }
+  img.opaimg {
+    border: 1px solid red;
+    opacity: 1;
+  }
+  .opaimg:hover {
+    opacity: 0.5;
+  }
+  p {
+    font-weight: bold;
+    color: lime;
+    opacity: 0.5;
+  }
+  p:hover {
+    font-display: auto;
+    opacity: 1;
+  }
+  p.test {
+    border: 2px dotted green;
+    color: fuchsia;
+
+  }
+</style>
+
+<div class="img">
+  <p>这个图片带有透明背景色,将鼠标移动到上面可以看出朦胧的感觉</p>
+  <img  class="opaimg" src="./img/u.jpg" alt="text">
+  <p class="test">这个p元素带有透明度,将鼠标移动到上面可以看出清楚文字的感觉</p>
+  <p>这个p元素带有透明度,将鼠标移动到上面可以看出清楚文字感觉</p>
+</div>
+
+<br>
+<br>
+<br>
+<b style="color:pink;background-color:black;">@Font-face Demo</b>
+<hr>
+<br>
+<style  type="text/css" media="screen">
+  @font-face {
+      font-family: sanlight;
+      src: url('./ttf/Sansation_Light.ttf'),url('./ttf/Sansation_Light.eot')/**IE+9*/;
+  }
+  @font-face {
+      font-family: sanbold;
+      src: url('./ttf/Sansation_Bold.ttf'),url('./ttf/Sansation_Bold.ttf') /*IE+9*/;
+      font-weight: bold;
+  }
+  .sanlight {
+    font-family: sanlight;
+  }
+  span {
+    font-family: sanbold;
+  }
+</style>
+<b style="color:aqua;">下面是引用外部字体进行显示，分别是sansation——light,与 sansation——bold</b>
+<div class="sanlight">
+    This is a Sansation_Light ttf Demo,I like this ttf very Much!!
+</div>
+<br>
+<div class="sanlight">
+  This is a Sansation_Light ttf Demo,I like this ttf very Much!!
+<span>This is a Sansation_Bold ttf Demo</span>,I like this ttf very Much!!
+</div>
+
+</body>
+<html>

@@ -1,0 +1,23 @@
+############### 重命名 configure.scan 为 configure.ac 并修改如下 ################
+
+#                                               -*- Autoconf -*-
+# Process this file with autoconf to produce a configure script.
+AC_PREREQ([2.63])
+
+#AC_INIT([FULL-PACKAGE-NAME], [VERSION], [BUG-REPORT-ADDRESS])
+	AC_INIT(int_arithmetic, 0.1, ggao@micron.com)
+	AM_INIT_AUTOMAKE(int_arithmetic, 0.1)
+# Generate static lib
+	AC_PROG_RANLIB
+	AC_CONFIG_SRCDIR([int_arithmetic.c])
+	AC_CONFIG_HEADERS([config.h])
+# Checks for programs.
+	AC_PROG_CC
+# Checks for libraries.
+# Checks for header files.
+	AC_CHECK_HEADERS([stdlib.h unistd.h])
+# Checks for typedefs, structures, and compiler characteristics.
+# Checks for library functions.
+	AC_CONFIG_FILES([Makefile
+			                 src/Makefile])
+	AC_OUTPUT

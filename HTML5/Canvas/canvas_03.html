@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>线条样式|及其简单路径</title>
+  </head>
+  <body>
+    <canvas id="cvs1" width="300" height="300" style="border:2px solid black">三种不同的结束线</canvas>
+    <canvas id="cvs2" width="300" height="300" style="border:2px solid black">lineJoin 属性设置或返回所创建边角的类型</canvas>
+    <canvas id="cvs3" width="300" height="300" style="border:2px solid black"></canvas>
+
+    <script type="text/javascript">
+          //lineCap 线条的结束端点样式(三种)
+          var cvs1 = document.getElementById('cvs1');
+          var context1 = cvs1.getContext('2d');
+          context1.strokeStyle="red";
+
+          context1.beginPath();
+          context1.lineWidth=10;
+          context1.lineCap="butt" //default
+          context1.moveTo(20,20);  //起点 非常重要
+          context1.lineTo(200,20); //下一个点
+          context1.stroke();
+
+          context1.beginPath();
+          context1.lineWidth=10;
+          context1.lineCap="round" //圆头
+          context1.moveTo(20,40);  //起点 非常重要
+          context1.lineTo(200,40);
+          context1.stroke();
+
+          context1.beginPath();
+          context1.lineWidth=10;
+          context1.lineCap="square" //方块
+          context1.moveTo(20,60); //起点 非常重要
+          context1.lineTo(200,60);
+          context1.stroke();
+
+
+          //lineJoin 属性设置或返回所创建边角的类型
+          var cvs2=document.getElementById("cvs2");
+          var ctx=cvs2.getContext("2d");
+          ctx.strokeStyle="magenta";
+          ctx.beginPath();
+          ctx.lineWidth=10;
+          ctx.lineJoin="round";  //round 	创建圆角。
+          ctx.moveTo(20,20);  //起点 非常重要
+          ctx.lineTo(100,50);
+          ctx.lineTo(20,100);
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.lineWidth=10;
+          ctx.lineJoin="bevel";  //创建斜角
+          ctx.moveTo(120,20);  //起点 非常重要
+          ctx.lineTo(180,60);
+          ctx.lineTo(120,100);
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.lineWidth=10;
+          ctx.lineJoin="miter";  //默认
+          ctx.moveTo(250,20);  //起点 非常重要
+          ctx.lineTo(200,60);
+          ctx.lineTo(250,90);
+          ctx.stroke();
+
+
+          //miterLimit 设置或返回最大斜接长度 (超过值便是bevel类型)
+          var cvs3 = document.getElementById('cvs3');
+          var cvs3context = cvs3.getContext('2d');
+          cvs3context.lineWidth=10;
+          cvs3context.lineCap="round";
+          cvs3context.lineJoin="round"
+          cvs3context.miterLimit=5;
+          cvs3context.moveTo(50,10);
+          cvs3context.lineTo(90,60);
+          cvs3context.lineTo(50,120);
+          cvs3context.stroke();
+    </script>
+  </body>
+</html>

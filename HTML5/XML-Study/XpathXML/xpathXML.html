@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>XPATH</title>
+</head>
+<body>
+    <script>
+        function loadXMLDoc(dname) 
+        {
+            xhttp = window.XMLHttpRequest ? new XMLHttpRequest():new ActiveXObject("Microsoft.XMLHTTP");
+            xhttp.open("GET", dname, false);
+            xhttp.send();
+            return xhttp.responseXML;
+        }   
+
+        xml = loadXMLDoc("book.xml");
+        path = "/bookstore/book[price=29.99]/author";
+
+        // code for IE
+        if (window.ActiveXObject) {
+            var nodes = xml.selectNodes(path);
+            for (i = 0; i < nodes.length; i++) {
+                document.write(nodes[i].childNodes[0].nodeValue);
+                 document.write("<br>");
+            }
+
+            //接口包含一个createDocumentType方法，它可以为实例管理的文档创建对应的DTD文档定义
+        }else if (document.implementation && document.implementation.createDocument) {
+            // code for Mozilla, Firefox, Opera, etc.
+            var nodes = xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
+            var result = nodes.iterateNext();
+
+            while (result) {
+                    document.write("<p style='color:red'>"+result.childNodes[0].nodeValue);
+                    document.write("</p>");
+                    result = nodes.iterateNext();
+                }
+            }
+
+    </script>
+</body>
+</html>

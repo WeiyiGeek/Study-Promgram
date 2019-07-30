@@ -1,0 +1,45 @@
+May 05 17:32:52.910 HYPERVISOR: Release 0.2.14-x86/Windows (tag 2014092320)
+May 05 17:32:52.913 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 58526.
+May 05 17:32:53.381 HYPERVISOR: exec_cmd: hypervisor version 
+May 05 17:32:53.382 HYPERVISOR: exec_cmd: hypervisor uuid 
+May 05 17:32:53.382 HYPERVISOR: exec_cmd: hypervisor working_dir F:\BaiduNetdiskDownload\CCNA\project-files\dynamips 
+May 05 17:32:53.383 GENERAL: working_dir=F:\BaiduNetdiskDownload\CCNA\project-files\dynamips
+May 05 17:32:53.384 HYPERVISOR: exec_cmd: vm create R3 4 c2691 
+May 05 17:32:53.392 VM: VM R3 created.
+May 05 17:32:53.393 HYPERVISOR: exec_cmd: vm set_con_tcp_port R3 2004 
+May 05 17:32:53.394 HYPERVISOR: exec_cmd: c2691 get_mac_addr R3 
+May 05 17:32:53.395 HYPERVISOR: exec_cmd: vm set_ios R3 C:\Users\Administrator\GNS3\images\IOS\C2691-AD-12415.BIN 
+May 05 17:32:53.397 HYPERVISOR: exec_cmd: vm set_exec_area R3 64 
+May 05 17:32:53.398 HYPERVISOR: exec_cmd: vm get_status R3 
+May 05 17:32:53.398 HYPERVISOR: exec_cmd: vm set_idle_pc R3 0x60c59d98 
+May 05 17:32:53.399 HYPERVISOR: exec_cmd: vm set_disk0 R3 0 
+May 05 17:32:53.401 HYPERVISOR: exec_cmd: vm set_nvram R3 256 
+May 05 17:32:53.402 HYPERVISOR: exec_cmd: vm slot_add_binding R3 0 16 WIC-2T 
+May 05 17:32:53.403 HYPERVISOR: exec_cmd: vm set_ram R3 192 
+May 05 17:32:53.409 HYPERVISOR: exec_cmd: vm set_config R3 configs/i4_startup-config.cfg 
+May 05 17:32:53.411 HYPERVISOR: exec_cmd: vm set_ghost_status R3 2 
+May 05 17:32:53.412 HYPERVISOR: exec_cmd: vm set_ghost_file R3 C2691-AD-12415.BIN-192.ghost 
+May 05 17:34:13.649 HYPERVISOR: exec_cmd: nio create_udp udp-54429c4e-7d6b-4de1-ae7f-8392965dbc91 10002 127.0.0.1 10003 
+May 05 17:34:13.666 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R3 0 16 udp-54429c4e-7d6b-4de1-ae7f-8392965dbc91 
+May 05 17:34:13.667 HYPERVISOR: exec_cmd: vm get_status R3 
+May 05 17:34:17.763 HYPERVISOR: exec_cmd: vm get_status R3 
+May 05 17:34:17.769 HYPERVISOR: exec_cmd: vm start R3 
+May 05 18:05:26.225 HYPERVISOR: exec_cmd: vm extract_config R3 
+May 05 19:02:26.197 HYPERVISOR: exec_cmd: nio bind_filter udp-54429c4e-7d6b-4de1-ae7f-8392965dbc91 2 capture 
+May 05 19:02:26.198 HYPERVISOR: exec_cmd: nio setup_filter udp-54429c4e-7d6b-4de1-ae7f-8392965dbc91 2 ppp_serial F:\BaiduNetdiskDownload\CCNA\project-files\captures\R3_Serial0-0_to_R2_Serial0-0.pcap 
+May 05 19:02:38.873 HYPERVISOR: exec_cmd: vm get_status R3 
+May 05 19:02:38.879 HYPERVISOR: exec_cmd: vm stop R3 
+May 05 19:02:39.002 VM: VM R3 shutdown.
+May 05 19:02:40.216 HYPERVISOR: exec_cmd: vm get_status R3 
+May 05 19:02:40.240 HYPERVISOR: exec_cmd: vm start R3 
+May 05 20:22:01.474 HYPERVISOR: exec_cmd: vm extract_config R3 
+May 05 20:22:03.990 HYPERVISOR: exec_cmd: vm extract_config R3 
+May 05 20:22:07.692 HYPERVISOR: exec_cmd: vm get_status R3 
+May 05 20:22:07.694 HYPERVISOR: exec_cmd: vm stop R3 
+May 05 20:22:07.807 VM: VM R3 shutdown.
+May 05 20:22:07.809 HYPERVISOR: exec_cmd: vm extract_config R3 
+May 05 20:22:07.813 HYPERVISOR: exec_cmd: vm delete R3 
+May 05 20:22:07.813 VM: VM R3 destroyed.
+May 05 20:22:07.815 HYPERVISOR: exec_cmd: hypervisor stop 
+May 05 20:22:08.120 HYPERVISOR: Stopped.
+May 05 20:22:08.121 GENERAL: reset done.

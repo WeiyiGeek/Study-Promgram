@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang= dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>文本 font | demo</title>
+  </head>
+  <body>
+    <canvas id="cvs1" width="300" height="300" style="border:2px solid black">查看 fillText() ; </canvas>
+    <canvas id="cvs2" width="300" height="300" style="border:2px solid black">查看 strokeText() ; </canvas>
+    <script type="text/javascript">
+        var c1 = document.getElementById('cvs1');
+        var context1 = c1.getContext('2d');
+        var linearc1 = context1.createLinearGradient(0,0,c1.width,0);
+        linearc1.addColorStop("0","magenta");
+        linearc1.addColorStop("0.5","blue");
+        linearc1.addColorStop("1.0","red");
+        context1.fillStyle=linearc1;
+        context1.font="normal bold 20px arial";  //设置文本样式
+        context1.fillText("Canvas Text",20,50); //填充文本
+
+        var txt = "Canvas text";
+        context1.textBaseline="middle";  //文本基线
+        context1.fillText("width:" + context1.measureText(txt).width,20,90); //字体的宽度
+
+
+
+        var c2 = document.getElementById('cvs2');
+        var context2 = c2.getContext('2d');
+        var linearc2 = context2.createLinearGradient(0,0,c2.width,0);
+        linearc2.addColorStop("0","green");
+        linearc2.addColorStop("0.5","blue");
+        linearc2.addColorStop("1.0","red");
+        context2.strokeStyle=linearc2;
+
+        context2.font="bold 40px Georgia";
+        context2.strokeText("Canvas Text",10,50);
+
+        context2.strokeStyle="red";
+        context2.textAlign="left";    //文本对齐方式
+        context2.strokeText("hello-world",10,100);   //字体的框架（无填充）
+    </script>
+
+  </body>
+</html>

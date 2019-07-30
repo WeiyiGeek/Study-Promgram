@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Css outline style</title>
+<style type="text/css">
+  p {border:white solid 4px;}
+  p.dotted {outline-style: dotted;}
+  p.dashed {outline-style: dashed;}
+  p.solid {outline-style: solid;}
+  p.double {outline-style: double;}
+  p.groove {outline-style: groove;}
+  p.ridge {outline-style: ridge;}
+  p.inset {outline-style: inset;}
+  p.outset {outline-style: outset;}
+</style>
+</head>
+
+<body>
+<b style="color:lime;background-color: black;">## 轮廓的样式-outline-style
+</b>
+<p class="dotted"><b>注释：</b>只有在规定了 !DOCTYPE 时，Internet Explorer 8 （以及更高版本） 才支持 outline 属性。<br>
+outline-style: dotted
+</p>
+<p class="dashed">A dashed outline</p>
+<p class="solid">A solid outline</p>
+<p class="double">A double outline</p>
+<p class="groove">A groove outline</p>
+<p class="ridge">A ridge outline</p>
+<p class="inset">A inset outline</p>
+<p class="outset">A outset outline</p>
+
+<br>
+<hr>
+<br>
+<b style="color:white;background-color: black;">## 轮廓的颜色-outline-color
+</b>
+<style type="text/css">
+  p.cname {outline-style: dotted;outline-color: olive;}
+  p.chex {outline-style: dashed;outline-color: #00ff00;}
+  p.crgb {outline-style: groove;outline-color: rgb(142,15,118);}
+  p.invert {outline-style: outset;outline-color: invert;}
+</style>
+<p class="cname">this is color name</p>
+<p class="chex">this is color HEX</p>
+<p class="crgb">this is color rgb</p>
+<p class="invert">A invert outline-style</p>
+<p><b>注释：</b>只有在规定了 !DOCTYPE 时，Internet Explorer 8 （以及更高版本） 才支持 outline-color 属性。</p>
+
+<br>
+<hr>
+<br>
+<b style="color:aqua;background-color:gray">## 轮廓的宽度-outline-width</b>
+<style type="text/css" media="screen">
+  p.thin {outline-offset: inherit;outline-style: double;outline-color: rgba(85,128,42,1);outline-width: thin;}
+  p.thick {outline-style: ridge;outline-color: navy;outline-width: thick;}
+  p.length {outline-style:solid;outline-color: #ff0000;outline-width: 10px;}
+</style>
+<p class="thin">A thin outline-width</p>
+<p class="thick">A thick outline-width</p>
+<p class="length">A lenght 10px outline-width</p>
+
+<br>
+<hr>
+<br>
+<b style="color:fuchsia">## 一个声明中设置所有的轮廓属性-outline
+</b>
+<style  type="text/css" media="screen">
+</style>
+<p class="zhushi"><b>注释：</b>只有在规定了 !DOCTYPE 时，Internet Explorer 8 （以及更高版本） 才支持 outline 属性。</p>
+<br>
+<br>
+<br>
+
+</body>
+<html>

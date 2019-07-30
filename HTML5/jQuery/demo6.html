@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery demo 6 </title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+     <script>
+        $(document).ready(function(){
+            //父节点
+            $("#demo1").click(function(){
+                console.log("span标签的父节点："+$("span").parent().text());
+                $("span").parents().css({"border":"1px solid red","color":"red"});
+            });
+            $("#demo2").click(function(){
+                $("span").parentsUntil("div").css({"color":"blue","border":"1px solid black"});
+            });
+            //子节点
+            $("#demo3").click(function(){
+                //可以指定类名
+                console.info("子节点个数："+$(".descendants").children().length);
+                $(".descendants").children("p.1").css({"border":"1px solid black","color":"black"});
+            });
+            $("#demo4").click(function(){
+                $(".descendants").find("*").css({"color":"#A89521","border":"2px solid #5769bc"});
+            });
+        });
+  </script>
+    <style>
+.ancestors *
+{ 
+	display: block;
+	border: 2px solid lightgrey;
+	color: lightgrey;
+	padding: 5px;
+	margin: 10px;
+}
+</style>
+</head>
+<body class="ancestors"> body (曾曾祖父元素)
+  <div style="width:500px;">div (曾祖父元素)
+    <ul>ul (祖父元素)  
+      <li>li (父元素)
+        <span>span</span>
+      </li>
+    </ul>   
+  </div>
+  <button id="demo1" style="color:black;display: inline;">查看父节点</button>
+  <button id="demo2" style="color:black;display: inline;">parentsUntil</button>
+
+  <br>
+  <div class="descendants" style="width:500px;">div (当前元素) 
+  <p class="1">p (儿子元素)
+    <span>span (孙子元素)</span>     
+  </p>
+  <p class="2">p (儿子元素)
+    <span>span (孙子元素)</span>
+  </p> 
+</div>
+    <button id="demo3" style="color:black;display: inline;">children()</button>
+    <button id="demo4" style="color:black;display: inline;">find()</button>
+
+</body>
+</html>

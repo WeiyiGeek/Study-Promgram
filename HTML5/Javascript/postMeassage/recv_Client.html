@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ch" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Recv windows demo</title>
+  </head>
+  <body>
+    <p><b>This is a  recvive Message ：</b></p>
+    <div id="msg" style="border:1px solid gray" width="100px" height="100px"> </div>
+    <script type="text/javascript">
+    window.onload = function(){
+        if(window.addEventListener){
+          window.addEventListener("message", handleMessage, false);  //事件 , 调用函数名 , 指定事件是否在捕获或冒泡执行阶段
+          console.log("添加Message事件");
+        }else{
+          window.attachEvent("onmessage", handleMessage); //IE 不支持时候， 选择它
+          console.log("IE支持的添加事件");
+        }
+
+        function handleMessage(event) {  //event 事件对象
+          event = event || window.event;
+          document.getElementById('msg').innerHTML = event.origin + " said : "+event.data; //输出获取的Postmessage信息
+        }
+    }
+    </script>
+  </body>
+</html>

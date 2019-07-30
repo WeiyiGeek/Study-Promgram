@@ -1,0 +1,35 @@
+May 05 17:30:58.284 HYPERVISOR: Release 0.2.14-x86/Windows (tag 2014092320)
+May 05 17:30:58.286 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 58468.
+May 05 17:30:58.508 HYPERVISOR: exec_cmd: hypervisor version 
+May 05 17:30:58.511 HYPERVISOR: exec_cmd: hypervisor uuid 
+May 05 17:30:58.513 HYPERVISOR: exec_cmd: hypervisor working_dir F:\BaiduNetdiskDownload\CCNA\project-files\dynamips 
+May 05 17:30:58.727 GENERAL: working_dir=F:\BaiduNetdiskDownload\CCNA\project-files\dynamips
+May 05 17:30:58.728 HYPERVISOR: exec_cmd: vm create R3 3 c2691 
+May 05 17:30:58.735 VM: VM R3 created.
+May 05 17:30:58.737 HYPERVISOR: exec_cmd: vm set_con_tcp_port R3 2003 
+May 05 17:30:58.739 HYPERVISOR: exec_cmd: c2691 get_mac_addr R3 
+May 05 17:30:58.739 HYPERVISOR: exec_cmd: c2691 set_mac_addr R3 c003.3510.0000 
+May 05 17:30:58.741 HYPERVISOR: exec_cmd: vm set_nvram R3 256 
+May 05 17:30:58.742 HYPERVISOR: exec_cmd: vm set_disk0 R3 0 
+May 05 17:30:58.744 HYPERVISOR: exec_cmd: vm set_ios R3 C:\Users\Administrator\GNS3\images\IOS\C2691-AD-12415.BIN 
+May 05 17:30:58.745 HYPERVISOR: exec_cmd: vm get_status R3 
+May 05 17:30:58.746 HYPERVISOR: exec_cmd: vm set_idle_pc R3 0x60c59d98 
+May 05 17:30:58.747 HYPERVISOR: exec_cmd: vm set_ram R3 192 
+May 05 17:30:58.748 HYPERVISOR: exec_cmd: vm set_exec_area R3 64 
+May 05 17:30:58.749 HYPERVISOR: exec_cmd: vm slot_add_binding R3 0 16 WIC-2T 
+May 05 17:30:58.753 HYPERVISOR: exec_cmd: vm set_config R3 configs/i3_startup-config.cfg 
+May 05 17:30:58.756 HYPERVISOR: exec_cmd: vm create Ghost 0 c2691 
+May 05 17:30:58.760 VM: VM Ghost created.
+May 05 17:30:58.761 HYPERVISOR: exec_cmd: vm set_ios Ghost C:\Users\Administrator\GNS3\images\IOS\C2691-AD-12415.BIN 
+May 05 17:30:58.762 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+May 05 17:30:58.762 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost C2691-AD-12415.BIN-192.ghost 
+May 05 17:30:58.763 HYPERVISOR: exec_cmd: vm set_ram Ghost 192 
+May 05 17:30:58.764 HYPERVISOR: exec_cmd: vm get_status Ghost 
+May 05 17:30:58.765 HYPERVISOR: exec_cmd: vm start Ghost 
+May 05 17:30:59.270 HYPERVISOR: exec_cmd: vm get_status Ghost 
+May 05 17:30:59.271 HYPERVISOR: exec_cmd: vm stop Ghost 
+May 05 17:30:59.439 VM: VM Ghost shutdown.
+May 05 17:30:59.440 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+May 05 17:30:59.440 VM: VM Ghost destroyed.
+May 05 17:30:59.446 HYPERVISOR: exec_cmd: vm set_ghost_status R3 2 
+May 05 17:30:59.447 HYPERVISOR: exec_cmd: vm set_ghost_file R3 C2691-AD-12415.BIN-192.ghost 

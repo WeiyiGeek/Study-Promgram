@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>mutil Array DEMO</title>
+  </head>
+  <body>
+    <p>多维数组的定义Demo</p>
+    <div class="arr"></div>
+    <script type="text/javascript">
+    /*
+        var myArr = new Array();   //采用new关键字
+        var count = 0;
+        for(var i = 0;i < 3;i++){
+          myArr[i] = new Array();   //采用new关键字[i]
+          for (var j = 0; j < 4; j++) {
+            myArr[i][j] = ++count;
+          }
+        }
+        for(var i=0;i<myArr.length;i++){
+            for(var j=0;j<myArr[i].length;j++){
+                document.write(myArr[i][j]+" ");
+            }
+            document.write("<br/>");
+        }
+        */
+
+      /*
+      var arr = new Array(new Array(1,2),new Array("a","b"));
+      alert("arr[1][0]="+arr[1][0]);
+      */
+
+      var Myarr = [[1,2,3,4],[5,6,7,8],[8,9,10,11],[12,13,14,15]];
+        for(var i = 0; i < Myarr.length; i++){
+              for(var j = 0; j < Myarr[i].length; j++){
+                  console.log("a["+i+"]["+j+"]="+Myarr[i][j]);
+              }
+      }
+    </script>
+  </body>
+</html>

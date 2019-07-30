@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>demo 12 </title>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.8.3/jquery.js"></script>    
+</head>
+<body>
+    <fieldset>
+        <legend>jQuery 一些方法与属性</legend>
+        <p id="xg">点击我的图片触发动画,完成后点击fx.interval查看效果</p>
+        <div style="background-color:#569b44;width:150px;height:150px;display:none;"></div>
+        <span></span>
+        <hr>
+        <button class="get">获取版本</button>
+        <button class="fx">fx.interval属性</button>
+        <button class="kstz">fx.off属性</button>
+    </fieldset>
+    <fieldset>
+        <legend>keyDown keyPress keyUp</legend>
+        <label for="test">请输入字母：</label>
+        <input type="text" name="demo" id="test">
+        <hr>
+    </fieldset>
+
+    <script>
+        $(function(){
+
+            //2.jQuery事件 (只能输入字母)
+            var validKeys = {start:65,end:90};
+            var res = "";
+            $("#test").keydown(validKeys,function(event){
+                var keys = event.data;  //event.data.start
+                console.info(event.which); //ascil值
+                return event.which >= keys.start && event.which <= keys.end || event.which == 8;
+            });
+
+
+            //1.jQuery属性
+            $(".get").click(function(){
+                console.info("当前jQuery版本："+ $().jquery); //注意q不是大写
+            });
+
+            //改变动画帧数
+            $("#xg").click(function(){
+                $("div").toggle(5000);
+            });
+            $(".fx").click(function(){
+                jQuery.fx.interval = 500; //500针
+                console.log("jQuery.fx.interval属性值已经更改");
+            });
+
+        
+            //对所有动画进行全局禁用或启用。
+            var test = true;
+            $(".kstz").click(function(){
+                if(test){
+                    jQuery.fx.off = true;    //注意这里Q是大写
+                    test = false;
+                }else{
+                    jQuery.fx.off = false; 
+                    test = true;
+                }
+            });
+            //判断支持的对象
+            $("span").html("这个浏览器可以创建 XMLHttpRequest 对象: " + jQuery.support.ajax);
+            //用于.css()，来确定是否需要附加px到无单位的值。
+            console.log(jQuery.cssNumber);
+        });
+    
+    </script>
+
+</body>
+</html>

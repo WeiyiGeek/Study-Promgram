@@ -1,0 +1,2 @@
+﻿<h2>jQuery AJAX 是个非常棒的功能</h2>
+<p id="p1">利用jQuery 的 Ajax 技术 load() 加载</p>

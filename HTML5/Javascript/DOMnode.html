@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title id="test">Dom Test</title>
+  </head>
+  <body>
+    <p>更换标题</p>
+    <input type="button" name="test" value="Click" onclick="titleFun1()">
+
+    <p id="change">更改内容-1234567890</p>
+    <button type="button" name="button" onclick="changeFun()">Change content</button>
+
+    <p style="color:red" id="sty">点击下面的button来更换颜色</p>
+    <input type="button" name="test" value="Change Color" onclick="changeStyle()">
+
+    <p>创建新的 HTML 元素</p>
+    <button type="button" name="button" onclick="newHtml()">点击下面添加的新的b元素</button>
+    <div id="div1">
+    <p id="p1">This is a paragraph.</p>
+    <p id="p2">This is another paragraph.</p>
+    </div>
+
+    <script type="text/javascript">
+      var i = 0;
+      function titleFun1(){
+      document.getElementById('test').innerHTML="DOM 教程 学习";
+      }
+      function changeFun(){
+        document.getElementById('change').innerHTML="这是更改后的内容";
+      }
+      function changeStyle(){
+        var pColor = document.getElementById('sty');
+        if (i == 0) {
+            pColor.style.color="blue";
+            i++;
+        }else if(i == 1){
+            pColor.style.color="lime";
+            i++;
+        }else{
+            pColor.style.color="white";
+            pColor.style.backgroundColor="red";
+            i = 0;
+        }
+      }
+
+      function newHtml(){
+        var para=document.createElement("b");  //创建一个新的元素
+        var node=document.createTextNode("This is new.Add");  //创建一个文本节点并加入内容
+          para.appendChild(node);        //将创建的内容加入到我们创建的b元素中
+
+        var element=document.getElementById("div1");
+          element.appendChild(para);  //将b元素和文本->向div这个区域里添加
+      }
+    </script>
+
+<hr>
+<p>getElementsByName() 方法学习 - 多对于表单</p>
+    密码：<input name="byName" value="1" type="password">
+    <br/>  <br/>
+    文本：<input name="byName" type="txt" value="2123">
+<script>
+    var x = document.getElementsByName('byName');  //name不唯一
+    console.log(x.length)
+</script>
+
+<hr>
+<br>
+<br>
+
+<!--
+<script type="text/javascript">
+    document.getElementById('te').onmouseover = function (){alertDate();}
+    function alertDate(){
+      alert(Date());
+    }
+</script>
+
+-->
+<div
+onmousedown="mDown(this)"
+onmouseup="mUp(this)"
+style="background-color:#D94A38;width:200px;height:50px;padding-top:25px;text-align:center;">
+点击这里
+</div>
+
+<script>
+function mDown(obj)
+{
+  console.log(obj);
+obj.style.backgroundColor="#1ec5e5";
+obj.innerHTML="松开鼠标"
+}
+
+function mUp(obj)
+{
+obj.style.backgroundColor="#D94A38";
+obj.innerHTML="谢谢你"
+}
+</script>
+
+  </body>
+</html>

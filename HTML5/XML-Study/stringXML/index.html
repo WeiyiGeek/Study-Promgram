@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        XHR = window.XMLHttpRequest ? new XMLHttpRequest(): new ActiveXObject("Microsoft.XMLHTTP");
+        XHR.open("GET","index.xml",false);
+        XHR.send();
+        rs = XHR.responseXML;
+
+        document.write("<p style='font-weight:blod'>个人信息</p><table border='1'>");
+        var person = rs.getElementsByTagName("person");
+        for(var i = 0; i < person.length; i++){
+            document.write("<tr>");
+                for(var x = 1; x < 7 ; x+=2){
+                    document.write("<td>");
+                    document.write(person[i].childNodes[x].firstChild.nodeValue);
+                    document.write("</td>");
+                }
+            document.write("</tr>");
+        }
+    </script>
+</body>
+</html>

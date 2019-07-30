@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>form CHECK</title>
+  </head>
+  <body>
+    <p>JavaScript 表单验证</p>
+<form name="nameForm" action="index.html" method="post" onsubmit="return validateForm();">
+  Name:<input type="text" name="iname" value="test">
+  <input type="submit" name="" value="Submit">
+</form>
+  <p>Javascript Email验证</p>
+<form name="myForm" action="demo-form.php" onsubmit="return validateEmail();" method="post">
+Email: <input type="text" name="email">  <!--form属性获取元素们的name属性-->
+<input type="submit" value="提交">
+</form>
+
+<script type="text/javascript">
+  function validateForm(){
+    var x =document.forms['nameForm']['iname'].value;
+    if (x == null || x == "") {
+      alert("需要输入名字:");
+       return false;
+    }
+  }
+
+  function validateEmail(){
+    var y = document.forms['myForm']['email'].value;
+    var atpos = y.indexOf("@");
+    var dotpos = y.lastIndexOf(".");
+    console.log(atpos+"\n"+dotpos);
+
+    if (atpos < 1 || dotpos <= atpos + 2 || dotpos + 2 >= y.length) {
+      alert("this is no validate Email Address：");
+      return false;
+    }
+  }
+</script>
+
+<p>API validity</p>
+<input id="id1" type="number" min="50" max="100" required>
+<button onclick="mFunction();">验证</button>
+<p id="demo"></p>
+<script>
+function mFunction() {
+    var txt = "";
+    var inpObj = document.getElementById("id1");
+    if(isNaN(inpObj)){
+        if (inpObj.validity.rangeOverflow) {
+            txt = "输入的值太大了";
+        }else if (inpObj.validity.rangeUnderflow) {
+            txt = "输入的值太小了";
+        }else{
+            txt = "这是正确的";
+        }
+        document.getElementById("demo").innerHTML = txt;
+     }else{
+         alert('sorry,please input number:');
+     }
+
+}
+</script>
+  </body>
+</html>

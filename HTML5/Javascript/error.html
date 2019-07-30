@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>EEROR</title>
+  </head>
+  <body>
+    <input type="text" name="test" value="error" onchange="errorTes(this.value)">
+    <input type="button" name="" value="click" onclick="errorTes(getElementsByName('test').value)">
+    <script type="text/javascript">
+      function errorTes(x) {
+        var x;
+        try {
+          if(x == "")  throw "值为空";
+          if(isNaN(x)){ throw "不是数字";
+            x = Number(x);
+          }
+          if(x < 5)    throw "太小";
+          if(x > 10)   throw "太大";
+        } catch (err) {
+            document.write(err);
+        } finally {
+            document.write('OK!!!');
+        }
+      }
+    </script>
+
+  </body>
+</html>

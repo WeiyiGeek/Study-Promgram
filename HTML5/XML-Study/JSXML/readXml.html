@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>映射地址列表</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <style>
+.table { 
+    margin-left: auto; 
+    margin-right: auto;
+    border: 1px solid black; 
+    line-height: 1.25;
+    width: 100%;
+    text-align: center; 
+    border-spacing: 0px 1px; 
+    border-collapse: collapse;
+   
+}
+
+.table th { 
+    border: 1px solid black;
+    line-height: 1;
+    padding: 7px;
+    background-color: #dddddd;
+    text-align:center;
+}
+
+.table td { 
+    border: 1px solid black; 
+    padding: 5px;
+    text-align:left;
+}
+    
+</style>
+
+</head>
+<body>
+<p align="center">
+    内网地址映射列表
+    <hr>
+    红色代表：映射被禁用
+    <hr>
+</p>
+ <div id="result"></div>   
+    <script>
+        var result = "<table border='1' class='table'> <th>名称</th><th>源接口</th><th>目标接口</th><th>外网地址</th><th>映射端口</th><th>内网地址</th><th>内网端口</th><th>映射是否启用</th><th>映射信息</th>";
+        XHR = "";
+            XHR = window.XMLHttpRequest ? new XMLHttpRequest() : new activexObjext("Microsoft.XMLHTTP");
+            XHR.open("GET", "http://127.0.0.1/demo1.xml", false);
+            XHR.send();
+        ResultXml = XHR.responseXML;  //返回一个xml文档对象
+
+        var childObj = ResultXml.getElementsByTagName("IPRuleSet")[0];
+        //获取xml子节点个数（IP映射次数）
+        var childLength = childObj.childNodes.length;
+        for (let num = 1; num < childLength; num+=2) {
+          var childObjArr = childObj.childNodes[num];
+          //或者子节点属性个数
+          var attrlength = childObjArr.attributes.length;
+
+            // 判断映射是否启用
+            if(childObjArr.attributes[attrlength-1].nodeValue == 1){
+                result += "<tr bgcolor='#c90000' style='color:white'>";
+            }else{
+                result += "<tr>";
+            }
+
+            for (let index = 0; index < attrlength; index++) {
+                var childAttrVa = childObjArr.attributes[index].nodeValue;
+                if(index == 6 || index == 7 || index == 3  || childAttrVa == "SinglePort" || childAttrVa == "SingleIP"){
+                    continue;
+                }
+                result += "<td>"+ childAttrVa + "</td>";
+            }
+                result += "</tr>";
+        }
+        result += "</table>"
+        var res = document.getElementById("result").innerHTML = result;
+    </script>
+</body>
+</html>

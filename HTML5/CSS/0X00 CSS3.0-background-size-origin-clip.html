@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>0X00 CSS3.0-background-size-origin-clip</title>
+<style type="text/css" media="screen">
+ div.clip {
+   width:20%;
+   height:250px;
+   padding:50px;
+   border:10px dashed lime;
+   background-color: rgba(128,128,128,0.5);
+   /*background-clip: content-box; */
+   background-clip: border-box;
+    /*background-clip: padding-box;*/
+}
+
+ div.origin {
+   width: 20%;
+   height: 200px;
+   padding: 50px;
+   border: 10px solid red;
+   background-image: url(./img/logo.png);
+   background-repeat: no-repeat;
+   background-size: contain;
+   background-origin: border-box;
+   background-position: center;
+   /*background-origin: content-box;
+    background-origin: padding-box;
+   */
+ }
+
+ div.size {
+   width: 50%;
+   height: 300px;
+   padding: 30px;
+     background:url(http://www.w3school.com.cn/i/bg_flower.gif);
+     /* background-size:35% 50%; percentage->1width-2height
+     baclground-size:50px 50px;
+     -moz-background-size:35% 100%;  老版本的 Firefox */
+     background-size:25%;
+     border: 10px solid gray;
+ }
+</style>
+
+</head>
+<body>
+  <b style="color:lime;">background-clip Demo</b>
+<hr>
+
+<div class="clip">
+  This is background-clip Demo,This is background-clip Demo,This is background-clip Demo,This is background-clip Demo,This is background-clip Demo,This is background-clip Demo,This is background-clip Demo,This is background-clip Demo,This is background-clip Demo,This is background-clip Demo,This is background-clip Demo
+</div>
+<br>
+<br>
+<br>
+<hr>
+<br>
+<b style="color:white;background-color:#FF0000">background-size</b>
+<hr>
+<div class="origin">
+  This is background-origin Demo,This is background-origin Demo,This is background-origin Demo,This is background-origin Demo,This is background-origin Demo,This is background-origin Demo,This is background-origin Demo,
+</div>
+<br>
+<br>
+<hr>
+<br>
+<b style="color:white;background-color:gray;">background-size</b>
+<hr>
+<br>
+<br>
+<br>
+
+<div class="size">
+    This is background-size Demo, This is background-size Demo, This is background-size Demo, This is background-size Demo, This is background-size Demo, This is background-size Demo, This is background-size Demo, This is background-size Demo,
+
+</div>
+
+</body>
+<html>

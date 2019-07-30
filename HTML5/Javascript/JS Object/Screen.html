@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Screen object Demo</title>
+  </head>
+  <body>
+    <b>screen.height/Width</b> <br>
+    <b>screen.avaliHeight/Width</b><br>
+    <b>screen.colorDepth/pixelDepth</b><br>
+    <br/><hr/>
+    <p id="test" style="font-weight:900;border:solid black 1px;"></p>
+    <script>
+      function $(id){ return document.getElementById(id);}
+      var txt = "";
+      txt += "屏幕总宽度：" + screen.width + " -- 屏幕可用宽度：" + screen.availWidth + "<br>";
+      txt += "屏幕总高度：" + screen.height + " -- 屏幕可用高度：" + screen.availHeight + "<br>";
+      if (screen.colorDepth <= 8) {
+        document.body.style.background="#000FFF";  //为8位屏幕的简单的蓝色背景色
+      }else{
+        document.body.style.background="#8EA5C5";   //为现代屏幕的华丽的蓝色背景色
+        txt += "颜色深度位：" + screen.colorDepth + " -- 颜色分辨率: " + screen.pixelDepth;
+      }
+      $('test').innerHTML = txt;
+    </script>
+  </body>
+</html>

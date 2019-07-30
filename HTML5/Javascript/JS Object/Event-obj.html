@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>audio / video</title>
+  </head>
+  <body>
+  <p>video 案例</p>
+  <video controls poster="test.jpg" id="video">
+    <source src="http://www.runoob.com/try/demo_source/mov_bbb.mp4" type="video/mp4">
+  </video><!--
+  <script type="text/javascript">
+  function $(id) {return document.getElementById(id);}
+  var n=0;
+  $('video').addEventListener("canplay",function () {alert('开始播放视频/音频 Event')}); //4
+  $('video').oncanplaythrough=function () {alert('可以正常播放且无需停顿和缓冲时触发 Event');}; //5
+  $('video').ondurationchange=function () {alert('时长发生变化时触发 Event');}; //3
+  $('video').addEventListener("ended",function () {alert('视频结束')});//9
+  $('video').onloadstart=function () {alert('浏览器开始寻找指定视频/音频触发');} //1
+  $('video').onplay=function (){alert('视频/音频开始播放时触发');}//6
+  $('video').onpause=function (){alert('视频/音频暂停时触发。');}//8
+  $('video').onprogress=function (){alert('浏览器下载指定的视频/音频时触发。 ');} //2
+  $('video').onseeking=function(){alert('用户开始重新定位视频/音频时触发。');} //last
+  $('video').addEventListener("timeupdate",function (){n+=1;console.log(n);}); //7
+  $('video').onvolumechange=function (){alert('声音发生改变');}; //last
+  </script><br> -->
+  <hr>
+  <br>
+  <p style="color:lightblue;border:solid 1px red" onclick="altPress(event);">1.点击此处查看Alt键是否被按下,以及查看鼠标那一个键被按下</p>
+  <p style="color:lightblue;border:solid 1px red" onclick="ctrlPress(event);">2.点击此处查看ctrl键是否被按下,以及鼠标的x,y坐标</p>
+
+  <script type="text/javascript">
+    function altPress(event){
+      if(event.altKey==1){
+        console.log("ALT Key 被按下");
+      }else {
+        console.log("ALT Key 未被按下");
+      }
+      switch (event.button) {
+        case 0:console.log("鼠标左键按下");  break;
+        case 1:console.log("鼠标中键按下");  break;
+        case 2:console.log("鼠标右键按下");  break;
+        default:console.log("无任何点击");
+      }
+    }
+    function ctrlPress(event){
+      if(event.ctrlKey==1){
+        console.log("CTRL Key 被按下");
+      }else {
+        console.log("CTRL Key 未被按下");
+      }
+      console.log("鼠标指针坐标(x,y):X Coords="+event.clientX+" ---- Y Coords="+event.clientY);
+    }
+  </script>
+
+  <hr>
+  <br>
+  <p>按下按键获取键所处的位置,以及返回输入的字符：</p>
+<input type="text" size="40" onkeydown="myFunction(event)">
+<p>可能返回值:</p>
+<ul>
+  <li>0 代表标准按键 (如 "A")</li>
+  <li>1 代表左侧按键 (如左侧的 CTRL 键)</li>
+  <li>2 代表右侧按键 (如右侧的 CTRL 键)</li>
+  <li>3 代表数字键盘上的按键 (如在数字键盘上的 "2" )</li>
+</ul>
+<p><strong>注意：</strong>  Safari，IE8及更早版本浏览器不支持 location 属性。</p>
+<p id="demo"></p>
+<script>
+function myFunction(event) {
+    document.getElementById("demo").innerHTML = "按键的位置在: " + event.location;
+    document.getElementById("demo").style="color:red;"
+  }
+</script>
+
+<hr>
+<br>
+<p>在输入框中按下任意按钮按键。</p>
+<input type="text" size="40" name="" value="" onkeydown="keydonwFun(event)" onkeypress="keypressFun(event);">
+<p style="color:blue;background-color:lightgray;">onkeydown - <span id="demo1"></span></p>
+<p style="color:blue;background-color:lightgray;">onkeypress - <span id="demo2"></span></p>
+
+<br><br><br>
+<script type="text/javascript">
+function keydonwFun(event){
+  console.log("按下的按键："+event.key);
+  console.log("Event.keyCode:"+event.keyCode);
+  var key = event.keyCode;  //不支持onkeypress事件
+  document.getElementById("demo1").innerHTML = "KeyCode | Unicode 键代码为: " + key + " --- 字符为：" +String.fromCharCode(key);
+}
+
+
+function keypressFun(event){
+  console.log("Event.charCode:"+event.charCode);//只支持onkeypress事件，否则返回为0
+  var char = event.which;
+  document.getElementById("demo2").innerHTML = "which | Unicode 字符代码为: " + char + " --- 字符为：" +String.fromCharCode(char);
+}
+</script>
+  </body>
+</html>

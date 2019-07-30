@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jquery demo 5</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <style type="text/css">
+        /*样式表*/
+        .all{
+            color:red;
+        }
+        .important{
+            font-weight:bold;
+        }
+        .blue{
+            color:#96b97d;
+            background-color:black;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>CSS 类操作 与 方法操作</legend>
+            <h6>我是一个标题不要忽视我</h6>
+            <p>我是如此爱好学习计算机网络技术</p>
+            <i>重要的事情说三遍</i>
+            <ol><li>有序列表</li><li class="all">有序列表</li></ol>
+            <p id="css" style="color:#57659b;font-size:large;">这是一个测试CSS属性的标签</p>
+        <hr>
+            <button id="demo1">添加CSS类</button>
+            <button id="demo2">删除CSS类</button>
+            <button id="demo3">切换CSS类</button>
+            <button id="demo4">CSS方法获取设置属性</button>
+    </fieldset>
+
+    <fieldset>
+        <legend>jQuery 尺寸 </legend> 
+            <!-- 300 + 2 * 10 + 2 * 2 --->
+            <div id="div1" style="background-color:#576b95;color:white;width:300px;height: 150px;padding: 10px;border:2px solid #e64340;margin: 10px"></div>
+        <hr>
+        <button id="demo5">一键获取尺寸信息信息</button>
+    </fieldset>
+    <script>
+        $(function(){
+            //1.CSS 类操作
+          $("#demo1").click(function(){
+                $("h6,i,p").addClass("all");
+                $("i,p").addClass("important");
+                $("p").addClass("blue");
+          });
+          $("#demo2").click(function(){
+                $("h6,i,p").removeClass("all");
+          });
+          $("#demo3").click(function(){
+              $("li").toggleClass("all");
+          });
+
+          //2.CSS方法获取设置属性
+          $("#demo4").click(function(){
+              console.info("颜色值："+$("#css").css("color"));
+              $("#css").css("border","2px solid #888");
+              //非常注意设置多个属性的时候必须使用 {}
+              $("#css").css({"font-style":"italic","font-family":"serif"});
+          });
+
+            //3.jQuery尺寸
+            $("#demo5").click(function(){
+                var txt = "";
+                txt+="div 宽度: " + $("#div1").width() + "</br>";
+                txt+="div 高度: " + $("#div1").height() + "</br>";
+                txt+="div 宽度包含内边距: " + $("#div1").innerWidth() + "</br>";
+                txt+="div 高度包含内边距: " + $("#div1").innerHeight() + "</br>";
+                txt+="div 宽度，包含内边距和边框: " + $("#div1").outerWidth() + "</br>";
+                txt+="div 高度，包含内边距和边框: " + $("#div1").outerHeight();
+                $("#div1").html(txt);
+            });
+
+        });
+    </script>
+</body>
+</html>

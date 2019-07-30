@@ -1,0 +1,56 @@
+#!/bin/bash
+#### Mysql8.0多实例快速安装 （针对于二进制安装）##
+### Author: WeiyiGeek##
+#主库建立
+mkdir -vp /data/{{3306,3307}/{data,tmp,binlog,innodb_ts,innodb_log,logs},backup,scripts}
+touch /data/{3306,3307}/tmp/mysql-error.log
+touch /data/{3306,3307}/my.cnf
+
+cat > /data/3306/my.cnf<<EOF
+
+#主库
+[client]
+default-character-set=utf8   # 设置mysql客户端默认字符集 
+port = 3306
+socket = /data/3306/mysql.sock
+# The MySQL server 
+[mysqld] 
+port = 3306
+mysqlx_port = 33060 
+user = mysql
+server-id = 3306
+socket = /data/3306/mysql.sock 
+mysqlx_socket=/data/3306/mysqlx.sock 
+pid-file = /data/3306/mysql.pid 
+basedir = /usr/local/mysql
+datadir = /data/3306/data 
+tmpdir = /data/3306/tmp #非必须
+log-bin = /data/3306/binlog/mysql-bin   
+log-error = /data/3306/mysql-error.log
+explicit_defaults_for_timestamp
+character-set-server=utf8  #服务端默认字符集 
+EOF
+
+sed 's/3306/3307/g' /data/3306/my.cnf > /data/3307/my.cnf
+chown -R mysql:mysql /data/
+/usr/local/mysql/bin/mysqld --defaults-file=/data/3307/my.cnf --initialize --user=mysql --basedir=/usr/local/mysql && /usr/local/mysql/bin/mysqld --defaults-file=/data/3306/my.cnf --initialize --user=mysql --basedir=/usr/local/mysql
+
+#获取root密码
+echo -n "主3306端口mysql的root密码：" &&  grep "password" /data/3306/mysql-error.log | awk '{print $13}' && echo -n "从3307端口mysql的root密码："&& grep "password" /data/3307/mysql-error.log | awk '{print $13}'
+
+pass3306=`grep "password" /data/3306/mysql-error.log | awk '{print $13}'`
+pass3307=`grep "password" /data/3307/mysql-error.log | awk '{print $13}'`
+
+nohup /usr/local/mysql/bin/mysqld_safe --defaults-file=/data/3306/my.cnf --user=mysql & 
+sleep 10
+nohup /usr/local/mysql/bin/mysqld_safe --defaults-file=/data/3307/my.cnf --user=mysql &
+sleep 10
+
+echo $pass3306 $pass3307
+
+#登录数据库以及密码更改：
+mysql -u root -p$pass3306 -S /data/3306/mysql.sock -e "ALTER USER 'root'@'localhost' IDENTIFIED BY 'System123@';" --connect-expired-password
+mysql -u root -p$pass3307 -S /data/3307/mysql.sock -e "ALTER USER 'root'@'localhost' IDENTIFIED BY 'System123@';" --connect-expired-password
+
+mysql -uroot -pSystem123@ -S /data/3306/mysql.sock -e "status;"
+mysql -uroot -pSystem123@ -S /data/3307/mysql.sock -e "status;"

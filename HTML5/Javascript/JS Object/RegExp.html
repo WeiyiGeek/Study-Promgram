@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>rgeExpression demo</title>
+  </head>
+  <body style="color:white;background-color:black;font-weight:bold;">
+<p>将要匹配的文本：</p>
+<textarea name="textA" rows="10" cols="80" id="textA">dd</textarea>
+<br><br>
+<b>正则表达式：</b>
+<input type="text" name="regExp" value="" required id="regExp">
+<button type="button" name="button" onclick="test()">匹配字符</button>
+<p>匹配的成功的字符：</p>
+<pre id="result"></pre>
+
+<script type="text/javascript">
+  function $(id) {return document.getElementById(id);}
+  //var testa = document.getElementsByTagName('textarea').innerHTML;
+  //testa[0].style.color="lime";
+  //var testa = document.getElementsByName('textA')[0].firstChild.nodeValue;
+function test(){
+  $('result').innerHTML ="";
+  var str = String($('textA').value);
+ var regExpV = $('regExp').value;  //由于是字符串所以需要进行字符串截取,取消“”的影响
+ var strResult = str.match(new RegExp(regExpV.slice(1,regExpV.length-1),'ig'));
+  $('result').innerHTML = strResult;
+}
+
+/*
+var str = "Visit W3School, W3School is a place to study web technology.";
+var patt = new RegExp("W3School","g");
+var result;
+
+while ((result = patt.exec(str)) != null)  {
+  console.log(result);
+  console.log(patt.lastIndex);
+ }
+*/
+</script>
+
+
+
+</body>
+</html>

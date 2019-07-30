@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Math Object Demo</title>
+  </head>
+  <body>
+    <p>Math 对象的属性与方法的使用</p>
+    <input type="button" name="" value="刷新页面" onclick="javascript:location.reload();">
+<script type="text/javascript">
+function MathObjAttribute(){
+  console.log("自然对数的底数:"+Math.E);
+  console.log("2 的自然对数:"+Math.LN2);
+  console.log("10 的自然对数:"+Math.LN10);
+  console.log("2 为底的 e 的对数:"+Math.LOG2E);
+  console.log("10 为底的 e 的对数:"+Math.LOG10E);
+  console.log("圆周率:"+Math.PI);
+  console.log("2 的平方根的倒数 1/sqrt(2):"+Math.SQRT1_2);
+  console.log("2 平方根:"+Math.SQRT2);
+}
+
+function mathMethodF(){
+  var mathTest = Math.PI;
+  console.log("MathTest.toSource()："+mathTest.toSource());
+  console.log("MathTest.valueOf()："+mathTest.valueOf());
+
+  console.log("abs(-12)绝对值："+Math.abs(12));
+  console.log("sqrt(16)平方根："+Math.sqrt(16));
+  console.log("random()随机值："+Math.random());
+
+  console.log("exp(1)指数："+Math.exp(0));
+  console.log("log(1)对数："+Math.log(1));
+
+  console.log("pow(2,16) x 的 y 次幂："+Math.pow(2,16));
+  console.log("max(8,6) x 和 y 中的最高值："+Math.max(8,6));
+  console.log("min(8,6) x 和 y 中的最低值："+Math.min(8,6));
+
+  console.log("Math.ceil(5.1/-5.1):上舍入(比原值大)："+Math.ceil(5.1)+"\t"+Math.ceil(-5.1));
+  console.log("Math.floor(5.1/-5.1):下舍入(比原值小)："+Math.floor(5.1)+"\t"+Math.floor(-5.1));
+  console.log("round(5.4/-5.5)四舍五入最接近的整数:"+Math.round(5.4)+"\t"+Math.round(-5.6));
+
+  console.log("acos(0.5)反余弦值："+Math.acos(0.5));
+  console.log("asin(0.5)反正弦值："+Math.asin(0.5));
+  console.log("atan(0)反正切值："+Math.atan(0));
+  console.log("atan2(y,x)返回从 x 轴到点 (x,y) 的角度（介于 -PI/2 与 PI/2 弧度之间）："+Math.atan2(1,1));
+
+  console.log("Math.sin(Math.PI/2)正弦值："+Math.sin(Math.PI/2));
+  console.log("Math.cos(0)余弦值："+Math.cos(0));
+  console.log("Math.tan(Math.PI/4)正切值："+Math.tan(Math.PI/4));
+}
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>CSS cascading style sheet</title>
+<style type="text/css">
+div h6 {
+	color:green;
+	background-color:black;
+}
+#sidebar p {
+	color: red;
+	font-style: italic;
+	text-align: center;
+	margin-top: 0.5em;
+	}
+#sidebar span {
+	color: green;
+	font-weight: bold;
+	text-align: left;
+	margin-top: 1em;
+	}
+</style>
+</head>
+
+<body>
+<div id="sidebar">
+	<h6>派生选择器</h6>
+	<span>即使被标注为 sidebar 的元素只能在文档中出现一次，这个 id 选择器作为派生选择器也可以被使用很多次<p>id 选择器和派生选择器(会受到父元素的一些影响)</p></span>
+	<p>id 选择器和派生选择器</p>
+	<span>即使被标注为 sidebar 的元素只能在文档中出现一次，这个 id 选择器作为派生选择器也可以被使用很多次</span>
+</div>
+
+</body>
+</html>

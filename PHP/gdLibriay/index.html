@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>利用GD库绘画出时钟</title>
+</head>
+<body>
+	<img src="clock.php" alt="时钟" id="time">
+	<script>
+		setInterval(function(){
+			document.getElementById("time").src="clock.php?"+Math.random(); //加一个随机数防止缓存（值得学习-会不断的请求）
+		},1000);
+	</script>
+</body>
+</html>

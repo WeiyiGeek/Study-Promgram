@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Date Object</title>
+  </head>
+  <body>
+    <p>请看Console.log控制台</p>
+    <input type="button" name="test" value="刷新页面" onclick="javascript:location.reload();">
+
+
+<script type="text/javascript">
+function dateConstructor(){
+    var nowDate = new Date();
+      console.log("当前时间:"+nowDate);
+
+      //Constructor
+      if (nowDate.constructor == Array) {
+        console.log("This is an Array");
+      }else if (nowDate.constructor == Boolean) {
+        console.log("This is an Boolean");
+      }else if (nowDate.constructor == Date) {
+        console.log("This is an Date\n"+"函数结构"+nowDate.constructor);
+      }else {
+        alert("未找到当前Constructor！");
+      }
+
+      //创建一个新的日期对象方法：
+      Date.prototype.myMet=function(){
+        //this 代表了 Date 对象
+      	if (this.getMonth()==0){return "一月"};
+      	if (this.getMonth()==1){return "二月"};
+      	if (this.getMonth()==2){return "三月"};
+      	if (this.getMonth()==3){return "四月"};
+      	if (this.getMonth()==4){return "五月"};
+      	if (this.getMonth()==5){return "六月"};
+      	if (this.getMonth()==6){return "七月"};
+      	if (this.getMonth()==7){return "八月"};
+      	if (this.getMonth()==8){return "九月"};
+      	if (this.getMonth()==9){return "十月"};
+      	if (this.getMonth()==10){return "十一月"};
+      	if (this.getMonth()==11){return "十二月"};
+      }
+      console.log("Prototype新的日期对象方法:"+nowDate.myMet());
+}
+
+
+function DateUTC(){
+  console.log("返回当日的日期和时间:"+Date());
+  //将本地时间转换为UTC时间,也可以将UTC时间转换成本地时间
+  //var dateUTCto = new Date(Date.UTC(2012,1,1));  //将时间戳转换成当前时间 Method1:
+  console.log("2017,1,1的时间戳："+Date.UTC(2017,1,1)+"\nMethod2,将时间戳转换成当前时间："+ Date(Date.UTC(2012,1,1)));
+}
+
+function valueParse(){
+  var nowDate = new Date();
+  console.log("ValueOf():"+nowDate.valueOf()+" == getTime(): "+nowDate.getTime());
+
+  //我们将取得从 1970/01/01 到 2017/07/08 的毫秒数
+  var dparse = Date.parse("Dec 2, 2017");
+  console.log("Date.parse(‘Dec 2, 2017’): "+dparse);
+
+  //把上面的例子所输出的结果转换成年
+  var minutes = 1000 * 60;
+  var hours = minutes * 60;
+  var day = hours * 24;
+  var years = day * 365; // BUG明显
+  console.log("将上面的毫秒数转换成年: "+dparse/years+"年");
+}
+
+function getF(){
+  var nowDate = new Date();
+  console.log("四位数字返回年份:"+nowDate.getFullYear()+"\tUTC:"+nowDate.getUTCFullYear()); //这里会有变化 在0~8小时差之内
+  console.log("返回月份 (0 ~ 11):"+nowDate.getMonth()+"\tUTC:"+nowDate.getUTCMonth());  //这里会有变化
+  console.log("返回一个月中的某一天 (1 ~ 31):"+nowDate.getDate()+"\tUTC:"+nowDate.getUTCDate()); //这里会有变化
+  console.log("返回一周中的某一天 (0 ~ 6):"+nowDate.getDay()+"\tUTC:"+nowDate.getUTCDay()); //这里会有变化
+  console.log("小时 (0 ~ 23):"+nowDate.getHours()+"\tUTC:"+nowDate.getUTCHours());   //这里会有变化
+  console.log("分钟 (0 ~ 59):"+nowDate.getMinutes()+"\tUTC:"+nowDate.getUTCMinutes());
+  console.log("秒数 (0 ~ 59):"+nowDate.getSeconds()+"\tUTC:"+nowDate.getUTCSeconds());
+  console.log("毫秒(0 ~ 999):"+nowDate.getMilliseconds()+"\tUTC:"+nowDate.getUTCMilliseconds());
+  console.log("ObjectNowDate.getTime():"+nowDate.getTime());
+}
+
+function gmtF(){
+  var nowDate = new Date();
+  console.log("ObejectNowDate.getTimezoneOffset()本地与GMT时间之差:"+nowDate.getTimezoneOffset());
+  var gmtHours = nowDate.getTimezoneOffset()/60;
+  console.log("The local time zone is: GMT "+gmtHours);
+}
+
+function setF(){
+  var d = new Date();
+  document.write("使用 setFullYear() 来设置年份: "+d.setFullYear(2017,13,2)+" , 根据世界时(UTC) 设置setUTCFullYear()年份："+d.setUTCFullYear(2017,13,2)+" &raquo;&raquo; "+d+"<br/> <br/>");
+  document.write("设值月份 (0 ~ 11): "+d.setMonth(11,2)+" , 根据世界时(UTC) 设置月份："+d.setUTCMonth(11,2)+" &raquo;&raquo; "+d+"<br/> <br/>");
+  document.write("设值某一天 (1 ~ 31): "+d.setDate(2)+" , 根据世界时(UTC) 设置天数："+d.setUTCDate(2)+" &raquo;&raquo; "+d+"<br/> <br/>");
+  document.write("设值小时 (0 ~ 23): "+d.setHours(15)+" , 根据世界时(UTC) 设置小时："+d.setUTCHours(15)+" &raquo;&raquo; "+d+"<br/> <br/>");
+  document.write("设值分钟 (0 ~ 59): "+d.setMinutes(19)+" , 根据世界时(UTC) 设置分钟："+d.setUTCMinutes(19)+" &raquo;&raquo; "+d+"<br/> <br/>");
+  document.write("设值秒钟 (0 ~ 59): "+d.setSeconds(58)+" , 根据世界时(UTC) 设置秒钟："+d.setUTCSeconds(28)+" &raquo;&raquo; "+d+"<br/> <br/>");
+  document.write("设值毫秒 (0 ~ 999): "+d.setMilliseconds(888)+" , 根据世界时(UTC) 设置毫秒："+d.setUTCMilliseconds(898)+" &raquo;&raquo; "+d+"<br/> <br/>");
+  document.write("以毫秒设置 Date 对象: "+d.setTime(Date.UTC(2017,12,2))+"method1:----- "+d.setTime(Date.parse('Dec,3,2017'))+" &raquo;&raquo; "+d);
+}
+
+function convertF(){
+  var d = new Date();
+  console.log("Date 对象转换为字符串.toString()："+d.toString()+"\t本地时间字符串.toLocaleString()："+d.toLocaleString()+"\tUTC时间字符串："+d.toUTCString());
+  console.log("Date 对象的日期部分转换为字符串.toDateString()："+d.toDateString()+"\t本地时间日期部分字符串.toLocaleDateString()："+d.toLocaleDateString());
+  console.log("Date 对象的时间部分转换为字符串.toTimeString()："+d.toTimeString()+"\t本地时间时间部分字符串.toLocaleTimeString()："+d.toLocaleTimeString());
+}
+
+function isojsonStringF(){
+  var d = new Date();
+  console.log("ISO标准的时间字符串："+d.toISOString());
+  console.log("jSON类型时间字符串："+d.toJSON());
+}
+
+</script>
+
+  </body>
+</html>

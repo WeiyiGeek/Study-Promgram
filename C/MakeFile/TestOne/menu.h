@@ -1,0 +1,2 @@
+void music();
+void picture();

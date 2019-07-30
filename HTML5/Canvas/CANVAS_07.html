@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Canvas  像素点操作</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+<body>
+    <p>创建像素点并输出到画布中：</p>
+    <canvas id="cvs1" width="250px" height="250px" style="border: greenyellow 2px solid"></canvas>
+    <br>
+    
+    <canvas id="cvs2" width="220px" height="277px" style="border:grey 2px solid">图片的反转</canvas>
+    <img src="./img_the_scream.jpg" alt="invert" id="img">
+
+    <script>
+        //第一个案例
+        var c1 = document.getElementById('cvs1');
+        var context1 = c1.getContext('2d');
+        var imgData = context1.createImageData(200,200);            //像素点数量 40000 
+        console.log("width ："+imgData.width+"   height :" +imgData.height);  //创建的对象的高度与宽带
+        console.log("pixed 像素点 : " + (imgData.data.length / 4));  
+        for(i = 0; i < imgData.data.length; i+=4){              //这里值得学习（4个单元一个像素）
+            //设置 rgb 与 alpha 透明度
+            imgData.data[i+0] = 0;  //rgb(0,0,0) 黑色
+            imgData.data[i+1] = 0;
+            imgData.data[i+2] = 0;
+            imgData.data[i+3] = 255;
+            if(i % 16 == 0){
+                imgData.data[i+0] = 192;  //rgb(0,0,0) 灰色
+                imgData.data[i+1] = 192;
+                imgData.data[i+2] = 192;
+                imgData.data[i+3] = 255;
+            }
+        }
+        context1.putImageData(imgData, 10, 10);
+
+        //第二个案例
+        var img = document.getElementById('img');
+        var c2 = document.getElementById('cvs2');
+        var context2 = c2.getContext('2d');
+        context2.drawImage(img,0,0);                        //在画布上绘制图像
+        var imgData = context2.getImageData(0,0,c2.width,c2.height);  //这里是拷贝了画布指定矩形的像素数据
+        for (var i=0;i<imgData.data.length;i+=4)                 //反转颜色
+	    {
+		    imgData.data[i]=255-imgData.data[i];
+		    imgData.data[i+1]=255-imgData.data[i+1];
+		    imgData.data[i+2]=255-imgData.data[i+2];
+		    imgData.data[i+3]=255;
+        }
+        context2.putImageData(imgData,0,0);
+
+        //直接获取第一个像素点
+        var ired = imgData.data[0];
+        var igreen = imgData.data[1];
+        var iblue = imgData.data[2];
+        var ialpha = imgData.data[3];
+        console.log("第一个像素点："+ired+","+igreen+","+iblue+","+ialpha);  //输出获取的像素点
+
+    </script>
+</body>
+</html>

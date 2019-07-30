@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Opweration JS demo</title>
+    <script src="./opweration.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+    var abs=Math.abs(1 / 3 - (1 - 2 / 3));
+    if( abs < 0.0000001){
+        document.write("相等的");
+      }
+    </script>
+    <p>自加/自减运算符：</p>
+    <button type="button" name="button" onclick="addTest()">Console.operation</button>
+    <button type="button" name="button" onclick="deCrement()">Decrement</button>
+    <br>
+    <hr>
+    <p>赋值运算符</p>
+    <button type="button" name="button" onclick="assignment()">assignment</button>
+    <br>
+    <hr>
+    <p>字符串拼接</p>
+    <button type="button" name="button" onclick="StrJoint()">string Joint</button>
+    <br>
+    <hr>
+    <p>条件判断-三目运算符</p>
+    <button type="button" name="button" onclick="condition()">Condition</button>
+
+    <br>
+    <hr>
+    <p> 逻辑运算符</p>
+    <input type="button" name="logic" value="逻辑运算" onclick="logic()">
+    <br>
+    <hr>
+    <p>位运算</p>
+    <input type="button" name="binoperation" value="BinOper" onclick="BinOper()">
+  </body>
+</html>

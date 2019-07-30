@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Boolean Demo</title>
+  </head>
+  <body>
+<p>请使用console.log()进行输出查看</p>
+<script type="text/javascript">
+
+function prototypeF(){
+  Boolean.prototype.myColor=function(){ //为 Boolean 对象创建一个新的方法：
+    if (this.valueOf()==true){
+      this.color="true";
+    }
+    else{
+      this.color="fasle";
+    }
+  }
+
+  var a = new Boolean(1);
+  a.myColor();   //创建一个 Boolean 对象, 并添加 myColor 方法
+    console.log(a.color);
+    console.log(a.constructor);
+    document.write(a.constructor);
+}
+function booleanMethod(){
+  var test = new Boolean(0);
+  console.log("Boolean.toSource() : "+test.toSource());
+  console.log("Boolean.valueOf() : "+test.valueOf());
+  console.log("Boolean.toString() : "+test.toString());
+}
+
+</script>
+  </body>
+</html>

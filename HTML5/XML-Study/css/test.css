@@ -1,0 +1,44 @@
+#i100 {
+    background-color:black;
+    color: white;
+    width: 100%;
+    display: block;
+    margin-bottom: 30pt;
+    margin-left: 0;
+}
+
+
+#i200 {
+    background-color: black;
+    color: green;
+    display: block;
+    width: 100%;
+    margin-bottom: 30pt;
+    margin-left: 0;
+}
+
+to {
+    font-size: 20pt;
+    font-style: normal;
+    display: block;
+    
+}
+from {
+    font-size: 20pt;
+    font-style: normal;
+    display: block;
+}
+
+heading {
+    font-size: 20pt;
+    font-style: italic;
+    display: block;
+
+}
+
+message {
+    font-size: 20pt;
+    font-style: italic;
+    display: block;
+}
+

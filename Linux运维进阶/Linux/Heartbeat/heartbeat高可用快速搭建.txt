@@ -1,0 +1,142 @@
+############ 共用配置 #######################
+systemctl stop firewalld
+systemctl disable firewalld
+setenforce 0
+sed -i s#SELINUX=enforcing#SELINUX=disabled# /etc/selinux/config
+
+hostname data-1
+echo "data-1" >> /etc/hostname
+echo -e "192.168.1.100 data-1 node1\n192.168.1.100 data-1  node2" >> /etc/hosts
+#ssh node2 'systemctl start heartbeat'
+
+ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa
+ssh-copy-id root@192.168.1.100   #拷贝公钥到对方机器,就能不使用密码进行登陆ssh
+
+
+############## CentOS6#################
+#Step2.配置主机名
+hostname Master-data1
+sed -i 's/HOSTNAME=WeiyiGeek/HOSTNAME=Master-data1/g' /etc/sysconfig/network
+sed -i 's/HOSTNAME=WeiyiGeek/HOSTNAME=Master-data2/g' /etc/sysconfig/network
+
+#Step.3两台机器上分别运行
+cat >> /etc/hosts<<eof
+192.168.1.100 Master-data1
+192.168.1.101 Master-data2
+eof
+
+#Step4.软件下载安装
+mv /etc/yum.repos.d/epel.repo /etc/yum.repos.d/epel.repo.backup
+yum install -y epel-release  #或者
+rpm -ivh http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm   #注意系统版本
+rpm -ivh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm 
+
+rpm -ivh  https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7 #导入key
+
+rpm -qa | grep epel
+
+#TIPS：yum 安装rpm包安装后本地不清除的方法 
+sed -i "s/keepcache=0/keppcache=1/g" /etc/yum.conf  
+yum install heartbeat* -y
+
+
+#Step5.配置文件拷贝上传
+注意机器两边是一致得
+
+
+
+###############Centos7.#################
+#1.安装基础环境包：
+yum install -y gcc gcc-c++ autoconf automake libtool glib2-devel libxml2-devel bzip2 bzip2-devel e2fsprogs-devel libxslt-devel libtool-ltdl-devel asciidoc wget
+
+#2.创建用户和组
+groupadd haclient
+useradd -g haclient hacluster
+
+#3.官网下载软件包：Reusable-Components-glue、resource-agents、heartbeat
+wget http://hg.linux-ha.org/heartbeat-STABLE_3_0/archive/958e11be8686.tar.bz2 -O /opt/heartbeat3.tar.bz2
+wget http://hg.linux-ha.org/glue/archive/0a7add1d9996.tar.bz2  -O /opt/glue.tar.bz2
+wget https://github.com/ClusterLabs/resource-agents/archive/v3.9.6.tar.gz -O /opt/resource-agents.tar.bz2
+
+
+#4.安装glue
+tar xf glue.tar.bz2 
+./autogen.sh
+./configure --prefix=/usr/local/heartbeat --with-daemon-user=hacluster --with-daemon-group=haclient --enable-fatal-warnings=no LIBS='/lib64/libuuid.so.1'
+make && make install
+echo $?
+
+#5.安装Resource Agents
+tar xf resource-agents.tar.bz2 
+cd resource-agents-3.9.6/
+./autogen.sh 
+./configure --prefix=/usr/local/heartbeat --with-daemon-user=hacluster --with-daemon-group=haclient --enable-fatal-warnings=no LIBS='/lib64/libuuid.so.1'
+make && make install
+echo $?
+
+#6.安装HeartBeat
+tar xf heartbeat3.tar.bz2
+./bootstrap
+export CFLAGS="$CFLAGS -I/usr/local/heartbeat/include -L/usr/local/heartbeat/lib"
+./configure --prefix=/usr/local/heartbeat --with-daemon-user=hacluster --with-daemon-group=haclient --enable-fatal-warnings=no LIBS='/lib64/libuuid.so.1'
+make && make install
+echo $?
+
+
+#7.配置网卡支持插件文件
+mkdir -pv /usr/local/heartbeat/usr/lib/ocf/lib/heartbeat/
+cp /usr/lib/ocf/lib/heartbeat/ocf-* /usr/local/heartbeat/usr/lib/ocf/lib/heartbeat/
+
+
+#注意：一般启动时会报错因为 ping和ucast这些配置都需要插件支持 需要将lib64下面的插件软连接到lib目录 才不会抛出异常
+ln -svf /usr/local/heartbeat/lib64/heartbeat/plugins/RAExec/* /usr/local/heartbeat/lib/heartbeat/plugins/RAExec/
+ln -svf /usr/local/heartbeat/lib64/heartbeat/plugins/* /usr/local/heartbeat/lib/heartbeat/plugins/
+
+
+#安装后主要得目录配置文件
+heartbeat configuration:
+  Version                  = "3.0.6"
+  Executables              = "/usr/local/heartbeat/sbin"
+  Man pages                = "/usr/local/heartbeat/share/man"
+  Libraries                = "/usr/local/heartbeat/lib64"
+  Header files             = "/usr/local/heartbeat/include"
+  Arch-independent files   = "/usr/local/heartbeat/share"
+  Documentation files      = "/usr/local/heartbeat/share/doc/heartbeat"
+  State information        = "/usr/local/heartbeat/var"
+  System configuration     = "/usr/local/heartbeat/etc"
+  Init (rc) scripts        = "/etc/rc.d/init.d"
+  Init (rc) defaults       = "/etc/sysconfig"
+  Use system LTDL          = "yes"
+  HA group name            = "haclient"
+  HA group id              = "1001"
+  HA user name             = "hacluster"
+  HA user user id          = "1001"
+  Build dopd plugin        = "yes"
+  Enable times kludge      = "yes"
+
+#8. 配置heartbeat配置文件(参考上面即可)
+#拷贝三个模版配置文件到 /usr/local/heartbeat/etc/ha.d 目录下 
+cp /usr/local/heartbeat/share/doc/heartbeat/{ha.cf,haresources,authkeys} /usr/local/heartbeat/etc/ha.d/
+vim /usr/local/heartbeat/etc/ha.d/ha.cf
+vim /usr/local/heartbeat/etc/ha.d/authkeys
+vim /usr/local/heartbeat/etc/ha.d/haresources
+
+#指定节点主机名，和VIP地址，以双冒号分隔资源，此处以apache为例进行配置
+node1 192.168.1.200 apache::/etc/httpd/conf/httpd.conf
+data1 IPaddr::192.168.1.200/24/eth1  #VIP 漂移得IP
+data2 IPaddr::192.168.1.201/24/eth1
+
+#9.设置权限非常重要
+chmod 600 /usr/local/heartbeat/etc/ha.d/authkeys
+chown -R root:haclient /usr/local/heartbeat/
+
+[root@data1 heartbeat]# ip addr | grep "192.168"
+    inet 192.168.1.100/24 brd 192.168.1.255 scope global eth1
+    inet 192.168.1.201/24 brd 192.168.1.255 scope global secondary eth1:0
+    inet 192.168.1.200/24 brd 192.168.1.255 scope global secondary eth1:1
+    inet 192.168.2.100/24 brd 192.168.2.255 scope global noprefixroute eth2
+
+
+
+

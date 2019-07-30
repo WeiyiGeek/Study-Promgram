@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>FirstDay Javascript</title>
+  <script src="./test.js"></script>
+    </head>
+  <body>
+    <div id="text">Js Demo</div>
+    <script type="text/javascript">
+      document.getElementById("text").innerHTML="Method1:My First Day Study Javascript!";
+      document.write("<br/>Method2:Write textarea");
+
+      //  document.write("内部引用，js！");
+        //这是注释
+      /*  var age = 15;
+        if (age >= 18) {
+            alert('age >= 18');
+        } else {
+            alert(age);
+        }*/
+
+/*
+        var a=0,b=0;
+        var c = b /a; //NaN类型
+        if(isNaN(c)){
+              document.write("c 是 NaN"+"----"+c);
+        }else{
+              document.write("C 不是 NaN"+"----"+c);
+        }
+
+    var d = 1 / 3;
+    var e = (1 - 2 / 3);
+    document.write("d="+d);
+    document.write('<br/>');
+    document.write("e="+e);
+
+
+  var abs=Math.abs(1 / 3 - (1 - 2 / 3));
+  if( abs < 0.0000001){
+        document.write("相等的");
+  }
+*/
+
+    </script>
+    <p id="myPar">I am a paragraph.</p>
+    <div id="myDiv">I am a div.</div>
+    <p>
+    <button type="button" onclick="myFunction()">交替变化</button>
+    </p>
+
+    <script>
+    function myFunction(){
+    document.getElementById("myPar").innerHTML="Hello World";
+    document.getElementById("myDiv").innerHTML="How are you?";
+    }
+    </script>
+
+
+  </body>
+</html>

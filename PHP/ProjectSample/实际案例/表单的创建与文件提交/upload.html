@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>php文件上传</title>
+</head>
+<body>
+<form action="upload.php" method="post" enctype="multipart/form-date"> <!-- //enctype 属性规定在发送到服务器之前应该如何对表单数据进行编码。multipart/form-date:不对字符编码。在使用包含文件上传控件的表单时，必须使用该值。 -->
+	<input name="file" type="file"><br><br> <!-- //有file就是2进制上传所以要指定类型 -->
+	<input type="submit" value="提交">
+</form>
+</body>
+</html>

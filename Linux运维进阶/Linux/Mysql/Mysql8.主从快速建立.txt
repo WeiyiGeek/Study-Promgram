@@ -1,0 +1,48 @@
+#主库脚本
+#!/bin/bash
+MYUSER="root"
+MYPASS="System123@"
+MYSOCK=/data/3306/mysql.sock
+BAKPATH=/data/backup
+LOGFILE=${BAKPATH}/mysql_Binlogs_`date +%F`.log
+DATAFILE=${BAKPATH}/mysql_Backup_`date +%F`.sql
+
+MYSQL_HOME=/usr/local/mysql/bin
+MYSQL_CMD="${MYSQL_HOME}/mysql -u$MYUSER -p$MYPASS -S $MYSOCK"
+MYSQL_DUMP="${MYSQL_HOME}/mysqldump -u$MYUSER -p$MYPASS -S$MYSOCK -A -B --flush-logs --events --master-data=2"
+
+[ `$MYSQL_CMD -e "select user,host from mysql.user"|grep rep|wc -l` -ne 1 ] && $MYSQL_CMD -e "CREATE USER 'rep'@'%' IDENTIFIED BY 'System123@';" &&
+$MYSQL_CMD -e "grant replication slave on *.* to 'rep'@'%';" && $MYSQL_CMD -e "flush privileges;" || echo "用户已建立"
+
+$MYSQL_CMD -e "flush tables with read lock;"
+sleep 2
+echo "--------show Master status---------------" > $LOGFILE
+$MYSQL_CMD -e "show master status;">> $LOGFILE
+$MYSQL_DUMP > $DATAFILE
+sleep 5
+$MYSQL_CMD -e "unlock tables;"
+cat $LOGFILE
+#MAIL -e "mysql slave log" 3333@qq.com < $LOG_FILE
+
+
+
+#从库脚本
+#!/bin/bash
+MYUSER="root"
+MYPASS="System123@"
+MYSOCK=/data/3307/mysql.sock
+BAKPATH=/data/backup
+MYSQL_HOME=/usr/local/mysql/bin
+LOGFILE=${BAKPATH}/mysql_Binlogs_`date +%F`.log
+DATAFILE=${BAKPATH}/mysql_Backup_`date +%F`.sql
+MYSQL_CMD="${MYSQL_HOME}/mysql -u$MYUSER -p$MYPASS -S $MYSOCK"
+#导入数据到从库中
+cd /data/backup && ${MYSQL_CMD} < ${DATAFILE}
+
+#config slave
+#下面为了测试填写的管理IP实际填写VIP
+$MYSQL_CMD -e "CHANGE MASTER TO MASTER_HOST='192.168.1.200',MASTER_PORT=3306,MASTER_USER='rep',MASTER_PASSWORD='System123@',MASTER_LOG_FILE='mysql-bin.000010',MASTER_LOG_POS=815;"
+sleep 2
+$MYSQL_CMD -e "start slave;" 
+sleep 5
+$MYSQL_CMD -e "show slave status\G;" | egrep "IO_Running|SQL_Running" >> $LOG_FILE

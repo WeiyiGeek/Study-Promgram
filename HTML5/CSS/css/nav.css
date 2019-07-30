@@ -1,0 +1,61 @@
+/**body主体**/
+body {margin: 0;padding: 0;}
+
+ /* ul设置无圆点  */
+ul { list-style-type: none;margin: 10px 10px;padding: 0;}
+
+
+/* 垂直导航栏CSS,采用伪类 */
+/*
+a:link,a:visited {
+  display: block;
+  width: 120px;
+  padding: 4px;
+  margin-bottom: 1px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: white;
+  background-color: #bebebe;
+}
+a:hover,a:active {background-color: #cc0000;font-style: italic;}
+*/
+
+/* 水平导航栏CSS,采用inline
+li {display: inline;}
+
+a:link,a:visited {
+  padding: 4px;
+  margin-right: 0.5px;
+  font-weight: bolder;
+  text-align: center;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: white;
+  background-color: #bebebe;
+}
+a:hover,a:active {
+  background-color: #cc0000;
+  font-style: oblique;
+  font-family: serif;
+}*/
+
+/* 水平导航栏CSS,采用列表项进行浮动 */
+li {float: left;}
+a:link,a:visited {
+  display: block;
+  width: 120px;
+  padding: 4px;
+  font-weight: bolder;
+  text-align: center;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: white;
+  background-color: #bebebe;
+}
+a:hover,a:active {
+  background-color: #CC0000;
+  font-family: monospace;
+  font-style: italic;
+}

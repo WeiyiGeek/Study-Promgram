@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>PostMessage 使用案例</title>
+  </head>
+  <body>
+    <iframe src="http://localhost/recv_Client.html" width="800px" height="150px" id="iframe"></iframe>  <!--嵌入iframe标签-->
+    <br>
+    <input type="text" id="msg" placeholder="输入发送的信息" size="32">
+    <input type="submit" id="sub" value="发送">
+    <script type="text/javascript">
+        window.onload = function(){
+          //event对象
+          document.getElementById('sub').onclick = function(e){
+            var msgContext = document.getElementById('msg').value;    //绑定输入信息的对象
+            var iframeWindow = document.getElementById('iframe').contentWindow;  //绑定要发送信息的窗口对象 
+            iframeWindow.postMessage(msgContext,"http://localhost/recv_Client.html"); //采用 postMessages 方法
+        }
+      }
+    </script>
+  </body>
+</html>

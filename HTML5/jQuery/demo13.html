@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jquery demo 13</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <fieldset>
+        <legend>getScript | getJSON</legend>
+        <button id="gets">getScript|使用 Ajax 来获取JavaScript脚本并执行</button>
+        <button id="getj">getJSON|使用 Ajax 来获取JSON</button>
+        <div style="color:red"></div>
+    </fieldset>
+        <fieldset>
+            <legend>param() serialize() serializeArray()</legend>
+            <form action="test">
+                <input type="text" name="username" placeholder="username"><br><br>
+                <input type="password" name="pass" placeholder="password" style="border:1px solid green"><br>
+                <input id="demo1" type="button" value="序列化表单">
+            </form>
+            <button id="demo2">数组序列化表单</button>
+            <BUtton id="demo3">$.param()</BUtton>
+        </fieldset>
+
+    <script>
+        $(function(){
+            /**4.序列化数据**/
+            $("#demo1").click(function(){
+                //iuput name 属性就是字符串key
+                console.info("Get："+$("form").serialize());
+            });
+            $("#demo2").click(function(){
+                //对象,内置函数
+                $.each($("form").serializeArray(),function(i,field){
+                    //注意这里name 代表keys  ， value 代表的了值
+                    console.warn(field.name + ":" +field.value);
+                });
+            });
+            $("#demo3").click(function(){
+                personObj=new Object();
+                personObj.firstname="John";
+                personObj.lastname="Doe";
+                personObj.age=50;
+                personObj.eyecolor="blue"; 
+                console.error($.param(personObj));
+            });
+
+            //1.js脚本请求
+            $("#gets").click(function(){
+                $.getScript("http://www.runoob.com/try/demo_source/demo_ajax_script.js",
+                function(response,status){
+                    console.info("返回状态："+status);
+                    console.warn(response);
+                });
+            });
+            //2.json请求
+            $("#getj").click(function(){
+                $.getJSON("demo13_ajax_json.js",function(data,status,xhr){
+                    if(status == "success"){
+                        console.log(data.firstName + " - " + data.lastName + " - " + data.age);
+                    }else{
+                        alert("getJSON失败");
+                    }
+                    //遍历方法值得学习 索引与值
+                    $.each(data, function(i, field){
+				        $("div").append(i + ":" + field + "<br>"); 
+			        });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

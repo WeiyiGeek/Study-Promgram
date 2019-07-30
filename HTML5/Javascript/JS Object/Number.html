@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Number Test Demo</title>
+  </head>
+  <body>
+    <p>Number Demo Console.log</p>
+    <input type="button" name="test" value="刷新页面" onclick="javascript:location.reload();">
+<script type="text/javascript">
+function nanproF(){
+  var numberTest = 100;
+  numberTest = Number.NaN;
+  console.log(numberTest);
+  console.log("Number函数引用结构体："+numberTest.constructor);
+
+  Number.prototype.newMethod = function () {
+    return this.myPrrop = this.valueOf()/2;
+  }
+  var d = new Number(55);
+  d.newMethod();
+  //d.myPrrop 来调用
+  console.log(d);
+}
+function minMax(){
+  console.log("最小的数："+Number.MIN_VALUE);
+  console.log("最大的数："+Number.MAX_VALUE);
+}
+function infinityF(){
+  var t = (-Number.MAX_VALUE)*2;
+  var x = (Number.MAX_VALUE)*2;
+  if (t == Number.NEGATIVE_INFINITY) {
+      document.write("Value of t: " + t + "<br/>");
+  }
+  if (x == Number.POSITIVE_INFINITY) {
+      document.write("Value of x: " + x);
+  }
+}
+
+function expF(){
+  var t = new Number(123456);
+  console.log("toString():"+t.toString());
+  console.log("valueOf():"+t.valueOf());
+  console.log("Exponential: "+t.toExponential(4));
+}
+
+function toFixedF(){
+  var num = new Number(13.37);
+  console.log("四舍五入小数点一位(one decimal)后："+num.toFixed(1));
+}
+function toPrecisionF(){
+  var num = new Number(123456);
+  console.log("显示小数点后位数及后面换成指数形式："+num.toPrecision(4)); //会四舍五入小数点后第四位
+}
+
+</script>
+  </body>
+</html>

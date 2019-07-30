@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jquery 初始学习demo1 </title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <p>点击哪一个就消失哪一个</p>
+    <p>我是第一个</p>
+    <p>我是第二个</p>
+    <b class="test">移动/移出到我这里提示</b>
+    <p id="tes">将鼠标移动到该段落上。</p>
+    <script>
+        //采用匿名函数的形式
+        $(document).ready(function(){
+            //注意这里的方法没有onclick
+            $("p").click(function(){
+                    $(this).hide();
+            });
+
+            $(".test").hover(function(){
+                console.log("移动到我的头上了");
+            },function(){
+                console.log("您终于移出我了");
+            });
+
+            $("#tes").bind("mouseover mouseout",function(){
+                 $("#tes").toggleClass("stye");
+            });
+        });
+    </script>
+     <style type="text/css">
+    .stye{
+        font-size:150%;
+	    color:red;
+    }
+    </style>
+</body>
+</html>

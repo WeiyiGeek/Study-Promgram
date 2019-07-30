@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>CSS BORDER Attribute</title>
+	<link rel="stylesheet" href="">
+	<link rel="c" type="text/css" href="">
+	<style type="text/css" media="screen">
+		* {padding: *;margin: *;}
+		div.test {border-top: dotted;border-right:dashed;border-bottom: solid;border-left: double;}
+
+	</style>
+</head>
+<body>
+	<b style="color:lime">border-style</b>
+	<style type="text/css">
+p.dotted {border-style: dotted}
+p.dashed {border-style: dashed}
+p.solid {border-style: solid}
+p.double {border-style: double}
+p.groove {border-style: groove}
+p.ridge {border-style: ridge}
+p.inset {border-style: inset}
+p.outset {border-style: outset}
+</style>
+<p class="dotted">A dotted border</p>
+
+<p class="dashed">A dashed border</p>
+
+<p class="solid">A solid border</p>
+
+<p class="double">A double border</p>
+
+<p class="groove">A groove border</p>
+
+<p class="ridge">A ridge border</p>
+
+<p class="inset">An inset border</p>
+
+<p class="outset">An outset border</p>
+<br>
+<p style="color:maroon">四边设置不同的边框</p>
+	<div class="test">
+		A top right bottom left
+	</div>
+<p style="border-top:groove;border-top:ridge;border-bottom:inset;border-style:outset;">A groove ridge inset outset</p>
+<br>
+<br>
+<hr>
+<hr>
+<br>
+<br>
+<b style="color:aqua;">##  4 个边的边框的宽度-border-top/right/bottom/left-width （border-width）</b>
+<p style="border-style:solid;border-width:4px 5em 100% thin">Every border</p>
+<p style="border-style:solid none;border-bottom-width:1em;border-top-width:2em;"> border-top-width/bottom-width</p>
+<p style="border-style:none solid;border-left-width:thin;border-right-width:thick;"> border-left-width/right-width</p>
+<br>
+<br>
+<hr>
+<br>
+<br>
+<b style="color:fuchsia;">##  4 个边的边框的颜色-border-top/right/bottom/left-color （border-color）
+</b>
+<p style="border-style:solid;border-width:thick;border-color:red #0F0 rgb(82,118,45) rgba(131,25,86,0.5);">border-color solid thick</p>
+<br>
+<p style="border-style:double;border-width:1em;border-top-color:yellow;border-bottom-color:blue">top/bottom-color yellow double thin</p><br>
+
+<p style="border-style:groove;border-width:30px;border-right-color:#00ffff;border-left-color:lime;">right/left-color blue groove 30px</p>
+
+<br>
+<br>
+<br><hr>
+<br>
+<b style="color:red;">## 透明边框 ##</b>
+<br>
+
+<style type="text/css" media="screen">
+a {text-decoration:none;}   /**去除下划线**/
+a:link, a:visited {   /**伪类**/
+border-style: solid;
+border-width: 1px;
+border-color: transparent;
+}
+a:hover {border-color: gray;}   /**移动到A元素上面的时候进行转换边框颜色**/
+</style>
+
+<a href="#">鼠标</a>
+<a href="#">点击移动到这里</a>
+<a href="#">会变变出边框</a>
+
+<br>
+<br>
+<hr>
+<br>
+<br>
+<b style="color:red;">border Attribute</b>
+<p style="border:thick dotted rgba(42,128,85,0.5);border-style:dotted solid">border width - style - rgb</p>
+
+</body>
+</html>

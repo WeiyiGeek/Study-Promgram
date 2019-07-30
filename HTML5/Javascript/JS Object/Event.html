@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>html event demo</title>
+  </head>
+  <body onpagehide="pagehideFun(Event);">
+<p id="demo1" style="color:lime;background-color:blue">1.oncontextmenu 事件demo</p>
+<div class="demo1" style="border:solid red 1px;background-color:black;color:white;width:400px;height:200px;" oncontextmenu="oncontextmenuFun();">
+  <b>This is oncontextmenu demo</b>
+</div>
+
+<br>
+<hr>
+<p id="demo2" style="color:lime;background-color:blue">2.按键事件demo</p>
+<input type="text" name="text1" value="" placeholder="请进行输入按键进行触发事件" onkeydown="javascript:alert('1.按键按下')" onkeypress="javascript:alert('2.按下已松开')">
+<br>
+<input type="text" name="text2" value="" placeholder="输入按键放开触发事件,有点点延迟" onkeyup="javascript:alert('3.按键松开')">
+
+<br>
+<hr>
+<p id="demo3" style="color:lime;background-color:blue">3.onhashchange 事件</p>
+<a href="#demo3" title="跳转锚">点击跳转</a>
+<p name="demo3">这是一个锚</p>
+<input type="button" name="" value="点击修改锚" onclick="changpart();">
+<br>
+<hr>
+<p style="color:lime;background-color:blue">4.onpagehide 事件</p>
+<a id="demo4" href="http://baidu.com" title="跳转百度">点击跳转</a>
+
+
+<br>
+<hr>
+<p style="color:lime;background-color:blue">5.onblur 失去焦点</p>
+<input type="text" name="text3" value="" placeholder="请输入字母将自动转换成大写" onblur="myFun();">
+<p id="demo5">转换后：</p>
+
+<br>
+<hr>
+<p style="color:lime;background-color:blue">6.oninput 输入事件</p>
+<input type="text" name="text3" oninput="myFunction()">
+<p id="demo6">你输入的是:</p>
+
+<br>
+<hr>
+<p style="color:lime;background-color:blue">7.onsearch 事件</p>
+<form class="" action="index.html" method="post">
+  <input type="search" name="text4" value="javascript" onsearch="searchFun();">
+  <input type="submit" name="" value="提交">
+</form>
+
+
+
+<script type="text/javascript">
+  function $(id) {return document.getElementById(id);}
+  function oncontextmenuFun(){
+    console.log("右键菜单打开将弹出时间");
+    alert(Date());
+  }
+
+  var onkey=document.getElementsByName('text1')[0];
+  onkey.addEventListener("keydown",keydown);
+  //键盘监听，注意：在非ie浏览器和非ie内核的浏览器
+//参数1：表示事件，keydown:键盘向下按；参数2：表示要触发的事件
+  function keydown(Event){
+    console.log("输入的键盘Ascii编码: "+Event.keyCode);  //a=65
+    //表示键盘监听所触发的事件，同时传递传递参数Event，keyCode表示键盘编码
+  }
+
+//  window.onbeforeunload = function(){
+   //return "你确定要离开吗"  //需要返回值
+//}
+function changpart(){
+  location.hash="demo2";
+  console.log("更改锚后的URL："+location.href);
+}
+function hashchangeFun() {
+  alert("锚已经被更改了");
+}
+
+function pagehideFun(Event){
+  alert("跳转: "+$('demo4').getAttribute('href'));
+  alert("页面是否从浏览器缓存中加载?\n " + Event.persisted);
+  document.getElementsByTagName('tagName')
+}
+
+function myFun(){
+  var txt=document.getElementsByName('text3')[0];
+  $('demo5').innerHTML+=txt.value.toUpperCase(); //转换成大写
+}
+
+function myFunction(){
+  var txt1=document.getElementsByName('text3')[1];
+  $('demo6').innerHTML=txt1.value;
+}
+
+
+function searchFun(){
+console.log("搜索的值为: "+document.getElementsByName('text4').value);
+}
+
+</script>
+
+ <hr>
+<br>
+<p oncopy="copyFun();">拷贝,剪切,粘贴事件demo</p>
+<input type="text" name="" value="等待剪切的值：123456" oncut="cutFun();">
+<textarea name="name" rows="8" cols="80" onpaste="pasteFun();"></textarea>
+<script type="text/javascript">
+  function copyFun(){
+    console.log("已拷贝");
+  }
+
+  function cutFun(){
+    console.log("已剪切");
+  }
+
+  function pasteFun(){
+    console.log("已粘贴");
+  }
+</script>
+  </body>
+</html>

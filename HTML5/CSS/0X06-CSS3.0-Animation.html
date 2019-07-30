@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>CSS3.0 STYLE ANIMATION ABBRIBUTE DEMO</title>
+<style type="text/css" media="screen">
+  b {
+    color:white;
+    background-color: #f3a45a;
+    border-radius: 4px;
+  }
+</style>
+</head>
+<body>
+<b>## @keyframes 规则，创建动画 </b>
+<hr>
+<style type="" media="screen">
+  .demo {
+    height: 500px;
+    width: 500px;
+    margin: 0 auto;
+    border: 1px solid red;
+  }
+  .kf {
+    width: 100px;
+    height: 20px;
+    background: gray;
+    color: white;
+    position:relative; /*设置为相对位置，重要*/
+    animation:identifier 5s infinite;
+    border-radius: 4px;
+  }
+  @keyframes identifier {
+    from {top:0px;}
+    to {top:300px;}
+    from {left : 0px;}
+    to {left: 300px;}
+  }
+
+  div.kr{
+width:100px;
+height:100px;
+background:red;
+color: white;
+position:relative;
+animation:mymove 5s infinite;
+
+}
+
+@keyframes mymove  /*先从0到200px，在回退到top：50px;再到top：100px;*/
+{
+0%   {top:0px;}
+25%  {top:200px;}
+75%  {top:50px}
+100% {top:100px;}
+}
+
+div.multi{
+  margin: 10px;
+  width:100px;
+  height:100px;
+  background:red;
+  color: white;
+  border-radius: 5px;
+  position:relative;
+  animation:multi 5s infinite;
+}
+@keyframes multi{
+  0%   {top:0px; left:0px; background:red;}
+  25%  {top:0px; left:100px; background:blue;}
+  50%  {top:100px; left:100px; background:yellow;}
+  75%  {top:100px; left:0px; background:green;}
+  100% {top:0px; left:0px; background:red;}
+}
+</style>
+<div class="demo">
+  <!--<div class="kf">keyframstop-left</div>
+  <div class="kr">keyframstop-%-px-</div>-->
+  <div class="multi">keyframs</div>
+</div>
+<br>
+<br>
+<br>
+<b>animation-timing-function 规定动画的速度曲线，速度曲线定义动画从一套 CSS 样式变为另一套所用的时间</b>
+<hr>
+<style media="screen">
+  .linear,.ease,.easein,.easeout,.easeit {
+    width: 90px;
+    height: 50px;
+    background-color: #A1e4a3;
+    font-weight: bold;
+
+    position: relative !important;
+    animation: timing 5s infinite;
+  }
+  .linear {animation-timing-function: linear;}
+  .ease {animation-timing-function:ease;}
+  .easein {animation-timing-function:ease-in;}
+  .easeout {animation-timing-function:ease-out;}
+  .easeit {animation-timing-function:ease-in-out;}
+
+  @keyframes timing {
+    from {left: 0px;}
+    to {left: 600px;}
+  }
+</style>
+<div class="linear">linear</div>
+<div class="ease">ease</div>
+<div class="easein">ease-in</div>
+<div class="easeout">ease-out</div>
+<div class="easeit">ease-in-out</div>
+
+<br>
+<br>
+<br>
+<b>animation-delay 负值 Demo</b>
+<hr>
+<style type="text/css" media="screen">
+  .delay {
+    width: 60px;
+    height: 150px;
+    background:black;
+    font-weight: bold;
+    color: white;
+
+    position: relative;
+    animation: test 5s infinite;
+    animation-delay: -1s;
+  }
+  @keyframes test {
+    from {left: 0px;}
+    to {left: 500px;}
+  }
+</style>
+<div class="delay">Delay -2直接从第三秒显示</div>
+<br>
+<br>
+<br>
+<b>animation-play-state 属性规定动画正在运行还是暂停。</b>
+<hr>
+<style>
+div.paused{
+        width:100px;
+        height:100px;
+        background:red;
+        position:relative;
+        color: white;
+        animation:mymove 5s infinite;
+}
+div.paused:hover{
+        /*animation-play-state:running; */
+        animation-play-state:paused;
+}
+@keyframes mymove{
+        from {left:0px;}
+        to {left:200px;}
+}
+</style>
+<div class="paused">
+  鼠标移动到方块上就停止动画
+</div>
+
+<br>
+<br>
+<br>
+<b>animation all abbribute DEMO!!!</b>
+<hr>
+<style media="screen">
+div.anima{
+  width: 100px;
+  height: 100px;
+  background: gray;
+position:relative;
+animation-name:myfirst;  /**引入标识符号**/
+animation-duration:5s;
+animation-timing-function:linear;
+animation-delay:1s;
+animation-iteration-count:infinite;
+animation-direction:alternate;
+animation-play-state:running;
+}
+
+@keyframes myfirst{  /**这个标识符号是非常重要的*/
+0%   {background:red; left:0px; top:0px;}
+25%  {background:yellow; left:200px; top:0px;}
+50%  {background:blue; left:200px; top:200px;}
+75%  {background:green; left:0px; top:200px;}
+100% {background:red; left:0px; top:0px;}
+}
+</style>
+<div class="anima"></div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+</body>
+<html>

@@ -1,0 +1,67 @@
+ <!DOCTYPE html>
+ <html>
+   <head>
+     <meta charset="utf-8">
+     <title>Dom style  and class</title>
+
+     <style type="text/css" media="screen">
+      .test1{
+          margin-top: 10px;
+          border: 3px solid black;
+          font-style: oblique;
+          font-weight: bold;
+          font-family: monospace;
+          border-radius: 20px;
+      }
+      .test2{
+        margin-top: 10px;
+        border: 3px solid red;
+        font-family: sans-serif;
+        font: bold oblique;
+        border-radius: 10px;
+        background: black;
+        color: lime;
+      }
+     </style>
+   </head>
+   <body>
+     <p>利用js来设置css对元素的隐藏与显示</p>
+     <div class="number" style="border:1px solid red">
+       <p id="first">number first none</p>
+       <p id="second" style="display:none;background-color:lime">number second block</p>
+     </div>
+     <input type="button" name="ok" value="display" onclick="displayFun()">
+<br>
+<hr>
+<br>
+<br>
+<br>
+  <p>更换元素的类名达到换</p>
+  <button type="button" name="button" onclick="changeClass()">changeClass</button>
+  <button type="button" name="button" onclick="removeClass()">removeClass</button>
+
+  <div class="test1" id="cClass">
+    This is a css Demo!!
+  </div>
+     <script type="text/javascript">
+     function changeClass(){
+     cClass = document.getElementById('cClass');
+        if (cClass.className == "test1") {
+          cClass.className = "test2";
+          cClass.innerHTML = "P元素的Class名:"+cClass.className;
+        }else{
+          cClass.className = "test1";
+          cClass.innerHTML = "P元素的Class名:"+cClass.className;
+        }
+     }
+     function removeClass(){
+       cClass.removeAttribute("class");
+     }
+
+     function displayFun(){
+       document.getElementById('first').style.display="none";
+       document.getElementById('second').style.display="block";
+     }
+     </script>
+   </body>
+ </html>

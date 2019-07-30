@@ -1,0 +1,18 @@
+<?xml version="1.0" ?> 
+<?xml-stylesheet type="text/css" href="test.css" ?>
+<root>
+    <!--注意只能有一个根-->
+    <note id="i100">
+        <to>Tove</to> 
+        <from>Jani</from> 
+        <heading>Reminder</heading> 
+        <message>Don't forget me this weekend!</message> 
+    </note>
+    
+    <note id="i200">
+        <to>Liyang</to> 
+        <from>Zhangwei</from> 
+        <heading>Reminder</heading> 
+        <message>Don't forget me this weekend!</message> 
+    </note>
+</root>

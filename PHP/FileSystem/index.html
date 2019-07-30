@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>文件上传demo</title>
+</head>
+<body>
+<fieldset>
+    <legend>文件上传demo</legend>
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+        <label for="user">用户：</label><input type="text" name="user" id="user"><br/>
+        <input type="hidden" name="MAX_FILE_SIZE" value="1000000"><br/>
+        <label for="img">up pic:</label><input type="file" name="img[]" id="img" value=""> 
+        <label for="img1">up pic:</label><input type="file" name="img[]" id="img1" value=""> 
+        <label for="img2">up pic:</label><input type="file" name="img[]" id="img2" value=""> 
+        <label for="img3">up pic:</label><input type="file" name="img[]" id="img3" value=""> 
+        <input type="submit" value="upload"><br/>
+    </form>
+</fieldset>
+<?php
+
+?>
+</body>
+</html>
+
+

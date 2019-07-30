@@ -1,0 +1,27 @@
+May 05 17:30:58.212 HYPERVISOR: Release 0.2.14-x86/Windows (tag 2014092320)
+May 05 17:30:58.215 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 58467.
+May 05 17:30:58.509 HYPERVISOR: exec_cmd: hypervisor version 
+May 05 17:30:58.511 HYPERVISOR: exec_cmd: hypervisor uuid 
+May 05 17:30:58.512 HYPERVISOR: exec_cmd: hypervisor working_dir F:\BaiduNetdiskDownload\CCNA\project-files\dynamips 
+May 05 17:30:58.756 GENERAL: working_dir=F:\BaiduNetdiskDownload\CCNA\project-files\dynamips
+May 05 17:30:58.758 HYPERVISOR: exec_cmd: vm create R2 2 c2691 
+May 05 17:30:58.761 VM: VM R2 created.
+May 05 17:30:58.762 HYPERVISOR: exec_cmd: vm set_con_tcp_port R2 2002 
+May 05 17:30:58.763 HYPERVISOR: exec_cmd: c2691 get_mac_addr R2 
+May 05 17:30:58.764 HYPERVISOR: exec_cmd: c2691 set_mac_addr R2 c002.1b74.0000 
+May 05 17:30:58.764 HYPERVISOR: exec_cmd: vm set_nvram R2 256 
+May 05 17:30:58.767 HYPERVISOR: exec_cmd: vm set_disk0 R2 0 
+May 05 17:30:58.771 HYPERVISOR: exec_cmd: vm set_ios R2 C:\Users\Administrator\GNS3\images\IOS\C2691-AD-12415.BIN 
+May 05 17:30:58.773 HYPERVISOR: exec_cmd: vm get_status R2 
+May 05 17:30:58.774 HYPERVISOR: exec_cmd: vm set_idle_pc R2 0x60c59d98 
+May 05 17:30:58.774 HYPERVISOR: exec_cmd: vm set_ram R2 192 
+May 05 17:30:58.776 HYPERVISOR: exec_cmd: vm set_exec_area R2 64 
+May 05 17:30:58.776 HYPERVISOR: exec_cmd: vm slot_add_binding R2 0 16 WIC-2T 
+May 05 17:30:58.779 HYPERVISOR: exec_cmd: vm set_config R2 configs/i2_startup-config.cfg 
+May 05 17:30:58.894 HYPERVISOR: exec_cmd: vm get_status R2 
+May 05 17:30:58.896 HYPERVISOR: exec_cmd: vm extract_config R2 
+May 05 17:30:58.897 HYPERVISOR: exec_cmd: vm delete R2 
+May 05 17:30:58.897 VM: VM R2 destroyed.
+May 05 17:30:58.899 HYPERVISOR: exec_cmd: hypervisor stop 
+May 05 17:30:59.009 HYPERVISOR: Stopped.
+May 05 17:30:59.009 GENERAL: reset done.

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>String Object Demo</title>
+  </head>
+  <body>
+    <p>String Demo Console.log</p>
+    <input type="button" name="button" value="刷新页面" onclick="javascript:location.reload();"><p></p>
+    <script type="text/javascript">
+      function lengthPrototypeF(){
+          var str = new String("Hello,World!");
+          console.log("string结构:"+str.constructor);
+          console.log("当前字符串长度："+str.length);
+          String.prototype.StrDemo = function () {
+            this.myStr = this.valueOf() + "javascript pragram change the World!";
+          };
+          str.StrDemo();
+          console.log("String.Prototype："+str.myStr);
+      }
+
+function charCodeFrom(){
+var str = new String("Hello,World javascripT");
+var lastStr = str.charAt(str.length - 1);
+var codeStr = str.charCodeAt(str.length - 1);
+console.log("str字符串最后一个字符："+lastStr+"\t这个字符的Ascii码："+codeStr);
+
+var fromCodeStr = String.fromCharCode(48,9,9,65,9,97);
+console.log("String.formCharCode(x,x,x)将acsii码转换成字符串："+fromCodeStr);
+}
+
+function indexLastF(){
+  var test = "hello world,javascript!,hello world,javascript!"
+    console.log(test.indexOf("o")+"\t"+test.indexOf("world",6));
+    console.log(test.lastIndexOf("hello")+"\t"+test.lastIndexOf("hello",20));
+}
+
+function concatF(){
+  var str1 = "String";
+  var str2 = " Object";
+  var str3 = " Demo";
+  console.log("Method1："+str1.concat(str2," Demo"));
+  console.log("Method2："+str1.concat(str2,str3));
+}
+
+function lowerUpperF(){
+  var bigStr = "HELLO WORLD";
+  var smallStr = "hello world";
+  console.log("大写转换成小写:"+bigStr.toLowerCase());
+  console.log("小写转换成大写:"+smallStr.toUpperCase());
+}
+
+function sliceSplitF(){
+  var str = new String("How are you jacker ,I'm Like Computer technology");
+  console.log("截取最倒数一个单词:"+str.slice(-10));
+  console.log("截取最倒数第二个单词:"+str.slice(28,-11));
+
+  var separator = str.split(" ",4)
+  console.log("以空格为分隔符(分为四段)："+separator+"\t\t可通过数组访问："+separator[3]);
+}
+
+function subF(){
+    var test = new String("Hello world javascript!");
+    console.log("从字符串第二个位置中向后提取三个字符："+test.substr(2,3));  //从0开始计数
+    console.log("从字符串第三个位置提取到第七个位置的字符："+test.substring(3,7)); //7 - 3 = 4个字符
+}
+
+function regexpMatch(){
+  var str = "The rain in SPAIN stays mainly in the plain";
+  var n=str.match(/ain/gi);
+  console.log("匹配值："+n);
+  console.log("匹配值的个数："+n.length);
+}
+
+function searchReplceF(){
+  var str="Mr. Blue has a blue house";
+  console.log(str.search("blue"));  //执行一次对大小写敏感的查找:
+  console.log(str.search(/blue/i)); //执行一次忽略大小写的检索:
+  var n=str.replace(/blue/gi,"red"); //执行一个全局替换并不区分大小写
+  console.log(n);
+
+  String.prototype.replaceAll = function(search, replacement) {
+    return this.replace(new RegExp(search, 'g'), replacement);
+  };
+  var str1 = "Visit Microsoft!Visit Microsoft!Visit Microsoft!";
+  var n=str1.replaceAll("Microsoft","Runoob");
+  console.log(n);
+}
+
+function htmlPacket(){
+  var txt = "Hello World!";
+document.write("<p>字体变大: " + txt.big() + "</p>");
+document.write("<p>字体缩小: " + txt.small() + "</p>");
+document.write("<p>字体加粗: " + txt.bold() + "</p>");
+document.write("<p>斜体: " + txt.italics() + "</p>");
+document.write("<p>固定定位: " + txt.fixed() + "</p>");
+document.write("<p>加删除线: " + txt.strike() + "</p>");
+document.write("<p>字体颜色: " + txt.fontcolor("green") + "</p>");
+document.write("<p>字体大小: " + txt.fontsize(6) + "</p>");
+document.write("<p>下标: " + txt.sub() + "</p>");
+document.write("<p>上标: " + txt.sup() + "</p>");
+document.write("<p>链接: " + txt.link("http://www.w3cschool.cc") + "</p>");
+document.write("<p>闪动文本: " + txt.blink() + " (不能用于IE,Chrome,或者Safari)</p>");
+
+}
+    </script>
+
+    <script type="text/javascript">/*
+      var test =new String("Hello,world!");
+      var conStr = "";
+      for (var i = 0; i < test.length; i++){
+        var str = test.charAt(i) + " >>>> " +test.charCodeAt(i);
+        console.log(str);
+        //document.write(test[i]+" ");
+        conStr = conStr + String.fromCharCode(test.charCodeAt(i));
+      }
+      console.log("Ascii码转字符串："+conStr);*/
+    </script>
+  </body>
+</html>

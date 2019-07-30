@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+    <!--
+    <h1>Method 1 </h1>
+    <form action="GPR.php?name=zhangsan&age=10" method="post"> //表单请求 username:
+        <input type="text" name="name">
+        <br> //name 是非常重要 , 要是传递给后端的值 age:
+        <input type="text" name="age">
+        <br>
+        <input type="submit" name="sub" value="提交">
+    <form>
+-->
+    <h1>Method 2 </h1>
+    <form action="GPR.php?arr[]=zhangsan&arr[]=10" method="post"> 
+        <input type="text" name="name[]">
+        <br> 
+        <input type="text" name="name[]">
+        <br>
+        <input type="submit" name="sub1" value="提交">
+    <form>
+</body>
+</html>

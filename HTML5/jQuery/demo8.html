@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>jquey ajax demo 8</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+    <fieldset>
+        <legend>Ajax load()</legend>
+        <div class="con">Content</div>
+        <hr>
+        <button id="demo1">load()</button>
+    </fieldset>
+    <fieldset>
+        <legend>Ajax get/post</legend>
+        <div id="getdata" style="border:1px solid red">This a get option</div><br>
+
+        <div id="postdata" style="border:1px solid green">this is a post option</div>
+        <hr>
+        <button class="getb">get()</button>
+        <button class="postb">post()</button>
+    </fieldset>
+
+    <script>
+        $(function(){
+            //1.ajax  XHR = xmlHttpRequest
+            /*
+            $.ajax({
+                type:'',
+                url:'',
+                dataType:'',
+                success:function(data){
+                    //data对象
+                },
+                error:function(e){
+                    //错误信息
+                },
+            });
+            */
+            //2.load方法
+            $("#demo1").click(function(){
+                $(".con").load("./ajax.txt #p1",function(response,status,xhr){
+                    if(status == "success"){
+                        console.info("加载的值：\n"+response+" xhr对象："+xhr.status);
+                    }else if(status == "error"){
+                        alert("Error: "+xhr.status+": "+xhr.statusText);
+                    }
+                });
+            });
+            //3.get/post()
+            $(".getb").click(function(){
+                $.get("./ajax.php?select=date",function(data,status){
+                    console.info("get请求返回的数据:\n"+data);
+                    $("#getdata").html(data);
+                });
+            });
+            $(".postb").click(function(){
+                $.post("./ajax.php",{name:"学习jQuery-post站点",url:"http://baidu.com"},function(data,status){
+                    if(status == "success")
+                    {
+                        console.info("post请求发送的数据:\n"+data);
+                        $("#postdata").html(data);
+                    }
+                    else
+                    {
+                        alert("POST数据失败！");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

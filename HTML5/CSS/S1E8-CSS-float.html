@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Css style float clear</title>
+</head>
+
+<body>
+<b style="color:pink;background-color:black;">## 元素的浮动-Float</b>
+<p>
+  <style type="text/css" media="screen">
+    img.test {float: right;
+      border:1px dotted black;
+      margin:0px 0px 15px 200px;
+}
+  </style>
+<p style="border: 1px solid black;">在下面的段落中，我们添加了一个样式为 <b>float:right</b> 的图像,结果是这个图像会浮动到段落的右侧。</p>
+<img class="test" src="http://www.w3school.com.cn/i/eg_cute.gif" alt="Text">
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+</p>
+
+<br>
+<br>
+<hr>
+<br>
+<br>
+<style type="text/css">
+span {
+float:left;
+width:0.7em;
+font-size:400%;  /**字体粗细**/
+font-family:algerian,courier;
+line-height:80%;
+}
+</style>
+
+<p>
+<span>T</span>his is some text.
+This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+</p>
+
+<p>
+在上面的段落中，文本的第一个字母包含在一个 span 元素中。这个 span 元素的宽度是当前字体尺寸的 0.7 倍。span 元素的字体尺寸是 400%，行高是 80%。span 中的字母字体是 "Algerian"
+</p>
+
+<br>
+<br>
+<hr>
+<br>
+<br>
+<b style="color:white;background-color:gray;">清除浮动-clear</b>
+<style type="text/css">
+img.test1
+  {
+  float:left;
+  clear:both;
+  }
+img.yi {float:right;border:1px solid red;}
+</style>
+<img class="test1" src="http://www.w3school.com.cn/i/eg_smile.gif" />
+<img class="test1" src="http://www.w3school.com.cn/i/eg_smile.gif" />
+<b>没有clear both 就是两张图片并排</b>
+<hr>
+<p style="color:red;">下面是一排的无clear，是靠右浮动的</p>
+<img class="yi" src="http://www.w3school.com.cn/i/eg_smile.gif" />
+<img class="yi" src="http://www.w3school.com.cn/i/eg_smile.gif" />
+
+
+</body>
+<html>

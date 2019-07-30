@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <person>
+        <name>张伟</name>
+        <age>12</age>
+        <addr>重庆市渝北区光电园轻轨站</addr>
+    </person>
+    <person>
+        <name>李伟</name>
+        <age>28</age>
+        <addr>重庆市南岸区</addr>
+    </person>
+    <person>
+        <name>黄淑华</name>
+        <age>52</age>
+        <addr>重庆市九龙坡区</addr>
+    </person>
+</root>

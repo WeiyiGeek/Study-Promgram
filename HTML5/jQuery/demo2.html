@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jquery demo2</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <fieldset>
+        <legend>jQuery 显示隐藏动画</legend>
+        <p class="xs">我是要消失的</p>
+        <p class="xs">我也是要消失的</p>
+        <div id="xsdiv" style="height:100px;width:150px;background-color:green;color:white;">会慢慢的进行消失</div>
+        <hr>
+        <button id="demo1">常见效果hide()</button><button id="demo2">背景消失</button><button id="reset">RESET-show()</button>
+        <button id="demo4">toggle()</button>
+    </fieldset>
+
+    <fieldset>
+        <legend>jQuery 显示淡入淡出</legend>
+        <p class="xs1" style="background-color:#f955ff">我是要淡入的</p>
+        <p class="xs1" style="background-color:#09551f;color:white">我也是淡入的</p>
+        <div id="xsdiv1" style="height:100px;width:150px;background-color:#666;color:white;display:none;">会慢慢的淡出</div>
+        <hr>
+        <button id="demo5">fadeIn()</button><button id="demo6">fadeOut()</button><button id="demo7">fadeToggle()</button>
+        <button id="demo8">fadeTo()</button>
+    </fieldset>
+    
+    <fieldset>
+        <legend>jQuery 效果 - 滑动上划下滑</legend>
+        <div id="pane" style="padding:5px;background-color:#e5eecc;text-align:center;">---滑动演示---</div>
+        <div id="pane1" style="padding:50px;display:none;background-color:#e5eecc;text-align:center;">Hello world!</div>
+        <hr>
+        <button id="demo9">slideUp()</button><button id="demo10">slideDown()</button>
+        <button id="demo11">slideToggle()</button>
+    </fieldset>
+
+    <script>
+        $(function(){
+            //1.jQuery 显示隐藏
+            $("#demo1").click(function(){
+                $(".xs").hide(1000,function(){
+                    console.info("隐藏完成!");
+                });
+            });
+            $("#demo2").click(function(){
+                $("#xsdiv").hide(1000,"linear",function(){
+                    console.info("背景图隐藏完成！");
+                });
+            });
+            $("#reset").click(function(){
+                $(".xs").show(500,"swing");
+                $("#xsdiv").show(500),"swing";
+            });
+
+            $("#demo4").click(function(){
+                $(".xs").toggle(500,"linear",function(){alert("切换完成")});
+                $("#xsdiv").toggle(500,"linear");
+            });
+
+
+            //2.jQuery 淡入淡出效果
+            $("#demo5").click(function(){
+                $("#xsdiv1").fadeIn(1000,function(){
+                    console.info("背景图淡入完成");
+                });
+            });
+            $("#demo6").click(function(){
+                $(".xs1").fadeOut("slow",function(){
+                    console.info("淡出完成");
+                });
+            });
+            $("#demo7").click(function(){
+                $("#xsdiv1").fadeToggle("fast",function(){
+                    console.info("背景图隐藏完成！");
+                });
+                 $(".xs1").fadeToggle("fast",function(){
+                    console.info("文字隐藏完成！");
+                });
+            });
+
+            $("#demo8").click(function(){
+                $("#xsdiv1").fadeTo("slow",0.7,function(){
+                  alert("颜色变淡完成");
+                });
+                 $(".xs1").fadeTo("slow",0.3,function(){
+                  alert("颜色变淡完成");
+                });
+            });
+
+            //3.jQuery 效果 - 滑动上划下滑
+            $("#demo9").click(function(){
+                $("#pane1").slideUp("slow",function(){
+                    console.info("上滑成功");
+                });
+            });
+            $("#demo10").click(function(){
+                $("#pane1").slideDown(1000,function(){
+                    console.info("下滑成功");
+                });
+            });
+         
+            $("#demo11").click(function(){
+                $("#pane1").slideToggle(1000,function(){
+                    alert("切换滑块");
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jquery demo 3 </title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    
+<fieldset>
+        <legend>jQuery 效果- 动画</legend>
+            <p>默认情况下，所有的 HTML 元素有一个静态的位置，且是不可移动的| 如果需要改变，我们需要将元素的 position 属性设置为 relative, fixed, 或 absolute!</p>
+            <p>属性的动画值设置为 "show"、"hide" 或 "toggle|切换"</p>
+            <div id="anim" style="background:#98bf21;height:50px;width:50px;position:relative;"></div>
+        <hr>
+        <button id="demo1">多属性+相对值</button>
+        <button id="demo2">使用预定义的值</button>
+        <button id="demo3">使用队列功能多个动画</button>
+</fieldset>
+<fieldset>
+        <legend>停止滑动、淡入淡出和自定义动画。</legend>
+            <p id="start1">点击开始动画</p>
+            <div id="anim1" style="background:#98bf21;height:50px;width:100px;display: none;"></div>
+        <hr>
+        <button id="demo4">停止动画</button>
+</fieldset>
+<fieldset>
+    <legend>jQuery 效果 - 链（chainning）</legend>
+    <div id="chain" style="position: relative;background-color:#666;width:150px;">移动的变色的文字</div>
+</fieldset>
+
+
+<script>
+    $(function(){
+        //1.jQuery 动画
+        $("#demo1").click(function(){
+            //使用需要在值的前面加上 += 或 -=：
+            $("#anim").animate({
+                left:'+=250px',
+                opacity:'0.5',
+                height:'+=50px',
+                width:'+=50px'
+            });
+        });
+        //预定义值
+        $("#demo2").click(function(){
+            $("#anim").animate({
+                height:'toggle',
+                width:'toggle'
+            });
+        });
+        //队列多动画注意这里animate中，用 Camel 标记法书写所有的属性名 font-size => fontSize
+        $("#demo3").click(function(){
+            var div=$("#anim");
+            div.animate({height:'300px',opacity:'0.4'},"slow");
+            div.animate({width:'300px',opacity:'0.8'},"slow");
+            div.animate({height:'100px',opacity:'0.4'},"slow");
+            div.animate({width:'100px',opacity:'0.8'},"slow");
+            div.animate({height:'50px'},"slow");
+            div.animate({width:'50px'},"slow");
+        });
+
+
+       //2.停止动画
+       $("#start1").click(function(){
+           $("#anim1").slideDown(2000,function(){console.info("完成！")});
+           $("#anim1").animate({width:'+=150px'},"slow");
+           $("#anim1").slideUp(1000);
+       }); 
+       $("#demo4").click(function(){
+           $("#anim1").stop(true,true);
+       });
+
+
+       //3.方法链
+       $("#chain").click(function(){
+           $("#chain").css("color","white")
+                        .animate({width:"+=10px",height:"500px",opacity:0.5},"slow")
+                        .slideUp(2000);
+       });
+       $("#chain").dblclick(function(){
+           $("#chain").css("color","green").slideUp(1000).slideDown(2000).hide("1000",function(){console.info("方法链!");alert("加载完成")})
+       });
+    });
+</script>
+
+</body>
+</html>
+
+
+
+     
+
+

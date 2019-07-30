@@ -1,0 +1,15 @@
+$(document).ready(function(){
+  $.ajax({
+    type:"GET",
+    url:"https://10.3.74.189/ajax/bb.php?callback=123",
+    dataType:"json",
+    success:function(data){
+      console.log(data);
+      $("#result").html(data.msg);
+    },
+    error:function(jqXHR){
+      console.log("存在跨域问题");
+      alert(jqXHR.status);
+    }
+  });
+});

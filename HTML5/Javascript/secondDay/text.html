@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JS demo</title>
+    <script src="./text.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <p style="color:lime;">comfirm Demo</p>
+    <input type="button" onclick="confirmTest();" value="confirm(demo)">
+
+    <p style="color:red">prompt Demo</p>
+    <input type="button" onclick="promptTest();" value="prompt(str,input)">
+
+    <p>Date() 事件envet</p>
+    <button type="button" name="button" onclick="displayDate();">显示当前时间</button>
+
+    <p id="demo"style="color:green;border:1px solid red;"></p>
+    <p>鼠标移动到下面就会触发js</p>
+    <p id="event" onmouseover="this.innerHTML=Date();">Try mouse over</p>
+
+    <hr>
+    <div id="demo1"></div>
+    <script>
+    var x = 'It\'s alright';  //使用转义\ 来转义,达到不与字符串包含符重复
+    var y = "He is called \"Johnny\"";
+    document.getElementById("demo1").innerHTML = x + "<br>" + y;
+  </script>
+
+  <button type="button" name="button" onclick="textLength();">String.Length Demo</button>
+  <hr>
+  <p onmouseover="newTest();" id="newT">Try!</p>
+  </body>
+</html>

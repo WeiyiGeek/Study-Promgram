@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title> CSS background-* style </title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		body {
+			/**style="background-color: yellow;**/
+			/**background-image: url(http://www.w3school.com.cn//i/eg_bg_04.gif);**/
+		}
+
+		p.flower {background-image: url(http://www.w3school.com.cn/i/eg_bg_03.gif); padding: 20px;}
+		a.radio {background-image: url(http://www.w3school.com.cn/i/eg_bg_07.gif);  padding: 20px;}
+
+		.repeat {
+			width: 600px;
+			height: 600px;
+			border: 1px solid red;
+			/**background-image: url(http://img5.imgtn.bdimg.com/it/u=278261023,3329259580&fm=200&gp=0.jpg);**/
+			/**background-repeat: repeat-x;**/
+			/**background-repeat: repeat-y;**/
+			background-repeat: no-repeat;
+		}
+
+		.position {
+			width: 300px;height: 300px;
+			background-image: url(http://www.w3school.com.cn/i/eg_bg_03.gif);
+			background-repeat: no-repeat;
+			background-position: center bottom;
+			border: 2px solid black;
+		}
+		.position1 {
+			width: 300px;height: 300px;
+			background-image: url(http://www.w3school.com.cn/i/eg_bg_03.gif);
+			background-repeat: no-repeat;
+			background-position: 66% 33%;
+			border: 2px solid black;
+		}
+		.position2 {
+			width: 300px;height: 300px;
+			background-image: url(http://www.w3school.com.cn/i/eg_bg_03.gif);
+			background-repeat: no-repeat;
+			background-position: 100px 100px;
+			border: 2px solid red;
+		}
+		.attach {
+			background-image: url("logo.png");
+			background-repeat: no-repeat;
+			background-position: right bottom;
+			background-attachment: fixed;
+			border: 1px solid black;
+		}
+/**
+		.backgd {
+			width: 300px;height: 300px;
+			border: 2px solid red;
+			background: #ffff00 url(http://www.w3school.com.cn/i/eg_bg_03.gif) repeat-y fixed center;
+		} **/
+	</style>
+
+</head>
+
+<body class="attach">
+	<h2 style="background-color: #f60;">This is a background-color attribute </h2>
+	<p style="background-color: rgb(48,138,45);">This is a paragraph.</p>
+	<p style="background-color: rgba(125,154,45,0.5);">带有背景透明度0.5</p>
+	<span style="background-color: transparent;">这是是一个透明的样式 </span>
+<hr>
+<br>
+<h4>background-image 属性Demo：</h4>
+<p class="flower">我是一个有花纹背景的段落。<a href="#" class="radio">我是一个有放射性背景的链接。</a></p>
+<p><b>注释：</b>为了清晰地显示出段落和链接的背景图像，我们为它们设置了少许内边距。</p>
+
+<hr>
+<br>
+<div class="repeat">
+	<h1>background-repeat</h1>
+	<span>这是一个不重复的背景样式</span>
+</div>
+
+<hr />
+
+<div class="position">
+		<h1>background-position</h1>
+	<span>这是一个背景定位(左右上下居中),bottom+center的样式</span>
+</div><br><br>
+<div class="position1">
+		<h1>background-position1</h1>
+	<span>这是一个背景定位利用百分数 66% 33%</span>
+</div><br><br>
+<div class="position2">
+		<h1>background-position1</h1>
+	<span>这是一个背景定位利用长度值 100px 100px</span>
+</div>
+
+<br />
+
+<div class="backgd">
+	 <b>使用简写属性来将所有背景属性设置在一个声明之中。</b>
+</div>
+</body>
+</html>

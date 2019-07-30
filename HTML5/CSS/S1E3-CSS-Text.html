@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Css-Text-style</title>
+<style type="text/css" media="screen">
+      p {color: red;}
+      span {color: green;}
+      p.blue {color: blue;}
+
+      p.lf {direction: ltr;}
+      p.rg{direction: rtl;}
+
+      p.small {line-height: 90%}
+      p.big {line-height: 10px}
+      p.big {line-height: 0.5}
+
+      p.text {text-indent: 1em;}   /**还可以是1cm,20%,100px**/
+
+      h6.stricken {text-decoration: line-through;}
+      h6 {text-decoration: underline overline;}
+</style>
+</head>
+
+<body>
+<b>Color属性</b>
+<p>我要设置红色</p>
+<span>我要设置绿色</span>
+<p class="blue">我要设置蓝色</p>
+
+<hr />
+<br />
+<b>Direction属性</b>
+<p class="lf">left 左方向</p>
+<p class="rg">right 右方向</p>
+
+<hr />
+<br />
+<b>Line-height属性</b>
+<p>
+这是拥有标准行高的段落。
+在大多数浏览器中默认行高大约是 110% 到 120%。
+这是拥有标准行高的段落。
+</p>
+
+<p class="small">
+这个段落拥有更小的行高。
+这个段落拥有更小的行高。
+这个段落拥有更小的行高。
+这个段落拥有更小的行高。
+</p>
+
+<p class="big">
+这个段落拥有更大的行高。
+这个段落拥有更大的行高。
+这个段落拥有更大的行高。
+这个段落拥有更大的行高。
+</p>
+
+<hr />
+<br />
+<b>text-indent属性</b>
+<p class="text">
+this p element text;this p element text;this p element text;this p element text;this p element text;this p element text;this p element text;this p element text;this p element text;this p element text;this p element text;this p element text;this p element text;this p element text;this p element text;this p element text;this p element text;
+</p>
+
+<hr />
+<br />
+
+<b>text-align属性</b>
+<h6 style="text-align:left">左对齐</h6>
+<h6 style="text-align:center">中部对齐</h6>
+<h6 style="text-align:right">右对齐</h6>
+<h6 style="text-align:justify">这是个两端对齐</h6>
+
+
+
+<hr />
+<br />
+<b>word-spacing属性</b>
+<p style="word-spacing: 30px;">This is some text. This is some text.</p>
+<p style="word-spacing: -0.5em">This is some text. This is some text.</p>
+
+<hr />
+<br />
+<b>letter-spacing属性</b>
+<h1 style="letter-spacing: -0.1em;">This is header 1</h1>
+<h4 style="letter-spacing: 20px;">This is header 4</h4>
+
+<br/>
+<hr/>
+<br/>
+<b>text-transform属性</b>
+<p style="text-transform: uppercase;">This is a P element!!</p>
+<h4 style="text-transform: lowercase;">THIS IS A H4 ELEMENT!!</h4>
+<p style="text-transform: capitalize;">this is seconde p element!!!</p>
+
+<hr>
+<br>
+<b>Text-decoration</b>
+<h1 style="text-decoration: overline;">这是标题 1</h1>
+<h2 style="text-decoration: line-through overline;">这是标题 2</h2>  <!--可以进行组合-->
+<h3 style="text-decoration: underline;">这是标题 3</h3>
+<h4 style="text-decoration: bink;">这是标题 4</h4>
+<p><a href="http://www.w3school.com.cn/index.html" style="text-decoration: none">这是一个链接,但没有下划线！！</a></p>
+
+<h6 class="stricken">查看 优先级 与 text-decoration 属性的覆盖</h6>
+<hr>
+<br>
+<b>white-space 属性</b>
+<p style="white-space: normal;">This     paragraph has    many
+    spaces           in it.</p>
+    <p>注释：当 white-space 属性设置为 normal 时，会合并所有的空白符，并忽略换行符。</p>
+    <p style="white-space: nowrap;">This     paragraph has    many
+        spaces           in it.This     paragraph has    many
+            spaces           in it.This     paragraph has    many
+                spaces           in it.This     paragraph has    many
+                    spaces           in it.</p>
+
+     <p style="white-space: pre;">This     paragraph has    many
+                        spaces           in it.This     paragraph has    many
+                            spaces           in it.This     paragraph has    many
+                                spaces           in it.This     paragraph has    many
+                                    spaces           in it.</p>
+                                    <p style="white-space: pre-wrap;">This     paragraph has    many
+                                                       spaces           in it.This     paragraph has    many
+                                                           spaces           in it.This     paragraph has    many
+                                                               spaces           in it.This     paragraph has    many
+                                                                   spaces           in it.</p>
+                                                                   <p style="white-space: pre-line;">This     paragraph has    many
+                                                                                      spaces           in it.This     paragraph has    many
+                                                                                          spaces           in it.This     paragraph has    many
+                                                                                              spaces           in it.This     paragraph has    many
+                                                                                                  spaces           in it.</p>
+</body>
+<html>

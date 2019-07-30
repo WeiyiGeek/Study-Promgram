@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>style text * demo</title>
+<style type="text/css" media="screen">
+  b {
+      color:white;
+      background-color: black;
+  }
+  .shadow {
+    font-weight: bold;
+    text-align: center;
+    text-shadow: -10px -10px 5px red;
+  }
+  .shadow1 {
+    font-size: 1cm;
+    text-shadow: 2px 2px 10px green;
+  }
+.justify {
+  text-align: justify;
+  text-justify: inter-word;
+  border: 1px solid black;
+}
+.justify1 {
+  text-align: justify;
+  text-justify: distribute ;
+  border: 1px solid lime;
+}
+</style>
+
+</head>
+<body>
+<b>text-shadow 文字影阴 Demo</b>
+<hr>
+<p class="shadow">This is a Text-shadow Demo!!</p>
+<p class="shadow1">This is a Text-shadow Demo!!</p>
+
+<br>
+<br>
+<b>text-justify Demo</b>
+<hr>
+<p class="justify">This is text-align: justify and text-justify Demo!!!!,This is text-align: justify and text-justify Demo!!!,This is text-align: justify and text-justify Demo!!!This is text-align: justify and text-justify Demo!!!</p>
+
+<p class="justify1">This is text-align: justify and text-justify Demo!!!!,This is text-align: justify and text-justify Demo!!!,This is text-align: justify and text-justify Demo!!!This is text-align: justify and text-justify Demo!!!</p>
+
+<br>
+<br>
+<b>text-overflow Demo</b>
+<hr>
+<style>
+div.test1{
+white-space:nowrap; /*不换行的*/
+width:13em;
+overflow:hidden;   /*impotrant,超出宽度则自动隐藏*/
+border:1px solid #000000;
+}
+</style>
+<p>这个 div 使用 "text-overflow:ellipsis" ：</p>
+<div class="test1" style="text-overflow:ellipsis;">This is some long text that will not fit in the box</div>
+
+<p>这个 div 使用 "text-overflow:clip"：</p>
+<div class="test1" style="text-overflow:clip;">This is some long text that will not fit in the box</div>
+
+<br>
+<br>
+<br>
+<b>##  自动换行 word-warp 与 word-break
+</b>
+<hr>
+<style>
+p.test2{
+width:11em;
+border:1px solid #000000;
+word-wrap:break-word;  /*将长单词*/
+}
+p.test3 {
+  width: 11em;
+  border: 1px solid #bebebe;
+  word-break: break-all;
+}
+</style>
+
+<span>word-wrap DEMO</span>
+<p class="test2">This paragraph contains a very long word: thisisaveryveryveryveryveryverylongword. The long word will break and wrap to the next line.</p>
+
+<p class="test3">This is a veryveryveryveryveryveryveryveryveryvery long paragraph.</p>
+
+</body>
+<html>

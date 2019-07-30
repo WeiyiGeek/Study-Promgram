@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ajax XMLSpy</title>
+    <style>
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;  /*表格边框合二为一*/
+  background-color: lime;
+}
+td {
+  padding: 5px;
+  text-align: center;
+  background-color: lightgray;
+}
+</style>
+  </head>
+  <body>
+<p>获取xml里面值转换成表单：</p>
+<input type="button" name="" value="获取" onclick='ajaxFun();'>
+<table id="result"></table>
+<script type="text/javascript">
+  function ajaxFun(){
+      var tab=document.getElementById('result');
+      var txt="";
+      //var XHR=window.XMLHttpRequest?new XMLHttpRequest():new activeXObject("Microsoft.XMLHTTP");
+      var XHRX=window.XMLHttpRequest?new XMLHttpRequest():new activeXObjext("Microsoft.XMLHTTP");
+      XHRX.open("GET","cd_catalog.xml",true);
+      XHRX.send();
+      XHRX.onreadystatechange=function(){
+        if(XHRX.readyState==4){
+          if(XHRX.status==200){
+            xmlDoc=XHRX.responseXML;
+            ar=xmlDoc.getElementsByTagName('ARTIST');
+            ti=xmlDoc.getElementsByTagName('TITLE');
+            txt="<tr><th>Artist</th><th>Title</th></tr>";
+            for (var i = 0; i < ar.length; i++) {
+              txt += "<tr><td>"+ar[i].childNodes[0].nodeValue +"</td><td>"+ ti[i].childNodes[0].nodeValue + "</td></tr>";
+            }
+            tab.innerHTML=txt;
+            console.log(XHRX.getResponseHeader('Last-Modified'));
+          }else{
+            console.log("出现错误:"+XHRX.status);
+          }
+        }
+      };
+
+  }
+</script>
+  </body>
+</html>

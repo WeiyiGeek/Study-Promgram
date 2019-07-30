@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Cookie 设置由于查看</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    function addCookie() {
+      if (document.cookie == "") {
+          document.cookie = "userid=1000";
+          document.cookie = "time=2018";
+          console.log("添加系统Cookie值成功！！");
+          window.location.reload();  //刷新页面加载Cookie
+      }else {
+        console.log("浏览器系统已存在Cookie ："+document.cookie);
+      }
+    }
+
+    //清除所有cookie函数
+    function clearCookie(){
+      if (document.cookie != "") {
+        var keys = document.cookie.match(/[^ =;]+(?=\=)/g); //采用正则匹配
+        if(keys) {
+        for(var i = keys.length;i--;)
+            document.cookie = keys[i] + '=0;expires=' + new Date(0).toUTCString()
+        }
+        console.log("浏览器系统已清空Cookie ："+document.cookie);
+      }else{
+        //否则添加cookies
+        addCookie();
+      }
+    }
+
+    //获取指定cookie名称的值
+    function getCookie(cookieParam){
+      //将Cookie以 ";" 分割成为数组
+        var aCookie = document.cookie.split("; ");
+        console.log(aCookie.length);
+        for(var i=0; i < aCookie.length; i++){
+        //将上面的分割的Cookie数组,再次进行以 "=" 分割
+            var aCrumb = aCookie[i].split("=");
+            //如果要获取的参数名相同则输出Cookie值
+            if(cookieParam === aCrumb[0])
+            {
+              return unescape(aCrumb[0] + ":"+ aCrumb[1]);
+            }
+        }
+    }
+    </script>
+    <input type="button" name="" value="添加Cookie" onclick="addCookie();">
+    <br>
+    <input type="button" name="" value="清空Cookie" onclick="clearCookie();">
+    <br>
+    <input type="button" name="" value="返回指定Cookie参数的值" onclick="javascript:alert(getCookie('time'))">
+  </body>
+</html>

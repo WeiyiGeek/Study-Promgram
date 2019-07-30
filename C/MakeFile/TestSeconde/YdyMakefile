@@ -1,0 +1,14 @@
+#Bu=arm-linux-gcc
+BU=gcc
+TARGET=all
+DEPENDENT=main.o mytool1.o mytool2.o
+$(TARGET):$(DEPENDENT)
+	$(BU) $^ -o main
+main.o:main.c
+	$(BU) -c $^ -o $@
+mytool2.o:mytool2.c
+	$(BU) -c $^ -o $@
+mytool1.o:mytool1.c
+	$(BU) -c $^ -o $@
+clean:
+	rm *.o main

@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>CSS 3.0 resize nav box-sizing</title>
+<style type="text/css" media="screen">
+  b {
+    color: white;
+    background: gray;
+    font-weight: bolder;
+  }
+</style>
+</head>
+<body>
+  <b>在 CSS3，resize 属性规定是否可由用户调整元素尺寸。</b>
+<hr>
+<style type="text/css" media="screen">
+  .rs {
+    border: 2px solid red;
+    padding: 20px 20px;
+    width: 300px;
+
+    overflow: auto;
+    resize: both;
+  }
+</style>
+<div class="rs">
+  resize 属性规定是否可由用户调整元素尺寸
+</div>
+
+<br>
+<br>
+<br>
+<b>box-sizing 属性允许您以确切的方式定义适应某个区域的具体内容。</b>
+<hr>
+<style>
+div.container{
+    width:30em;
+    border:1em solid lime;
+}
+div.box{
+    box-sizing:border-box;  /**在范围内进行并列显示*/
+    /*box-sizing: content-box;*/
+    width:50%;
+    border:1em solid red;
+    float:left; /*设置浮动**/
+}
+</style>
+<p>box-sizing:border-box</p>
+<div class="container">
+<div class="box">这个 div 占据左半部分</div>
+<div class="box">这个 div 占据右半部分</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<b>Firefox 支持替代的 -moz-appearance 属性，作用不怎么大.
+</b>
+<hr>
+<style type="text/css" media="screen">
+  .app {
+    width: 180px;
+    color: lime;
+    -moz-appearance:button;
+  }
+</style>
+<div class="app">
+  -moz-appearance:button;
+</div>
+
+
+</body>
+<html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>document 对象文档 demo</title>
+    <style type="text/css">
+      a:focus, a:active {
+      color: green;
+      }
+    </style>
+  </head>
+  <body ondblclick="activeFun(); attrzj();">
+<div style="margin:0px;font-size:1rem;font-style:normal;text-align:start;text-indent:0px;color:white;width:100%;padding:6px;font-weight:bold;background:rgb(255, 132, 0);">1）Document 对象：</div>
+<hr>
+<p id="active">点击文档中任意一元素输出元素标签名。</p>
+<input type="text" name="" value="输入内容">
+<button type="button" name="button">按钮</button>
+<p id="hasFocus" style="border:solid 1px black;color:red;"></p>
+
+<p>点击按钮设置或移除以上链接的焦点,颜色发生变化</p>
+<a id="myAnchor" href="http://baidu.com">链接的焦点</a>
+<input type="button" name="" value="获取焦点" onclick="getFocus();">
+<input type="button" name="" value="移除焦点" onclick="loseFocus();">
+
+<script type="text/javascript">
+  function $(id) {return document.getElementById(id);}
+  function activeFun(){
+    var tName = document.activeElement.tagName; //关键
+    $('active').innerHTML=tName;
+    $('active').style.color="red";
+  }
+
+  setInterval("hasFoc()",1);
+  function hasFoc(){
+    if(document.hasFocus()){  //关键
+      $('hasFocus').innerHTML = "文档获取焦点";
+    } else {
+      $('hasFocus').innerHTML = "文档失去焦点";
+    }
+  }
+
+  function getFocus(){
+    $('myAnchor').focus();
+  }
+
+  function loseFocus(){
+    $('myAnchor').blur();
+  }
+</script>
+<br>
+<br>
+<p style="margin:0px;font-size:1rem;font-style:normal;text-align:start;text-indent:0px;width:100%;padding:6px;font-weight:bold;color:rgb(255, 132, 0);">1.document.anchors</div>
+<hr>
+<a href="#" name="html">HTML 教程</a>
+<a href="#" name="css">CSS 教程</a>
+<a href="#" name="js">Javascript 教程</a>
+<a href="#js" onmouseover="anchorsFun();">点击此处可跳转</a>
+<p style="border:solid 1px red;" id="anc"></p>
+<button type="button" name="button" onclick="anFun();">统计anchors</button>
+<script type="text/javascript">
+  function anFun(){
+    alert("锚的个数：" + document.anchors.length);
+  }
+
+  function anchorsFun(){
+    $('anc').innerHTML = "";
+    for (var i = 0; i < 3; i++) {
+      $('anc').innerHTML += "anchors["+ i + "]="+ document.anchors[i].innerHTML  + "<br\>";
+    }
+  }
+</script>
+<br>
+<br>
+<p style="margin:0px;font-size:1rem;font-style:normal;text-align:start;text-indent:0px;width:100%;padding:6px;font-weight:bold;color:rgb(255, 132, 0);">2.document.baseURL</div>
+<hr>
+<b id="test1" style="border:solid 1px red;" onmouseover="test1();"></b>
+<p><strong>注意:</strong> Internet Explorer不支持基础URI属性。</p>
+<script type="text/javascript">
+function test1(){
+  $('test1').innerHTML ="baseURI = " + document.baseURI +"<br/>documentURI = " +document.documentURI;
+}
+
+function attrzj(){
+  console.log("document.head:"+document.head);
+  console.log("document.body:"+document.body);
+  console.log("document.documentElement:"+document.documentElement);
+
+  console.log("document.cookie:"+document.cookie);
+}
+
+</script>
+
+
+<p style="margin:0px;font-size:1rem;font-style:normal;text-align:start;text-indent:0px;width:100%;padding:6px;font-weight:bold;color:rgb(255, 132, 0);">3.document.forms</div>
+<hr>
+<br/>
+<b id="doctype" onmouseover="doctp()">文档名称</b>
+<p>注意:在IE 8和更早的版本,对于HTML和XHTML文档doctype属性返回null ,只在XML文档下工作</p>
+
+<form name="Form1" action="server.php" method="post"></form>
+<form name="Form2"></form>
+<form></form>
+<button type="button" name="button" onclick="formsFun();">forms用法</button>
+
+<script type="text/javascript">
+function doctp(){
+  $('doctype').innerHTML = "当前文档类型名称:" + document.doctype.name;
+  $('doctype').style.color = "green";
+}
+
+function formsFun(){
+  alert("forms个数:"+document.forms.length+ "\n文档名称:"+ document.forms[0].name);
+}
+</script>
+<p style="margin:0px;font-size:1rem;font-style:normal;text-align:start;text-indent:0px;width:100%;padding:6px;font-weight:bold;color:rgb(255, 132, 0);">4.document.images</div>
+<hr>
+<img id="runoob1" border="0" src="klematis.jpg" width="150" height="113">
+<img id="runoob2" border="0" src="klematis2.jpg" width="152" height="128">
+<button type="button" name="button" onclick="imagesFun();">document.images[]</button>
+<button type="button" name="button" onclick="ImplementationFun()">单击按钮来检查这个文件是否有功能HTML DOM 1.0
+</button>
+<script type="text/javascript">
+  function imagesFun(){
+    console.log("图像数目:"+document.images.length);
+    console.log("第一个图像的ID："+document.images[0].id);
+    console.log("第二个图形的属性"+document.images[1].src);
+  }
+  function ImplementationFun(){
+    console.log("支持DOM："+document.implementation.hasFeature("HTML","1.0"));
+  }
+</script>
+<p style="margin:0px;font-size:1rem;font-style:normal;text-align:start;text-indent:0px;width:100%;padding:6px;font-weight:bold;color:rgb(255, 132, 0);">4.document.links</div>
+<hr>
+<img src ="http://www.runoob.com/try/demo_source/planets.gif" width="145" height="126" alt="Planets" usemap ="#planetmap" onmouseover="linksFun();"> <!-- BUG:关联map 的name -->
+<map name="planetmap">
+  <area shape="rect" coords="0,0,82,126" href="sun.htm" alt="Sun">
+  <area shape="circle" coords="90,58,3" href="mercur.htm" alt="Mercury">
+  <area shape="circle" coords="124,58,8" href="venus.htm" alt="Venus">
+</map>
+<script type="text/javascript">
+  function linksFun(){
+    console.log("全文链接/地址数目area/a Tag:"+document.links.length);
+    console.log("链接的coords值:"+document.links[7].coords);
+    console.log("链接的属性"+document.links[5].href);
+    document.links[5].href = "http://baidu.com";
+    console.log("链接的属性:"+document.links[5].href);
+
+  }
+</script>
+<p style="margin:0px;font-size:1rem;font-style:normal;text-align:start;text-indent:0px;width:100%;padding:6px;font-weight:bold;color:rgb(255, 132, 0);">5.document.readyState / scripts / title</div>
+<hr>
+<button type="button" name="button" onclick="readySFun();">readyState()</button>
+<button type="button" name="button" onclick="titleFun();">getTitle</button>
+<br>
+<button type="button" name="button" onclick="scriptFun();">getScripts</button>
+<p id="js">点击上面返回当前的所有script标签的对象</p>
+  <script type="text/javascript">
+    console.log("当前加载状态："+document.readyState);
+    function readySFun() {
+      console.log("当前再次加载状态："+document.readyState);
+    }
+    function titleFun(){
+      console.log("当前的title值："+document.title);
+    }
+    function scriptFun(){
+      console.log("script元素个数："+document.scripts.length);
+      console.log("第一个script元素的内容："+document.scripts[0].innerHTML);
+    }
+  </script>
+  </body>
+</html>

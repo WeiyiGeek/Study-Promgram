@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery demo 7 </title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <fieldset>
+        <legend> 同胞节点 </legend>
+        <div style="border:2px solid #5769bc2">
+            <h6>h6标签</h6>
+            <p>p标签</p>
+            <span class="center">span标签</span>
+            <p>p标签</p>
+            <h3>h3</h3>
+            <h4>h4</h4>
+            <h5>h5标签</h5>
+        </div>
+        <hr>
+        <input id="sib" type="button" value="siblings" />
+        <button id="next" >next*</button>
+    </fieldset>
+
+    <fieldset class="test">
+        <legend>jQuery DOM 节点过了</legend>
+        <div>
+	        <p>首个段落</p>
+        </div>
+        <div>
+	        <p>中间段落</p>
+        </div>	
+        <div>
+	        <p>尾部段落</p>
+        </div>
+        <hr>
+            <div class="test1">
+                <p>菜鸟教程 (index 0).</p>
+                <p class="url">http://www.runoob.com (index 1)。</p>
+                <p>google (index 2).</p>
+                <p class="url">http://www.google.com (index 3)。</p>
+            </div>
+        <hr>
+        <button id="demo1">first()/last()</button>
+        <button id="demo2">eq()</button>
+        <button id="demo3">filter()</button>
+        <button id="demo4">not()</button>
+    </fieldset>
+    <script>
+        $(function(){
+            //2.节点过滤
+            $("#demo1").click(function(){
+                $(".test div p").first().css({"color":"red","font-weight":"bold"});
+                $(".test div p").last().css({"color":"green","font-weight":"bold"});
+            });
+            $("#demo2").click(function(){
+                $(".test1 p").eq(1).css("background-color","yellow");  
+            });
+            $("#demo3").click(function(){
+                //值得学习注意css（）当只有一个属性的时候采用,分割属性与属性值,多个属性里面用：分割
+                //class等于 url时候
+                $(".test1 p").filter(".url").css({"background-color":"#888888","color":"white"});
+
+            });
+            $("#demo4").click(function(){
+                //class不等于 url时候
+                $(".test1 p").not(".url").css({"background-color":"#A68B4C","color":"white"});
+            });
+
+            //1.同胞siblings
+            $("#sib").click(function(){
+               $(".center").siblings().css({"color":"#5987BC"}); 
+               console.info("siblings()：是上下查找同胞节点");
+            });
+            $("#next").click(function(){
+                $(".center").nextAll().css({"border":"2px solid black","font-weight":"bold"});
+                $(".center").nextUntil("h3").css({"border":"2px solid black","font-weight":"bold"}); //p标签受到影响
+            });
+        })
+    </script>
+</body>
+</html>

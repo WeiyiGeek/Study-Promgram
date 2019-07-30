@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>CSS-style excursion clip</title>
+</head>
+<b style="color:fuchsia">Excursion -TOP/RIGHT/BOTTOM/LEFT</b>
+<style type="text/css" media="screen">
+  img.normal {position: absolute;top: 50px;right: 0px;}
+  /**img.normal1 {position: absolute;bottom: 0px;left: 0px;}**/
+  img.normal2 {position: absolute;left: 20%;top: 5%;}
+</style>
+<h6>这是一个标题的</h6>
+<img src="./logo.png" alt="logo" class="normal" />
+<p>This is a p element!!!!This is a pelement!!!</p>
+
+<h6>这是一个标题的</h6>
+<img src="./logo.png" alt="logo" class="normal1" />
+<p>This is a p element!!!!This is a pelement!!!</p>
+<h6>这是一个标题的</h6>
+<img src="./logo.png" alt="logo" class="normal2" />
+<p>This is a p element!!!!This is a pelement!!!</p>
+<br>
+<br>
+<br>
+<hr>
+<br>
+<br>
+<br>
+<b style="color:lime;background-color:black;">## 当内容溢出元素框时-overflow</b>
+<style type="text/css" media="screen">
+  div.scroll {width: 150px;height:150px;overflow: scroll;background-color: rgba(42,128,65,0.5);}
+  div.hiddle {width: 150px;height: 150px;overflow: hidden;background-color: rgba(78,45,123,0.5)}
+</style>
+<br>
+Scroll <!--#如何设置浏览器来自动地处理溢出auto-->
+<div class="scroll">
+  <p>this is A overfolw-scroll!!this is A overfolw-scroll!!this is A overfolw-scroll!!this is A overfolw-scroll!!this is A overfolw-scroll!!this is A overfolw-scroll!!this is A overfolw-scroll!!</p>
+</div>
+<br>
+hiddle
+<div class="hiddle">
+  <p>this is A overfolw-Hiddle!!this is A overfolw-Hiddle!!this is A overfolw-Hiddle!!this is A overfolw-Hiddle!!this is A overfolw-Hiddle!!this is A overfolw-Hiddle!!this is A overfolw-Hiddle!!</p>
+</div>
+
+<br>
+<br>
+<hr>
+<br>
+<br>
+<b style="color:maroon;background-color:black;">## 剪裁图片进行显示-clip
+</b>
+<style type="text/css">
+img.clip {
+position:absolute;
+clip:rect(8px 79px 45px 42px) /**45-8px(上下) 79-42(左右)**/
+}
+img.clip {position: absolute;clip: auto;
+}
+</style>
+<p>clip 属性剪切了一幅图像：</p>
+<p><img  class="clip1" border="0" src="http://www.w3school.com.cn/i/eg_bookasp.gif" width="120" height="151"></p>
+<br>
+<hr>
+<br><p><img class="clip" border="0" src="http://www.w3school.com.cn/i/eg_bookasp.gif" width="120" height="151"></p>
+
+<br>
+<br>
+<hr>
+<br><br><br><br><br><br><br><br><br><br>
+<br>
+<hr>
+<b style="color:yellow;background-color:black;">## 元素的垂直对齐方式-vertical-align
+</b>
+<style type="text/css">
+img.baseline {vertical-align: baseline;}
+img.top1 {vertical-align:top}
+img.top {vertical-align:text-top}
+img.bottom1 {vertical-align:bottom}
+img.bottom {vertical-align:text-bottom}
+img.middle {vertical-align:middle}
+img.sub {vertical-align:sub}
+img.super {vertical-align:super}
+img.baifenbi {vertical-align:-200%;}
+img.em {vertical-align:2em;}
+</style>
+<p>这是一幅<img class="baseline" border="0" src="http://www.w3school.com.cn/i/eg_cute.gif" />把元素的顶端与行中最高元素的顶端对齐-baseline</p>
+
+<p>这是一幅<img class="top1" border="0" src="http://www.w3school.com.cn/i/eg_cute.gif" />把元素的顶端与行中最高元素的顶端对齐-top</p>
+<p>这是一幅<img class="top" border="0" src="http://www.w3school.com.cn/i/eg_cute.gif" />把元素的顶端与父元素字体的顶端对齐-text-top</p>
+
+<p>这是一幅<img class="bottom1" border="0" src="http://www.w3school.com.cn/i/eg_cute.gif" />把元素的顶端与行中最低的元素的顶端对齐-bottom</p>
+<p>这是一幅<img class="bottom" border="0" src="http://www.w3school.com.cn/i/eg_cute.gif" />把元素的底端与父元素字体的底端对齐-text-bottom</p>
+
+
+<p>这是一幅<img class="middle" border="0" src="http://www.w3school.com.cn/i/eg_cute.gif" />把此元素放置在父元素的中部-middle</p>
+<p>这是一幅<img class="sub" border="0" src="http://www.w3school.com.cn/i/eg_cute.gif" />垂直对齐文本的下标-sub</p>
+<p>这是一幅<img class="super" border="0" src="http://www.w3school.com.cn/i/eg_cute.gif" />垂直对齐文本的上标-super</p>
+<p>这是一幅<img class="baifenbi" border="0" src="http://www.w3school.com.cn/i/eg_cute.gif" />使用 "line-height" 属性的百分比值来排列此元素，允许使用负值。</p>
+<p>这是一幅<img class="em" border="0" src="http://www.w3school.com.cn/i/eg_cute.gif" />使用em的长度</p>
+
+
+<br>
+<br><br>
+<hr>
+<br>
+<br>
+<b style="color:blue;background-color:rgba(78,45,45,0.5);">## 元素的堆叠顺序-z-index
+</b>
+<style type="text/css" media="screen">
+img.x {position: absolute;top: 2700px;left: 0px;z-index: -1}
+img.y {position: absolute;top: 2900px;right: 100px;z-index: 1}
+
+</style>
+<h1>这是一个标题</h1>
+<img class="x" src="http://www.w3school.com.cn/i/eg_mouse.jpg" />
+<p>默认的 z-index 是 0,Z-index -1 拥有更低的优先级,img在文字底下</p>
+<br>
+<br>
+
+
+<h1 style="text-align:right;">这是一个标题</h1>
+<img class="y" src="http://www.w3school.com.cn/i/eg_mouse.jpg" />
+<p style="text-align:right;">默认的 z-index 是 0。Z-index 1 拥有更高的优先级,图片在上面</p>
+
+
+</body>
+<html>

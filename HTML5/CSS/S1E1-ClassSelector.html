@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>CSS cascading style sheet</title>
+<style type="text/css">
+.center {
+	text-align: center;
+	color: white;
+	background-color: #771100;
+}
+.fancy td {
+	color: #f60;
+	background-color: black;
+}
+td.fanc {
+    color: green;
+    background: #666;
+    }
+
+[titlew]{
+	color: red;
+	background-color: blue;
+}
+
+[title=W3School]{
+border:5px solid blue;
+}
+
+[title~=hello]{
+color:red;
+}
+
+[lang|=en]
+{
+color:red;
+}
+</style>
+</head>
+
+<body>
+
+<h1 class="center">
+This heading will be center-aligned
+</h1>
+
+<p class="center">
+This paragraph will also be center-aligned.
+</p>
+
+<div class="fancy">
+	<table border="1px">
+		<tr>
+			<th>这个是个头</th>
+			<td>这是一个class类选择器作为，派生选择器</td>
+		</tr>
+		<tr>
+			<th>这是第二个头</th>
+			<td class="fanc">元素也可以基于它们的类而被选择</td>
+		</tr>
+	</table>
+</div>
+
+<hr>
+<h1>属性选择器</h1>
+<h2 title="Hello World">Hello World</h2>
+<a title="test" href="http://www.baidu.com" target="_blank" />这是利用属性选择器的样式</a>
+<h1>无法应用样式：</h1>
+<h2>Hello world</h2>
+<a href="http://w3school.com.cn">W3School</a>
+
+<hr>
+
+<h1>可以应用样式：</h1>
+<img title="W3School" src="http://www.w3school.com.cn/i/w3school_logo_white.gif" />
+<br />
+<a title="W3School" href="http://w3school.com.cn">W3School</a>
+<hr />
+
+<h1>无法应用样式：</h1>
+<p title="greeting">Hi!</p>
+<a class="W3School" href="http://w3school.com.cn">W3School</a>
+
+<hr>
+
+<br />
+
+<h1>属性和值选择器 - 多个值</h1>
+
+<h1>可以应用样式：</h1>
+<h2 title="hello world">Hello world</h2>
+<p title="student hello">Hello W3School students!</h1>
+<hr />
+
+<h1>无法应用样式：</h1>
+<h2 title="world">Hello world</h2>
+<p title="student">Hello W3School students!</p>
+
+
+<hr /><br>
+
+<h1>可以应用样式：</h1>
+<p lang="en">Hello!</p>
+<p lang="en-us">Hi!</p>
+
+<hr />
+
+<h1>无法应用样式：</h1>
+<p lang="www en-us">Hi!</p>  <!--没有以en为开头的本身或者单词-->
+<p lang="us">Hi!</p>
+<p lang="zh">Hao!</p>
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>css-list-style</title>
+<style type="text/css">
+  div.div1 {border: 1px solid red;}
+
+  ul.disc {list-style-type: disc;background-color: rgba(34,139,34,0.5);}
+  ul.circle {list-style-type: circle;background-color: rgba(255,69,0,0.5);}
+  ul.square {list-style-type: square;background-color: rgba(34,87,82,0.5);}
+  ul.none {list-style-type: none;background-color: rgba(250,128,114,0.5);}
+
+  ol.disc {list-style-type: decimal-leading-zero;background-color: rgba(250,128,114,0.5)}
+  ol.circle {list-style-type: lower-alpha;background-color: rgba(255,69,0,0.5);}
+  ol.square {list-style-type: upper-roman;background-color: rgba(34,87,82,0.5);}
+  ol.none {list-style-type: upper-latin;background-color: rgba(34,139,34,0.5);}
+
+  ul.inside {
+  list-style-image: url('http://www.w3school.com.cn/i/eg_arrow.gif');
+  list-style-position: inside
+  }
+
+ul.outside {
+  list-style-image: url('http://www.w3school.com.cn/i/eg_arrow.gif');
+  list-style-position: outside
+  }
+</style>
+</head>
+
+<body>
+<b style="color: lime;background-color:black;">list-style-type</b>
+<div class="div1">
+    <ul class="disc">
+    <li>咖啡</li>
+    <li>茶</li>
+    <li>可口可乐</li>
+    </ul>
+
+    <ul class="circle">
+    <li>咖啡</li>
+    <li>茶</li>
+    <li>可口可乐</li>
+    </ul>
+
+    <ul class="square">
+    <li>咖啡</li>
+    <li>茶</li>
+    <li>可口可乐</li>
+    </ul>
+
+    <ul class="none">
+    <li>咖啡</li>
+    <li>茶</li>
+    <li>可口可乐</li>
+    </ul>
+</div>
+<br>
+<div class="div1">
+    <ol class="disc">
+    <li>咖啡</li>
+    <li>茶</li>
+    <li>可口可乐</li>
+  </ol>
+
+    <ol class="circle">
+    <li>咖啡</li>
+    <li>茶</li>
+    <li>可口可乐</li>
+  </ol>
+
+    <ol class="square">
+    <li>咖啡</li>
+    <li>茶</li>
+    <li>可口可乐</li>
+  </ol>
+
+    <ol class="none">
+    <li>咖啡</li>
+    <li>茶</li>
+    <li>可口可乐</li>
+  </ol>
+</div>
+
+<hr>
+<br>
+<b style="color: maroom">列表项图像 list-style-image </b>
+<ul style="list-style-image: url('http://www.w3school.com.cn/i/eg_arrow.gif');list-style-type: square;">
+<li>咖啡</li>
+<li>茶</li>
+<li>可口可乐</li>
+</ul>
+<p>注释：请始终规定一个 "list-style-type" 属性以防图像不可用。</p>
+
+<hr>
+<br>
+<b style="color: navy;">列表标志位置 list-style-position  </b>
+<p>该列表的 list-style-position 的值是 "inside"：</p>
+<ul class="inside">
+<li>Earl Grey Tea - 一种黑颜色的茶</li>
+<li>Jasmine Tea - 一种神奇的“全功能”茶</li>
+<li>Honeybush Tea - 一种令人愉快的果味茶</li>
+</ul>
+
+<p>该列表的 list-style-position 的值是 "outside"：</p>
+<ul class="outside">
+<li>Earl Grey Tea - 一种黑颜色的茶</li>
+<li>Jasmine Tea - 一种神奇的“全功能”茶</li>
+<li>Honeybush Tea - 一种令人愉快的果味茶</li>
+</ul>
+
+
+<br>
+<hr>
+<br>
+<b style="color: olive;">list-style 设置全部属性</b>
+<ul style="list-style: square inside url('http://www.w3school.com.cn/i/eg_arrow.gif')">
+<li>咖啡</li>
+<li>茶</li>
+<li>可口可乐</li>
+</ul>
+
+
+</body>
+<html>

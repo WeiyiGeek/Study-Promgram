@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Windows 方法</title>
+
+  </head>
+  <body>
+<p style="color:lime;font-weight:blod;border:solid green 1px;background-color:black;">1.windows open() & close()</p>
+<hr>
+<input type="button" name="" value="open()" onclick="openUrl();"> <br/> <br/>
+<input type="button" name="" value="close()" ondblclick="closeUrl();"><br/> <br/>
+<input type="button" name="" value="print()" onclick="printf();"><br/> <br/>
+<input type="button" name="" value="moveBy():当前坐标移动像素" onclick="mvBy();"><br/> <br/>
+<input type="button" name="" value="moveTo():窗口移动到一个指定的坐标" onclick="mvTo();"><br/> <br/>
+<input type="button" name="" value="resizeBy():当前窗口大小改变" onclick="rsBy();"><br/> <br/>
+<input type="button" name="" value="resizeTo():指定窗口大小" onclick="rsTo();"><br/> <br/>
+<input type="button" name="" value="scrollBy():当前滑动栏改变" onclick="scrBy();"><br/> <br/>
+<input type="button" name="" value="scrollTo():指定滑动栏到多少" onclick="scrTo();"><br/> <br/>
+<script type="text/javascript">
+  var winUrl;
+  function openUrl(){
+    //winUrl = prompt("请输入URL：","http://baidu.com");
+    winUrl = window.open('window.html',"testName","titlebar=0,location=0,fullscreen=no,height=100px,width=100px,left=0px,top=0px,menubar=no,toolbar=0,resizeable=0,scrollbars=yes",true);
+    winUrl.blur();  //方法可把键盘焦点从顶层窗口移开，从而将我们打开的窗口获得“键盘”输入焦点
+  //  winUrl.document.write("<a href='javascript:window.print();'>打印</a>");
+
+  }
+
+  function closeUrl(){
+    if(winUrl){
+      winUrl.close();
+      alert('窗口已经关闭');
+    }
+  }
+
+  function printf(){
+    window.print();
+    alert('窗口已经打印');
+  }
+
+  function mvBy(){
+    alert(winUrl.screenX + "," +winUrl.screenY );
+    winUrl.moveBy(100,100);     //如果是指定url就会有安全警告,不能跨域使用
+    winUrl.focus(); //设置窗口焦点
+  }
+
+  function mvTo(){
+    winUrl.moveTo(0,0);
+    winUrl.focus();
+    alert("当前位置:(0,0)");
+  }
+
+  function rsBy(){
+    alert( winUrl.innerWidth + "," + winUrl.innerHeight);
+    winUrl.resizeBy(100,100);
+    winUrl.focus();
+  }
+
+  function rsTo(){
+    alert( winUrl.innerWidth + "," + winUrl.innerHeight);
+    winUrl.resizeTo(200,300);
+    alert( winUrl.innerWidth + "," + winUrl.innerHeight);
+    winUrl.focus();
+  }
+
+  function scrBy(){
+    winUrl.scrollBy(100,100); //滚动栏滑动
+    winUrl.focus();
+  }
+
+  function scrTo(){
+    winUrl.scrollTo(200,200); //滚动栏滑动
+    winUrl.focus();
+  }
+</script>
+
+<br>
+<br>
+<p style="color:lime;font-weight:blod;border:solid red 1px;background-color:black;">2.windows setInterval() & clearInterval()</p>
+<hr>
+<input type="button" name="" value="setInterval():开始计时" onclick="setInt();"><br/>
+<input type="button" name="" value="clearInterval():关闭计时" onclick="javascript:clearInterval(currentTime);"><br/>
+<p  id="id5" style="color:yellow;border:solid black 1px;background-color:black;">当时时间</p>
+<script type="text/javascript">
+  function $(id) {return document.getElementById(id);}
+  function setInt(){
+    currentTime = setInterval (function() { timer() } , 1000); //自我调用
+  }
+  function timer(){
+    var d = new Date();
+    var t = d.toLocaleTimeString();
+    $('id5').innerHTML = t;
+  }
+</script>
+<br>
+<h3>JavaScript 进度条</h3>
+<input type="button" name="" value="点击加载" onclick="progress();">
+<style type="text/css">
+  .progress {
+    width: 100%;
+    height: 30px;
+    position: relative;
+    background-color: #ddd;
+    border: solid blue 1px;
+  }
+  .pBar {
+    width: 0px;
+    height: 30px;
+    position: absolute;
+    background-color: #4CAF50;
+  }
+</style>
+<div class="progress">
+  <div class="pBar" id="test"></div>
+</div>
+<script type="text/javascript">
+  function progress(){
+    var elem = document.getElementById('test');
+    var width = 0;
+    var id = setInterval(function(){tProgress()},1000);
+    function tProgress(){
+      if(width == 100){
+        clearInterval(id);
+      }else {
+        width++;
+        elem.style.width = width + '%';
+        elem.style.backgroundColor = elem.style.backgroundColor == "yellow" ? "pink" : "yellow";  //改变颜色
+      }
+    }
+  }
+</script>
+<br><br>
+<!--参数的传递-->
+<p>点击按钮每 2 秒输出 "Hello"。</p>
+<p>实例中，我们也会输出传递给 alertFunc() 函数的参数 ( 兼容所有浏览器 )。</p>
+<button type="button" name="button" onclick="argmInterval();">start</button>&nbsp;&nbsp;<button type="button" name="button" onclick="JavaScript:clearInterval(id2);">stop</button>
+<br>
+<p id="demo"></p>
+<p id="demo2" style="color:red;"></p>
+<script type="text/javascript">
+  var id2;
+  function argmInterval(){
+    id2 = setInterval(function(){ alertFunc("boy","Good")},2000);
+  }
+  function alertFunc(param1,param2){
+    $('demo').innerHTML += "Hello ";
+    $('demo2').innerHTML ="传递给 alertFunc() 的参数: <br>" + param1 + "<br>" + param2 + "<br>";
+  }
+
+</script>
+
+<br>
+<br>
+<br>
+<p style="color:lime;font-weight:blod;border:solid red 1px;background-color:black;">3.windows setTimeout() & clearTimeout()</p>
+<hr>
+<p>3秒后显示时间 及 修改文本框的值 </p>
+<button type="button" name="button" onclick="hello();">时间与文本框</button><input type="button" name="" value="暂停执行" onclick="JavaScript:clearTimeout(myVar)"><br>
+<input type="text" id="txt">
+
+<p>打开一个新窗口，3 秒后将该窗口关闭:</p>
+<button onclick="openWin()">打开 "窗口"</button>
+
+
+<p>显示当前时间给小于10数字前面加上0</p>
+<button type="button" name="button" onclick="startTime()">详细时间</button>
+<input type="text" name="" value="" id="tt">
+
+<script type="text/javascript">
+  var myVar;
+  function hello(){
+    myVar = setTimeout(function(){alert(new Date);},2000);
+    myVar = setTimeout(function(){ $('txt').value="2 秒" }, 2000);  //注意这里2秒后会叠加时间所以 2000 / 4000 / 6000
+    myVar = setTimeout(function(){ $('txt').value="4 秒" }, 4000);
+    myVar = setTimeout(function(){ $('txt').value="6 秒" }, 6000);
+  }
+
+  function openWin(){
+    var topen = window.open('window.html','test','width=200px,height=200px;');
+    topen.focus();
+    setTimeout(function(){ topen.close()},3000)
+  }
+
+  function startTime(){
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = check(m);
+  s = check(s);
+  $('tt').value = h + ":" + m + ":" + s;
+  myVar = setTimeout(function(){ startTime()},500);
+  }
+
+  function check(i){
+    if(i < 10){
+      i = "0" + i;
+    }
+    return i;
+  }
+</script>
+
+<br>
+<hr>
+<br>
+
+<script type="text/javascript">
+  var messages = ['1','2','3'];
+  var i;
+  for (i = 0; i < messages.length; i++) {
+    setTimeout(function (){console.log(messages[i]);}, i * 1500); //3次undefined
+    console.log(i); //输出 0 1 2
+  }
+  console.log(i);  // 输出3
+</script>
+
+
+  </body>
+</html>

@@ -1,0 +1,9 @@
+CC = gcc
+OBJECT = main.o mytool1.o mytool2.o
+TARGET = all
+$(TARGET):$(OBJECT)
+	$(CC) $^ -o main
+%.o:%.c
+	$(CC) -c $< -o $@
+clean:
+	rm *.o main 

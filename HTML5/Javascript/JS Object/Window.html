@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Window 对象学习</title>
+<script>
+function $(id){return document.getElementById(id);}
+
+var myWindow;
+function openWin(){
+	myWindow=window.open("","window.name","width=400,height=200"); //window 打开的窗口对象
+	myWindow.document.write("<p>窗口名称为: " + myWindow.name + "</p>");
+	myWindow.opener.$('msg').innerHTML = ("<p>这个是源窗口!</p>");  //对于源窗口进行写入,会影响是否正确关闭open()方法打开的窗口
+	alert("源窗口URL地址："+window.parent.location);
+}
+
+function closeWin(){
+	if (myWindow){  //为真则关闭
+		myWindow.close();
+	}
+}
+
+function checkWin(){
+	if (!myWindow){ //判断窗口对象是不是打开
+		$('msg').innerHTML="我的窗口没有被打开!";
+	}else{
+		if (myWindow.closed){
+			$('msg').innerHTML="我的窗口被关闭!";
+		}else{
+			$('msg').innerHTML="我的窗口没有被关闭!";
+		}
+	}
+}
+
+function check(){
+	if (window.top != window.self) {
+		$('msg1').innerHTML="不是顶层窗口";
+	}
+	else{
+		$('msg1').innerHTML="这个窗口是最顶层窗口!";
+	}
+}
+
+</script>
+</head>
+<body>
+<b style="color:red">window.closed  / window.name</b><br><br>
+<input type="button" value="打开我的窗口" onclick="openWin()" />
+<input type="button" value="关闭我的窗口" onclick="closeWin()" />
+<br><br>
+<input type="button" value="我的窗口被关闭了吗?" onclick="checkWin()" />
+<br><br>
+<input type="button" onclick="check()" value="检查窗口">
+<br><br>
+是否关闭:<b id="msg"></b>
+<br>
+窗口：<b id="msg1"></b>
+<hr/>
+
+
+
+<b style="color:red">window.defaultStatus</b><br><br>
+<script>
+window.defaultStatus="这是默认状态栏文本! !";
+</script>
+<p>查看状态栏中的文本。</p>
+<p><b>注意：</b> defaultStatus属性在Firefox、Chrome或Safari的默认配置下是不工作的。</p>
+
+<hr>
+<b style="color:red">window.frames</b><br><br><!--
+<iframe src="http://www.qq.com" width="" height=""></iframe>
+<iframe src="http://www.taobao.com" width="" height=""></iframe>
+<iframe src="http://www.runoob.com" width="" height=""></iframe>-->
+<button onclick="changeWebSite()">点击转换框架中的网页</button>
+<script>
+  function changeWebSite(){
+    for (var i = 0; i < window.frames.length; i++) {
+    window.frames[i].location = "http://www.baidu.com";  //修改全部框架的src地址
+    alert("iframe框架个数为:"+window.frames.length + "  方式二:"+frames.length);
+}  }
+</script>
+
+<hr>
+<b style="color:red">window.innerWidth / innerHeight</b><br>
+<b style="color:red">window.outerWidth / outerHeight</b><br>
+<p id="id1" style="border:solid green 1px">单击按钮来显示这个窗口的高度和宽度,以及带上工具条与滚动条</p>
+<button type="button" name="button" onclick="getWindowSize()">点击获取窗口大小</button>
+<script>
+function getWindowSize(){
+  $('id1').innerHTML="浏览器中网页(除去工具条与滚动条)：height：" +window.innerHeight +"    -    weight：" + window.innerWidth+ "<br/>浏览器界面(工具条与滚动条)Height:" + window.outerHeight + "    -     Weight:" +window.outerWidth;
+  }
+</script>
+
+<hr>
+<b style="color:red">window.screenLeft / screenTop</b><br>
+<b style="color:red">window.screenX / screenY</b><br>
+<p id="id2" style="font-size:18px;border:solid lime 2px;">相对于屏幕距离左上角的x与y的坐标</p>
+<input type="button" name="" value="获取x与y的坐标" onclick="getXY();">
+<script type="text/javascript">
+	function getXY(){
+		var txt = "";
+		txt += "<br/>相对于屏幕左方:" + window.screenLeft;
+		txt +="<br/>相对于屏幕上方:" + window.screenTop;
+		txt += "<br/>离屏幕左上角x:" + window.screenX;
+		txt +="<br/>离屏幕左上角y:" + window.screenY;
+			$('id2').innerHTML=txt;
+	}
+</script>
+
+<style type="text/css">
+.div1 {
+    border: 1px solid black;
+    background-color: lightblue;
+    height: 2000px;
+    width: 200px;
+}
+</style>
+<hr>
+<button type="button" name="button" onclick="xyOffset();" >按键也随之而浮动</button>
+
+<b style="color:red">pageXOffset / pageYOffset</b><br>
+<div class="div1">
+</div>
+<script type="text/javascript">
+	function xyOffset(){
+		window.scrollBy(0,100);
+		if (window.pageXOffset !== undefined) {  // 所有浏览器，除了 IE9 及更早版本
+		 alert("水平滚动: " + window.pageXOffset + ", 垂直滚动: " + window.pageYOffset);
+ 		} else {   // IE9 及更早版本
+		 alert("水平滚动: " + document.documentElement.scrollLeft+ ", 垂直滚动: " + document.documentElement.scrollTop);
+ 		}
+	}
+</script>
+
+<hr/>
+<b style="color:#0A4D86">window.history 对象</b><br>
+<a href="http://baidu.com" target="_self">百度</a>
+<a href="http://qq.com" target="_self">腾讯</a>
+<p id="id3" style="font-size:18px;border:solid lime 2px;">当前的窗口历史列表中的网址数</p>
+<input type="button" value="查看历史列表数" onclick="getHistory();" />
+<input type="button" value="back" onclick=" backHis();" />
+<input type="button" value="forward" onclick="forwardHis();" />
+<input type="button" value="go(num)" onclick="goHis();" />
+<script>
+	function getHistory(){
+		$('id3').innerHTML="历史列表中的网址数:"+history.length;
+	}
+	function backHis(){
+		window.history.back();
+	}
+	function forwardHis(){
+		window.history.forward();
+	}
+	function goHis(){
+		var num = prompt('请输入要返回的数量',);
+		window.history.go(num);
+	}
+</script>
+
+<hr/>
+<b style="color:#0A4D86">window.location 对象</b><br>
+<input type="button" name="" value="点击获取location信息" onclick="locainfo();">
+<button type="button" name="button" onclick="newDoc()">打开新的文档页面</button>
+<button type="button" name="button" onclick="reloadDoc()">刷新页面</button>
+<button type="button" name="button" ondblclick="replaceDoc()">替换文档页面</button>
+
+<script type="text/javascript">
+	function locainfo(){
+		var text ="href: "+location.href + "\nHash：";
+		text += window.location.hash + "\nHost：";
+		text += window.location.host + "\nHostName：";
+		text += window.location.hostname + "\nURL：";
+		text += window.location.pathname + "\nPort:	";
+		var port = window.location.port;
+		if( port == "" ){
+			text += "80" + "\nProtocol:	";
+		}else{
+			text += port + "\nProtocol:";
+		}
+		text += window.location.protocol + "\"\nSearch：" + window.location.search+"\n"
+		console.log(text);
+	}
+
+	function newDoc(){
+		window.location.assign("http://baidu.com");
+	}
+	function reloadDoc(){
+		window.location.reload();
+	}
+	function replaceDoc(){
+		window.location.replace("http://baidu.com");
+	}
+</script>
+
+</body>
+</html>

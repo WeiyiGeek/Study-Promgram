@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IF demo</title>
+  </head>
+  <body>
+    <p style="color:red;font-weight:bold;">if 语句的五则运算</p>
+    <form class="" action="./index.html" method="get">
+      <input type="number" name="var1"  value="" id="var1" placeholder="请输入数字:1" onchange="calculate();">
+      <select class="" name="" id="opera" onchange="calculate();">
+        <option value="+" selected>+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+      </select>
+      <input type="number" name="var1" value="" id="var2" placeholder="请输入数字:2" onchange="calculate();"> =
+      <b id="result"></b>
+    </form>
+    <button type="button" name="button" onclick="calculate();">计算结果</button>
+
+    <script>
+    function calculate(){
+      var var1 = document.getElementById('var1').value;
+      var var2 =  document.getElementById('var2').value;
+      var opera =  document.getElementById('opera').value;
+      var result = document.getElementById('result');
+
+      if (opera == "+") {
+        result.innerHTML = Number(var1) + Number(var2);
+
+      }else if (opera == "-") {
+        result.innerHTML = Number(var1) - Number(var2);
+
+      }else if (opera == "*") {
+        result.innerHTML = Number(var1) * Number(var2);
+
+      }else if (opera == "/") {
+        result.innerHTML = Number(var1) / Number(var2);
+
+      }else if (opera == "%") {
+        result.innerHTML = Number(var1) % Number(var2);
+
+      }else {
+          alert("亲,计算失败请重新计算！");
+      }
+    }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Array object Demo</title>
+  </head>
+  <body>
+<p>点击按钮创建一个数组，并显示它的构造函数,长度与构造函数</p>
+<div id="demo1" style="border:1px solid red;"></div>
+<input type="button" name="test" value="Click Test" onclick="demo1()">
+<br>
+<hr>
+<input type="button" name="" value="刷新页面" onclick="javascript:location.reload()">
+<script type="text/javascript">
+  function demo1(){
+    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+  	var x=document.getElementById("demo1");
+  //  console.log("constructor函数构造:\n"+fruits.constructor);
+
+    var books = new Array();
+     books[0] = "javascript编程艺术";
+     books[1] = "Js Dom 详解";
+     books[2] = "前端浪潮";
+    x.innerHTML="数组长度："+books.length;
+
+    function employee(name,job,born){  //对象函数
+        this.name=name;
+        this.job=job;
+        this.born=born;
+    }
+    var bill = new employee("Weiyi","IT",1998);
+    employee.prototype.salary=null; //添加一个对象的属性
+    bill.salary=2000; //相当于this.salary=2000
+    document.write(bill.toSource());
+  //  console.log("Salary："+bill.salary);
+  }
+</script>
+
+<script type="text/javascript">
+function conCatf(){
+  var a = [1,2,3];
+var b = new Array();
+    b[0] = 4;
+    b[1] = 5;
+var c = new Array(3);
+    c[0] = 6;
+    c[1] = 7;
+    c[2] = 8;
+
+console.log("Method1:"+a.concat(4,5));
+console.log("Method2:"+a.concat(b));
+console.log("Method3:"+a.concat(b,c));
+}
+
+function joinF(){
+var arr = new Array(3)
+arr[0] = "George"
+arr[1] = "John"
+arr[2] = "Thomas"
+console.log("Default："+arr.join());
+console.log("Separator='-'："+arr.join("-"));
+}
+
+var arr = new Array(3)
+arr[0] = "1-Weiyi"
+arr[1] = "2-WeiGeek"
+arr[2] = "3-Weiye"
+
+var arra = new Array(3)
+arra[0] = "George"
+arra[1] = "John"
+arra[2] = "Thomas"
+
+function shiftF(){
+  console.log(arra+"\t"+arra.length);
+  console.log(arra.shift());
+  console.log(arra+"\t"+arra.length);
+}
+
+function popF(){
+  var arr = new Array(3)
+  arr[0] = "George"
+  arr[1] = "John"
+  arr[2] = "Thomas"
+
+  console.log(arr+"\t"+arr.length);
+  console.log(arr.pop());
+  console.log(arr+"\t"+arr.length);
+}
+
+
+function unshiftF(){
+  console.log(arr+"\t"+arr.length);
+  console.log(arr.unshift("jakes"));
+  console.log(arr+"\t"+arr.length);
+}
+function pushF(){
+  console.log(arr+"\t"+arr.length);
+  console.log(arr.push("jakes"));
+  console.log(arr+"\t"+arr.length);
+}
+
+function reverseF(){
+  console.log("Default："+arr);
+  console.log("Reverse: "+arr.reverse());
+}
+
+
+var srr = new Array(6)
+srr[0] = "0-George"
+srr[1] = "1-John"
+srr[2] = "2-Thomas"
+srr[3] = "3-James"
+srr[4] = "4-Adrew"
+srr[5] = "5-Martin"
+
+function sliceF(){
+  console.log(srr.slice(2,4));  //2开始4结束 (只有2/3)
+  console.log(srr.slice(-3));  //取倒数三个
+  console.log(srr.slice(-3,-1));   //取倒数3和倒数2(两个数)
+}
+
+function spliceF(){
+  var arr = new Array(6)
+arr[0] = "George"
+arr[1] = "John"
+arr[2] = "Thomas"
+arr[3] = "James"
+arr[4] = "Adrew"
+arr[5] = "Martin"
+
+document.write("Default: "+arr + "<br />")
+arr.splice(2,0,"-William-");  //添加到第三个元素处  7
+document.write("add: "+arr + "<br />")
+arr.splice(2,2,"-William-");  //删除第三/四个元素并替换第三个元素  6
+document.write("Replace: "+arr + "<br />")
+}
+
+
+function sortF(){
+
+  var arr = new Array(6)
+  arr[0] = "B";
+  arr[1] = "C";
+  arr[2] = "A1";
+  arr[3] = "a";
+  arr[4] = "A";
+  arr[5] = "D";
+  console.log(arr.sort()); //Default 进行字符Ascii排序
+
+  function sortNumber(a,b){
+    return a - b
+  }
+
+var arr = new Array(6)
+arr[0] = "10"
+arr[1] = "5"
+arr[2] = "40"
+arr[3] = "25"
+arr[4] = "1000"
+arr[5] = "1"
+
+console.log(arr.sort(sortNumber)); //按照函数进行排序
+
+}
+
+function toLoStringF(){
+  var arr = new Array(3)
+  arr[0] = "George";
+  arr[1] = "John";
+  arr[2] = "Thomas";
+  console.log(arr.toString()+"\t"+typeof(arr.toString()));
+  console.log(arr.toLocaleString()+"\t"+typeof(arr.toLocaleString()));
+  console.log(arr.valueOf()[2]);
+  console.log(arr.valueOf());
+}
+
+function copyWithin(){
+
+  var fruits1 = ["Banana", "Orange", "Apple", "Mango", "Kiwi", "Papaya"];
+  console.log(fruits1.copyWithin(1, 0));
+
+  var fruits = ["Banana", "Orange", "Apple", "Mango", "Kiwi", "Papaya"];
+  console.log(fruits.copyWithin(3, 0, 1));
+}
+
+function everyF(){
+    var ages = [18, 33, 22, 40];
+  function checkAdult(ages) {
+      return ages >= 18;   //判断数组上面的值是不是都大于18，是则为真，否则为假
+  }
+      console.log(ages.every(checkAdult));
+}
+
+function filterF(){
+    var ages = [17, 33, 22, 60];
+  function checkAdult(ages) {
+      return ages >= 18;   //判断数组上面的值是不是都大于18，大于则返回元素
+  }
+      console.log(ages.filter(checkAdult));
+}
+
+function fillF(){
+  var fruits = ["Banana", "Orange", "Apple", "Mango"];
+  console.log("Default Array:  "+fruits+"\nFill Array:  "+fruits.fill('FillContent',2,4));
+}
+
+function findIndexF(){
+    var number = [23, 72, 29, 12];
+
+    function checkA(num){
+      return num >= 55;
+    }
+    console.log("find():\t"+number.find(checkA));
+    console.log("findIndex():\t"+number.findIndex(checkA));
+}
+
+
+function forEachf(){
+  var sum = 0;
+  var num = [1,2,3,4,5,6,7,8,9,];
+
+  function sumFun(number){
+    sum += number;
+    return sum;
+  }
+  num.forEach(sumFun);
+  //console.log("从1加到9 = "+sum);
+
+  function newFun(item,index,arrname){
+    arrname[index] = item * 10;
+    console.log("第"+(index+1)+"个元素乘10 = "+arrname[index]);
+  }
+  num.forEach(newFun);
+}
+
+function includesF(){
+
+  var arrname = ['a','b','c','d'];
+    console.log(arrname.includes('a'));
+    console.log(arrname.includes('c',3)); //由于'c'的索引为2，然而3大于2则返回False
+// 数组长度是4
+// fromIndex 是 -100
+// computed index 是 4 + (-100) = -96
+    console.log(arrname.includes('b',-100));  //全部搜索
+}
+
+function lindexOf(){
+  var arrname = ['a',1,'b','c',4,'d',1,2,'b',3,4];
+  console.log(arrname.indexOf(1)+"\t"+arrname.indexOf('b',7));
+  console.log(arrname.lastIndexOf(1)+"\t"+arrname.lastIndexOf(4,6));
+}
+
+function mapF(){
+  var numbers = [4, 9, 16, 25];
+  console.log("对数组里面每个元素求平方根："+numbers.map(Math.sqrt));
+
+  function multiplication(item,index,arrname){
+    arrname[index] = item * 10;
+    console.log("第"+(index+1)+"个元素*10 = "+arrname[index]);
+  }
+  numbers.map(multiplication)
+}
+
+
+function reduceRL(){
+  var numbers = [2, 45, 30, 100];
+
+  function getSum(total, num) {
+      return total - num;
+  }
+  console.log("2 - 45 - 30 - 100 = "+numbers.reduce(getSum));
+  console.log("100 - 30 - 45 - 2 = "+numbers.reduceRight(getSum));
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+  </body>
+</html>

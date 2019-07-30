@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>For Statament demo</title>
+  </head>
+  <body>
+<!--    <script type="text/javascript">
+      var result=0
+      for(var i = 0; i <= 100; i++){
+          result +=i;
+      }
+      console.log("1+2+3+5.....+100="+result);
+    </script>
+-->
+<script type="text/javascript">
+  var x;
+  var txt="";
+  var person = {
+    fname:"Wei-",
+    lname:"yi-",
+    work:"Whitecap",
+    age:"56"
+  };
+  for (var x in person) {
+    txt = txt + person[x];
+    console.log(x);  //对象的属性
+  }
+  console.log("person-Object:"+txt);
+</script>
+
+
+  </body>
+</html>

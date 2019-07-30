@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Canvas 路径选择</title>
+  </head>
+  <body>
+    <canvas id="canv1" width="300" height="300" style="border:2px solid green">stroke()</canvas>
+    <canvas id="canv2" width="300" height="300" style="border:2px solid green">fill()</canvas>
+
+<script type="text/javascript">
+    /*stroke()函数与closePath()**/
+
+    //绘制已定义的路径
+    var c1 = document.getElementById('canv1');
+    var c1context = c1.getContext('2d');
+    c1context.beginPath();
+    c1context.lineWidth=10;
+    c1context.moveTo(30,30);
+    c1context.lineTo(30,150);
+    c1context.lineTo(170,150);
+    c1context.strokeStyle="gray";  //使用stroke时候用strokestyle来设置样式
+    c1context.stroke();  //绘制已定义的路径。
+
+    //fill() 与 closePath() 功能比较
+    //创建从当前点回到起始点的路径,并设置fillstyle填充
+    var c2 = document.getElementById('canv2');
+    var c2context = c2.getContext('2d');
+
+    c2context.beginPath();
+    c1context.lineWidth=10;
+
+    c2context.moveTo(30,30);
+    c2context.lineTo(30,200);
+    c2context.lineTo(230,200);
+
+    c2context.fillStyle="red";  //填充颜色
+
+    c2context.closePath();      //闭合所有的点 (fill()比起它强大写)
+    c2context.fill();  //那么 fill() 方法会从路径结束点到开始点之间添加一条线，以关闭该路径（正如 closePath() 一样），然后填充该路径
+</script>
+
+<br>
+<br>
+<br>
+<canvas id="c3" width="300" height="300"> 从画布中剪切 200*120 像素的矩形区域。然后，绘制一个红色矩形。只有被剪切区域内的红色矩形部分是可见的： </canvas>
+<script type="text/javascript">
+    //clip();
+    var c3 = document.getElementById('c3');
+    var c3context = c3.getContext('2d');
+    c3context.strokeStyle="blue";
+    c3context.rect(30,30,170,150);  //剪切的矩形区域
+    c3context.stroke();
+    c3context.clip();
+
+    c3context.fillStyle="red";
+    c3context.fillRect(0,0,100,130);
+    c3context.save();
+</script>
+
+<br>
+<br>
+<br>
+<canvas id="canv4" width="300" height="150" style="border:4px solid green">二次贝塞尔曲线 quadraticCurveTo()</canvas>
+<canvas id="canv5" width="300" height="150" style="border:4px solid green">三次贝塞尔曲线 bezierCurveTo()</canvas>
+<script type="text/javascript">
+  //二次贝塞尔曲线 quadraticCurveTo()
+  var c4 = document.getElementById('canv4');
+  var context4 = c4.getContext('2d');
+  context4.beginPath();
+  context4.lineWidth=10;
+  context4.strokeStyle="red";
+  context4.lineCap="round";
+  context4.moveTo(30,30);
+  context4.quadraticCurveTo(30,110,210,30);
+  context4.stroke();
+
+  //三次贝塞尔曲线 bezierCurveTo()
+  var v5 = document.getElementById('canv5');
+  var context5 = v5.getContext('2d');
+  context5.beginPath();
+  context5.lineWidth=10;
+  context5.lineCap="square"; //方块
+  context5.moveTo(30,30);
+  context5.bezierCurveTo(40,110,110,110,180,30);
+  context5.stroke();
+</script>
+
+<br>
+<br>
+<br><br>
+<br>
+<br>
+<canvas id="arc1" width="200" height="100" style="border:1px solid #d3d3d3;">画圆，您的浏览器不支持 HTML5 canvas 标签。</canvas>
+<canvas id="arcto2" width="200" height="100" style="border:1px solid #d3d3d3;">创建介于两个切线之间的弧/曲线，以及验证点是不是在之上</canvas>
+<script type="text/javascript">
+  //华圆函数arc()
+    var arc1 = document.getElementById('arc1');
+    var contextarc1 = arc1.getContext('2d');
+    contextarc1.beginPath();
+    contextarc1.fillStyle="gray";
+    contextarc1.arc(75,50,40,0*Math.PI,2*Math.PI);
+    //contextarc1.arc(75,50,40,0*Math.PI,1.5*Math.PI);  // 3/4圆
+
+    if(contextarc1.isPointInPath(80,60)){  //判断是不是在圆内
+      contextarc1.fill();
+      console.log("当前坐标在圆的范围内@！");
+    }
+
+    //圆弧以及验证点的区域 arcTo()  / isPointeLnPath()
+    var arc2 = document.getElementById('arcto2');
+    var contextarc2 = arc2.getContext('2d');
+    contextarc2.beginPath();
+    contextarc2.strokeStyle="green";
+    contextarc2.moveTo(20,20);           // Create a starting point
+    contextarc2.lineTo(100,20);          // Create a horizontal line
+    contextarc2.arcTo(150,20,150,70,50); // Create an arc
+    contextarc2.lineTo(150,120);         // Continue with vertical line
+    contextarc2.stroke();                // Draw it
+</script>
+
+  </body>
+</html>

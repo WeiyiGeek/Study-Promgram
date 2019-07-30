@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>CCS TABLE </title>
+<style type="text/css" media="screen">
+table.Tborder,th,td {
+    border: 1px solid gray;
+  }
+table.Testhw {width: 100%;}
+th {height: 50px;}
+</style>
+
+</head>
+
+<body>
+<b style="color:navy">Tables border</b><br>
+<table class="Tborder">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+  </tr>
+  <tr>
+    <td>Bill</td>
+    <td>Gates</td>
+  </tr>
+  <tr>
+    <td>Steven</td>
+    <td>Jobs</td>
+  </tr>
+</table>
+<hr>
+<style type="text/css">
+  table {border-collapse: collapse;}    /*表格边框折叠为单一边框,单边框*/
+</style>
+
+<b style="color: olive">Tables border-spaceing</b>
+<p><b>注释：</b>如果没有规定 !DOCTYPE，border-collapse 属性可能会引起意想不到的错误。</p>
+
+
+<br>
+<hr>
+<br>
+<b style="color: purple;">表格宽度和高度</b>
+<table class="Testhw">
+  <tr>
+    <th>Test1</th>
+    <th>Test2</th>
+  </tr>
+  <tr>
+    <td>Security</td>
+    <td>Network</td>
+  </tr>
+</table>
+
+<br>
+<hr>
+<br>
+<b style="color: silver;">表格文本对齐 text-align vertical-align</b>
+<style type="text/css">
+.Test {border: 1px solid maroon;border-collapse:collapse;width: 100%;height: 100px;}
+.testtd {text-align: right;}
+.testth {vertical-align: middle;height: 50px;}
+</style>
+
+<table class="Test">
+<tr>
+<th>Firstname</th>
+<th>Lastname</th>
+</tr>
+<tr>
+<td class="testtd">Bill</td>
+<td class="testtd">Gates</td>
+</tr>
+<tr>
+<td class="testth">Steven</td>
+<td class="testth">Jobs</td>
+</tr>
+</table>
+
+<br>
+<hr>
+<br>
+<b style="color: teal;">表格内边距-padding</b>
+<style type="text/css">
+table, td, th {border:1px solid red;}
+td {padding:15px;/**background-color:green;color:white;**/}
+</style>
+<table>
+<tr>
+<th>Firstname</th>
+<th>Lastname</th>
+</tr>
+<tr>
+<td>Bill</td>
+<td>Gates</td>
+</tr>
+<tr>
+<td>Steven</td>
+<td>Jobs</td>
+</tr>
+</table>
+<br>
+<hr>
+<br>
+<b style="color: ;">border-spaceing 边框之间的空白</b>
+<style type="text/css" media="screen">
+  table.one {border-collapse: separate;
+  border-spacing: 20px;
+
+}
+</style>
+<table class="one" border="1px">
+<tr>
+<td>Adams</td>
+<td>John</td>
+</tr>
+<tr>
+<td>Bush</td>
+<td>George</td>
+</tr>
+</table>
+
+<br>
+<hr>
+<br>
+<b style="color: yellow;">表格标题的位置-capition-side</b>
+<style type="text/css" media="screen">
+  caption {caption-side: bottom;}
+</style>
+<table border="1">
+
+<caption>This is a caption</caption>
+<tr>
+<td>Adams</td>
+<td>John</td>
+</tr>
+<tr>
+<td>Bush</td>
+<td>George</td>
+</tr>
+</table>
+
+<p><b>注释：</b>如果已规定 !DOCTYPE，那么 Internet Explorer 8 （以及更高版本）支持 caption-side 属性。</p>
+
+
+<br>
+<hr>
+<br>
+<b style="color: green;">## 是否显示表格中的空单元格-empty-cells
+</b>
+<style type="text/css">
+table.cap {border-collapse:separate;
+  empty-cells: hide;
+  background-color: gray;
+}
+
+</style>
+<table class="cap" border="1">
+<tr>
+<td>Adams</td>
+<td>John</td>
+</tr>
+<tr>
+<td>Bush</td>
+<td></td>
+</tr>
+</table>
+<p><b>注释：</b>如果已规定 !DOCTYPE，那么 Internet Explorer 8 （以及更高版本）支持 empty-cells 属性。</p>
+
+<br>
+<hr>
+<br>
+<b style="color: lime;">## 表格布局算法-table-layout</b>
+<style type="text/css" media="screen">
+  table.in {table-layout: auto;background-color: rgba(214,20,145,0.5); border: 1px solid black;width: 100%;}
+  table.out {table-layout: fixed;background-color: rgba(154,124,52,0.5);border: 1px solid gray;width: 100%}
+</style>
+<table class="in">
+  <tr>
+    <td width="20%">1000000000000000000000000000</td>
+    <td width="40%">10000000</td>
+    <td width="40%">100</td>
+  </tr>
+</table>
+
+<br>
+<br>
+
+<table class="out" border="1" width="100%">
+<tr>
+<td width="20%">1000000000000000000000000000</td>
+<td width="40%">10000000</td>
+<td width="40%">100</td>
+</tr>
+</table>
+
+
+
+
+</body>
+<html>

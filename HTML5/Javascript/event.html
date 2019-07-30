@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Event demo TEest</title>
+  </head>
+
+  <body onbeforeunload="return test()">
+    <script type="text/javascript">
+    window.onbeforeunload = function(){
+       return "你确定要离开吗"
+    }
+    </script>
+
+<script type="text/javascript">
+    function test(){
+        return "你确定要离开吗";
+    }
+</script>
+  </body>
+</html>

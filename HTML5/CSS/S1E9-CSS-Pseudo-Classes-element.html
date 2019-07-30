@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>CSS style pSeudo classes Element</title>
+
+</head>
+
+<body>
+<b>Psecudo -> :link  :visited 伪类</b>
+<style type="text/css" media="screen">
+  a.red:link {color:white;background-color: black;}
+  a.red:visited {color: #FF0000;background-color: rgba(78,125,85,0.5)}
+</style><br>
+<hr>
+
+<a class="red" href="#id">CSS Pseudo LINK AND VISITED</a>
+
+<br>
+<br>
+<br>
+<b>Pseudo 之 :hover 与 :active</b>
+<style type="text/css" media="screen">
+  a.black:link {text-decoration:none;}
+  a.black:hover {color:lime;background-color: black;}
+  a.black:active {color: #FF0000;background-color: rgba(178,125,85,0.5)}
+</style><br>
+<hr>
+<a class="black" href="#id">CSS Pseudo 之 :HOVER AND :ACTIVE</a>
+
+<br>
+<br>
+<br>
+<br>
+<b style="color:fuchsia">获取焦点的元素-：focus</b>
+<style type="text/css" media="screen">
+    form input:focus {color:lime;background-color: gray;}
+</style>
+<br>
+<hr>
+<br>
+<form action="form_action.asp" method="get">
+First name: <input type="text" name="fname" /><br />
+Last name: <input type="text" name="lname" /><br />
+<input type="submit" value="Submit" />
+</form>
+
+<br>
+<br>
+<br>
+<br>
+
+<b style="color:maroon;">Psecdo :first-child</b>
+<hr>
+<style type="text/css" media="screen">
+  p:first-child {color:red;border:1px dotted gray;}
+  div.test > p:first-child {background-color: yellow;}
+/**  div.testt p:first-child  {color:gray;} **/
+</style>
+<div class="test">
+  <p>some text1.0</p>
+  <p>some text1.1</p>
+</div>
+<div class="testt">
+  <p>some text2</p>
+  <p>some text3</p>
+</div>
+
+<br>
+<br>
+<hr>
+<br>
+<b style="color:pink">:lang 伪类使你有能力为不同的语言定义特殊的规则</b>
+<br>
+<style type="text/css" media="screen">
+  q:lang(no) {
+    quotes: "这是head:" ";这是bottom";
+  }
+</style>
+<q lang="no">&nbsp;&nbsp;&nbsp;Test Pseudo :lamg&nbsp;&nbsp;&nbsp;</q>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+<h1>下面是伪元素案例:Pseudo Elment!</h1>
+<br>
+<br>
+<br>
+<b style="color:olive;">first-line first-letter</b>
+<hr>
+<style type="text/css">
+p.ww:first-line {
+color: #ff0000;
+font-variant: small-caps
+}
+</style>
+<p class="ww">
+You can use the :first-line pseudo-element to add a special effect to the first line of a text!
+</p>
+<style type="text/css">
+p.w2:first-letter{
+color: pink;
+font-size:xx-large;
+}
+</style>
+<p class="w2">
+You can use the :first-letter pseudo-element to add a special effect to the first letter of a text!
+</p>
+<br>
+
+<br>
+<br>
+<br>
+<b style="color:blue;">:before and :after</b>
+<hr>
+<style type="text/css" media="screen">
+  h1:before {content: url(http://www.w3school.com.cn/i/w3school_logo_white.gif)}
+  p:after{content: url(http://www.w3school.com.cn/i/w3school_logo_white.gif)}
+</style>
+<h1>This is a heading</h1>
+<p>The :before pseudo-element inserts content before an element.</p>
+
+
+<br>
+<br>
+<br>
+
+
+</body>
+<html>

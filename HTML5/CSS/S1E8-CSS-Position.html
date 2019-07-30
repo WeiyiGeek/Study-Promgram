@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>CSS STYLE Position</title>
+</head>
+
+<body>
+  <b style="color:aqua;background-color: black;"># CSS 相对定位-relative
+</b>
+<style type="text/css" media="screen">
+
+  h2.pos_left {border: 1px solid red;position: relative;left: -20px;background-color: rgba(123,42,85,0.5);}
+  h2.pos_right {border: 1px dotted green;position: relative;left: 20px;background-color: rgba(42,183,26,0.5);}
+</style>
+<h2>这是位于正常位置的标题</h2>
+<h2 class="pos_left">这个标题相对于其正常位置向左移动20px</h2>
+<h2 class="pos_right">这个标题相对于其正常位置向右移动20px</h2>
+<h2>这是位于正常位置的标题</h2>
+
+<br>
+<hr>
+<br>
+<b style="color:fuchsia">## CSS 绝对定位-absolute</b>
+<style type="text/css" media="screen">
+    h2.pos_abs {border:1px dashed red;position: absolute;left: 100px;top: 400px;background-color: rgba(78,215,85,0.5)}
+</style>
+<h2 class="pos_abs">这是带有绝对定位的标题</h2>
+<p>通过绝对定位，元素可以放置到页面上的任何位置。下面的标题距离页面左侧 100px，距离页面顶部400px。</p>
+<br><br><br>
+<br>
+<hr>
+<br>
+<br>
+
+<b style="color:lime;background-color:black;">CSS 固定定位 fixed</b>
+<style type="text/css" media="screen">
+  p.one {position: fixed;left: 5px;top: 550px;}
+  p.two {position: fixed;bottom: -10px;;right: 50px;}
+</style>
+<p class="one"> a fixed left top </p>
+<p class="two"> <img src="./logo.png" alt="text"></p>
+
+<br>
+<hr>
+<br>
+</body>
+<html>

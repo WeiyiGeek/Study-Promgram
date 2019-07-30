@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jquey ajax demo 9</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+    <fieldset>
+        <legend>jquery noConflict() demo</legend>
+        <div id="pd" style="font-weight:bold;color:green">判断jquery是否正常工作</div>
+    </fieldset>
+    <script>
+        //方法1：
+        $.noConflict();
+        jQuery(function(){
+            jQuery("#pd").mouseenter(function(){
+                console.info("鼠标移动进入");
+                jQuery("#pd").text("jQuery 仍然在工作!").css("color","red");
+            });
+        });
+
+        //方法2
+        var jq=$.noConflict();
+        jq(document).ready(function(){
+            jq("#pd").mouseleave(function(){
+                console.info("鼠标移出");
+               jQuery("#pd").text("jQuery 仍然在工作!").css("color","yellow");
+            });
+        });
+
+        //方法3：想在内部还是使用$符合
+        //如果你的 jQuery 代码块使用 $ 简写，并且您不愿意改变这个快捷方式，那么您可以把 $ 符号作为匿名函数的参数变量传递给 ready 方法。
+        //这样就可以在函数内使用 $ 符号了 - 而在函数外，依旧不得不使用 "jQuery"：
+        $.noConflict();
+        jQuery(function($){
+            $("#pd").click(function(){
+                $("#pd").text("jQuery 函数内使用 $ 符号 ，jQuery 仍然在工作!").css({"color":"white","background-color":"#579b6c"});
+            });
+        })
+    </script>
+</body>
+</html>

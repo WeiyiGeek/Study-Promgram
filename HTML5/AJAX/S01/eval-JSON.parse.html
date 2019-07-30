@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>json demo</title>
+  </head>
+  <body>
+<fieldset>
+  <legend>eval Method</legend>
+  <button type="button" name="button" onclick="evalJson();">Eval</button>
+</fieldset>
+
+<fieldset>
+  <legend>parse Method</legend>
+  <button type="button" name="button" onclick="parseJson();">Parse</button>
+</fieldset>
+
+<fieldset>
+  <legend>eval / parse 方法对比</legend>
+  <button type="button" name="button" onclick="vaJson();">对比代码</button>
+</fieldset>
+
+<script type="text/javascript">
+
+  var dataJson = '{ "staff":[{"name":"Weiyi","age":18},{"name":"Geek","age":28}]}';
+  var dbJson = '{"sites":[{"title":"腾讯","url":"www.qq.com"},{"title":"百度","url":console.log("eval会正常执行/而parse方法会报错")}]}';
+
+  function evalJson(){
+    var jsonObj = eval('('+ dataJson +')');
+    console.log("ID:"+jsonObj.staff[0].name);
+  }
+
+  function parseJson(){
+    var jsonObj=JSON.parse(dataJson);
+    console.log("Age:"+jsonObj.staff[1].age);
+  }
+
+  function vaJson(){
+    var jsonObj = eval('('+dbJson+')');
+    //eval会触发console.log()调试方法
+    jsonObj.sites[1].url;
+
+    //JSON.parse()方法会报错
+    jsonObj = JSON.parse(dbJson);
+    alert(+jsonObj.sites[1].url);
+  }
+</script>
+
+  </body>
+</html>

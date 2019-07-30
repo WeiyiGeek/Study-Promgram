@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>switch demo</title>
+  </head>
+  <body>
+    <p style="color:red;font-weight:bold;">switch 语句的位运算</p>
+    <form class="" action="./index.html" method="get">
+      <input type="number" name="var1"  value="" id="var1" placeholder="请输入数字:1" onchange="calculate();">
+      <select class="" name="" id="opera" onchange="calculate();">
+        <option value="&" selected>&</option>
+        <option value="|">|</option>
+        <option value="^">^</option>
+        <option value="~">~</option>
+        <option value="<<"><<</option>
+        <option value=">>">>></option>
+      </select>
+      <input type="number" name="var1" value="" id="var2" placeholder="请输入数字:2" onchange="calculate();"> =
+      <b id="result">Console.log(输出)</b>
+    </form>
+    <script type="text/javascript">
+      function calculate(){
+        var var1 =Number(document.getElementById('var1').value);
+        var var2 = Number(document.getElementById('var2').value);
+        var opera = document.getElementById('opera').value;
+
+        switch (opera) {
+          case "&":
+            var result = var1 & var2;
+            console.log(var1+"&"+var2+"="+result);
+            break;
+
+          case "|":
+              result = var1 | var2;
+              console.log(var1+"|"+var2+"="+result);
+              break;
+
+          case "^":
+              result = var1 ^ var2;
+              console.log(var1+"^"+var2+"="+result);
+              break;
+
+          case "~":
+              result = ~var2;
+              console.log("~"+var2+"="+result);
+              break;
+
+          case "<<":
+              result = var1 << var2;
+              console.log(var1+"<<"+var2+"="+result);
+              break;
+
+          case ">>":
+              result = var1 >> var2;
+              console.log(var1+">>"+var2+"="+result);
+              break;
+
+          default:
+              message = confirm("输入错误,是不是要重新计算?");
+        }
+      }
+    </script>
+
+  </body>
+</html>

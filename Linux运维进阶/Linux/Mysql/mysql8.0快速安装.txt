@@ -1,0 +1,101 @@
+#下载mysql8.0二进制包
+wget https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.16-linux-glibc2.12-x86_64.tar.xz -O /opt
+xz -d mysql-8.0.16-linux-glibc2.12-x86_64.tar.xz
+tar xf mysql-8.0.16-linux-glibc2.12-x86_64.tar
+
+#用户建立
+groupadd -g 500 mysql
+useradd -r -g mysql -s /sbin/nologin mysql
+
+
+#删除自带的mariadb
+rpm -qa | grep "mariadb"
+rpm -e --nodeps mariadb-libs-5.5.60-1.el7_5.x86_64
+
+#建立文件目录
+cd /usr/local/mysql
+mkdir -vp /usr/local/mysql/{data,log}
+mkdir -vp /var/lib/mysql
+
+
+
+##### 编辑 /etc/my.cnf  ####
+[mysqld]
+user=mysql
+port=3306
+datadir=/usr/local/mysql/data
+log-error=/usr/local/mysql/log/mysql-err.log
+pid-file=/usr/local/mysql/data/mysql.pid
+#skip-grant-tables #此项是为了装好后免登陆修改密码使用
+default_authentication_plugin=mysql_native_password
+socket=/var/lib/mysql/mysql.sock 
+character-set-server=utf8 
+mysqlx_port = 33070 
+mysqlx_socket=/var/lib/mysql/mysqlx.sock 
+server-id = 1
+
+[client]
+# 设置mysql客户端默认字符集
+default-character-set=utf8
+
+
+chown -R mysql:mysql /usr/local/mysql /var/lib/mysql /etc/my.cnf
+echo "export PATH=$PATH:/usr/local/mysql/bin"  >>  /etc/profile
+source /etc/profile
+
+
+#初始化
+/usr/local/mysql/bin/mysqld --initialize --user=mysql  --basedir=/usr/local/mysql --datadir=/usr/local/mysql/data
+ cat /usr/local/mysql/log/mysql-err.log 
+
+
+cp  /usr/local/mysql/support-files/mysql.server  /etc/init.d/mysqld
+#vi /etc/init.d/mysqld  #将base与data目录进行更改
+sed -i  's|basedir=|basedir=/usr/local/mysql|g' /etc/init.d/mysqld
+sed -i  's|datadir=|datadir=/usr/local/mysql/data|g' /etc/init.d/mysqld
+
+basedir=/usr/local/mysql
+datadir=/usr/local/mysql/data
+
+chkconfig --add mysqld
+chkconfig --list mysqld
+service mysqld start
+
+#登陆mysql数据库
+mysql -uroot -p"lTRGbo53ii<5" -S /var/lib/mysql/mysql.sock 
+mysql -uroot -p"NwOytt6n.hl3"  -S /var/lib/mysql/mysql.sock
+
+mysql > ALTER USER 'root'@'localhost' IDENTIFIED BY 'System@123';
+mysql > flush privileges
+
+mysql -uroot -p"System@123" -S /var/lib/mysql/mysql.sock -e "status"
+
+--------------
+mysql  Ver 8.0.16 for linux-glibc2.12 on x86_64 (MySQL Community Server - GPL)
+
+Connection id:          12
+Current database:
+Current user:           root@localhost
+SSL:                    Not in use
+Current pager:          stdout
+Using outfile:          ''
+Using delimiter:        ;
+Server version:         8.0.16 MySQL Community Server - GPL
+Protocol version:       10
+Connection:             Localhost via UNIX socket
+Server characterset:    utf8
+Db     characterset:    utf8
+Client characterset:    utf8
+Conn.  characterset:    utf8
+UNIX socket:            /var/lib/mysql/mysql.sock
+Uptime:                 8 min 52 sec
+
+Threads: 2  Questions: 12  Slow queries: 0  Opens: 142  Flush tables: 3  Open tables: 46  Queries per second avg: 0.022
+--------------
+
+
+
+
+
+
+

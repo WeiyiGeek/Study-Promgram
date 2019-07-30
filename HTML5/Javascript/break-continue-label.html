@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>BREAK AND contiune</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+<p>break DEMO</p>
+<button type="button" onclick="breakTest();">break DEMO</button>
+<p>continue DEMO</p>
+<button type="button" onclick="continueTest();">continue DEMO</button>
+<p>continue DEMO</p>
+<button type="button" onclick="golabelTest();">continue DEMO</button>
+	<script type="text/javascript">
+		function breakTest(){
+			var x="",i=0;
+			for (i = 0; i <= 10; i++) {
+				if (i == 3) {
+					break;
+				}
+				x += "该数字为"+i+"\n";
+			}
+			console.log(x);
+		}
+
+		function continueTest(){
+			var score= prompt("Please input students score:","100");
+			for(var i = 0;i <= score; i++){
+				if( i >= 2 && i <= 99 ){
+					continue;
+				}
+				console.log("这是第"+i+"次\n");
+			}
+		}
+
+		function golabelTest(){
+			
+			var x,y;
+			var result="";
+			for(x=0;x<3;x++){
+				label:  //重复的调用这个label标签，就能执行重复执行y这个for循环
+				for(y=1;y<6;y++){
+					if (y == 4) {
+						break label;
+					}
+					result += x + "-" + y + "\n"; 
+				}
+			}
+			console.log(result);
+		}	
+
+var i, j;
+loop1:
+for (i = 0; i < 3; i++) {      //The first for statement is labeled "loop1"
+   loop2:
+   for (j = 0; j < 3; j++) {   //The second for statement is labeled "loop2"
+      if (i == 1 && j == 1) {
+         break loop1;
+      }
+      console.log("i = " + i + ", j = " + j);
+   }
+}
+	</script>
+</body>
+</html>

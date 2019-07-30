@@ -1,0 +1,7 @@
+May 05 17:32:38.919 HYPERVISOR: Release 0.2.14-x86/Windows (tag 2014092320)
+May 05 17:32:38.920 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 58523.
+May 05 17:32:39.392 HYPERVISOR: exec_cmd: hypervisor version 
+May 05 17:32:39.392 HYPERVISOR: exec_cmd: hypervisor uuid 
+May 05 17:32:39.393 HYPERVISOR: exec_cmd: hypervisor working_dir F:\BaiduNetdiskDownload\CCNA\project-files\dynamips 
+May 05 17:32:39.394 GENERAL: working_dir=F:\BaiduNetdiskDownload\CCNA\project-files\dynamips
+May 05 17:32:39.395 HYPERVISOR: exec_cmd: vm create R3 3 c2691 

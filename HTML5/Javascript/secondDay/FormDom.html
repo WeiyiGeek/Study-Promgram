@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Form Dom demo</title>
+  </head>
+  <body id="biody"><!--
+    <form action="server.php" method="post" name="loginform">
+     <label>用户名：</label><input type="text" name="username" value="admin">
+     <label>密码：</label><input type="password" name="userpass" value="pass">
+    <button name="button" type="submit">登录</button>
+    </form>
+     <script type="text/javascript">
+       //method 2:
+       var mylogin = document.loginform;
+       var username = mylogin.username.value;   //采用 input 的name属性来获取改元素的值
+       console.log(username);
+       console.log("password:"+mylogin.elements[1].value);   //采用 form 的元素数组来获取元素的值
+
+       //method 1:
+        var myForm = document.forms;  //通过文档属性 来获取form的对象
+        var mylogin = myForm[0];    //选择数组中第一个form表单
+        alert("username:"+mylogin.elements[0].value+"\npassword:"+mylogin.userpass.value);   //同样可以用元素和name属性值获取元素值
+     </script>
+
+-->
+     <script type="text/javascript">
+        var pTag = document.createElement('p');
+        var pTagT = document.createTextNode('This is a p Elment!!');
+        pTag.appendChild(pTagT);
+        pTag.setAttribute("style","font-size:17px;color:red");
+        document.body.appendChild(pTag);
+     </script>
+
+
+  </body>
+</html>

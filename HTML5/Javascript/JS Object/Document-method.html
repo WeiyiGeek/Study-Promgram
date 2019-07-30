@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Document method Demo</title>
+  </head>
+  <body>
+<p style="color:white;width:100%;padding:6px;font-weight:bold;background:rgb(255, 132, 0);">1.addEventListener / removeEventListener</p>
+<hr>
+<p id="demo">在用户点击Click按钮 / 点击文档任何区域时使用 addEventListener() 方法执行指定函数。</p>
+<button type="button" name="button" id="demo2">click-addEvent</button>
+<button type="button" name="button" onclick="stopFun()">click-removeEvent</button>
+<p id="demo1">当前计数点击 click-removeEvent 停止</p>
+<p> Internet Explorer 8 及更早 IE 版本不支持 addEventListener() 方法 ,你可以使用 attachEvent() 方法替代</p>
+<!--
+<script type="text/javascript">
+  function $(id) {return document.getElementById(id); }
+  //这里获取demo2的节点,进行设置事件从而不用onclick="function"
+    $('demo2').addEventListener("click",  function test(){
+     $('demo').innerHTML = "Hello World, Javascript!!";
+     document.body.style.background = "black";  //更改背景颜色
+     document.body.style.color = "white";
+    });
+
+    //您可以在文档中添加许多事件，添加的事件不会覆盖已存在的事件,(双击触发)
+    document.addEventListener("dblclick", myFunction);
+    document.addEventListener("dblclick", someOtherFunction);
+    function myFunction() {
+      alert ("Hello World!");
+    }
+    function someOtherFunction() {
+
+      alert ("该函数同样执行!");
+    }
+
+    //可以传入传递参数值
+    var p1 = 9;
+    var p2 = 9;
+    $('demo2').addEventListener("mouseover",function(){
+      multiply(p1,p2);
+    })
+    function multiply(p1,p2){
+      console.log("p1 * p2 = "+p1*p2);
+    }
+
+    //使用 removeEventListener() 方法移除通过 addEventListener() 方法添加的事件句柄
+    document.addEventListener("mousemove", startFun);
+    function startFun(){
+        $('demo1').innerHTML = Math.random();
+    }
+    function stopFun(){
+      document.removeEventListener("mousemove", startFun);
+      console.log("已暂停随机数");
+    }
+
+    //<p> Internet Explorer 8 及更早 IE 版本不支持 addEventListener() 方法 ,你可以使用 attachEvent() 方法替代</p>
+    if (document.addEventListener) {                //所有主流浏览器，除了 IE 8 及更早 IE版本
+      document.addEventListener("dblclick", function support(){alert('当前支持AddEventListener');});
+    } else if (document.attachEvent) {             // IE 8 及更早 IE 版本
+      document.attachEvent("click", someOtherFunction);
+    }
+</script>
+-->
+<p style="color:white;width:100%;padding:6px;font-weight:bold;background:rgb(255, 132, 0);">1.addEventListener / removeEventListener</p>
+<hr>
+<input type="button" name="" value="建立新文档自身打开" onclick="createDocumemt()">
+<input type="button" name="" value="建立新文档新窗口打开" onclick="createNewDocumemt()">
+<input type="button" name="" value="write()与writeln()异同" onclick="createNew()">
+<script type="text/javascript">
+  function createDocumemt(){
+    var doc = document.open("text/html","replace");
+    var txt = "<!DOCTYPE HTML><html><head><title>Hello World!</title></head><body>hello World!Self - Windows</body></html>";
+    doc.write(txt);
+    doc.close();
+  }
+  function createNewDocumemt(){
+    var w = window.open();
+    w.document.open();
+    w.document.write("Hello World!JavaScript,New Windows");
+    w.document.close();
+  }
+  function createNew(){
+    var tw = window.open("http://www.runoob.com/try/try.php?filename=tryjsref_doc_writeln","","");
+    setTimeout(function (){tw.close();},10000)
+  }
+</script>
+<p style="color:white;width:100%;padding:6px;font-weight:bold;background:rgb(255, 132, 0);">2.createAttribute / setAttribute /removeAttribute</p>
+<hr>
+<p  id="changeCss" style="color:white;width:100%;padding:6px;font-weight:bold;">1.节点操作</p>
+<button type="button" name="button" onclick="changeStyle();">更改上面的样式</button>
+<input type="button" name="" value="removeAttribute" onclick="normalStyle();">
+<input type="button" name="" value="removeAttributeNode" onclick="removeNode();">
+<script type="text/javascript">
+function changeStyle(){
+  var tagP=document.getElementById('changeCss');
+  var cNewCss=document.createAttribute('class');
+  cNewCss.value="democss";
+  tagP.setAttributeNode(cNewCss);
+  tagP.setAttribute("style","font-size:17px;font-weight:bold");   //采用此方法设置样式属性
+}
+function normalStyle(){
+  var tagp=document.getElementById('changeCss');
+      tagp.removeAttribute('class');
+}
+function removeNode(){
+  var tagp=document.getElementById('changeCss');
+	var a=tagp.getAttributeNode("style"); //获取属性节点
+	tagp.removeAttributeNode(a);
+}
+</script>
+<style media="screen" type="text/css">
+  .democss {
+    color:white;
+    border:solid red 2px;
+    background:black;
+    font-weight: bold;
+    font-style: italic;
+  }
+</style>
+
+
+<p style="color:white;width:100%;padding:6px;font-weight:bold;background:rgb(255, 132, 0);">3.createDocumentFragment</p>
+<hr>
+<button type="button" name="button" onclick="changeIdValue();">更改li节点值</button>
+<ul>
+  <li>1.Coffee</li>
+  <li>2.Tea</li>
+</ul>
+<p id="demo3" style="color:red">单击按钮更改列表项,使用createDocumentFragment方法,然后在列表的最后一个孩子添加列表项。</p>
+<button type="button" name="button" onclick="addzhushi();">添加注释</button>
+<br>
+<button type="button" name="button" onclick="changeId()">更改节点或属性</button>
+<h1>Test</h1>
+<br>
+<button type="button" name="button" onclick="importNodeFun();">CopyNode</button><br/>
+<iframe src="./document.html" style="height:280px;width:420px;"></iframe>
+<p><strong>Note:</strong> IE 8 及更早的版本不支持importNote方法</p>
+<p id="demo4" style="color:lime;font-weight:bold;border:solid black 1px;">下面显示importNode结果:</p>
+<script type="text/javascript">
+  function changeIdValue(){
+    var doci=document.createDocumentFragment();
+    doci.appendChild(document.getElementsByTagName("li")[0]);
+    doci.childNodes[0].childNodes[0].nodeValue="3.Milk"; //进行第二个节点选择
+    document.getElementsByTagName("ul")[0].appendChild(doci);
+  }
+
+  function addzhushi(){
+    var c=document.createComment("右键源代码查看下面添加的注释");
+    document.body.appendChild(c);
+    var x=document.getElementById('demo3');
+    x.innerHTML="这个是添加的注释!!!!!";
+  }
+
+  function changeId(){
+    var testH1 = document.getElementsByTagName('h1')[0];
+    document.renameNode(testH1,null,"p");
+  }
+
+  function importNodeFun(){
+    var frame=document.getElementsByTagName('iframe')[0];
+    var h=frame.contentWindow.document.getElementsByTagName('p')[0];
+    var x=document.importNode(h,true);
+    document.getElementById('demo4').appendChild(x);
+  }
+</script>
+<p style="color:white;width:100%;padding:6px;font-weight:bold;background:rgb(255, 132, 0);">4.document.normalize()</p>
+<hr>
+<p id="demo5">点击一个按钮来添加文本,点击另一个按钮规范化文档:</p>
+<button type="button" name="button" onclick="addTextNode();">添加文本节点</button>
+<button type="button" name="button" onclick="normPara();">规范文本节点</button>
+<script type="text/javascript">
+  function addTextNode(){
+    var y=document.createTextNode(" -Click- ");
+    var x=document.getElementById('demo5');
+    x.appendChild(y);
+    var z=document.getElementById('cc');
+    z.innerHTML=x.childNodes.length;
+  }
+  function normPara(){
+    document.normalize();  //合并相邻的文本节点并删除空的文本节点
+    var x=document.getElementById("demo5");
+    var z=document.getElementById('cc');
+    z.innerHTML=x.childNodes.length;
+  }
+</script>
+<p>上面的段落有 <span id="cc">1</span>个子节点.</p>
+<p style="color:white;width:100%;padding:6px;font-weight:bold;background:rgb(255, 132, 0);">5.document.querySelector</p>
+<hr>
+<h6 id="ptag">案例1.this is demo1</h6>
+<h6 class="example">案例2.this is demo2</h6>
+<p class="example">案例3.this is demo3</p>
+<h5 class="example">案例4.this is demo4</h5>
+<button type="button" name="button" onclick="changeBg();">更改第一个\<\h6\>TAG背景颜色</button>
+<button type="button" name="button" onclick="classFun();">利用class类加载</button>
+<button type="button" name="button" onclick="pclassFun();">利用p.class类进行Css改变</button>
+
+<p> CSS 选择器 a[target] 确保所有有 target 属性的链接背景颜色为黄色：</p>
+<a href="http://www.w3cschool.cc">w3cschool.cc</a>
+<a href="http://www.disney.com" target="_blank">disney.com</a>
+<a href="http://www.wikipedia.org" target="_top">wikipedia.org</a>
+<br><br>
+<button type="button" name="button" onclick="atargetFun();">CSS 选择器 a[target] 案例</button>
+<br>
+<button type="button" name="button" onclick="normalSelector();">多个标签名选择器更改CSS</button>
+<style media="screen">
+  a[target] {
+    background-color: yellow;
+  }
+</style>
+
+<script type="text/javascript">
+  function changeBg(){
+    var v = document.querySelector('h6');
+    v.style.background = "red";
+    v.style.color = "white";
+  }
+  function classFun(){
+    document.querySelector(".example").style.background = "lime";  //字体颜色
+  }
+
+  function pclassFun(){
+    document.querySelector('p.example').style.fontStyle = "italic";  //斜体
+  }
+
+  function atargetFun(){
+    document.querySelector("a[target]").style.border = "solid 5px black"; //a[target] 第一个带有target属性的
+  }
+
+  function normalSelector(){
+    document.querySelector("h5,h6").style.border = "solid 5px yellow";  //利用多个标签
+  }
+</script>
+
+
+  </body>
+</html>

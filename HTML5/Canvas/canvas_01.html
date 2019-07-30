@@ -1,0 +1,89 @@
+<html>
+<head>
+    <title>Canvas 颜色属性与方法</title>
+    <meta charset="utf-8"/>
+</head>
+<body>
+    <canvas id="pic"  width="300" height="200" style="border:1px solid black">对不起,你的浏览器不支持该canvas标签！创建线性的渐变对象 </canvas>
+    <br>
+    <br>
+    <br>
+
+    <canvas id="pic1" width="300" height="200" style="border:1px solid magenta">创建放射状/圆形渐变对象</canvas>
+    <br>
+<br>
+    <p>图片显示在canvas画布中</p>
+    <img src="http://www.runoob.com/try/demo_source/img_lamp.jpg" alt="pic" id="img">
+    <p>效果展示：</p>
+    <canvas id="pic2" width="150" height="150" style="border:1px solid green" >指定的方向内重复指定的元素图片或者视频,以及其他的</canvas>
+    <br>
+    <input type="button" name="" value="默认样式" onclick="draw('repeat');">
+    <input type="button" name="" value="x|水平重复" onclick="draw('repeat-x');">
+    <input type="button" name="" value="y|垂直重复" onclick="draw('repeat-y');">
+    <input type="button" name="" value="不重复" onclick="draw('no-repeat');">
+    <br>
+
+    <script type="text/javascript">
+
+      //线性渐变对象
+      var pic = document.getElementById('pic');
+      var picConText = pic.getContext('2d');
+      var linearGradient = picConText .createLinearGradient(0,0,170,170);
+      linearGradient.addColorStop(0.1,'red');
+      linearGradient.addColorStop(0.2,'green');
+      linearGradient.addColorStop(0.5,'blue');
+      linearGradient.addColorStop(0.8,'gray');
+      linearGradient.addColorStop(1,'yellow');
+      picConText.fillStyle=linearGradient;
+      picConText.fillRect(20,20,150,150);
+
+
+      //创建放射状圆形渐变对象
+      var pic1 = document.getElementById('pic1');
+      var pic1Context = pic1.getContext('2d');
+      var radialGradient = pic1Context.createRadialGradient(85,70,5,100,90,100);
+      radialGradient.addColorStop(0,'black');
+      radialGradient.addColorStop(0.2,'white');
+      radialGradient.addColorStop(0.4,'magenta'); //紫色
+      radialGradient.addColorStop(0.6,'gray');
+      radialGradient.addColorStop(0.8,'blue');
+      radialGradient.addColorStop(1,'yellow');
+      pic1Context.fillStyle=radialGradient;
+      pic1Context.fillRect(20,20,170,170);
+
+
+      //创建模仿的图案,样品视频等等：
+      var img1 = document.getElementById('img');  //获取图片/图标/或者视频对象
+      function draw(direction){
+        var pic2 = document.getElementById('pic2');
+        var pic2ConText = pic2.getContext('2d');  //非常注意大小写
+        pic2ConText.clearRect(0,0,pic2.width,pic2.height);     //必须要清理画布才能重新显示
+        var pattern = pic2ConText.createPattern(img1,direction);
+        pic2ConText.fillStyle = pattern;
+        pic2ConText.fillRect(0,0,150,150);
+        pic2ConText.fill();  //填充当前的图像（路径）
+      }
+    </script>
+
+
+    <br>
+    <br>
+    <br>
+    <canvas id="pic3" width="300" height="300" style="border:1px solid red">设置影阴与模糊级别</canvas>
+
+    <script type="text/javascript">
+      //设置影阴效果与模糊界别
+      var pic3 = document.getElementById('pic3');
+      var pic3ConText = pic3.getContext('2d');
+      pic3ConText.shadowBlur = 10;         //模糊级别
+      pic3ConText.shadowColor = "black";   //影阴颜色
+      pic3ConText.shadowOffsetX = 20;
+      pic3ConText.shadowOffsetY = 25;
+      pic3ConText.fillStyle="red";
+      pic3ConText.fillRect(20,20,100,80);
+    </script>
+
+
+
+</body>
+</html>
