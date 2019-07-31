@@ -1,0 +1,25 @@
+HTTP/1.1 301 Moved Permanently
+Server: GitHub.com
+Content-Type: text/html
+Location: https://weiyigeek.club/
+X-GitHub-Request-Id: EF4A:7654:1FA540:214012:5D415D7F
+Content-Length: 178
+Accept-Ranges: bytes
+Date: Wed, 31 Jul 2019 09:38:25 GMT
+Via: 1.1 varnish
+Age: 1041
+Connection: keep-alive
+X-Served-By: cache-hnd18746-HND
+X-Cache: HIT
+X-Cache-Hits: 1
+X-Timer: S1564565906.774883,VS0,VE0
+Vary: Accept-Encoding
+X-Fastly-Request-ID: 4fcbc810692127e454a9b3850238a12a8b9e0a1c
+
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body bgcolor="white">
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
