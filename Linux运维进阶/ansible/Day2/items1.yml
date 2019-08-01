@@ -1,0 +1,23 @@
+---
+- hosts: local
+  remote_user: root
+  gather_facts: no
+  vars:
+    dirs:
+    - "/tmp/a"
+    - "/tmp/b"
+    - "/tmp/c"
+    - "/tmp/d"
+  tasks:
+  - file:
+      path: "{{item}}"    #关键点1 （多次运行file模块 - 每一行运行一次）
+      state: touch
+    with_items: "{{dirs}}"  #重复的操作越多，使用循环则越方便  #关键点2
+  - shell: "whoami"     
+    register: "cmd"
+  - debug:
+      msg: "{{cmd[item]}}"   #关键点3  shell模块命令遍历返回的信息
+    with_items: "{{cmd}}"    #关键点4
+  - debug:
+      var: cmd[item]   #关键点3  shell模块命令遍历返回的信息
+    with_items: "{{cmd}}"    #关键点4

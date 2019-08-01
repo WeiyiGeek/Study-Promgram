@@ -1,0 +1,32 @@
+---
+- hosts: local
+  remote_user: root
+  vars:
+    testvar1: tv1    #关键点-只能在当前主机中使用
+  tasks:
+  - name: "test shell return variable"
+    shell: "echo setfact module"
+    register: revar
+  - name: setfact moudle setting
+    set_fact:
+      testvar2: tv2  #关键点-可以在随后的play中任意主机调用使用
+      testvar3: "{{revar.cmd}}"  #关键点-变量给变量赋值
+      cacheable: yes  #示例设置事实，以便它们将保留在事实缓存中
+  - debug:
+      msg: "Local host : {{testvar1}} - {{testvar2}} -  {{testvar3}} - {{revar.cmd}}"
+ 
+- hosts: local
+  remote_user: root
+  tasks:
+  - name: "other play get testvar2"
+    debug:
+      msg: "{{testvar2}}"  #有set_fact模块创建可以被第二个play引用
+  #- name: "other play get testvar1"
+  #  debug:
+  #    msg: "{{testvar1}}"   #不能被第二play引用
+  - name: "other play get testvar3"
+    debug:
+      msg: "{{testvar3}}"
+  - name: "show execute command"
+    debug:
+      msg: "{{revar.cmd}}"   #注册的变量也能在第二个play中使用

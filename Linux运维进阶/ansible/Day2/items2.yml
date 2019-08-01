@@ -1,0 +1,24 @@
+---
+- hosts: local
+  remote_user: root
+  vars:
+    cmd:   #关键点
+      - "hostname"
+      - "hostname -I"
+  gather_facts: no
+  tasks:
+  - name: "Mutil Shell Execute"
+    shell: "{{item}}"      #关键点
+    with_items: "{{cmd}}"
+    register: returncmd  #会把多次执行的结果放入returncmd变量之中
+  - debug:
+      var: returncmd
+#当使用了循环以后，每次shell模块执行后的返回值都会放入一个名为"results"的序列中，我们可以直接调用使用
+  - name: "show shell execute result"
+    debug:
+      msg: "{{item.stdout}}"   #关键点
+    with_items: "{{returncmd.results}}"   #关键点
+#因为debug模块只是输出了经过jinja2的for循环处理过的信息而已，debug模块并没有因为for循环而被重复的调用
+  - name: "jinja2 syntax"
+    debug:
+      msg: "{% for i in returncmd.results %} {{ i.stdout }} {% endfor %}" #for循环的语法为jinja2语言中的for循环语法

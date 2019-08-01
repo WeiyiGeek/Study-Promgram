@@ -1,0 +1,25 @@
+---
+- hosts: local
+  remote_user: root
+  gather_facts: no
+  tasks:
+  - name: "Example play 1"
+    debug:
+      msg: "E.g 1: index is : {{ item.0 }} , value is {{ item.1 }}"
+    with_indexed_items:  #将添加过编号的每一项放入到了item中,简单的单层列表
+    - test1  #test1索引编号是0
+    - test2  #test2索引编号是1
+    - test3  #test3索引编号是2
+  - name: "Example play 2"
+    debug:
+      msg: "E.g 2: index is : {{ item.0 }} , value is {{ item.1 }}"
+    with_indexed_items:  #多层列表与with_flattened效果类似进行拉升
+    - [a,b,c]
+    - [test1, test2]
+  - name: "Example play 3"
+    debug:
+      msg: "E.g 3: index is : {{ item.0 }} , value is {{ item.1 }}"
+    with_indexed_items: #多层列表但是列表中镶嵌列表 （特殊重点）
+    - [a,b]
+    - [c, [d,e]]
+    - [end]

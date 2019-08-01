@@ -1,0 +1,17 @@
+---
+- name: "Play1 : Gather facts of local"
+  hosts: local,testB
+  remote_user: root
+  tasks:
+  - name: "show play hosts"
+    debug:
+      msg: "Play1 -> play include hosts : {{play_hosts}}"
+
+- name: "Play2: Gather facts"
+  hosts: testA,testB
+  remote_user: root
+  tasks:
+  - debug: 
+     msg: "Play2 -> Local IP : {{hostvars['local'].ansible_default_ipv4}}"
+  - debug: 
+     msg: "Play2 -> Local interface : {{hostvars['local'].ansible_default_ipv4.interface}}"

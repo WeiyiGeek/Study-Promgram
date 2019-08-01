@@ -1,0 +1,11 @@
+---
+- hosts: local
+  remote_user: root
+  gather_facts: no
+  tasks:
+  - debug:
+      msg: "{{item}}"
+    with_items: "{{groups.all}}"
+  - debug:
+      msg: "{% for i in item %}{{ i }}{% endfor %}"
+    with_items : ["1","2","3"]

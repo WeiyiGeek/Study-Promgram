@@ -1,0 +1,9 @@
+---
+- hosts: local
+  remote_user: root
+  vars:
+    verify: "123456"
+  tasks:
+  - name: "Passing Variables On The Command Line"
+    debug:
+      msg: "{{ip}} - {{port}} - {{service}} , Verify: {{verify}}"

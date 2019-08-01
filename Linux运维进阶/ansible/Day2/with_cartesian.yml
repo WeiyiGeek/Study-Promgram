@@ -1,0 +1,18 @@
+---
+- hosts: local
+  remote_user: root
+  gather_facts: no
+  tasks:
+  - name: "Show Create directory"
+    debug:
+      msg: "{{ item }}"
+    with_cartesian:   #关键点
+    - [a, b, c]
+    - [test1, test2]
+  - name: "shell create Directory"
+    file:
+      path: "/tmp/{{item.0}}/{{item.1}}"  #关键点
+      state: directory
+    with_cartesian:
+    - [a, b, c]
+    - [test1, test2]

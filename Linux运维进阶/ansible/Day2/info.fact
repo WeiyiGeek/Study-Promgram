@@ -1,0 +1,6 @@
+{
+   "testmsg":{
+       "msg1":"This is the first custom test message",
+       "msg2":"This is the second custom test message"
+   }
+}

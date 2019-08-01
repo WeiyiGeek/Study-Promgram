@@ -1,0 +1,14 @@
+---
+- hosts: local
+  remote_user: root
+  vars:
+    testvar: value of test variable 1024   #关键1
+  tasks:
+  - name: touch testfile
+    file:
+      path: /tmp/testfile
+      state: touch
+  - name: debug demo
+    debug: 
+      #msg: "this is debug info , {{ testvar }} "
+      var: testvar

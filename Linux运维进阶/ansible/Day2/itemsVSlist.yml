@@ -1,0 +1,23 @@
+---
+- hosts: local
+  remote_user: root
+  gather_facts: no
+  tasks:
+  - name: " with_list show"
+    debug:
+      msg: "{{item}}"
+    with_list:    #关键点
+    - [ 1, 2]
+    - [ a, b ]
+  - name: " with_items show"
+    debug:
+      msg: "{{item}}" 
+    with_items: #关键点
+    - [ 1, 2 ]
+    - [ a, b ]
+  - name: " with_flattened show"
+    debug:
+      msg: "{{item}}"
+    with_flattened: #关键点
+    - [ 1, 2 ]
+    - [ a, b ]

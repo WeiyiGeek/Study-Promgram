@@ -1,0 +1,9 @@
+---
+- hosts: local
+  remote_user: root
+  vars:
+    test: "Test："  #关键点
+  tasks:
+  - name: debug demo
+    debug:
+      msg: "{{test}} Remote host memory swap information: {{ansible_memory_mb['swap']}} \n, ip addrs info: {{ansible_all_ipv4_addresses}}"  #关键点

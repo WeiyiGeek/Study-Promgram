@@ -1,0 +1,24 @@
+---
+- name: "Play 1 - local"
+  hosts: local
+  remote_user: root
+  gather_facts: no
+  vars:
+    testvar: "通过vars关键字定义的变量方法是无法被跨主机引用的"
+  tasks:
+  - name: "setfact module settting"
+    set_fact:  #但是可以通过set_fact模块与hostvars来进行跨主机引用(重要)
+      var1: "gather_facts settting no"
+  - name: "show set_fact"
+    shell: "echo {{var1}}"
+    register: shellrst 
+
+- name: "Play 2 - testA "
+  hosts: testA
+  remote_user: root
+  gather_facts: no
+  tasks:
+  - debug:
+      msg: "Play 1 hostvars : {{hostvars.local.var1}} , Play 1 register shell command: {{hostvars.local.shellrst['cmd']}}"  #但是可以采用hostvars来进行跨主机引用set_fact模块设置的变量
+      #msg: "play 1 中的 {hostvars['local'].ansible_default_ipv4 不能被调用由于根本没有进行gathering facts主机信息收集"
+      #msg: "play 1 中的 testvar 变量不能被引用 {{testvar}} "

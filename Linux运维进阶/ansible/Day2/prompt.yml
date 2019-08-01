@@ -1,0 +1,30 @@
+---
+- hosts: local
+  remote_user: root
+  vars_prompt: 
+    - name: "Username"               #变量名称
+      prompt: "What is your name:"   #交互式输入提示
+      private: no                     #是否隐秘：默认Yes(不显示输入)/no(显示输入))
+    - name: "Password"
+      prompt: "What is your password:"
+    - name: "Sex"                    #多选项选项
+      prompt: "Choose the you Sex: \n
+      m: Man\n
+      w: Woman\n
+      o: other\n"
+      private: no
+      default: o
+    - name: "PayPass"               #加密输入以哈希密码输出 (可以直接创建linux系统用户和设置密码)
+      prompt: "Enter Pay PassWord:"
+      private: no                    #可查看输入
+      unsafe: yes                    #支持输入特殊字符 比如： { % 等ansbile含义符号 
+      encrypt: "sha512_crypt"        #关键点-encrypt关键字表示对用户输入的信息进行哈希
+      confirm: yes   #关键点-通过"confirm"关键字就能实现需要输入两次完全相同的密码，才能够设置成功
+  tasks:
+   - name: output prompt vars   #任务名称
+     debug:
+      msg: "Username = {{Username}} , Password = {{Password}},  Sex = {{Sex}}, Pay Password = {{PayPass}}"
+   - name: create user    #创建用户
+     user:
+       name: "{{Username}}"
+       password: "{{PayPass}}"

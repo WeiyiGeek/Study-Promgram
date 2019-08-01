@@ -1,0 +1,10 @@
+---
+- hosts: local
+  remote_user: root
+  gather_facts: no
+  tasks:
+  - debug:
+      msg: "{{ item }}"
+    with_together:
+    - [ 1, 2, 3]
+    - [ a, b]

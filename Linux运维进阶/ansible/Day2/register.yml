@@ -1,0 +1,19 @@
+---
+- hosts: local
+  remote_user: root
+  vars:
+    cmd1: whoami
+    cmd2: hostname -I
+  tasks:
+  - name: execute whoami
+    shell: "{{cmd1}}" 
+    register: who
+  - name: execute hostname
+    shell: "{{cmd2}}"
+    register: hostname
+  - name: execute echo
+    shell: "echo test > /tmp/testshellfile"
+    register: echovar
+  - name: Debug shell module return values
+    debug: 
+      var: who,hostname,echovar

@@ -1,0 +1,7 @@
+---
+- hosts: local
+  remote_user: root
+  tasks:
+  - name: "Passing Variables On The Command Line"
+    debug:
+      msg: "{{testvar}} {{countlist[0]}}"
