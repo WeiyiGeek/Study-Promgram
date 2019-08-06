@@ -1,0 +1,27 @@
+---
+- hosts: local
+  remote_user: root
+  tasks:
+  - name: "Demo 1-Method 1"
+    debug:
+      msg: "Method1-System release is Centos7"  
+    when: ansible_distribution == "CentOS" and ansible_distribution_major_version == "7"  #方式1
+  - name: "Demo 1-Method 2"
+    debug:
+      msg: "Method2-System release is Centos7"
+    when:
+    - ansible_distribution == "CentOS"   #方式2
+    - ansible_distribution_major_version == "7"
+  - name: "Demo 3"
+    debug:
+      msg: "{{ item }}"
+    with_items:
+    - 1
+    - 2
+    - 3
+    - 4
+    when: item > 1 and ( item == 3 or item ==5)  #列表中的所有条件同时成立时，对应的任务才会执行
+  - name: "Demo 4"
+    debug:
+      msg: "System release is not centos"
+    when: not ansible_distribution == "CentOS"  #关键点

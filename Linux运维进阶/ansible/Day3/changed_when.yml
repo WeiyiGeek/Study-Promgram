@@ -1,0 +1,12 @@
+---
+- hosts: local
+  remote_user: root
+  gather_facts: no
+  tasks:
+  - debug:
+      msg: "test message" 
+    changed_when: 2 > 1 #关键点
+  - name: "shell VS"
+    shell: "ls /opt"  
+  - shell: "ls /opt"  #hell模块的执行状态最终为'ok'
+    changed_when: false

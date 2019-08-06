@@ -1,0 +1,68 @@
+---
+- hosts: local
+  remote_user: root
+  gather_facts: no
+  vars:
+    testvar: "test"
+    testvar1: 
+    testpath: /bin/bash
+    teststr: "thisisstringdemo"
+    testnum: 1024
+    a:
+    - 2
+    - 5
+    b: [1,2,3,4,5]
+    ver: 7.4.1708
+  tasks:
+  - name: "Demo then defined"
+    debug:
+      msg: "Variable is defined"
+    when: testvar is defined   #关键点
+  - name: "Demo then undefined or none" 
+    debug:
+      msg: "Variable is undefined or is none"
+    when: (testvar2 is undefined) or (testvar1 is none)  #关键点
+  #分割线----------------------------------------
+  - name: "Demo then success|failure|change|skip"
+    shell: "cat /testdir/abc"
+    when: testvar == "test"
+    register: returnmsg
+    ignore_errors: true
+  - debug:
+      msg: "success"
+    when: returnmsg is success
+  - debug:
+      msg: "failed"
+    when: returnmsg is failure
+  - debug:
+      msg: "changed"
+    when: returnmsg is change
+  - debug:
+      msg: "skip"
+    when: returnmsg is skip
+  #分割线----------------------------------------
+  - name: "Demo then String"
+    debug:
+      msg: "String = {{teststr}} ,but is lower"
+    when: (teststr is lower) and (teststr is string) 
+  #分割线----------------------------------------
+  - name: "Demo then number"
+    debug:
+      msg: "Number = {{testnum}} ,but is odd" #odd奇数 / even偶数
+    when: (testnum is number) and (testnum is even) 
+  - debug:
+      msg: "Can be divided exactly by 2"  #是否能被设置数整除
+    when: testnum is divisibleby(2)
+  #分割线----------------------------------------
+  - name: "Demo then super set"
+    debug:
+      msg: "A is a subset of B"        #子集
+    when: a is subset(b)
+  - debug:
+      msg: "B is the parent set of A"  #父集
+    when: b is superset(a)
+  #分割线----------------------------------------
+  - name: "Demo then version"
+    debug:
+      msg: "This message can be displayed when the ver is greater than ver1"
+    when: (ver is version(7.3,"gt")) and (ver is version(7.3,">"))

@@ -1,0 +1,18 @@
+---
+- hosts: local
+  remote_user: root
+  gather_facts: no
+  tasks:
+  - block:
+      - shell: 'ls /opt'
+      - shell: 'ls /testdir'
+      - shell: 'ls /c'
+    rescue:   #关键点 block执行错误时候执行
+      - debug:
+          msg: 'I caught an error'
+      - command: /bin/false
+      - debug:
+          msg: 'I also never execute'
+    always:
+      - debug:
+          msg: "This always executes"

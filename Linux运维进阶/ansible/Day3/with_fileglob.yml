@@ -1,0 +1,10 @@
+---
+- hosts: local
+  remote_user: root
+  gather_facts: no
+  tasks:
+  - debug:
+      msg: "{{ item }}"
+    with_fileglob:  #可以通过"with_file"关键字获取到ansible主机中的文件内容
+    - /tmp/demo*.???  #ansbile主机上的文件
+    - /root/*

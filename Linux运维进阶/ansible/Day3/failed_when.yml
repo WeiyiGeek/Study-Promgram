@@ -1,0 +1,11 @@
+---
+- hosts: local
+  remote_user: root
+  tasks:
+  - debug:
+      msg: "I execute normally"
+  - shell: "echo 'This is a string for testing error'"
+    register: return_value
+    failed_when: ' "error" in return_value.stdout' #表示\"error\"字符串如果存在于shell模块执行后的标准输出中，则条件成立，当条件成立后，shell模块的执行状态将会被设置为失败
+  - debug:  #关键点 - 由于失败则debug模块不会被执行
+      msg: "I never execute,Because the playbook has stopped"

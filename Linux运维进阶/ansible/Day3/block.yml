@@ -1,0 +1,27 @@
+---
+- hosts: local
+  remote_user: root
+  tasks:
+  - debug:
+      msg: "task1 not in block"
+  - name: "Demo block"
+    block:  #当when对应的条件成立，则执行block中的两个任务 #关键点
+      - debug:
+          msg: "task2 in block1"
+      - debug:
+          msg: "task3 in block1"
+    when: 2 > 1
+  - name: "Demo ingnore erros"
+    shell: 'ls /ttt'
+    register: return_value
+    ignore_errors: true  #关键点
+  - debug:
+      msg: "I cought an error"     #如果条件成立，代表shell任务执行出错，则执行debug任务
+    when: return_value is failed   #关键点采用filed处理错误选择
+  - name: "Demo block error"
+    block:
+      - debug:
+         msg: "shell error!"
+      - debug:
+         msg: "shell execute error!"
+    when: return_value is failed   #关键点采用filed处理错误选择

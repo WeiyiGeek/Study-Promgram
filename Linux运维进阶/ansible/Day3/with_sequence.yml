@@ -1,0 +1,27 @@
+---
+- hosts: local
+  remote_user: root
+  gather_facts: no
+  tasks:
+  - name: "Method 1"
+    debug:
+      msg: "{{ item }}"
+    with_sequence: start=1 end=3 stride=1
+    #其中start=1表示从1开始，end=3表示到5结束，stride=1表示步长为1，即从1到5每次增加1
+  - name: "Method 2"
+    debug:
+      msg: "{{ item }}"
+    with_sequence: count=3
+    #count=5表示数字序列默认从1开始，到3结束，默认步长为1，与上述两种写法的效果相同
+  - name: "Demo 3"
+    debug: 
+      msg: "{{ item }}"  #" %0.2f"表示将数字格式化为一个保留两位小数点的浮点数
+    with_sequence: start=6 end=2 stride=-2 format="number is %0.2f"   #关键点
+  - name: "Demo 4 - Create dir"
+    file:
+      path: "/tmp/test{{ item }}"
+      state: directory
+    with_sequence:
+      start=2
+      end=10
+      stride=2

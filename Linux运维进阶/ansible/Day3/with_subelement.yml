@@ -1,0 +1,21 @@
+---
+- hosts: local
+  remote_user: root
+  gather_facts: no
+  vars:
+    users:
+    - name: WeiyiGeek
+      gender: male
+      hobby:
+        - Skateboard
+        - VideoGame
+    - name: Xiaodaigua
+      gender: female
+      hobby:
+        - Music
+  tasks:
+  - debug:
+      msg: "{{ item.0.name }} 's hobby is {{ item.1 }} , User's Gender is {{ item.0.gender}}"  #关键点(变成子对象元素，既可以分别可以将两个字典进行整合)
+    with_subelements:
+    - "{{users}}"
+    - hobby

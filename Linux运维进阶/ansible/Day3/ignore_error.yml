@@ -1,0 +1,16 @@
+---
+- hosts: local
+  remote_user: root
+  tasks:
+  - name: task1
+    shell: "ls /testabc"
+    ignore_errors: true   #关键点,表示shell模块执行报错后，ansible会忽略报错，继续执行之后的task。
+    register: returnmsg
+  - name: task2
+    debug:
+      msg: "Command execution successful"
+    when: returnmsg.rc == 0  #关键点
+  - name: task3
+    debug:
+      msg: "Command execution failed"
+    when: returnmsg.rc != 0  #关键点

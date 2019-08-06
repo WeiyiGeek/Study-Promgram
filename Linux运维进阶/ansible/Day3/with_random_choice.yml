@@ -1,0 +1,13 @@
+---
+- hosts: local
+  remote_user: root
+  gather_facts: no
+  tasks:
+  - debug:
+      msg: "{{ item }}"
+    with_random_choice:
+    - "one"
+    - 2
+    - "three"
+    - 4
+    - "five"

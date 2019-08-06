@@ -1,0 +1,12 @@
+---
+- hosts: local
+  remote_user: root
+  gather_facts: no
+  tasks:
+  - shell: "echo 'This is a string for testing--error'"
+    register: return_value  #关键点
+  - fail:  #关键点
+      msg: "1.Interrupt running playbook"
+    when: "'error' in return_value.stdout"  #并对fail模块添加了判断条件 表示shell模块执行后的标注输出信息中如果包含'error'字符串，则条件成立
+  - debug: #关键点 由于遇到了fail便不会被执行
+      msg: "I never execute,Because the playbook has stopped"

@@ -1,0 +1,30 @@
+---
+- hosts: local
+  remote_user: root
+  gather_facts: no
+  vars:
+    testpath1: /tmp/login.txt
+    testpath2: /var/log
+  tasks:
+  - name: "Demo then file/directory"
+    debug:
+      msg: "file"
+    when: testpath1 is file
+  - debug:
+      msg: "directory"
+    when: testpath2 is directory
+  - debug:
+      msg: "link"
+    when: testpath2 is link
+  - debug:
+      msg: "link"
+    when: testpath2 is link
+  - debug:
+      msg: "mount"
+    when: testpath1 is mount
+  - debug:
+      msg: "file {{ testpath1 }} not exist"
+    when: testpath1 is not exists
+  - debug:
+      msg: "file {{ testpath1 }} is exist"
+    when: testpath1 is exists

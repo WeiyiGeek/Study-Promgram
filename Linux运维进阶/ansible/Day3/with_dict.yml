@@ -1,0 +1,25 @@
+---
+- hosts: local
+  remote_user: root
+  gather_facts: no
+  vars:
+    users:
+      WeiyiGeek: female
+      Baby_ang: male
+  tasks:
+  - name: "Demo 1.dict"
+    debug:
+      msg: "Username: {{ item.key }} , User's gender: {{ item.value }}"
+    with_dict: "{{users}}"
+  - name: "Demo 2.dict"
+    debug:
+      msg: "Item: {{ item.key }}, Username: {{ item.value['name'] }} , User's gender: {{ item.value.gender }} , User's Telephone: {{ item.value.telephone }}"
+    with_dict:
+      alice:
+        name: Alice Appleworth
+        gender: female
+        telephone: 123-456-7890
+      bob:
+        name: Bob Bananarama
+        gender: male
+        telephone: 987-654-3210

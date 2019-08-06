@@ -1,0 +1,15 @@
+---
+- hosts: local
+  remote_user: root
+  gather_facts: no
+  tasks:
+  - debug:
+      msg: "1"
+  - debug:
+      msg: "2"
+  - fail:  #关键点
+      msg: "Interrupt running playbook"  
+  - debug:
+      msg: "3"
+  - debug:
+      msg: "4"
