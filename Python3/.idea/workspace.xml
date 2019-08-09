@@ -2,14 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e7bd297-b6c7-48e2-83d9-ccd4ed4523d4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Python安全平台建设/Scan/Web/webscreenshot.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Python自动化运维/Day4/pycurldemo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JAVADemo/src/createUUID.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Day9/execl.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Day9/os.popen.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Day9/python-logo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JAVADemo/src/Demo_String.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JAVADemo/Demo/Day5/Demo_String.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JAVADemo/src/InterfaceDemo1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JAVADemo/Demo/Day5/InterfaceDemo1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JAVADemo/src/InterfaceDemo2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JAVADemo/Demo/Day5/InterfaceDemo2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JAVADemo/src/abstractDemo1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JAVADemo/Demo/Day5/abstractDemo1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Linux运维进阶/Linux/shell/LinuxShell脑图/Linux Shell 学习路径(一).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Linux运维进阶/Linux/shell/LinuxShell脑图/Linux Shell 学习路径(三).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Linux运维进阶/Linux/shell/LinuxShell脑图/Linux Shell 学习路径(二).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Linux运维进阶/Linux/shell/LinuxShell脑图/Shell正则表达式.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Linux运维进阶/Linux/shell/LinuxShell脑图/Xmind/Linux Shell 学习路径(一).xmind" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Linux运维进阶/Linux/shell/LinuxShell脑图/Xmind/Linux Shell 学习路径(三).xmind" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Linux运维进阶/Linux/shell/LinuxShell脑图/Xmind/Linux Shell 学习路径(二).xmind" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Linux运维进阶/Linux/shell/Shell Regular Expression/Shell中的正则表达式(regular expression).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Linux运维进阶/Linux/shell/Shell Regular Expression/Shell中的正则表达式(regular expression).xmind" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../blog/source/_posts/系统运维/自动化运维/Ansible/Ansible模块介绍.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../blog/source/_posts/系统运维/自动化运维/Ansible/Ansible模块介绍.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../blog/source/_posts/系统运维/自动化运维/Ansible/Ansible自动化运维学习笔记2.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../blog/source/_posts/系统运维/自动化运维/Ansible/Ansible自动化运维学习笔记2.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../blog/source/_posts/系统运维/自动化运维/Python/Python自动化运维1.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../blog/source/_posts/系统运维/自动化运维/Python/Python自动化运维1.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../blog/awkprof.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../blog/source/_posts/收集.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../blog/source/_posts/收集.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../blog/source/_posts/数据存储/Redis/Redis数据库学习.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../blog/source/_posts/数据存储/Redis/Redis数据库学习.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../blog/source/_posts/系统运维/Linux/Shell编程/编程案例/Shell脚本编程示例.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../blog/source/_posts/系统运维/Linux/Shell编程/编程案例/Shell脚本编程示例.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../blog/source/_posts/系统运维/Linux/入坑容灾/Linux安全运维操作.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../blog/source/_posts/系统运维/Linux/入坑容灾/Linux运维问题解决.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../blog/source/_posts/系统运维/Linux/入坑容灾/Linux运维问题解决.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../blog/source/_posts/系统运维/Linux/常用命令/二进制程序类命令/编码加密核验类命令.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../blog/source/_posts/系统运维/Linux/常用命令/二进制程序类命令/编码加密核验类命令.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../blog/source/_posts/系统运维/Linux/常用命令/磁盘管理类命令/磁盘和移动存储常用命令.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../blog/source/_posts/系统运维/Linux/常用命令/磁盘管理类命令/磁盘和移动存储常用命令.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../blog/source/_posts/系统运维/Linux/常用命令/系统管理类命令/系统配置和性能优化.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../blog/source/_posts/系统运维/Linux/常用命令/系统管理类命令/系统配置和性能优化.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../blog/source/_posts/编程世界/Python/模块函数学习/Python3内置模块使用.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../blog/source/_posts/编程世界/Python/模块函数学习/Python3内置模块使用.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../blog/source/_posts/编程世界/Python/模块函数学习/Python3外置模块使用.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../blog/source/_posts/编程世界/Python/模块函数学习/Python3外置模块使用.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../blog/source/_posts/网安大类/黑帽编程/Python/1.黑帽编程应用之Python.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../blog/source/_posts/网安大类/黑帽编程/Python/1.黑帽编程应用之Python.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../blog/source/_posts/编程世界/Python/模块函数学习/Python3数据分析模块.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../blog/source/_posts/编程世界/Python/模块函数学习/Python3数据分析模块.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../blog/source/_posts/编程世界/RegularExpression/正则表达式介绍与使用.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../blog/source/_posts/编程世界/RegularExpression/正则表达式介绍与使用.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,25 +87,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Python自动化运维/Day4/pycurldemo.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="74" column="66" selection-start-line="74" selection-start-column="61" selection-end-line="74" selection-end-column="66" />
-              <folding>
-                <element signature="e#173#183#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Python安全平台建设/Scan/Web/webscreenshot.py">
+        <entry file="file://$PROJECT_DIR$/Day9/execl.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+            <state relative-caret-position="289">
+              <caret line="56" column="28" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
               <folding>
-                <element signature="e#178#193#0" expanded="true" />
+                <element signature="e#209#226#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -146,6 +157,8 @@
         <option value="$PROJECT_DIR$/Python自动化运维/Day2/ip.txt" />
         <option value="$PROJECT_DIR$/Python自动化运维/Day4/pycurldemo.py" />
         <option value="$PROJECT_DIR$/Python安全平台建设/Scan/Web/webscreenshot.py" />
+        <option value="$PROJECT_DIR$/Day9/os.popen.py" />
+        <option value="$PROJECT_DIR$/Day9/execl.py" />
       </list>
     </option>
   </component>
@@ -174,20 +187,11 @@
             <path>
               <item name="Python3" type="b2602c69:ProjectViewProjectNode" />
               <item name="Python3" type="462c0819:PsiDirectoryNode" />
-              <item name="Python安全平台建设" type="462c0819:PsiDirectoryNode" />
+              <item name="Day9" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Python3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Python3" type="462c0819:PsiDirectoryNode" />
-              <item name="Python安全平台建设" type="462c0819:PsiDirectoryNode" />
-              <item name="Scan" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Python3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Python3" type="462c0819:PsiDirectoryNode" />
-              <item name="Python安全平台建设" type="462c0819:PsiDirectoryNode" />
-              <item name="Scan" type="462c0819:PsiDirectoryNode" />
-              <item name="Web" type="462c0819:PsiDirectoryNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
             </path>
           </expand>
           <select />
@@ -206,14 +210,15 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\githubProject\Study-Promgram\Python3\Python自动化运维\config" />
-      <recent name="E:\githubProject\Study-Promgram\Python3\Python自动化运维\Day1" />
-      <recent name="E:\githubProject\Study-Promgram\Python3\Day8" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\githubProject\Study-Promgram\Python3\Python自动化运维\Day1\哇哇哇哇" />
       <recent name="E:\githubProject\Study-Promgram\Python3\Python自动化运维\config\333" />
+      <recent name="E:\githubProject\Study-Promgram\Python3\Day8" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\githubProject\Study-Promgram\Python3\Day9" />
+      <recent name="E:\githubProject\Study-Promgram\Python3\Python自动化运维\config" />
+      <recent name="E:\githubProject\Study-Promgram\Python3\Python自动化运维\Day1" />
       <recent name="E:\githubProject\Study-Promgram\Python3\Day8" />
     </key>
   </component>
@@ -229,7 +234,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.webscreenshot">
+  <component name="RunManager" selected="Python.execl">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="Python3" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -252,22 +257,38 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="capture" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="execl" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Python3" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Python自动化运维/Day2" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Day9" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Python自动化运维/Day2/capture.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Day9/execl.py" />
       <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="os.popen" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Python3" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Day9" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Day9/os.popen.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -278,6 +299,9 @@
       <module name="Python3" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Python自动化运维/Day4" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -319,6 +343,9 @@
       <module name="Python3" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Python安全平台建设/Scan/Web" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -334,35 +361,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="xlsxDemo" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Python3" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Python自动化运维/config" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Python自动化运维/config/xlsxDemo.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.execl" />
+        <item itemvalue="Python.os.popen" />
         <item itemvalue="Python.webscreenshot" />
         <item itemvalue="Python.pycurldemo" />
         <item itemvalue="Python.stmplibsimple3" />
-        <item itemvalue="Python.capture" />
-        <item itemvalue="Python.xlsxDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -396,11 +401,12 @@
       <workItem from="1564122136577" duration="10916000" />
       <workItem from="1564473942262" duration="5933000" />
       <workItem from="1564556169622" duration="10309000" />
+      <workItem from="1565334983801" duration="4310000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92188000" />
+    <option name="totallyTimeSpent" value="96498000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -415,13 +421,13 @@
     <frame x="-1374" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49945116" visible="true" weight="0.22637194" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49945116" visible="true" weight="0.23094513" />
       <window_info id="Structure" order="1" sideWeight="0.50054884" side_tool="true" weight="0.15702036" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.15487674" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32930845" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.169045" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49923897" weight="0.50274426" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49923897" weight="0.50250417" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32930845" />
@@ -429,8 +435,8 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32930845" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" weight="0.32930845" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010718" side_tool="true" weight="0.32930845" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49946466" weight="0.35455543" />
-      <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49946466" visible="true" weight="0.45409015" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49946466" weight="0.3539232" />
+      <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49946466" visible="true" weight="0.2721202" />
       <window_info anchor="bottom" id="Database Console" order="13" sideWeight="0.4989282" weight="0.32930845" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -484,10 +490,12 @@
     <SUITE FILE_PATH="coverage/Python3$jsonDemo.coverage" NAME="jsonDemo Coverage Results" MODIFIED="1564038059893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python自动化运维/config" />
     <SUITE FILE_PATH="coverage/Python3$dnsmonitorweb.coverage" NAME="dnsmonitorweb Coverage Results" MODIFIED="1562752353680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python自动化运维" />
     <SUITE FILE_PATH="coverage/Python3$json.coverage" NAME="json Coverage Results" MODIFIED="1564032842587" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python自动化运维/config" />
+    <SUITE FILE_PATH="coverage/Python3$os_popen.coverage" NAME="os.popen Coverage Results" MODIFIED="1565335129788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Day9" />
     <SUITE FILE_PATH="coverage/Python3$YamlDemo.coverage" NAME="YamlDemo Coverage Results" MODIFIED="1564031699533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python自动化运维/config" />
     <SUITE FILE_PATH="coverage/Python3$difflibfile.coverage" NAME="difflibfile Coverage Results" MODIFIED="1562895578986" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python自动化运维" />
     <SUITE FILE_PATH="coverage/Python3$pycurldemo.coverage" NAME="pycurldemo Coverage Results" MODIFIED="1564561247031" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python自动化运维/Day4" />
     <SUITE FILE_PATH="coverage/Python3$gitsvnScan.coverage" NAME="gitsvnScan Coverage Results" MODIFIED="1563328276442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python安全平台建设/Scan" />
+    <SUITE FILE_PATH="coverage/Python3$execl.coverage" NAME="execl Coverage Results" MODIFIED="1565341859089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Day9" />
     <SUITE FILE_PATH="coverage/Python3$ipinfo.coverage" NAME="ipinfo Coverage Results" MODIFIED="1562744269382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python安全平台建设/Scan" />
     <SUITE FILE_PATH="coverage/Python3$blogWordCloud.coverage" NAME="blogWordCloud Coverage Results" MODIFIED="1562922342205" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Day8" />
     <SUITE FILE_PATH="coverage/Python3$xlsxDemo.coverage" NAME="xlsxDemo Coverage Results" MODIFIED="1564474899014" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python自动化运维/config" />
@@ -498,23 +506,6 @@
     <SUITE FILE_PATH="coverage/Python3$verity.coverage" NAME="verity Coverage Results" MODIFIED="1564129999551" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python自动化运维/Day2" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Python自动化运维/Day1/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Day8/bg.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://D:/Program Files (x86)/Python37-32/Lib/site-packages/requests/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Python自动化运维/Day1/synchronization.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -763,15 +754,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Python自动化运维/Day4/BreezePython.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Python自动化运维/Day4/geckodriver.log">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/Day9/os.popen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="14" column="18" lean-forward="true" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Python自动化运维/Day4/BreezePython.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Python安全平台建设/Scan/Web/webscreenshot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="27" selection-start-line="27" selection-end-line="28" />
+          <folding>
+            <element signature="e#178#193#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Python自动化运维/Day4/pycurldemo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
+        <state relative-caret-position="221">
           <caret line="74" column="66" selection-start-line="74" selection-start-column="61" selection-end-line="74" selection-end-column="66" />
           <folding>
             <element signature="e#173#183#0" expanded="true" />
@@ -779,12 +787,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Python安全平台建设/Scan/Web/webscreenshot.py">
+    <entry file="file://$PROJECT_DIR$/Day9/python-logo.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Day9/execl.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+        <state relative-caret-position="289">
+          <caret line="56" column="28" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
           <folding>
-            <element signature="e#178#193#0" expanded="true" />
+            <element signature="e#209#226#0" expanded="true" />
           </folding>
         </state>
       </provider>
