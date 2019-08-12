@@ -13,7 +13,7 @@ runtime! debian.vim
 " NOTE: debian.vim sets 'nocompatible'.  Setting 'compatible' changes numerous
 " options, so any other options should be set AFTER setting 'compatible'.
 "set compatible
-git 
+
 
 " ####兼容性选项####
 set nocompatible  
@@ -52,7 +52,12 @@ set fencs=utf-8,usc-bom,euc-jp,gb18030,gbk,gb2312,cp936
 
 set history=50     " 历史记录为50 
 set number         " 显示行号
+
 set cursorline     " 在当前行显示一条下划线
+set cursorcolumn   " 在当前列显示列线条
+hi CursorLine  cterm=underline guibg=#00ff00   " 设置横竖的颜色
+hi CursorColumn cterm=reverse ctermbg=2 guibg=#00ff00   
+
 
 set nocompatible  " 不要使用vi的键盘模式，而是vim自己的 
 set confirm          " 在处理未保存或只读文件的时候，弹出确认 
@@ -77,6 +82,7 @@ highlight StatusLineNC guifg=Gray guibg=White
 " 文件设置 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
 set nobackup  "不要备份文件（根据自己需要取舍） 
+set autoread  " 文件被改动时自动载入
 
 " 不要生成swap文件，当buffer被丢弃的时候隐藏它 
 setlocal noswapfile 
@@ -121,7 +127,7 @@ set novisualbell  " 不要闪烁
 " 我的状态行显示的内容（包括文件类型和解码） 
 " set statusline=%F%m%r%h%w\[POS=%l,%v][%p%%]\%{strftime(\"%d/%m/%y\ -\ %H:%M\")} 
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
-set statusline=[%F]%y%r%m%*%=[Line:%l/%L,Column:%c][%p%%]
+" set statusline=[%F]%y%r%m%*%=[Line:%l/%L,Column:%c][%p%%]
 
 
 " 文本格式和排版 
