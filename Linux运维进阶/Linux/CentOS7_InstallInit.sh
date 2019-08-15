@@ -4,9 +4,9 @@ echo -e "\n############################\n#网卡配置\n########################
 sed -i 's/ONBOOT=no/ONBOOT=yes/g' /etc/sysconfig/network-scripts/ifcfg-ens192
 sed -i 's/BOOTPROTO=dhcp/BOOTPROTO=static/g' /etc/sysconfig/network-scripts/ifcfg-ens192
 cat >> /etc/sysconfig/network-scripts/ifcfg-ens192 <<EOF
-echo IPADDR=10.10.107.222
-echo NETMASK=255.255.255.0
-echo GATEWAY=10.10.107.1
+IPADDR=10.10.107.239
+NETMASK=255.255.255.0
+GATEWAY=10.10.107.1
 EOF
 service network restart
 echo nameserver 114.114.114.114 >> /etc/resolv.conf
@@ -26,7 +26,7 @@ yum update -y && yum upgrade -y &&  yum -y install epel*
 echo "--[YUM替换更新应用软件完成]--"
 
 echo -e "\n############################\n#安装常用的运维软件\n####################################\n"
-yum install -y nano vim net-tools tree wget dos2unix unzip
+yum install -y nano vim net-tools tree wget dos2unix unzip gcc gcc-c++ openssl-devel bzip2-devel
 echo "--[安装安装完成]--"
 
 echo -e "\n############################\n#安装COBBLER及其依赖\n####################################\n"

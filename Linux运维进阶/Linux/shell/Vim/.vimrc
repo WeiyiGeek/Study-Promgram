@@ -253,6 +253,10 @@ func SetTitle()
 			call Note1()
 			call append(6, "\#!/bin/bash")
 			call append(7, "")
+		elseif &filetype == '.pl'
+			call Note1()
+			call append(6, "\#!/usr/bin/perl")
+			call append(7, "")
 		elseif &filetype == 'python'  "关键点
 			call Note1()
 			call append(6, "\#!/usr/bin/env python")
