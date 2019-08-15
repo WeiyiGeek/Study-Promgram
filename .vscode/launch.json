@@ -6,6 +6,18 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Demo_InnerClass",
+            "request": "launch",
+            "mainClass": "Demo_InnerClass"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Demo3",
+            "request": "launch",
+            "mainClass": "Demo3"
+        },
+        {
+            "type": "java",
             "name": "Debug Internal",
             "request": "launch",
             "console": "internalConsole",
