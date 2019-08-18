@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Demo_AnonmouseInnerClass1",
+            "request": "launch",
+            "mainClass": "Demo_AnonmouseInnerClass1",
+            "projectName": "Study-Promgram_f3d21036"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Demo_InnerClass",
             "request": "launch",
             "mainClass": "Demo_InnerClass"
