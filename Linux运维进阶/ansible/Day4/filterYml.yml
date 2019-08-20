@@ -1,0 +1,13 @@
+---
+- hosts: local
+  remote_user: root
+  gather_facts: no
+  tasks:
+  - include_vars: 
+      file: "/root/filter.txt"
+      name: vartest
+  - debug:
+      msg: "{{item.1.url}}"
+    with_subelements:
+    - "{{vartest.logs}}"
+    - files

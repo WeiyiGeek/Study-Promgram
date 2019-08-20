@@ -1,0 +1,9 @@
+logs:
+- domainName: test.com
+  files:
+   - dateFrom: 2018-09-05-0000
+     url: ?key=asdashashdhad&uid=124
+- domainName: test123.com
+  files:
+   - dateFrom: 2018-09-05-0000
+     url: ?key=asdashashdhad&uid=124

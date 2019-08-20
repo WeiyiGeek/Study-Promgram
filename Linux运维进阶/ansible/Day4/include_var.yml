@@ -1,0 +1,31 @@
+---
+- hosts: local
+  remote_user: root
+  gather_facts: no
+  vars_files:  #关键点
+    - /tmp/ansible/demo1/var.yml
+  tasks:
+  - name: "Demo1 var_files"
+    debug:
+      msg: "{{test1}} {{test2}}"
+  - name: "Demo2 edit var_files"
+    lineinfile:
+      path: /tmp/ansible/demo1/var.yml
+      line: "testvar3: Ansible Study"
+  - include_vars: 
+      file: /tmp/ansible/demo1/var.yml  #关键点
+      name: trans_var   #关键点
+  - name: "Demo3 show dynmaic add"
+    debug:
+      msg: "{{ trans_var }} {{trans_var.testvar3}}"
+  - name: "Demo4 include_vars directory"
+    include_vars:
+      dir: /tmp/ansible/demo2/
+      depth: 1
+      extensions: [yaml,yml,json,varfile]
+      files_matching: "^var.*"
+      name: includeval
+    register: return_val  #坑呀,与include平级
+  - name: "Demo4 show includevars dir"
+    debug:
+      msg: "{{return_val.ansible_included_var_files}} include -> {{includeval.test3}}  -> {{includeval.test4}}"

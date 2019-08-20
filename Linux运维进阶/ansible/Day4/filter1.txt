@@ -1,0 +1,12 @@
+---
+users:
+- name: tom
+  age: 17
+  hobby:
+    - run
+    - pingpang
+- name: jerry
+  age: 12
+  hobby:
+    - computer
+    - basketball

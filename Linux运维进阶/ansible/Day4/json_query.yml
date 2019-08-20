@@ -1,0 +1,11 @@
+---
+- hosts: local
+  remote_user: root
+  gather_facts: no
+  tasks:
+  - include_vars:
+      file: "/root/filter.txt"
+      name: vartest
+  - name: "json_query Filter Demo"
+    debug:
+            msg: "{{vartest|json_query('logs[*].files[*].url')}}"

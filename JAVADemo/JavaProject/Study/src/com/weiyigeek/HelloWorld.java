@@ -1,7 +1,7 @@
 /**
  * Java Eclipse IDE ѧϰ
  */
-package com.weiyigeek.demo;
+package com.weiyigeek;
 
 /**
  * @author Administrator

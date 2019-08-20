@@ -1,0 +1,28 @@
+---
+- hosts: local
+  remote_user: root
+  gather_facts: no
+  vars_files:
+  - /tmp/ansible/demo1/var.yml
+  tasks:
+  - debug:
+      msg: "{{test1}} {{test2}}"  #由于testvar2已经加入到了变量文件中,所有显示OK
+  - lineinfile:
+      path: /tmp/ansible/demo1/var.yml #修改添加变量文件
+      line: "testvar4: add"
+  - include_vars: 
+      file: /tmp/ansible/demo1/var.yml
+      name: trans_var  #关键点将变量文件中变量全部赋值给另外trans_var变量
+  #'include_vars'模块重新加载了变量文件
+  - debug:
+      msg: "include_vars - {{trans_var.testvar4}}"  # 成功调用了trans_var.testvar4变量
+  - include_vars: 
+      dir: /tmp/ansible/demo2/   #夹杂这个文件中为.yaml / yml / json 
+      files_matching: "^var.*" #加载指定目录中以\"var_\"开头的变量文件
+      ignore_files: ["^var_.*",varintest.yaml] #明确指定需要忽略的变量文件名称的列表
+      extensions: [yaml,yml,json,varfile] #允许的扩展
+      depth: 1 #递归深度
+      name: var  #关键点将变量文件中变量全部赋值给另外
+    register: returnval
+  - debug:
+      msg: "{{var}} -> {{returnval.ansible_included_var_files}}"  # 调用var重新赋值的变量;

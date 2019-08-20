@@ -1,0 +1,22 @@
+---
+- hosts: local
+  remote_user: root
+  gather_facts: no
+  tasks:
+  - include_vars:
+      file: "/root/filter1.txt"
+      name: vartest
+      #坑：注意下面是name(在palybook执行中显示的title)
+  - name: "json_query Demo 1 : Name"
+    debug:
+      msg: "{{vartest | json_query('users[*].name')}}" 
+  - name: "json_query Demo 2 : Hobby"
+    debug:
+      msg: "{{vartest | json_query('users[*].hobby[*]')}}"
+  - name: "Advances json_query Demo1"
+    debug:
+      msg: "{{vartest | json_query('users[?name==`tom`].hobby[*]')}}" #关键点指定用户过滤
+  - name: "Advances json_query Demo2"
+    debug:
+       #用户的姓名和年龄都按照我们定义的方式输出
+       msg: "{{vartest | json_query('users[*].{username:name,userage:age}')}}"
