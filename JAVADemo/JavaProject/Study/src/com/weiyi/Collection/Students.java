@@ -4,8 +4,7 @@ public class Students {
 	private String name;
 	private int age;
 	//创建空参和有参
-	public Students() {
-	}
+	public Students() {}
 	public Students(String name, int age) {
 		this.name = name;
 		this.age = age;
