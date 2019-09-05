@@ -23,4 +23,17 @@ public class Students {
 	public void setAge(int age) {
 		this.age = age;
 	}
+	
+	@Override
+	public String toString() {
+		return "Students [name=" + name + ", age=" + age + "]";
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		//向下转型
+		Students stu = (Students)obj; 
+		return this.name.equals(stu.name) && this.age == stu.age;
+	}
+	
 }
