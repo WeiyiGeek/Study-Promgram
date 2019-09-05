@@ -7,15 +7,15 @@ import com.weiyi.Collection.Students;
 public class Demo4_For {
 
 	public static void main(String[] args) {
-		//ÊµÀı1.ÔöÇ¿for±éÀúÊı×é
+		//Êµï¿½ï¿½1.ï¿½ï¿½Ç¿forï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		int[] arr = {11,22,33,44,55};
-		//foreach µü´ú(ÖµµÃÑ§Ï°)
+		//foreach ï¿½ï¿½ï¿½ï¿½(Öµï¿½ï¿½Ñ§Ï°)
 		for (int i : arr) {
 			System.out.print(i+" ");
 		}
 		System.out.println();
 		
-		//ÊµÀı2.ÔöÇ¿for±éÀú¼¯ºÏ´æ´¢ÔªËØ
+		//Êµï¿½ï¿½2.ï¿½ï¿½Ç¿forï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´æ´¢Ôªï¿½ï¿½
 		ArrayList<String> list = new ArrayList<String>();
 		list.add("a");
 		list.add("b");
@@ -27,14 +27,14 @@ public class Demo4_For {
 		System.out.println();
 
 		
-		//ÊµÀı3.ArrayList´æ´¢×Ö·û´®ºÍ×Ô¶¨Òå¶ÔÏó²¢±éÀúÔöÇ¿for°æ
+		//Êµï¿½ï¿½3.ArrayListï¿½æ´¢ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½ó²¢±ï¿½ï¿½ï¿½ï¿½ï¿½Ç¿forï¿½ï¿½
 		ArrayList<Students> list1  = new ArrayList<Students>();
-		list1.add(new Students("ÔüÔü¸ç", 27));
-		list1.add(new Students("ÁõÊ¦¸µ", 26));
-		list1.add(new Students("ÕÊÀÏÊ¦", 27));
+		list1.add(new Students("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", 27));
+		list1.add(new Students("ï¿½ï¿½Ê¦ï¿½ï¿½", 26));
+		list1.add(new Students("ï¿½ï¿½ï¿½ï¿½Ê¦", 27));
 		
 		for (Students param : list1) {
-			System.out.println(param);  //ÕâÀïÊÇÓÉÓÚÖØĞ´ÁËtoStringµÄĞ§¹û
+			System.out.println(param);  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ´ï¿½ï¿½toStringï¿½ï¿½Ğ§ï¿½ï¿½
 		}
 	}
 }
