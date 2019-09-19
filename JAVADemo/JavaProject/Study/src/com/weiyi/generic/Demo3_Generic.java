@@ -7,26 +7,26 @@ import java.util.List;
 public class Demo3_Generic {
 
 	public static void main(String[] args) {
-		//ÊµÀı1.µ±ÓÒ±ßµÄ·ºĞÍ²»È·¶¨Ê±,×ó±ß¿ÉÒÔÖ¸¶¨Îª?
+		//Êµï¿½ï¿½1.ï¿½ï¿½ï¿½Ò±ßµÄ·ï¿½ï¿½Í²ï¿½È·ï¿½ï¿½Ê±,ï¿½ï¿½ß¿ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½Îª?
 		List<?> list = new ArrayList<Integer>();
 
-		//ÊµÀı2.Í¨Åä·û°¸ÀıÑéÖ¤
+		//Êµï¿½ï¿½2.Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¤
 		ArrayList<Study> list1 = new ArrayList<>();
-		list1.add(new Study("1.ÍõÀÏÎå", 15)); //×ÓÀà
-		list1.add(new Study("2.ÍõÀÏ¼ª", 15));
-		list1.add(new Study("3.ÍõÀÏËÄ", 15));
+		list1.add(new Study("1.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", 15)); //ï¿½ï¿½ï¿½ï¿½
+		list1.add(new Study("2.ï¿½ï¿½ï¿½Ï¼ï¿½", 15));
+		list1.add(new Study("3.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", 15));
 		
 		ArrayList<Students> list2 = new ArrayList<>();
-		list2.add(new Students("4.²âÊÔ",25));  //¸¸Àà
-		list2.add(new Students("5.Ñ§ÉúÀà",25));
+		list2.add(new Students("4.ï¿½ï¿½ï¿½ï¿½",25));  //ï¿½ï¿½ï¿½ï¿½
+		list2.add(new Students("5.Ñ§ï¿½ï¿½ï¿½ï¿½",25));
 
-		list2.addAll(list1);   //¸¸ÀàÌí¼ÓÆ´½Ó×ÓÀàµÄ¼¯ºÏ £¨×¢Òâ²»ÄÜ¸¸ÀàÇ¿ÖÆ×ª»»³ÉÎª×ÓÀàlist1.addAll(list2))
-		System.out.println("Êä³ö½á¹û:"+list2);
+		list2.addAll(list1);   //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ ï¿½ï¿½×¢ï¿½â²»ï¿½Ü¸ï¿½ï¿½ï¿½Ç¿ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½list1.addAll(list2))
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:"+list2);
 	}
 }
 
 
-//ÊµÀı1
+//Êµï¿½ï¿½1
 class Study extends Students {
 	public Study() {
 		super();
