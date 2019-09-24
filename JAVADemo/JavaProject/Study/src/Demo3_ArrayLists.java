@@ -27,5 +27,4 @@ public class Demo3_ArrayLists {
 			}
 		}
 	}
-
 }
