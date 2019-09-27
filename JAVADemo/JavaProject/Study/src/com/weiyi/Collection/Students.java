@@ -66,7 +66,7 @@ public class Students implements Comparable<Students> {
 			return 0;
 		*/
 		int num = this.age - o.age;
-		System.out.println(num);
+		//System.out.println(num);
 		return num == 0 ? this.name.compareTo(o.name) : num;  //判断年龄是否相同如果相同再看其姓名是是不是相同(再String中已经重写了compareTo-相同返回0，o.name大于返回1,o.name小于返回-1)否则返回num
 		 
 	}
