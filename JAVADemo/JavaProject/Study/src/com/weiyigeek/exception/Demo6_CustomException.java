@@ -10,7 +10,6 @@ public class Demo6_CustomException {
 			System.out.println(e);
 			System.out.println("错误的信息 ： "+e.getMessage());
 		}
-
 	}
 	
 	//抛出自定义异常类
@@ -29,12 +28,9 @@ class AgeOutOfBoundsException extends Exception {
 	//继承父类的构造方法,使其可以传递具体的错误参数字符串;
 	public AgeOutOfBoundsException() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public AgeOutOfBoundsException(String message) {
 		super(message);
-		// TODO Auto-generated constructor stub
 	}
-
 }
