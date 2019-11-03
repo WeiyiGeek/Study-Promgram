@@ -119,14 +119,12 @@ public class Demo2_NetGUI extends Frame {
 		
 		//清空聊天文件记录
 		cls.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				try {
 					viewText.setText(""); //清屏并且删除聊天记录
 					new BufferedWriter(new FileWriter("E:\\config.txt")).close();
 				} catch (IOException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 			}
@@ -134,10 +132,9 @@ public class Demo2_NetGUI extends Frame {
 		
 		//键盘监听(回车发送)
 		sendText.addKeyListener(new KeyAdapter() {
-
 			@Override
 			public void keyReleased(KeyEvent e) {
-				//ctrl+enter 进行发送信息
+				//Ctrl + Enter 进行发送信息
 				if(e.getKeyCode() == KeyEvent.VK_ENTER && e.isControlDown())
 				{
 					try {
