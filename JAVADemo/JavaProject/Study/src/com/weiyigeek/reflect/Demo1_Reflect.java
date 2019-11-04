@@ -41,7 +41,6 @@ public class Demo1_Reflect {
 		//4.通过反射获取方法
 		Method m = clazz1.getMethod("reflectDemo"); //获取类中的方法
 		m.invoke(s); //执行无参方法reflectDemo
-		
 		Method m1 = clazz1.getMethod("reflectDemo", int.class); //获取有参数方式
 		m1.invoke(s, 1024);
 		
