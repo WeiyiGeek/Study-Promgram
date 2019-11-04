@@ -71,7 +71,13 @@ public class Students implements Comparable<Students> {
 		 
 	}
 	
-	
-	
+	//无参函数
+	public void reflectDemo() {
+		System.out.println("反射获取的无参方法!");
+	}
+	//有参函数(多态)
+	public void reflectDemo(int a) {
+		System.out.println("反射获取的有参方法，a = " + a);
+	}
 }
 
