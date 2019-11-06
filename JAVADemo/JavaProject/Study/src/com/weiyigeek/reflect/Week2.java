@@ -8,7 +8,12 @@ public enum Week2 {
 		public void show() {
 			System.out.println("星期二");
 		}
+	},WED("星期三"){
+		public void show() {
+			System.out.println("星期三");
+		}
 	};
+	
 	private String w;
 	private Week2(String w) {
 		this.w = w;
@@ -17,4 +22,8 @@ public enum Week2 {
 		return w;
 	}
 	public abstract void show();
+	//重写ToString方法
+	public String toString() {
+		return w;
+	}
 }

@@ -15,6 +15,16 @@ public class EnumDemo {
 		Week2 w2 = Week2.MON;
 		System.out.println("方法3:");
 		w2.show();
-
+		
+		//实例4.与switch进行联用
+		System.out.println("方法4:");
+		Week2 w3 = Week2.MON;
+		switch (w3) {
+		case MON:
+			System.out.println("星期 1 ");
+			break;
+		case TUE:
+			System.out.println("星期 2 ");
+		}
 	}
 }
