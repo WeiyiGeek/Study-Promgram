@@ -1,0 +1,10 @@
+﻿<logotest>
+  <extensions>
+    <e>.exe</e>
+    <e>.dll</e>
+  </extensions>
+   <unextensions>
+    <e>.exe</e>
+    <e>.dll</e>
+  </unextensions>
+</logotest>

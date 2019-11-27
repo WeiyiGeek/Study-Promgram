@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Jquery/Javascript互换</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<script src="jquery-2.1.0.min.js"></script>
+</head>
+<body>
+  <button id="clk1">JS=>JQ对象</button>
+  <button id="clk2">JQ=>JS对象</button>
+  <pre id="change">
+      【JQ和JS之间的转换】
+      - JQ对象,只能调用JQ的属性和方法
+      - JS对象,只能调用JS的属性和方法
+  </pre>
+  <hr>
+  <button id="clk3">Show</button>
+  <button id="clk4">Hide</button>
+  <br>
+  <img src="https://img2018.cnblogs.com/blog/1010141/201907/1010141-20190716105923289-1888756797.png" width="100px" height="100px" alt="Test" style="display: block;"/>
+  <script>
+      //示例1:
+      $("#clk1").click(function(){
+        var demo1 = document.getElementById("change");
+        $(demo1).html("<b style='color:red'>JS对象转换成为JQ对象!</b>");
+      });
+      
+      //示例2:
+      $("#clk2").click(function(){
+       var $demo2 = $('#change');
+       var demo2 = $demo2.get(0); //或者$demo2[0]
+       demo2.innerHTML="<b style='color:green'>JQ对象转换成为JS对象!</b>";
+      });
+
+      //示例3
+      $(function(){
+        $('#clk3').click(function(){
+          $("img").show(2000);
+          $("img").animate({width:"200px",opacity:"0.9"})
+          $("img").fadeIn(2000);
+        })
+
+        $('#clk4').click(function(){
+          $("img").hide(3000);
+          $("img").fadeOut(1000);
+        })
+      });
+    </script>
+</body>
+</html>

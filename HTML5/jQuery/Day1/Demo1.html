@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+  <script>
+    /**文档加载完成执行**/
+    //方式1
+    jQuery(document).ready(function(){
+      alert("Read");
+    })
+    //方式2
+    $(document).ready(function(){
+      alert("Reader");
+    })
+    //方式3
+    $(function(){
+      alert("Method")
+    })
+  </script>
+</body>
+</html>
