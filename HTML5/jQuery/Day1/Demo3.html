@@ -9,19 +9,18 @@
   <script>
     //1.JQ文档加载事件
     //2.定时器setTimeout()
-
     function ShowAD(){
-      $("img").show(1000);
+      //$("img").show(1000);
+      $("img").fadeIn(2000);
       $("img").slideDown();
-      $("img").fadeIn(1000);
-
       setTimeout("HideAD()",3000)
     };
 
     function HideAD() {
-      $("img").hide(1000);
-      $("img").slideUp();
-      $("img").fadeOut(1000);
+      //$("img").Hide(1000)
+      $("img").fadeOut(2000);
+      $("img").Hide(1000)
+      //$("img").slideUp();
     }
 
     //3.显示和隐藏广告
