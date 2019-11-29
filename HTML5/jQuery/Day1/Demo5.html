@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>城市联动</title>
+  <script src="jquery-2.1.0.min.js"></script>
+  <script>
+    var provinces = [
+				["深圳市","东莞市","惠州市","广州市"],
+				["长沙市","岳阳市","株洲市","湘潭市"],
+				["厦门市","福州市","漳州市","泉州市"]
+			];
+
+    $(function(){
+				$("#province").change(function(){
+					//得到城市信息
+					var cities = provinces[this.value];
+
+          if( this.value == -1){
+            alert("请选择城市信息!");
+          }
+          //清空城市select中的option
+          /*var $city = $("#city"); 	//将JQ对象转成JS对象进行清空
+          var citySelect = $city.get(0)
+          citySelect.options.length = 0;*/
+          $("#city").empty();  //采用JQ的方式清空
+      
+					//遍历城市数据
+					$(cities).each(function(i,n){
+						$("#city").append("<option value="+n+">"+n+"</option>");
+					});
+				});
+			});
+  </script>
+</head>
+<body>
+  <!--选择省份-->
+  <select id="province">
+			<option value="-1">--请选择--</option>
+			<option value="0">广东省</option>
+			<option value="1">湖南省</option>
+			<option value="2">福建省</option>
+		</select>
+		<!--选择城市-->
+		<select id="city"></select>
+</body>
+</html>
