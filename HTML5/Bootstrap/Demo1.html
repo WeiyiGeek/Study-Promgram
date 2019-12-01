@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单效验</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://www.gongjuji.net/content/files/jquery.md5.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <style>
+        .req {
+            color:red;
+        }
+        .onErrorTips {
+            color:red;
+            font: 1em sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <form action="index.html" method="GET">
+        <div class="loginInput">
+            <input type="text" name="username" id="username" class="depend">
+        </div>
+        <div class="loginInput">
+            <input type="password" name="passowrd" id="password" class="depend" placeholder="请输入8~16位的密码">
+        </div>
+        <input type="submit" value="登录">
+        <input type="button" value="清空">
+        <div class="loginRemember">
+            <select name="loginRemember" id="">
+                <option value="0">不记住登录</option>
+                <option value="1">记住登录</option>
+            </select>    
+        </div>
+    </form>
+    <script>
+    $(function(){
+        var userReg = /^[0-9a-zA-Z_]+$/;
+        var passReg = /^[0-9a-zA-Z!@#$%&*\.\,\?]+$/;
+
+        //必须项加上红星
+        $(".loginInput").append("<font class='req'> * <font>");
+
+        //效验绑定表单
+        $(".depend").blur(function(){
+            //获取输入框里面的值
+            var val = $(this).val(); 
+            
+            //清除当前对象的提示信息
+            $(this).parent().find("span").remove();  //体现链式编程
+
+            //判读获取当前事件处理的对象
+            if($(this).is("#username")){
+                //用户名效验
+                if(val.length <= 0 ||  val.length >= 16 ){
+                    $(this).parent().append("<span class='onErrorTips'>用户名长度有误!</span>");
+                }else if(!userReg.test(val)){
+                    $(this).parent().append("<span class='onErrorTips'>用户名输入有误!</span>");
+                }
+            }
+            
+            if($(this).is("#password")){
+                //密码效验
+                if(val.length <= 7 ||  val.length > 18 ){
+                    $(this).parent().append("<span class='onErrorTips'>密码长度有误!</span>");
+                }else if(!passReg.test(val)){
+                    $(this).parent().append("<span class='onErrorTips'>密码输入了特殊有误!</span>");
+                }
+            }
+
+        }).focus(function(){
+            $(this).triggerHandler("blur");
+        }).keyup(function(){
+            $(this).triggerHandler("blur");
+        });
+
+        $("input[value='清空']").click(function(){
+            $(".depend").val("");
+        });
+
+        //点击表单里面的提交事件进行触发
+        $("form").submit(function(){
+            $(".depend").trigger("focus");
+            //根据返回的true或者false决定是否进行表单提交,这里采用查找页面上是否存在错误信息来验证表单(值得学习)
+            if($(".onErrorTips").length > 0){
+                return false;
+            }else{
+                //md5加密输入
+                $("#password").val($.md5($("#password").val()))
+                return true;
+            }
+        });
+    });
+    </script>
+</body>
+</html>
