@@ -10,6 +10,57 @@
   <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
 </head>
 <body>
+
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">首页</a>
+      </div>
+  
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">公司产品 <span class="sr-only">(current)</span></a></li>
+          <li><a href="#">公司简介</a></li>
+          <li><a href="#">公司发展</a></li>
+          <li><a href="#">人才招聘</a></li>
+          <li><a href="#">公司地址</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">产品分类 <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">网络安全设备</a></li>
+              <li><a href="#">网络通信设备</a></li>
+              <li><a href="#">物联网设备</a></li>
+              <li class="divider"></li>
+              <li><a href="#">云计算可信设备</a></li>
+              <li class="divider"></li>
+              <li><a href="#">虚拟化数据存储设备</a></li>
+            </ul>
+          </li>
+        </ul>
+    
+        <form class="navbar-form navbar-right" role="search" action="search.php" method="GET">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form> 
+        <ul class="nav" style="line-height:50px; height:50px;">
+            <li><a href="#" class="btn btn-warning pull-right" style="margin-top: 10px;">注册</a> </li>
+            <li><a href="#" class="btn btn-primary pull-right" style="margin-top: 10px;">登录</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
   <div class="container">
     <div class="jumbotron">
         <h1>BootStrap 使用案例</h1>
@@ -18,7 +69,97 @@
           <a class="btn btn-primary btn-lg" href="https://weiyigeek.club">My Blog </a>
         </p>
     </div>
-  </div>
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="1000">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+      
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+              <a href="https://weiyigeek.club">            
+                <img src="http://pic.90sjimg.com/design/00/07/29/69/5666757345e09.jpg" alt="">
+              </a>
+            <div class="carousel-caption">
+             <font>图片1</font>
+            </div>
+          </div>
+          <div class="item">
+            <a href="https://weiyigeek.club">            
+                <img src="http://pic.90sjimg.com/design/00/07/29/69/5666757345e09.jpg" alt="">
+            </a>
+            <div class="carousel-caption">
+             <b>图片2</b>
+            </div>
+          </div>
+          <div class="item">
+            <a href="https://weiyigeek.club">            
+                <img src="http://pic.90sjimg.com/design/00/07/29/69/5666757345e09.jpg" alt="">
+            </a>
+            <div class="carousel-caption">
+            <p>图片3</p>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+      
+    <div class="row"> 
+            <div class="col-md-4">
+                <h3>个人简介</h3>
+                <p>WeiyiGeek WeiyiGeek WeiyiGeek WeiyiGeek WeiyiGeek WeiyiGeek </p>
+                <a href="https://weiyigeek.club" class="btn btn-danger pull-right">了解更多</a>
+            </div>
+            <div class="col-md-4">
+                <h3>学习安排</h3>
+                <p>HTML5 JavaScript jQuery CSS BootStrap C C++ Python Java Perl VF MySQL Memcache Mongdb </p>
+                <a href="https://weiyigeek.club" class="btn btn-info pull-right">了解更多</a>
+
+            </div>
+            <div class="col-md-4">
+                <h3>个人随记</h3>
+                <p>网络安全 计算机通信 企业安全管理 企业运维 云计算 IOT云物联 微信小程序</p>
+                <a href="https://weiyigeek.club" class="btn btn-primary pull-right">了解更多</a>
+            </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            <img src="http://www.htmleaf.com/templets/default/images/alyun-1180-90.png" alt="null" srcset="">
+        </div>
+    </div>
+    <div class="row">
+        <div style="text-align: center;">
+            <a href="#">关于我们</a>
+            <a href="#">联系我们</a>
+            <a href="#">招纳贤士</a>
+            <a href="#">法律声明</a>
+            <a href="#">友情链接</a>
+            <a href="#">支付方式</a>
+            <a href="#">配送方式</a>
+            <a href="#">服务声明</a>
+            <a href="#">广告服务</a>
+            <br>
+            <p>
+                Copyright @ 2019 WeiyiGeek 版权所有
+            </p>
+        </div>
+    </div>
+</div>
+
 
 <!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
 <!-- 需求3: 包含 jQuery 库 -->
@@ -26,3 +167,4 @@
 <!-- 需求4: 合并了 Bootstrap JavaScript 插件 -->
 <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
+</html>
