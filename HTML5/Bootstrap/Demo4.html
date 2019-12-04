@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BootStrap 排版示例</title>
+  <!-- Boostrap 样式库-->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1>我是标题1, <small>我是副标题1,得到一个字号更小的颜色更浅的文本</small></h1>
+
+    <h2>引导主体副本</h2>
+    <p class="lead">为了给段落添加强调文本，则可以添加 class="lead"，这将得到更大更粗、行高更高的文本</p>
+
+    <div class="row">
+        <small>本行内容是在标签内</small><br>
+        <strong>本行内容是在标签内</strong><br>
+        <em>本行内容是在标签内，并呈现为斜体</em><br>
+        <p class="text-left">向左对齐文本</p>
+        <p class="text-center">居中对齐文本</p>
+        <p class="text-right">向右对齐文本</p>
+        <p class="text-muted">本行内容是减弱的</p>
+        <p class="text-primary">本行内容带有一个 primary class</p>
+        <p class="text-success">本行内容带有一个 success class</p>
+        <p class="text-info">本行内容带有一个 info class</p>
+        <p class="text-warning">本行内容带有一个 warning class</p>
+        <p class="text-danger">本行内容带有一个 danger class</p>
+    </div>
+
+    <div class="row">
+      <p style="color:red">abbr 缩写标记</p>
+      <abbr title="World Wide Web">WWW</abbr><br>
+      <abbr title="Real Simple Syndication" class="initialism">RSS</abbr>
+    </div>
+    <br>
+    <div class="row">
+        <address>
+            <strong>Some Company, Inc.</strong><br>
+            100 street<br>
+            Some City, State XXXXX<br>
+            <abbr title="Phone">P:</abbr> (123) 456-7890
+          </address>
+          <address>
+            <strong>Full Name</strong><br>
+            <a href="mailto:#">mailto@WeiyiGeek.com</a>
+          </address>
+    </div>
+    <div class="row">
+        <blockquote>
+            <p>这是一个带有源标题的引用。</p>
+            <small>Someone famous in <cite title="Source Title">Source Title(引用)</cite></small>
+          </blockquote>
+          <blockquote class="pull-right">
+            这是一个向右对齐的引用。
+            <small>Someone famous in <cite title="Source Title">Source Title(引用)</cite></small>
+          </blockquote>
+    </div>
+
+
+    <div class="row">
+      <h4>有序列表</h4>
+      <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ol>
+      <h4>无序列表</h4>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+      <h4>未定义样式列表</h4>
+      <ul class="list-unstyled">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+      <h4>内联列表</h4>
+      <ul class="list-inline">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+      <h4>定义列表</h4>
+      <dl>
+        <dt>Description 1</dt>
+        <dd>Item 1</dd>
+        <dt>Description 2</dt>
+        <dd>Item 2</dd>
+      </dl>
+      <h4>水平的定义列表</h4>
+      <dl class="dl-horizontal">
+        <dt>Description 1</dt>
+        <dd>Item 1</dd>
+        <dt>Description 2</dt>
+        <dd>Item 2</dd>
+      </dl>
+    </div>
+  </div>
+    
+
+<!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
+<!-- 需求3: 包含 jQuery 库 -->
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<!-- 需求4: 合并了 Bootstrap JavaScript 插件 -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
