@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BootStrap CSS学习示例 </title>
+  <!-- Boostrap 样式库-->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+
+    <h4 style="color:red"> 示例1：BS 之 Table 表格样式 </h4>
+    <!-- 响应式表格,当在大于 768px 宽的大型设备上查看时您将看不到任何的差别。-->
+    <div class="table-responsive">
+    <!-- 表格添加基础样式标签 -->
+    <table class="table table-hover table-striped table-bordered table-condensed">
+      <caption>关于表格存储内容的描述或总结 table table-hover table-striped table-bordered table-condensed</caption>
+      <!--- 表格标题行的容器元素（<tr>），用来标识表格列。 -->
+      <thead>
+        <!-- 表格行 -->
+        <tr class="action">
+          <!--- 表格列头部 -->
+          <th>头部1</th>
+          <th>头部2</th>
+          <th>头部3-悬停的颜色</th>
+        </tr>
+      </thead>
+      <!--表格主体中的表格行的容器元素（<tr>）-->
+      <tbody>
+        <!-- 表格行 -->
+        <tr class="success">
+          <!--- 表格列值 -->
+          <td>表格值1</td>
+          <td>表格值2</td>
+          <td>表格值3-成功的操作</td>
+        </tr>
+        <tr class="info">
+            <!--- 表格列值 -->
+            <td>表格值1</td>
+            <td>表格值2</td>
+            <td>表格值3-信息变化的操作</td>
+       </tr>
+       <tr class="warning">
+          <!--- 表格列值 -->
+          <td>表格值1</td>
+          <td>表格值2</td>
+          <td>表格值3-警告的操作</td>
+       </tr>
+        <tr class="danger">
+            <!--- 表格列值 -->
+            <td>表格值1</td>
+            <td>表格值2</td>
+            <td>表格值3-危险的操作</td>
+        </tr>
+      </tbody>
+      </table>
+    </div>
+  </div>
+
+<!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
+<!-- 需求3: 包含 jQuery 库 -->
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<!-- 需求4: 合并了 Bootstrap JavaScript 插件 -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

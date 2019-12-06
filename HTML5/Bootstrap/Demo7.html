@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BootStrap CSS学习示例 </title>
+  <!-- Boostrap 样式库-->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    
+    <form action="#" method="POST" role="form">
+      <legend>示例1:垂直表单</legend>
+      <div class="form-group">
+        <!--- for属性 与 input的id属性是相绑定的 -->
+        <label for="name">姓名:</label>
+        <input type="text" class="form-control" id="name" placeholder="Input field">
+      </div>
+      <div class="form-group">
+          <label for="inputfile">文件输入</label>
+          <input type="file" id="inputfile">
+          <p class="help-block">这里是块级帮助文本的实例。</p>
+      </div>
+       <!-- 复选框（Checkbox）和单选框（Radio）-->
+      <div class="checkbox">
+          <label>
+            <input type="checkbox"> 请打勾1
+          </label>
+          <label>
+            <input type="checkbox"> 请打勾2
+          </label>
+      </div>
+      <div class="radio">
+          <!-- 单选框 需要同一个name属性-->
+          <label for="danxuan1"><input type="radio" name="sex" id="danxuan1" value="1" checked="true"> 男/man</label>
+          <label for="danxuan2"><input type="radio" name="sex" id="danxuan2" value="2"> 女/woman </input></label>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    
+    <hr>
+
+    <form action="#" method="POST" role="form" class="form-inline">
+      <legend>示例2:内联表单</legend>
+      <div class="form-group">
+        <label for="">姓名:</label>
+        <input type="text" class="form-control" id="name" placeholder="Input field">
+      </div>
+      <div class="form-group">
+        <!---使用 class .sr-only，您可以隐藏内联表单的标签。 -->
+          <label class="sr-only" for="inputfile">文件输入</label>
+          <input type="file" id="inputfile">
+      </div>
+      <div class="checkbox">
+          <label>
+            <input type="checkbox"> 请打勾1
+          </label>
+          <label>
+            <input type="checkbox"> 请打勾2
+          </label>
+          <label for="danxuan1"><input type="radio" name="danxuan1" id="danxuan1"> 单选1 </input></label>
+          <label for="danxuan2"><input type="radio" name="danxuan1" id="danxuan2"> 单选2 </input></label>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <hr>
+
+    <form action="#" method="POST" role="form" class="form-horizontal">
+      <legend>示例3:水平表单</legend>
+      <div class="form-group">
+        <label for="username" class="col-sm-2 control-label">用户名:</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" id="username" placeholder="请输入用户名">
+        </div>
+      </div>
+      <div class="form-group">
+          <label for="password" class="col-sm-2 control-label">密  码:</label>
+          <div class="col-sm-3">
+              <input type="password" class="form-control" id="password" placeholder="请输入密码">
+          </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Email</label>
+        <div class="col-sm-3">
+          <p class="form-control-static">email@example.com</p>
+        </div>
+        <label class="col-sm-2 control-label">Email 不能被修改 </label>
+        <div class="col-sm-3">
+            <!-- P 标签也可以有标签 -->
+            <p class="form-control">email@example.com</p>
+        </div>
+     </div>
+      <div class="col-sm-offset-2 col-sm-10">
+          <div class="checkbox">
+            <label for="remember">
+              <input type="checkbox" name="remember" id="remember"> 请记住登录信息
+            </label>
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="name">文本框</label>
+          <textarea class="form-control" rows="3"></textarea>
+      </div>
+      <div class="form-group">
+          <label for="name">选择列表</label>
+          <select class="form-control input-lg">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+          <label for="name">可多选的选择列表</label>
+          <select multiple class="form-control input-sm" >
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+
+          <div class="form-group">
+              <label class="col-sm-2 control-label">聚焦</label> <!--- 关键点:control-label -->
+              <div class="col-sm-10">
+                <input class="form-control" id="focusedInput" type="text"  value="该输入框获得焦点...">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword" class="col-sm-2 control-label">
+                禁用
+              </label>
+              <div class="col-sm-10">
+                <input class="form-control" id="disabledInput" type="text" placeholder="该输入框禁止输入..." disabled> <!--- 关键点:disabled-->
+              </div>
+            </div>
+            <fieldset disabled> <!--- 关键点:  <fieldset disabled> -->
+              <div class="form-group">
+                <label for="disabledTextInput"  class="col-sm-2 control-label">禁用输入（Fieldset disabled）
+                </label>
+                <div class="col-sm-10">
+                  <input type="text" id="disabledTextInput" class="form-control"  placeholder="禁止输入">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="disabledSelect"  class="col-sm-2 control-label">禁用选择菜单（Fieldset disabled）
+                </label>
+                <div class="col-sm-10">
+                  <select id="disabledSelect" class="form-control">
+                    <option>禁止选择</option>
+                  </select>
+                </div>
+              </div>
+            </fieldset>
+            <!--- 关键点:  has-success -->
+            <div class="form-group has-success">
+              <label class="col-sm-2 control-label" for="inputSuccess">
+                输入成功
+              </label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputSuccess">
+              </div>
+            </div>
+            <!--- 关键点:  has-warning -->
+            <div class="form-group has-warning">
+              <label class="col-sm-2 control-label" for="inputWarning">
+                输入警告
+              </label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputWarning">
+              </div>
+            </div>
+            <!--- 关键点:  has-error-->
+            <div class="form-group has-error">
+              <label class="col-sm-2 control-label" for="inputError">
+                输入错误
+              </label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputError">
+              </div>
+            </div>
+
+         <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-8">
+            <button type="submit" class="btn btn-primary">登录</button>
+            <button type="reset" class="btn btn-info">清空</button>
+          </div>
+        </div>
+
+    </form>
+
+  </div>
+
+<!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
+<!-- 需求3: 包含 jQuery 库 -->
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<!-- 需求4: 合并了 Bootstrap JavaScript 插件 -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
