@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BootStrap CSS学习示例 </title>
+  <!-- Boostrap 样式库-->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <!-- 标准的按钮 -->
+    <button type="button" class="btn btn-default">默认按钮</button>
+    <!-- 提供额外的视觉效果，标识一组按钮中的原始动作 -->
+    <button type="button" class="btn btn-primary">原始按钮</button>
+    <!-- 表示一个成功的或积极的动作 -->
+    <button type="button" class="btn btn-success">成功按钮</button>
+    <!-- 信息警告消息的上下文按钮 -->
+    <button type="button" class="btn btn-info">信息按钮</button>
+    <!-- 表示应谨慎采取的动作 -->
+    <button type="button" class="btn btn-warning">警告按钮</button>
+    <!-- 表示一个危险的或潜在的负面动作 -->
+    <button type="button" class="btn btn-danger">危险按钮</button>
+    <!-- 并不强调是一个按钮，看起来像一个链接，但同时保持按钮的行为 -->
+    <button type="button" class="btn btn-link">链接按钮</button>
+
+    <hr>
+
+    <p>
+        <button type="button" class="btn btn-primary btn-lg">大的原始按钮</button>
+        <button type="button" class="btn btn-default btn-lg">大的按钮</button>
+     </p>
+     <p>
+        <button type="button" class="btn btn-primary"> 默认大小的原始按钮</button>
+        <button type="button" class="btn btn-default"> 默认大小的按钮</button>
+     </p>
+     <p>
+        <button type="button" class="btn btn-primary btn-sm">小的原始按钮</button>
+        <button type="button" class="btn btn-default btn-sm">小的按钮</button>
+     </p>
+     <p>
+        <button type="button" class="btn btn-primary btn-xs">特别小的原始按钮</button>
+        <button type="button" class="btn btn-default btn-xs">特别小的按钮</button>
+     </p>
+     <p>
+        <button type="button" class="btn btn-primary btn-lg btn-block">块级的原始按钮</button>
+        <button type="button" class="btn btn-default btn-lg btn-block">块级的按钮</button>
+     </p>
+
+     <hr>
+     <button type="button" class="btn btn-primary">原始按钮</button>
+     <button type="button" class="btn btn-primary active">激活按钮</button>
+     <a href="#" class="btn btn-danger active">a标签锚按钮</a>
+     <a href="#" class="btn btn-danger active" role="button">a标签锚按钮</a> <!--注意角色 role--->
+     <br><br>
+     <p>
+        <button type="button" class="btn btn-primary">原始按钮</button>
+        <button type="button" class="btn btn-primary" disabled="disabled">禁用的原始按钮</button>
+      </p>
+      <p>
+        <a href="#" class="btn btn-default" role="button">链接</a>
+        <a href="#" class="btn btn-default disabled" role="button">禁用链接</a>
+      </p>
+
+      <hr>
+      <p>通过 .btn-group-* 类来控制按钮组中使用按钮的大小。 </p>
+      <div class="btn-group btn-group-sm">
+        <button type="button" class="btn btn-primary">Apple</button>
+        <button type="button" class="btn btn-primary">Samsung</button>
+        <button type="button" class="btn btn-primary">Sony</button>
+      </div>
+
+      <hr>
+      <div class="btn-group btn-group-justified">
+          <!-- 注意:一个button 一个 btn-group 包裹-->
+        <div class="btn-group">
+          <button type="button" class="btn btn-info">Samsung</button>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-info">Sony</button>
+        </div>
+      </div>
+      <!-- a 标签外层可以不是 btn-group包含 一个父div设置即可 与 button的不同-->
+      <div class="btn-group btn-group-justified">
+        <a href="#" class="btn btn-primary">Apple</a>
+        <a href="#" class="btn btn-primary">Samsung</a>
+        <a href="#" class="btn btn-primary">Sony</a>
+      </div>
+      <br><br>
+      <div class="btn-group">
+            <!--- 关键点 .dropdown-toggle data-toggle="dropdown"-->
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">内嵌下拉菜单 <span class="caret"></span></button>
+            <!--- 关键点 .dropdown-menu-->
+            <ul class="dropdown-menu" role="menu">
+                <li> <a href="#" class="btn">成绩查询 <span class="caret"></span> </a></li>
+                <li> <a href="#" class="btn">分数查询 <span class="caret"></span> </a> </li>
+            </ul>
+        </div>
+
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary">分隔按钮</button>
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Tablet</a></li>
+                <li><a href="#">Smartphone</a></li>
+            </ul>
+        </div>
+  </div>
+
+<!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
+<!-- 需求3: 包含 jQuery 库 -->
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<!-- 需求4: 合并了 Bootstrap JavaScript 插件 -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

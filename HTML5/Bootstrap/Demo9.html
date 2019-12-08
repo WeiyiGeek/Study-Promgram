@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BootStrap CSS学习示例 </title>
+  <!-- Boostrap 样式库-->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+      <div class="row">
+            <img src="https://www.runoob.com/wp-content/uploads/2014/06/download.png" class="img-rounded">
+            <img src="https://www.runoob.com/wp-content/uploads/2014/06/download.png" class="img-circle">
+            <img src="https://www.runoob.com/wp-content/uploads/2014/06/download.png" class="img-thumbnail">
+            <img src="https://tpc.googlesyndication.com/daca_images/simgad/13063754865781208952" alt="图片响应式" class="img-responsive">       
+      </div>
+      <hr>
+      <div class="row">
+        <p class="text-muted"> "text-muted" 类的文本样式</p>
+        <p class="bg-info">【背景】该段落使用了类 "bg-info"。</p>
+        <p class="bg-warning">【背景】该段落使用了类 "bg-warning"。</p>
+	    <a class="bg-danger" href="/index.php">【背景】该链接使用了类 "bg-danger"。</a>
+      </div>
+
+      <br>
+      <!-- 注意居中显示块 必须设置宽度大小 -->
+      <div class="center-block" style="width:170px;"> 采用 center-block 居中显示</div>
+      <div class="center-block" style="width:150px;background-color:#ccc;">该 div 显示在中间</div>
+
+      <div class="row">
+        <!--aria-hidden="true" 主要是帮助残障人士（如失明）使用识读设备（自动读取内容并自动播放出来），播放到带此属性的内容时会自动跳过，以免残障人士混淆！ -->
+        <p>关闭图标实例
+            <button type="button" class="close"  aria-hidden="true"> &times;</button>
+        </p>
+        <div class="show" style="margin-left:10px;width:300px;background-color:#ccc;">
+            这是 show class 的实例
+         </div>
+        <div class="hidden" style="width:200px;background-color:#888;">
+            这是 hide class 的实例
+        </div>
+        </div>
+        <div class="row" style="padding: 10px 100px 19px 5px;">
+                <p>您可以通过使用 class .sr-only 来把元素对所有设备隐藏，除了屏幕阅读器。</p>
+                <form class="form-inline" role="form">
+                    <div class="form-group">
+                        <label class="sr-only" for="email">Email 地址</label>
+                        <input type="email" class="form-control" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="pass">密码</label>
+                        <input type="password" class="form-control" placeholder="Password">
+                    </div>
+                </form>
+        </div>
+    </div>
+
+<!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
+<!-- 需求3: 包含 jQuery 库 -->
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<!-- 需求4: 合并了 Bootstrap JavaScript 插件 -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
