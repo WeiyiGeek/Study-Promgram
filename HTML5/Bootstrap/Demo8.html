@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BootStrap CSS学习示例 </title>
+  <!-- Boostrap 样式库-->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <p>使用字体图-并且利用button按钮进行设置图标大小</p>
+    <div class="row">
+      <div class="col-md-3">
+          <input type="search" name="search" id="input" class="form-control" value="" required="required" title="" placeholder="请输入搜索信息">
+      </div>
+      <button class="btn">
+          <span class="glyphicon glyphicon-search"></span>
+      </button>
+    </div>
+    <br>
+    <button type="button" class="btn btn-default btn-lg">
+      <span class="glyphicon glyphicon-user"></span> User
+    </button>
+    <button type="button" class="btn btn-default btn-sm">
+      <span class="glyphicon glyphicon-user"></span> User
+    </button>
+    <button type="button" class="btn btn-default btn-xs">
+      <span class="glyphicon glyphicon-user"></span> User
+    </button>
+
+    <hr>
+    <p>定制字体图标</p>
+    <p>定制字体尺寸/颜色/文本阴影</p>
+    <button type="button" class="btn btn-primary btn-lg">
+        <span class="glyphicon glyphicon-user"></span> User
+    </button>
+    <button type="button" class="btn btn-primary btn-lg" style="color: rgb(248, 104, 21);">
+        <span class="glyphicon glyphicon-user"></span> User
+    </button>
+    <button class="btn btn-warning btn-lg" type="button">
+        <span class="glyphicon glyphicon-user" style="color: rgb(255,255,255); text-shadow: rgb(0, 0, 0) 1px 1px px;"></span><span> User</span> 
+    </button>
+
+    <hr>
+    <hr>
+    <p>带有字体图标的导航栏</p>
+    <nav class="navbar navbar-inverse" role="navigation">
+      <!-- 标题头部-->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Project name</a>
+          </div>
+          <!-- 导航连接 -->
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+              <li><a href="#shop"><span class="glyphicon glyphicon-shopping-cart"></span> Shop</a></li>
+              <li><a href="#support"><span class="glyphicon glyphicon-headphones"></span> Support <span class="caret"></span></a></li>
+            </ul>
+          </div>
+    </nav>
+  </div>
+
+<!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
+<!-- 需求3: 包含 jQuery 库 -->
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<!-- 需求4: 合并了 Bootstrap JavaScript 插件 -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>导航栏以及菜单下拉</title>
+  <!-- Boostrap 样式库-->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+  
+
+  <div class="container">
+    <hr>
+    <p>下拉菜单</p>
+    <!-- 
+      .dropup 类用于指定一个向上的下拉菜单
+      .dropdown-menu 类用于创建下拉菜单。
+    -->
+    <div class="dropdown">
+      <button type="button" class="btn btn-primary dropdown-toggle" id="menu" data-toggle="dropdown">
+        下拉菜单 
+        <span class="caret"></span>
+      </button>
+      <!-- 并将其值为所有读取的元素的id , 当ul获取到焦点时，屏幕阅读器是会读：“下拉菜单” -->
+      <ul class="dropdown-menu" role="menubar" aria-labelledby="menu">
+        <li role="presentation" class="dropdown-header">分类1</li>
+        <li role="presentation"><a href="#" role="menuitem">HTML</a></li>
+        <li role="presentation"><a href="#" role="menuitem">CSS</a></li>
+        <li role="presentation"><a href="#" role="menuitem">JavaScript</a></li>
+        <li role="presentation"><a href="#" role="menuitem">jQuery</a></li>
+        <li role="presentation"><a href="#" role="menuitem">Bootstrap</a></li>
+        <li class="divider"></li>
+        <li role="presentation" class="dropdown-header">分类2</li>
+        <li role="presentation"><a href="#" role="menuitem">PHP</a></li>
+        <li role="presentation" ><a href="#" role="menuitem">C</a></li>
+        <li role="presentation" class="disabled"> <a href="#" role="menuitem">C++</a></li>
+        <li role="presentation" class="disabled"> <a href="#" role="menuitem">Java</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+<!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
+<!-- 需求3: 包含 jQuery 库 -->
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<!-- 需求4: 合并了 Bootstrap JavaScript 插件 -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+<!--- 导航下拉 -->
+<li class="dropdown">
+    <!--- 关键点: class="dropdown-toggle" data-toggle="dropdown" 没有就不可以显示 -->
+    <a href="#support" class="dropdown-toggle" data-toggle="dropdown" role="button"><span class="glyphicon glyphicon-headphones"></span> Support <span class="caret"></span></a>
+    <ul class="dropdown-menu pull-right" role="menu">
+        <li class="text-left"><a href="#" tabindex="-1">网络安全设备</a></li>
+        <li class="text-center"><a href="#">网络通信设备</a></li>
+        <li class="text-right"><a href="#">物联网设备</a></li>
+        <!--- 横线显示分割  -->
+        <li class="divider"></li>
+        <li class="dropdown-header">云计算</li>
+        <li><a href="#">云计算可信设备</a></li>
+        <li class="divider"></li>
+        <li class="dropdown-header">虚拟化</li>
+        <!--- 禁用此项 -->
+        <li class="disable"><a href="#">虚拟化数据存储设备</a></li>
+      </ul>
+</li>
