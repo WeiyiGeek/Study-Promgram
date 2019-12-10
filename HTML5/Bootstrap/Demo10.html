@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>导航栏以及菜单下拉</title>
+  <!-- Boostrap 样式库-->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+
+  <div class="container">
+    <hr>
+    <p>下拉菜单</p>
+    <!-- 
+      .dropup 类用于指定一个向上的下拉菜单
+      .dropdown-menu 类用于创建下拉菜单。
+    -->
+    <div class="dropdown">
+      <button type="button" class="btn btn-primary dropdown-toggle" id="menu" data-toggle="dropdown">
+        下拉菜单 
+        <span class="caret"></span>
+      </button>
+      <!-- 并将其值为所有读取的元素的id , 当ul获取到焦点时，屏幕阅读器是会读：“下拉菜单” -->
+      <ul class="dropdown-menu" role="menubar" aria-labelledby="menu">
+        <li role="presentation" class="dropdown-header">分类1</li>
+        <li role="presentation"><a href="#" role="menuitem">HTML</a></li>
+        <li role="presentation"><a href="#" role="menuitem">CSS</a></li>
+        <li role="presentation"><a href="#" role="menuitem">JavaScript</a></li>
+        <li role="presentation"><a href="#" role="menuitem">jQuery</a></li>
+        <li role="presentation"><a href="#" role="menuitem">Bootstrap</a></li>
+        <li class="divider"></li>
+        <li role="presentation" class="dropdown-header">分类2</li>
+        <li role="presentation"><a href="#" role="menuitem">PHP</a></li>
+        <li role="presentation" ><a href="#" role="menuitem">C</a></li>
+        <li role="presentation" class="disabled"> <a href="#" role="menuitem">C++</a></li>
+        <li role="presentation" class="disabled"> <a href="#" role="menuitem">Java</a></li>
+      </ul>
+    </div>
+
+    <hr>
+    <p>按钮下拉分离</p>
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary btn-lg btn-toggle">下拉分离</button>
+      <button type="button" class="btn btn-primary btn-lg btn-toggle active" data-toggle="dropdown"><span class="caret"></span></button>
+      <span class="sr-only">切换下拉菜单</span>
+      <ul class="dropdown-menu" role="menubar">
+        <li class="dropdown-header">分类</li>
+        <li><a href="#" role="menuitem">功能</a></li>
+        <li><a href="#" role="menuitem">选择</a></li>
+        <li><a href="#" role="menuitem">选项</a></li>
+        <li class="divider"></li>
+        <li class="dropdown-header">分类</li>
+        <li> <a href="#" role="menuitem">案例</a></li>
+        <li> <a href="#" role="menuitem">安全</a></li>
+        <li class="disabled"> <a href="#" role="menuitem">禁用</a></li>
+      </ul>
+    </div>
+
+    <hr>
+    <p>导航菜单动态</p>
+    <!--- 导航元素样式 -->
+      <ul class="nav nav-pills nav-justified">
+        <!-- 关键点:data-toggle="tab" a 标签里面-->
+        <li class="active"><a data-toggle="tab" href="#home"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
+        <li><a data-toggle="tab" href="#user"><span class="glyphicon glyphicon-user"></span> 用户中心</a></li>
+        <li><a data-toggle="tab" href="#email"><span class="glyphicon glyphicon-envelope"></span> 用户邮箱</a></li>
+        <!--- 导航下拉菜单 - 外层包裹dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-bookmark"></span> 书签 <span class="caret"></span></a>
+          <ul class="dropdown-menu pull-right" role="menubar">
+              <li class="dropdown-header">分类书签</li>
+              <li class="active"><a href="#home" role="menuitem" tabindex="-1">首页</a></li>
+              <li><a href="#user" data-toggle="tab" role="menuitem" tabindex="-1" >用户中心</a></li>
+              <li class="disabled"><a href="#email" role="menuitem" tabindex="-1">邮箱</a></li>
+            </ul>
+        </li>
+      </ul>
+    <!-- 
+      切换导航菜单书签
+      提示: 与 .tab-pane 和 data-toggle="tab" (data-toggle="pill" ) 一同使用, 设置标签页对应的内容随标签的切换而更改。
+     -->
+     <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+          <h3>首页</h3>
+          <p>学的不仅是技术，更是梦想！！！</p>
+        </div>
+        <div id="user" class="tab-pane fade">
+          <h3>用户中心</h3>
+          <p>这用户中心显示的内容。</p>
+        </div>
+        <div id="email" class="tab-pane fade">
+          <h3>用户邮箱</h3>
+          <p>这是用户邮箱显示的内容。</p>
+        </div>
+      </div>
+  </div>
+
+<!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
+<!-- 需求3: 包含 jQuery 库 -->
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<!-- 需求4: 合并了 Bootstrap JavaScript 插件 -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
+

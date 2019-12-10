@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>按钮组/输入框组</title>
+  <!-- Boostrap 样式库-->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+  <p>基本按钮组与按钮工具栏</p>
+  <div class="btn-toolbar" role="toolbar">
+    <!-- button -->
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary">按钮组1</button>
+      <button type="button" class="btn btn-info">按钮组1</button>
+      <!-- btn-group 嵌套-->
+      <div class="btn-group dropdown">
+        <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">按钮组1
+          <span class="caret"></span>
+          <span class="sr-only">大屏幕显示</span>
+        </button>
+        <ul class="dropdown-menu">
+            <li class="dropdown-header">导航分类</li>
+            <li class="text-center"><a href="#user">用户</a></li>
+            <li class="text-center"><a href="#message">信息</a></li>
+            <li class="disabled text-center"><a href="#center">中心</a></li>
+          </ul>
+      </div>
+    </div>
+    <br>
+    <br>
+    <!-- input -->
+    <div class="btn-group-sm">
+        <input type="button" class="btn btn-primary" value="按钮组2">
+        <input type="button" class="btn btn-info" value="按钮组2">
+        <input type="button" class="btn btn-danger" value="按钮组2">
+    </div>
+    <br>
+    <br>
+    <!-- a -->
+    <div class="btn-group-xs">
+      <a href="#user" class="btn btn-primary">按钮组3</a>
+      <a href="#info" class="btn btn-info">按钮组3</a>
+      <a href="#danger" class="btn btn-danger">按钮组3</a>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
+<!-- 需求3: 包含 jQuery 库 -->
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<!-- 需求4: 合并了 Bootstrap JavaScript 插件 -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

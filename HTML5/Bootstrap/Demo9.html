@@ -9,8 +9,78 @@
   <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
-  
-
+   <!--
+    BootStrap导航栏下拉 role 属性 role="navigation" : 有助于增加可访问性
+   -->
+   <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+      <!-- 导肮和toggle得到更好的移动显示分组,响应式导航栏 -->
+      <div class="contaniner-fluid">
+        <div class="navbar-header">
+          <!-- 
+            采用了collapse 插件
+            data-target 对于 class 名称(.) 和 Id 名称(#)
+          -->
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">切换导航</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">极客Geek</a>
+          <p class="navbar-text">导航栏文本</p>
+        </div>
+      </div>
+      <!-- 收集用于切换的导航链接、表单和其他内容 -->
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav"> <!-- 导航条 --->
+          <li class="active"><a href="#">导航1</a></li>
+          <li><a href="#">导航2</a></li>
+          <li class="dropdown">
+              <!--- 
+                关键点: class="dropdown-toggle" data-toggle="dropdown" 取消后不可以显示下拉菜单
+                结合图标的导航链接 glyphicon glyphicon-headphones
+               -->
+            <a href="#support" class="dropdown-toggle" data-toggle="dropdown" role="button"><span class="glyphicon glyphicon-headphones">
+              </span> 导航三 <span class="caret"></span>
+            </a>
+              <ul class="dropdown-menu pull-left" role="menu">
+                  <li class="text-left"><a href="#" tabindex="-1">网络安全设备</a></li>
+                  <li class="text-center"><a href="#">网络通信设备</a></li>
+                  <li class="text-right"><a href="#">物联网设备</a></li>
+                  <!--- 横线显示分割  -->
+                  <li class="divider"></li>
+                  <li class="dropdown-header">云计算</li>
+                  <li><a href="#">云计算可信设备</a></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">虚拟化</li>
+                  <!--- 禁用此项 -->
+                  <li class="disable"><a href="#">虚拟化数据存储设备</a></li>
+                </ul>
+          </li>
+        </ul>
+        <!-- 导航栏下拉菜单（右） -->
+        <ul class="nav navbar-nav navbar-right"> <!-- 导航条 -->
+            <li><a href="#">导航4</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">下拉菜单 <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">导航链接</a></li>
+                <li><a href="#">导航链接</a></li>
+              </ul>
+            </li>
+          </ul>
+        <!--- 导航栏中搜索表单-->
+        <form class="navbar-form navbar-left" role="search" action="search.php" method="POST"> <!-- 导航表单 -->
+          <div class="form-group">
+            <input type="search" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <!-- 导航栏中的按钮向不在 form 标签里面的button添加class navbar-btn -->
+        <button type="button" class="btn btn-warning navbar-btn navbar-left">navbar-btn</button>
+      </div>
+    </nav>
+    
   <div class="container">
     <hr>
     <p>下拉菜单</p>
@@ -39,6 +109,18 @@
         <li role="presentation" class="disabled"> <a href="#" role="menuitem">Java</a></li>
       </ul>
     </div>
+    
+    <hr>
+    <p>面包屑导航(Breadcrumbs)</p>
+    
+    <ol class="breadcrumb">
+      <li>
+        <a href="#">Home</a>
+      </li>
+      <li class="active">Current Time</li>
+      <li class="active">Current Day</li>
+    </ol>
+    
   </div>
 
 
@@ -49,23 +131,3 @@
 <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
-
-
-<!--- 导航下拉 -->
-<li class="dropdown">
-    <!--- 关键点: class="dropdown-toggle" data-toggle="dropdown" 没有就不可以显示 -->
-    <a href="#support" class="dropdown-toggle" data-toggle="dropdown" role="button"><span class="glyphicon glyphicon-headphones"></span> Support <span class="caret"></span></a>
-    <ul class="dropdown-menu pull-right" role="menu">
-        <li class="text-left"><a href="#" tabindex="-1">网络安全设备</a></li>
-        <li class="text-center"><a href="#">网络通信设备</a></li>
-        <li class="text-right"><a href="#">物联网设备</a></li>
-        <!--- 横线显示分割  -->
-        <li class="divider"></li>
-        <li class="dropdown-header">云计算</li>
-        <li><a href="#">云计算可信设备</a></li>
-        <li class="divider"></li>
-        <li class="dropdown-header">虚拟化</li>
-        <!--- 禁用此项 -->
-        <li class="disable"><a href="#">虚拟化数据存储设备</a></li>
-      </ul>
-</li>
