@@ -47,6 +47,79 @@
       <a href="#danger" class="btn btn-danger">按钮组3</a>
     </div>
   </div>
+
+  <hr>
+
+  <p>输入框组示例</p>
+  <div role="inputgroup">
+    <span class="help-block"> Please input Email</span>
+    <form action="#" class="bs-example bs-example-form" role="form">
+      <div class="row">
+          <label for="emailname">邮箱地址:</label>
+          <div class="input-group col-md-6">
+              <span class="input-group-addon">
+                <span class="glyphicon glyphicon-envelope"></span>
+              </span>
+              <input type="text" class="form-control" name="emailname" id="emailname">
+              <span class="input-group-addon">@</span>
+              <input type="text" name="domain" class="form-control" placeholder="Domain URL">
+         </div>
+
+         <hr>
+
+         <label for="money">金  额:</label>
+          <div class="input-group col-md-6">
+              <span class="input-group-addon">$</span>
+              <input type="text" class="form-control" name="money" id="money">
+              <span class="input-group-addon">.00</span>
+          </div>
+          
+          <hr>
+
+          <label for="">复选框何单选插件</label>
+          <div class="input-group col-md-3">
+              <span class="input-group-addon"><input type="checkbox" name="checkout"></span>
+              <input type="text" class="form-control">
+          </div><!-- /input-group -->
+          <div class="input-group col-md-3">
+              <span class="input-group-addon"><input type="radio" name="radio"></span>
+              <input type="text" class="form-control">
+          </div><!-- /input-group -->
+
+          <hr>
+
+          <label for="search">按钮插件</label>
+          <div class="input-group col-md-6">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-search"></span>
+            </span>
+            <input type="search" name="search" class="form-control" id="search" placeholder="搜索的关键字">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="submit">搜索</button>
+            </span>
+          </div>
+      </div>
+      <hr>
+      <label for="dropdown">分割下拉框</label>
+      <div class="input-group col-md-6">
+        <input type="search" name="search1" id="dropdown" class="form-control">
+        <div class="input-group-btn">
+          <button class="btn btn-default" tabindex="-1">下拉菜单</button>
+          <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            <span class="caret"></span>
+            <span class="sr-only">切换下拉菜单</span>
+          </button>
+          <ul class="dropdown-menu pull-right">
+            <li class="dropdown-header">分类</li>
+            <li><a href="">Java</a></li>
+            <li><a href="">CSS</a></li>
+            <li class="divider"></li>
+            <li><a href="#">PHP</a></li>
+          </ul>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
 
 <!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>分页和翻页</title>
+  <!-- Boostrap 样式库-->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="page-header">
+        <h1>文档标题<small> 子内容显示</small></h1>
+      </div>
+
+  <p>分页</p>
+  <ul class="pagination pagination-lg">
+      <li><a href="#">&laquo;</a></li>
+      <li class="active"><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li class="disabled"><a href="#">5</a></li>
+      <li><a href="#">6</a></li>
+      <li><a href="#">7</a></li>
+      <li><a href="#">8</a></li>
+      <li><a href="#">9</a></li>
+      <li><a href="#">&raquo;</a></li>
+  </ul>
+  <br>
+  <p>翻页</p>
+  <ul class="pager pager-lg">
+    <li class="previous"><a href="">&larr; Previous</a></li>
+    <li class="next"><a href="">Next &rarr;</a></li>
+  </ul>
+
+  <hr>
+  <p>Boostrap 标签案例</p>
+  <h3>常规标签: <span class="label label-default">BS标签</span></h3>
+  <span class="label label-default">默认标签</span>
+  <span class="label label-primary">主要标签</span>
+  <span class="label label-success">成功标签</span>
+  <span class="label label-info">信息标签</span>
+  <span class="label label-warning">警告标签</span>
+  <span class="label label-danger">危险标签</span>
+
+  <hr>
+  <!-- .badge 类指定未读消息的数量 -->
+  <p>Bootstrap 徽章（Badges）</p>
+  <span>示例1:</span><a href="#">收件箱 <span class="badge">50</span></a>
+  <br>
+  <p>示例2:</p>
+  <ul class="nav nav-pills nav-stacked" style="max-width: 160px;">
+    <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span> 首页 <span class="badge">180</span></a></li>
+    <li class="active"><a href="#"><span class="glyphicon glyphicon-user"></span> 用户中心</a></li>
+    <li class="active"><a href="#"><span class="glyphicon glyphicon-envelope"></span> 邮箱信息 <span class="badge">20</span></a></li>
+  </ul>
+</div>
+
+
+<!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
+<!-- 需求3: 包含 jQuery 库 -->
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<!-- 需求4: 合并了 Bootstrap JavaScript 插件 -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
