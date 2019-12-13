@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> 多媒体对象（Media Object）</title>
+  <!-- Boostrap 样式库-->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <p>媒体组示例:</p>
+      <div class="media">
+        <div class="media-left">
+          <img src="https://static.runoob.com/images/mix/img_avatar.png" class="media-object" style="width:45px">
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">左对齐<small>Love</small></h4>
+          <p>这是一个示例文本，这是一个示例文本，这是一个示例文本</p>
+
+           <!-- 内嵌多媒体对象 -->
+           <div class="media">
+              <div class="media-left">
+                <img src="https://static.runoob.com/images/mix/img_avatar.png" class="media-object" style="width:45px">
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">内嵌对象<small><i>Posted on February 21, 2016</i></small></h4>
+                <p>这是一些示例文本。这是一些示例文本。这是一些示例文本。</p>
+              </div>
+            </div>
+        </div>
+      </div>
+      <!--- 注意右对齐是媒体对象是再media-body后-->
+      <div class="media">
+        <div class="media-body">
+          <h4 class="media-heading">右对齐<small>Love</small></h4>
+          <p>这是一个示例文本，这是一个示例文本，这是一个示例文本</p>
+        </div>
+        <div class="media-right">
+            <img src="https://static.runoob.com/images/mix/img_avatar.png" class="media-object" style="width:60px">
+        </div>
+      </div>
+
+      <!-- 置底 -->
+    <div class="media">
+        <div class="media-left media-bottom">
+          <img src="https://static.runoob.com/images/mix/img_avatar.png" class="media-object" style="width:60px">
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">置底</h4>
+          <p>这是一些示例文本...</p>
+        </div>
+        <div> 
+  </div>
+
+
+<!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
+<!-- 需求3: 包含 jQuery 库 -->
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<!-- 需求4: 合并了 Bootstrap JavaScript 插件 -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+    $(function(){
+      $("a[name='closealert']").click(function(){
+        $(this).parent().slideUp(200);
+      });
+      $("#myAlert1").bind('close.bs.alert', function(){
+        alert('已经关闭')
+      });
+
+       $("#start").click(function(){
+        var i = 1;
+        var start = setInterval(function(){
+          console.info(i);
+          $("#progress-bar").attr("style","width: "+i+"%;");
+          $("#progress-bar").attr("aria-valuenow",i);
+          $("#progress").text(i+"%");
+          if(i>100){
+            clearInterval(start);
+            $("#progress-bar").attr("style","width: 100%");
+            $("#progress-bar").attr("aria-valuenow",100);
+            $("#progress").text("100%");
+          }
+            
+          i++;
+        },100)
+      });
+    });
+</script>
+</body>
+</html>

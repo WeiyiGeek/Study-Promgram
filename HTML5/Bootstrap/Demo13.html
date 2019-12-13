@@ -109,8 +109,10 @@
           $("#progress-bar").attr("style","width: "+i+"%;");
           $("#progress-bar").attr("aria-valuenow",i);
           $("#progress").text(i+"%");
-          if(i==100)
+          if(i>100){
             clearInterval(start);
+          }
+            
           i++;
         },100)
       });
