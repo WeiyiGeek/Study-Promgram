@@ -7,6 +7,24 @@
   <title> 多媒体对象（Media Object）</title>
   <!-- Boostrap 样式库-->
   <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <style>
+	.list-group-horizontal .list-group-item {
+		display: inline-block;
+	}
+	.list-group-horizontal .list-group-item {
+		margin-bottom: 0;
+		margin-left:-4px;
+		margin-right: 0;
+	}
+	.list-group-horizontal .list-group-item:first-child {
+		border-top-right-radius:0;
+		border-bottom-left-radius:4px;
+	}
+	.list-group-horizontal .list-group-item:last-child {
+		border-top-right-radius:4px;
+		border-bottom-left-radius:0;
+	}
+	</style>
 </head>
 <body>
   <div class="container">
@@ -31,6 +49,7 @@
             </div>
         </div>
       </div>
+
       <!--- 注意右对齐是媒体对象是再media-body后-->
       <div class="media">
         <div class="media-body">
@@ -44,49 +63,75 @@
 
       <!-- 置底 -->
     <div class="media">
-        <div class="media-left media-bottom">
-          <img src="https://static.runoob.com/images/mix/img_avatar.png" class="media-object" style="width:60px">
-        </div>
         <div class="media-body">
           <h4 class="media-heading">置底</h4>
-          <p>这是一些示例文本...</p>
+          <p>这是一些示例文本...这是一些示例文本..这是一些示例文本..</p>
         </div>
-        <div> 
-  </div>
+        <div class="media-bottom">
+            <img src="https://static.runoob.com/images/mix/img_avatar.png" class="media-object" style="width:60px">
+        </div>
+    </div>
 
+    <div class="media">
+        <div class="media-left media-middle">
+            <img src="https://static.runoob.com/images/mix/img_avatar.png" class="media-object" style="width:60px">
+        </div>
+        <div class="media-body">
+            <h4 class="media-heading">
+                居中对齐 <small> Test</small>
+            </h4>
+            <p>这是一些示例文本...这是一些示例文本..这是一些示例文本..这是一些示例文本...这是一些示例文本..这是一些示例文本..这是一些示例文本...这是一些示例文本..这是一些示例文本..</p>
+        </div>
+    </div>
+
+    <hr>
+    <h4 class="heading">列表组示例</h4>
+    <ul class="list-group">
+        <li class="list-group-item">li标签列表组项示例1</li>
+        <li class="list-group-item">li标签列表组项示例1</li>
+        <li class="list-group-item">我的信息<span class="badge">新</span></li>
+        <li class="list-group-item">我的邮箱<span class="badge">123</span></li>
+        <a href="#" class="list-group-item active">a标签实现列表组项</a>
+    </ul>
+    <br>
+    <div class="list-group">
+        <a href="#" class="list-group-item active">
+            <h4 class="list-group-item-heading">
+                入门网站包
+            </h4>
+        </a>
+        <a href="#" class="list-group-item">
+            <h4 class="list-group-item-heading">
+                免费域名注册
+            </h4>
+            <p class="list-group-item-text">
+                您将通过网页进行免费域名注册。
+            </p>
+        </a>
+        <a href="#" class="list-group-item">
+            <h4 class="list-group-item-heading">
+                24*7 支持
+            </h4>
+            <p class="list-group-item-text">
+                我们提供 24*7 支持。
+            </p>
+        </a>
+    </div>
+    <br>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center">
+        <div class="list-group list-group-horizontal">
+            <a href="#" class="list-group-item">Google</a>
+            <a href="#" class="list-group-item active">Runoob</a>
+            <a href="#" class="list-group-item">Taobao</a>
+            <a href="#" class="list-group-item">Github</a>
+        </div>
+    </div>
+  </div>
 
 <!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
 <!-- 需求3: 包含 jQuery 库 -->
 <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 <!-- 需求4: 合并了 Bootstrap JavaScript 插件 -->
 <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script>
-    $(function(){
-      $("a[name='closealert']").click(function(){
-        $(this).parent().slideUp(200);
-      });
-      $("#myAlert1").bind('close.bs.alert', function(){
-        alert('已经关闭')
-      });
-
-       $("#start").click(function(){
-        var i = 1;
-        var start = setInterval(function(){
-          console.info(i);
-          $("#progress-bar").attr("style","width: "+i+"%;");
-          $("#progress-bar").attr("aria-valuenow",i);
-          $("#progress").text(i+"%");
-          if(i>100){
-            clearInterval(start);
-            $("#progress-bar").attr("style","width: 100%");
-            $("#progress-bar").attr("aria-valuenow",100);
-            $("#progress").text("100%");
-          }
-            
-          i++;
-        },100)
-      });
-    });
-</script>
 </body>
 </html>
