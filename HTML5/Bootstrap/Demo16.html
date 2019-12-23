@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Bootstrap 插件</title>
+  <!-- Boostrap 样式库-->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+<div class="page-header">
+  <h1>模态框（Modal）插件<small>案例</small></h1>
+</div>
+<button type="button" class="btn btn-large btn-block btn-primary" data-toggle="modal" data-target="#myModal">Modal Demo</button> <!-- 关键点-->
+<div class="modal fade" id="myModal" tabindex="-1" role="rialog" aria-labelledby="myModalLabel" aria-hidden="true"><!-- 关键点 fade 引入影藏-->
+  <div class="modal-dialog"><!-- 关键点-->
+    <div class="modal-content"><!-- 关键点-->
+      <div class="modal-header"><!-- 关键点-->
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">模态框(Modal)标题</h4>
+      </div>
+      <div class="modal-body"><!-- 关键点-->
+        这里是基础实例标题;
+        <input type="text" name="Demo" id="Demo" class="form-control" placeholder="测试输入">
+      </div>
+      <div class="modal-footer"><!-- 关键点-->
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭模态框</button> <!-- 关键点-->
+        <button type="button" class="btn btn-primary">提交更改</button>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+
+<a data-toggle="modal" href="http://baidu.com" data-target="#modal" rel="noopener noreferrer" class="btn btn-danger">请点击我 Modal Demo</a>
+<div class="modal fade" id="modal" tabindex="-1"> <!-- 如果没有tabindex就按下ese就不能隐藏模态框 -->
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header"><!-- 关键点-->
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">百度一下</h4>
+      </div>
+      <div class="modal-body"><!-- 关键点-->
+        <iframe src="http://baidu.com" style="width: 100%;height: 100%;"></iframe>
+      </div>
+      <div class="modal-footer"><!-- 关键点-->
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button> <!-- 关键点-->
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="page-header">
+  <h1>滚动监听（Scrollspy）插件<small>案例</small></h1>
+</div>
+<!-- 关键点 -->
+<nav id="myScrp" class="navbar navbar-default navbar-static" role="navigation">
+	<div class="container-fluid"> 
+
+		<div class="navbar-header">
+			<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-js-navbar-scrollspy"> <!-- 导航栏 自适应 -->
+				<span class="sr-only">切换导航</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">教程名称</a> <!-- 导航栏标题-->
+    </div>
+    
+		<div class="collapse navbar-collapse bs-js-navbar-scrollspy">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#ios">iOS</a></li>
+				<li><a href="#svn">SVN</a></li>
+				<li class="dropdown">
+					<a href="#" id="navbarDrop1" class="dropdown-toggle"  data-toggle="dropdown">Java <b class="caret"></b></a> <!-- 下拉菜单 -->
+					<ul class="dropdown-menu" role="menu" aria-labelledby="navbarDrop1"> <!-- 下拉触发列表-->
+						<li><a href="#jmeter" tabindex="-1">jmeter</a></li>
+						<li><a href="#ejb" tabindex="-1">ejb</a></li>
+						<li class="divider"></li>
+						<li><a href="#spring" tabindex="-1">spring</a></li>
+					</ul>
+				</li>
+			</ul>
+    </div>
+    
+  </div>
+  
+</nav>
+<div data-spy="scroll" data-target="#myScrp" data-offset="0" style="height: 200px; overflow: auto; position: relative;">
+  <div class="section">
+		<h4 id="ios">iOS<small><a href="#" onclick="removeSection(this);"> 
+			&times; 删除该部分</a></small>
+		</h4>
+		<p>iOS 是一个由苹果公司开发和发布的手机操作系统。最初是于 2007 年首次发布 iPhone、iPod Touch 和 Apple 
+			TV。iOS 派生自 OS X，它们共享 Darwin 基础。OS X 操作系统是用在苹果电脑上，iOS 是苹果的移动版本。</p>
+	</div>
+	<div class="section">
+		<h4 id="svn">SVN<small></small></h4>
+		<p>Apache Subversion，通常缩写为 SVN，是一款开源的版本控制系统软件。Subversion 由 CollabNet 公司在 2000 年创建。但是现在它已经发展为 Apache Software Foundation 的一个项目，因此拥有丰富的开发人员和用户社区。</p>
+	</div>
+	<div class="section">
+		<h4 id="jmeter">jMeter<small><a href="#" onclick="removeSection(this);">
+			&times; 删除该部分</a></small>
+		</h4>
+		<p>jMeter 是一款开源的测试软件。它是 100% 纯 Java 应用程序，用于负载和性能测试。</p>
+	</div>
+	<div class="section">
+		<h4 id="ejb">EJB</h4>
+		<p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。</p>
+	</div>
+	<div class="section">
+		<h4 id="spring">Spring</h4>
+		<p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+		<p>Spring 框架最初是由 Rod Johnson 编写的，在 2003 年 6 月首次发布于 Apache 2.0 许可证下。</p>
+	</div>
+</div>
+
+
+</div>
+<!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
+<!-- 需求3: 包含 jQuery 库 -->
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<!-- 需求4: 合并了 Bootstrap JavaScript 插件 -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+  $(function(){
+    $('#modal').on('show.bs.modal',function(){
+      console.log(new Date().toLocaleString() +" - 在调用 show 方法后触发。");
+    });
+    $('#modal').on('shown.bs.modal',function(){
+      console.log(new Date().toLocaleString() +" - 当模态框对用户可见时触发（将等待 CSS 过渡效果完成）。");
+    });
+    $('#modal').on('hide.bs.modal',function(){
+      console.log(new Date().toLocaleString() +" - 当调用 hide 实例方法时触发。");
+    });
+    $('#modal').on('hiden.bs.modal',function(){
+      console.log(new Date().toLocaleString() +" 	当模态框完全对用户隐藏时触发。");
+    });
+
+  });
+</script>
+</body>
+</html>
+
