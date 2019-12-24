@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Bootstrap 插件</title>
+  <!-- Boostrap 样式库-->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body> 
+<div class="container">
+  <h4>工具提示（Tooltip）插件 - 锚</h4> <!-- data-toggle 是显示 -->
+  这是一个 <a href="#" class="tooltip-show" data-toggle="tooltip" title="默认的 Tooltip" data-delay="{show: 500, hide: 3000}">默认的 Tooltip</a>.
+  这是一个 <a href="#" class="tooltip-event" data-toggle="tooltip" data-placement="left" title="左侧的 Tooltip">左侧的 Tooltip</a>.
+  这是一个 <a href="#" class="tooltip-toggle" data-toggle="tooltip" data-placement="top" title="顶部的 Tooltip">顶部的 Tooltip</a>.
+  这是一个 <a href="#" class="tooltip-destroy" data-toggle="tooltip" data-placement="bottom" title="底部的 Tooltip">底部的 Tooltip</a>.
+  这是一个 <a href="#" class="tooltip-show" data-toggle="tooltip" data-placement="right" title="右侧的 Tooltip">右侧的 Tooltip</a>
+  <br>
+  <h4>工具提示（Tooltip）插件 - 按钮</h4>
+  <button type="button" class="btn btn-default" data-toggle="tooltip"  title="默认的 Tooltip"> 默认的 Tooltip</button>
+  <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="左侧的 Tooltip">左侧的 Tooltip
+  </button>
+  <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="顶部的 Tooltip">顶部的 Tooltip
+  </button>
+  <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="底部的 Tooltip">底部的 Tooltip
+  </button>
+  <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="右侧的 Tooltip">右侧的 Tooltip</button>
+  <p class="tooltip-options" >
+		这是一个 
+	<a href="#"  class="tooltip-options" data-toggle="tooltip" title="am Header2">Tooltip 方法 options</a>. <!-- 貌似插入 html 不行 -->
+  </p>
+  <hr>
+  <div class="page-header">
+    <h4> 弹出框Popover <small>案例</small></h4>
+    <p>测试信息</p>
+  </div>
+  <button type="button" class="btn btn-default" title="Popover Title" data-container="body" data-toggle="popover" data-placement="left" data-content="左侧的Popover内容">左侧</button>
+  <button type="button" class="btn btn-primary" title="Popover Title" data-container="body" data-toggle="popover" data-placement="top" data-content="顶部的Popover内容">顶部</button>
+  <button type="button" class="btn btn-success" title="Popover Title" data-container="body" data-toggle="popover" data-placement="bottom" data-content="底部的Popover内容">底部</button>
+  <button type="button" class="btn btn-warning" title="Popover Title" data-container="body" data-toggle="popover" data-placement="right" data-content="右侧的Popover内容">右侧</button>
+  <p class="popover-options" style="display:flex;margin-top: 20px;">
+    <a href="#" type="button" class="btn btn-warning" title="<h2>Title</h2>" data-container="body" data-toggle="popover" data-content="<h4>Popover 中的一些内容 —— options 方法</h4>"> Popover </a>
+  </p>
+  <br>
+  <br>
+  <button type="button" class="btn btn-danger" onclick="reset()">取消弹出框显示</button>
+</div>
+
+<!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
+
+<script>
+  $(function () { 
+    $("[data-toggle='tooltip']").tooltip({delay: { show: 500, hide: 1000 }});
+    $('.tooltip-show').tooltip('show');
+    $('.tooltip-hide').tooltip('hide');
+    $('.tooltip-destroy').tooltip('destroy');
+    $('.tooltip-toggle').tooltip('toggle');  //有切换的动画
+    $(".tooltip-options a").tooltip({html : true });
+    $('.tooltip-event').on('show.bs.tooltip', function (e) {
+        console.log("当前点击了：" + e.target.firstChild.textContent);  //当前点击了：左侧的 Tooltip
+      })
+  })
+
+  $(function () { $('[data-toggle="popover"]').popover({ delay: { show: 500, hide: 800}, html: true});}); //延迟显示效果
+  $(function () { $('.btn-primary').popover('show');});
+  $(function () { $('.btn-default').popover('hide');});
+  $(function () { $('.popover-destroy').popover('destroy');});
+  $(function () { $('.btn-success').popover('toggle');});
+  $(function () {
+    $(".btn-warning").on('show.bs.popover',function(){
+      console.log("调用 show 实例方法时立即触发该事件");
+    })
+    $(".btn-warning").on('shown.bs.popover',function(){
+      console.log("当弹出框对用户可见时触发该事件（将等待 CSS 过渡效果完成）。");
+    })
+    $(".btn-warning").on('hide.bs.popover',function(){
+      console.log("当调用 hide 实例方法时立即触发该事件。");
+    })
+    //hiden没效果
+    $(".btn-warning").on('hiden.bs.popover',function(){
+      console.log("当工具提示对用户隐藏时触发该事件（将等待 CSS 过渡效果完成）。");
+    })
+  });
+  //按钮重置
+  function reset(){
+    $(function(){
+      $('[data-toggle="popover"]').popover('hide');
+   });
+  }
+
+
+</script>
+</body>
+</html>
+

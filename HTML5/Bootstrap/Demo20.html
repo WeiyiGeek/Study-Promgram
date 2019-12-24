@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Bootstrap 插件</title>
+  <!-- Boostrap 样式库-->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+<div id="alert1" class="alert alert-success">
+  <a href="#" class="close" data-dismiss="alert">&times;</a>
+  <strong>警告!网络链接正常!</strong>
+</div>
+
+<div id="alert2" class="alert alert-warning">
+  <a href="#" class="close" data-dismiss="alert">&times;</a>
+  <strong>警告!网络链接异常!</strong>
+</div>
+
+<hr>
+<div class="page-header">
+  <h4>按钮Button插件<small>示例</small></h4>
+</div>
+<div class="row">
+  <button id="fat-btn" class="btn btn-primary" data-loading-text="Loading..." type="button"><span class="glyphicon glyphicon-tint"></span> 加载状态</button>
+
+  <hr>
+  <button id="reset" class="btn btn-default">恢复默认</button>
+</div>
+
+</div>
+<!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
+<!-- 需求3: 包含 jQuery 库 -->
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<!-- 需求4: 合并了 Bootstrap JavaScript 插件 -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+$(function(){
+  $(".alert").click(function(){
+    $("#alert1").alert('close');
+    $("#alert2").alert();
+  });
+
+  $(function(){
+    $(".alert").bind('close.bs.alert',function(){
+      console.log('警告框被打开！')
+    })
+    $(".alert").bind('closed.bs.alert',function(){
+      alert("警告消息框被关闭");
+    })
+  })
+})
+
+
+//按钮插件学习
+ $(function(){
+   $("#fat-btn").click(function(){
+     //延迟进行加载然后进行提示
+    $(this).button('loading').delay(1000).queue(function(){
+      $("#fat-btn").html('<span class="glyphicon glyphicon-ok"> </span> 操作完成')
+    })
+   });
+
+   $("#reset").click(function(){
+      $("#fat-btn").button('reset');  //恢复原始 可以采用 $(this) 形式指代 本对象
+   });
+ })
+</script>
+</body>
+</html>
+

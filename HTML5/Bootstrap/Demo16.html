@@ -58,7 +58,6 @@
 <!-- 关键点 -->
 <nav id="myScrp" class="navbar navbar-default navbar-static" role="navigation">
 	<div class="container-fluid"> 
-
 		<div class="navbar-header">
 			<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-js-navbar-scrollspy"> <!-- 导航栏 自适应 -->
 				<span class="sr-only">切换导航</span>
@@ -68,7 +67,6 @@
 			</button>
 			<a class="navbar-brand" href="#">教程名称</a> <!-- 导航栏标题-->
     </div>
-    
 		<div class="collapse navbar-collapse bs-js-navbar-scrollspy">
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="#ios">iOS</a></li>
@@ -84,7 +82,6 @@
 				</li>
 			</ul>
     </div>
-    
   </div>
   
 </nav>
@@ -116,7 +113,7 @@
 		<p>Spring 框架最初是由 Rod Johnson 编写的，在 2003 年 6 月首次发布于 Apache 2.0 许可证下。</p>
 	</div>
 </div>
-
+<span id="activeitem" style="color:red;">滚动监听（Scrollspy）事件</span>
 
 </div>
 <!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
@@ -139,7 +136,24 @@
       console.log(new Date().toLocaleString() +" 	当模态框完全对用户隐藏时触发。");
     });
 
+    //移除操作
+    removeSection = function(e) {
+			$(e).parents(".section").remove();  //移除父元素
+			$('[data-spy="scroll"]').each(function () {
+				var $spy = $(this).scrollspy('refresh')
+			});
+		}
+
+    $("#myScrollspy").scrollspy();
+
+    //Nav标签ID
+    $('#myScrp').on('activate.bs.scrollspy', function () {
+      var currentItem = $(".nav li.active > a").text();
+      console.log(currentItem);
+      $("#activeitem").html("目前您正在查看 - " + currentItem);
+    });
   });
+
 </script>
 </body>
 </html>
