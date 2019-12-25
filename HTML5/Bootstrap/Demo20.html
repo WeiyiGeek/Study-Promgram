@@ -25,10 +25,43 @@
   <h4>按钮Button插件<small>示例</small></h4>
 </div>
 <div class="row">
-  <button id="fat-btn" class="btn btn-primary" data-loading-text="Loading..." type="button"><span class="glyphicon glyphicon-tint"></span> 加载状态</button>
+  <h4>演示 .button('toggle') 方法</h4>
+  <div id="myButtons1" class="bs-example"><button type="button" class="btn btn-primary">原始</button></div>
 
-  <hr>
+  <p>加载状态：</p>
+  <button id="fat-btn" class="btn btn-primary" data-loading-text="Loading..." type="button"><span class="glyphicon glyphicon-tint"></span> 加载状态(方式1)</button>
+  <button id="fat-btn1" class="btn btn-primary" data-loading-text="Loading finished" type="button"><span class="glyphicon glyphicon-tint"></span> 加载状态(方式2)</button>
   <button id="reset" class="btn btn-default">恢复默认</button>
+  <hr>
+  <p>单个切换</p>
+  <button type="button" class="btn btn-primary" data-toggle="button"> 单个切换</button>
+
+  <p>复选框（Checkbox）</p>
+  <div class="btn-group" data-toggle="buttons">
+    <label for="opt1" class="btn btn-primary btn-lg">
+      <input type="checkbox" name="option1" id="opt1"> 选项1
+    </label>
+    <label for="opt2" class="btn btn-primary btn-lg">
+      <input type="checkbox" name="option2" id="opt2"> 选项2
+    </label>
+    <label for="opt3" class="btn btn-primary btn-lg">
+      <input type="checkbox" name="option3" id="opt3"> 选项3
+    </label>
+  </div>
+
+  <p>单选按钮（Radio）</p>
+  <div class="btn-group" data-toggle="buttons">
+    <label class="btn btn-primary">
+        <input type="radio" name="options" id="option1"> 选项 1
+    </label>
+    <label class="btn btn-primary">
+        <input type="radio" name="options" id="option2"> 选项 2
+    </label>
+    <label class="btn btn-primary">
+        <input type="radio" name="options" id="option3"> 选项 3
+    </label>
+</div>
+
 </div>
 
 </div>
@@ -55,19 +88,37 @@ $(function(){
 })
 
 
-//按钮插件学习
+//按钮插件学习定时完成后显示下载完成
  $(function(){
+
+  //默认按压 演示 .button('toggle') 方法
+  $("#myButtons1 .btn").click(function(){
+      $(this).button('toggle');
+    });
+
+
+    //演示 .button('loading') 方法
    $("#fat-btn").click(function(){
-     //延迟进行加载然后进行提示
-    $(this).button('loading').delay(1000).queue(function(){
+      $(this).button('loading').delay(1000).queue(function(){
       $("#fat-btn").html('<span class="glyphicon glyphicon-ok"> </span> 操作完成')
     })
+  
+
+    //演示 .button(string) 方法
+    $("#fat-btn1").click(function(){
+        $(this).button('loading').delay(1000).queue(function(){
+        $(this).button('complete');   //完成后选择，再次点击则不能选择
+      });
+    });
    });
 
+
+   //演示 .button('reset') 方法
    $("#reset").click(function(){
       $("#fat-btn").button('reset');  //恢复原始 可以采用 $(this) 形式指代 本对象
    });
  })
+
 </script>
 </body>
 </html>
