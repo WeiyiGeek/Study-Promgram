@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Bootstrap 插件</title>
+  <!-- Boostrap 样式库-->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <style>
+  ul.nav-tabs{
+        width: 140px;
+        margin-top: 20px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+    }
+    ul.nav-tabs li{
+        margin: 0;
+        border-top: 1px solid #ddd;
+    }
+    ul.nav-tabs li:first-child{
+        border-top: none;
+    }
+    ul.nav-tabs li a{
+        margin: 0;
+        padding: 8px 16px;
+        border-radius: 0;
+    }
+    ul.nav-tabs li.active a, ul.nav-tabs li.active a:hover{
+        color: #fff;
+        background: #0088cc;
+        border: 1px solid #0088cc;
+    }
+    ul.nav-tabs li:first-child a{
+        border-radius: 4px 4px 0 0;
+    }
+    ul.nav-tabs li:last-child a{
+        border-radius: 0 0 4px 4px;
+    }
+    /* Set the top position of pinned element */
+    ul.nav-tabs.affix{
+        top: 30px; 
+    }
+  </style>
+</head>
+<body data-spy="scroll" data-target="#myScroll">
+<div class="container">
+  <div class="jumbotron">
+      <h1>Bootstrap<small> Affix </small></h1>
+  </div>
+  <div class="row">
+    <div class="col-xs-3 hidden-xs" id="myScroll">
+      <ul class="nav nav-tabs nav-stacked" data-spy="affix" data-offset-top="125" id="myNav">
+        <li class="active"><a href="#section1">第一部分</a></li>
+        <li><a href="#section2">第2部分</a></li>
+        <li><a href="#section3">第3部分</a></li>
+        <li><a href="#section4">第4部分</a></li>
+        <li><a href="#section5">第5部分</a></li>
+      </ul>
+    </div> 
+    <div class="col-xs-9">
+      <div class="page-header" id="section1">
+        <h2>WeiyiGeek <small>测试</small></h2>
+        <p>第1部分 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus,</p>
+      </div>
+      <div class="page-header" id="section2">
+        <h2>WeiyiGeek <small>测试</small></h2>
+        <p>第2部分 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus,</p>
+      </div>
+      <div class="page-header" id="section3">
+        <h2>WeiyiGeek <small>测试</small></h2>
+        <p>第3部分 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus,</p>
+      </div>
+      <div class="page-header" id="section4">
+        <h2>WeiyiGeek <small>测试</small></h2>
+        <p>第4部分 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus,</p>
+      </div>
+      <div class="page-header" id="section5">
+        <h2>WeiyiGeek <small>测试</small></h2>
+        <p>第5部分 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus,</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
+<!-- 需求3: 包含 jQuery 库 -->
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<!-- 需求4: 合并了 Bootstrap JavaScript 插件 -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+  //采用JS进行属性设置
+  $(document).ready(function(){
+      $("#myNav").affix({
+          offset: { top: 125 }
+      });
+  });
+  </script>
+</body>
+</html>
+
