@@ -22,7 +22,7 @@ public class Demo1 {
 			
 			//Step 2.构建连接字符串和建立链接
 			String urlFormat = "jdbc:mysql://%s:%d/%s?useUnicode=true&characterEncoding=UTF-8";
-			String connectionUrl = String.format(urlFormat, "113.100.177.1", 3306, "Demo");
+			String connectionUrl = String.format(urlFormat, "113.62.177.230",3306,"Demo");
 			conn = DriverManager.getConnection(connectionUrl, "root", "WeiyiGeek");
 			
 			//Step 3.创建statement
