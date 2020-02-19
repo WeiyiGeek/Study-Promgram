@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT root (stu)*>
+<!ELEMENT stu (name,age,address)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT age (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ATTLIST stu id ID #REQUIRED>
+<!ATTLIST stu gender (男|女) #REQUIRED>

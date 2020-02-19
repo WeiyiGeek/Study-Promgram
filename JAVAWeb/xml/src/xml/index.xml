@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "index.dtd" >
+<root>
+	<stu id="a_1001" gender="男">
+		<name>WeiyiGeek</name>
+		<age>20</age>
+		<address>中国北京东直门220号</address>
+	</stu>
+	<stu id="a_1002" gender="女">
+		<name>张欣欣</name>
+		<age>18</age>
+		<address>中国河北开封区小龙街道220号</address>
+	</stu>
+</root>

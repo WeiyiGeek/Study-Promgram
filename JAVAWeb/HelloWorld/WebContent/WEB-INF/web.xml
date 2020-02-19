@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>HelloWorld</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!-- 1.告知Tomcat我们应用中有个Servlet,名字叫做HelloHelloWorld，以及包.类的路径名称； -->
+  <servlet>
+  	<servlet-name>HelloWorld</servlet-name>
+  	<servlet-class>cn.weiyigeek.servlet.HelloWorld</servlet-class>
+  </servlet>
+  <!-- 2.注册Servlet映射以及URL匹配访问的路径 -->
+  <servlet-mapping>
+  	<servlet-name>HelloWorld</servlet-name>
+  	<url-pattern>/hello</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>HttpHelloWorld</servlet-name>
+  	<servlet-class>cn.weiyigeek.servlet.HttpHelloWorld</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>HttpHelloWorld</servlet-name>
+  	<url-pattern>/web</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 3.声明周期验证并提前初始化 -->
+  <servlet>
+  	<servlet-name>Lifecycle</servlet-name>
+  	<servlet-class>cn.weiyigeek.servlet.Lifecycle</servlet-class>
+  	<load-on-startup>3</load-on-startup>
+  </servlet>
+   <servlet-mapping>
+   	<servlet-name>Lifecycle</servlet-name>
+   	<url-pattern>/lifecycletest</url-pattern>
+   </servlet-mapping>
+   
+    <!-- 4.验证ServletConfig配置 -->
+    <servlet>
+    	<servlet-name>ServletConfig</servlet-name>
+    	<servlet-class>cn.weiyigeek.servlet.SevletConfig</servlet-class>
+    	<init-param>
+    		<param-name>WeiyiGeek</param-name>
+    		<param-value>ServletConfig</param-value>
+    	</init-param>
+    	<init-param>
+    		<param-name>name</param-name>
+    		<param-value>WeiyiGeek</param-value>
+    	</init-param>
+    	<init-param>
+    		<param-name>age</param-name>
+    		<param-value>88</param-value>
+    	</init-param>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>ServletConfig</servlet-name>
+    	<url-pattern>/config</url-pattern>
+    </servlet-mapping>
+</web-app>

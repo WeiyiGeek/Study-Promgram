@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.weiyigeek.cn/XMLSchema" xmlns:tns="http://www.weiyigeek.cn/XMLSchema" elementFormDefault="qualified">
+	<element name="root">
+		<complexType>
+				<sequence maxOccurs="unbounded">
+					<element name="stu">
+						<complexType>
+							<sequence>
+								<element name="name" type="string"></element>
+								<element name="age" type="int"></element>
+								<element name="address" type="string"></element>
+							</sequence>
+							<!-- 属性 -->
+							<attribute name="id" type="int" use="required"></attribute>
+						</complexType>
+					</element>
+				</sequence>
+		</complexType>
+	</element>
+</schema>

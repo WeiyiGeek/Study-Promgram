@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.weiyigeek.cn/XMLSchema"
+	xsi:schemaLocation="http://www.weiyigeek.cn/XMLSchema XMLSchema.xsd">
+	<stu id="1001">
+		<name>WeiyiGeek</name>
+		<age>20</age>
+		<address>中国北京东直门220号</address>
+	</stu>
+	<stu id="1002">
+		<name>张欣欣</name>
+		<age>18</age>
+		<address>中国河北开封区小龙街道220号</address>
+	</stu>
+</root>
