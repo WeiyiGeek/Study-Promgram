@@ -1,0 +1,40 @@
+<c3p0-config>
+  <default-config>
+    <property name="driverClass">org.mariadb.jdbc.Driver</property>
+    <property name="jdbcUrl">jdbc:mariadb://127.0.0.1:3306/student</property>
+    <property name="user">root</property>
+    <property name="password"></property>
+
+    <property name="automaticTestTable">con_test</property>
+    <property name="checkoutTimeout">30000</property>
+    <property name="idleConnectionTestPeriod">30</property>
+    <property name="initialPoolSize">10</property>
+    <property name="maxIdleTime">30</property>
+    <property name="maxPoolSize">100</property>
+    <property name="minPoolSize">10</property>
+    <property name="maxStatements">200</property>
+
+    <user-overrides user="test-user">
+      <property name="maxPoolSize">10</property>
+      <property name="minPoolSize">1</property>
+      <property name="maxStatements">0</property>
+    </user-overrides>
+  </default-config>
+  
+	<!--可以配置多种数据库-->
+  <named-config name="mysql">
+    <property name="driverClass">org.mysql.jdbc.Driver</property>
+    <property name="jdbcUrl">jdbc:mysql://127.0.0.1:3306/student</property>
+    <property name="user">root</property>
+    <property name="password"></property>
+  </named-config>
+
+<!--可以配置多种数据库-->
+  <named-config name="oracle">
+    <property name="driverClass">oracle.jdbc.driver.OracleDriver</property>
+    <property name="jdbcUrl">jdbc:oracle:thin:@192.168.10.25:1521:student</property>
+    <property name="user">master</property>
+    <property name="password"></property>
+  </named-config>
+  
+</c3p0-config>
