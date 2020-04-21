@@ -25,7 +25,7 @@ def getTitle(url):
 def main():
     global linenum
     workbook = xlwt.Workbook(encoding='utf-8')
-    worksheet = workbook.add_sheet('cqzk.com.cn')
+    worksheet = workbook.add_sheet('weiyigeek.top')
     with open("get.json", "r", encoding='utf-8') as domain:
         res = json.load(domain)
         domainname = res["result"]["domain"]["name"]
