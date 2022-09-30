@@ -1,0 +1,97 @@
+
+html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>分页测试</title>
+</head>
+<body>
+
+  <h1>分页测试1</h1>
+
+  <table class="table table-hover" style="border: 1px solid black;">
+    <thead>
+      <tr>
+        <th>Index</th><th>Name</th><th>食物</th><th>年龄</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in dogs %}
+      <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.d_eat }}</td>
+        <td>{{ user.d_age}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  
+
+
+
+  <hr>
+  <h1>分页测试2</h1>
+  <table class="table table-hover" border="1px solid red;">
+    <thead>
+      <tr>
+        <th>Index</th><th>Name</th><th>食物</th><th>年龄</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in pagination.items %}
+      <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.d_eat }}</td>
+        <td>{{ user.d_age}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  
+  {% macro render_pagination(pagination,current_page,current_count,end) %}
+  <div class=pagination>
+    {% if page != 1 %}
+    <a href="{{ url_for('demo3.get_dogs_paginate') }}?page=1&count={{ per_page }}">首页</a>
+    {% endif %}
+
+  {%- for page in pagination.iter_pages() %}
+    {% if page %}
+      {% if page != pagination.page %}
+        <a href="{{ url_for('demo3.get_dogs_paginate') }}?page={{ page }}&count={{ per_page }}">{{ page }}</a>
+      {% else %}
+        <strong>{{ page }}</strong>
+      {% endif %}
+    {% else %}
+      <span class=ellipsis>…</span>
+    {% endif %}
+  {%- endfor %}
+
+  {% if current_page != end %}
+  <a href="{{ url_for('demo3.get_dogs_paginate') }}?page={{ end }}&count={{ per_page }}">尾页</a>
+  {% endif %}
+  <br> <br>
+  <span>  数据共<b> {{ total }} </b>条 , 跳转到<input type="number" id="page_num" min="1" max="{{ end }}" value="{{ current_page }}"/>页, 每页显示<input type="number" min="5" max="100" id="per_page_num" value="{{ current_count }}"/>条</span>
+    <input type="button" value="跳转" id="goto" onclick="goto()">
+  </div>
+{% endmacro %}
+{{ render_pagination(pagination,page,per_page,end) }}
+
+
+<script>
+function goto(){
+  var page = document.getElementById("page_num").value;
+  var per_page = document.getElementById("per_page_num").value;
+  if ( page * per_page > {{ total }} ){
+    alert("显示超出返回值范围!");
+  } else {
+    window.location.href="{{ url_for('demo3.get_dogs_paginate') }}?page="+page+"&count="+per_page;
+  }
+}
+</script>
+</body>
+</html>

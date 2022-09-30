@@ -1,0 +1,10 @@
+第1行，hello go，bufio.NewWriter 写入!
+第2行，hello go，bufio.NewWriter 写入!
+第3行，hello go，bufio.NewWriter 写入!
+第4行，hello go，bufio.NewWriter 写入!
+第5行，hello go，bufio.NewWriter 写入!
+第6行，hello go，bufio.NewWriter 写入!
+第7行，hello go，bufio.NewWriter 写入!
+第8行，hello go，bufio.NewWriter 写入!
+第9行，hello go，bufio.NewWriter 写入!
+第10行，hello go，bufio.NewWriter 写入!

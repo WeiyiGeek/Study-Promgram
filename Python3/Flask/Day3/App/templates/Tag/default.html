@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+{% block header%}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title%} {{ title }} {% endblock %}</title>
+</head>
+{% endblock header%}
+<body>
+{% block content %}
+  <p style="color: red;"> Python Flask Deveploment Study!</p>
+  <h5>Name: {{ student }}</h5>
+{% endblock content %}
+
+<br/>
+{% block footer %}
+  <p>&copy; WeiyiGeek  &copysr; Python-Flask <br><a href="https://weiyigeek.top">个人主页</a></p>
+{% endblock footer %}
+
+<br/>
+</body>
+</html>

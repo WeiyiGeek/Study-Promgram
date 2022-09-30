@@ -1,0 +1,67 @@
+{% extends 'Tag/default.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 示例1.块引用 -->
+{% block header %}
+  {{ super() }}
+{% endblock header %}
+<body>
+  {% block content %}
+    <b>块引用嵌入</b>
+    {{ super() }}
+    {% block firends %}
+      <!-- 示例2.文件包含(需要包含在父块中) -->
+      <p>友情连接: </p>
+      {% include 'Tag/friends.html' %}
+    {% endblock firends %}
+
+    <hr>
+    <!-- 实例3.模板中定义函数含(需要包含在父块中)使用时候一般会在一个专门的文件中 -->
+
+    <b> 标签中自定义函数: </b> <br>
+    {% macro hello_tag() %}
+      <u> 我是标签模板生成的函数 </u> <br>
+    {% endmacro %}
+
+    <!-- 调用几次就生成几次 -->
+    {{ hello_tag() }}
+    {{ hello_tag() }}
+
+    {% from 'Tag/function.html' import Start,Product %}
+    <br>
+    {{ Start("WeiyiGeek") }}
+    {{ Product("Python3 入门到精通","Python 可视化编程","Python - Flask Web Development") }}
+
+  {% endblock content %}
+
+
+  {% block footer %}
+  <hr>
+  <b>条件循环</b>
+  {% for user in users %}
+    {% if loop.first %}
+    <li style="color:red"> {{ loop.index }} : {{ loop.index0 }} : {{ user }}</li>
+    {% elif loop.last %}
+    <li style="color:green"> {{ loop.index }} : {{ loop.index0 }} : {{ user }}</li>
+    {% else %}
+    <li style="color:blue"> {{ loop.index }} : {{ loop.index0 }} : {{ user }}</li>
+    {% endif %}
+  {% else %}
+    <p>循环结束</p>
+  {% endfor %}
+
+  <hr>
+  <b>过滤器</b>
+  <p>原始字符:{{ student }}</p>
+  <p>字符|capitalize:{{ student|capitalize }}</p>
+  <p>字符|upper:{{ student|upper }}</p>
+  <p>字符|reverse:{{ student|reverse }}</p>
+  <hr>
+
+    {{ super() }}
+  {% endblock footer %}
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登录</title>
+</head>
+<body>
+
+<!-- 模板引擎可以直接调用(蓝图.函数名)进行确定请求的url-->
+<form action="{{ url_for('demo2.login') }}" method="post">
+  <label for="username">用户名：</label>
+  <input type="text" id="username" name="username">
+  <br>
+  <label for="password">密  码:</label>
+  <input type="password" name="password" id="password">
+  <br>
+  <input type="submit" value="登录"/>
+  <input type="reset" value="清空"/>
+</form>
+</body>
+</html>

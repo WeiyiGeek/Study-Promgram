@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+</head>
+<body>
+  <table border="1">
+  <tr> <th>Index</th><th>Name</th><th>Gender</th><th>Years</th><th>Address</th></tr>
+  {% for user in result %}
+  <tr>
+    <td>{{ user.uid }}</td>
+    <td>{{ user.name }}</td>
+    <td>{{ user.gender }}</td>
+    <td>{{ user.yearsofwork }}</td>
+    <td>{{ user.address }}</td>
+  </tr>
+  {% else %}
+    
+  <tr>
+    <td colspan="2"> Over </td>
+  </tr>
+  {% endfor %}
+</table>
+</body>
+</html>

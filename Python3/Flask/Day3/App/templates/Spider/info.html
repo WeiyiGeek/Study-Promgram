@@ -1,0 +1,6 @@
+<!-- 注意此处不能有换行否则需要在模板渲染返回字符串时候必须进行换行符替换 --> 
+<ul>
+  {% for element in Info %}
+  <li> {{ element.id }} - {{ element.name }} </li>
+  {% endfor %}
+</ul>

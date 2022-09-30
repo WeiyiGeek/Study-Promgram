@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ Title }}</title>
+  <!-- (3) 静态js文件调用 -->
+  <!-- <script src="{{ url_for('static', filename='Spider/decode.js')}}"></script> -->
+
+  <!-- (4) 动态js文件调用(校验请求时间)防止网页上js文件被js编码破解 -->
+  <script>
+    document.write('<script src="/get/decode/?t='+Date.parse(new Date())+'"><\/script>')
+  </script>
+</head>
+<body>
+  <h1> 动物信息 </h1>
+  <div class="animal">
+    <!-- 
+    (1) 常规方式
+    <ul>
+    {#
+      {% for element in Info %}
+      <li> {{# element.id }} - {{ element.name }} </li>
+      {% endfor %}
+    #}
+    </ul> -->
+
+    <!-- (2) 动态输出 -->
+    <script type="text/javascript"> 
+      //方式1.模板引擎渲染得到内容(未加密), 注意此处需要采用safe引擎内置函数进行HTML编码转码
+      //document.write("{{ Info|safe }}");
+
+      //方式2.模板引擎渲染得到内容(已base64编码)才用内置js文件进行反编码输出
+      document.write(showEncodeHtml("{{ Info|safe }}"));
+    </script>
+  </div>
+</body>
+</html>
